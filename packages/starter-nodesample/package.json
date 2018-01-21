@@ -1,0 +1,37 @@
+{
+  "name": "starter-nodesample",
+  "version": "0.0.1",
+  "description": "authoring node js libraries in es7 using babel 7",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "nodemon src/index.js --exec babel-node",
+    "debug": "nodemon src/index.js --exec babel-node --debug",
+    "build": "cross-env NODE_ENV=production babel -s true src -d dist",
+    "serve": "node dist",
+
+    "clean":
+      "yarn run clean:dist && yarn run clean:reports && yarn run clean:coverage",
+    "clean:coverage": "shx rm -rf coverage",
+    "clean:dist": "shx rm -rf dist",
+    "clean:reports": "shx rm -rf reports",
+
+    "pretest": "yarn run clean:coverage && yarn run clean:reports",
+    "test":
+      "cross-env NODE_ENV=test mocha -c -S -R spec --compilers js:babel-register --check-leaks",
+    "posttest":
+      "cross-env NODE_ENV=test mocha -S -R mochawesome --compilers js:babel-register --reporter-options reportDir=reports --check-leaks",
+    "test:watch": "cross-env NODE_ENV=test yarn test -- -w",
+
+    "precoverage": "yarn run clean:coverage",
+    "coverage":
+      "cross-env NODE_ENV=test babel-istanbul cover src/*.js _mocha --report lcovonly -- -R spec",
+    "postcoverage":
+      "cross-env NODE_ENV=test babel-istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
+    "coverage:ci": "cross-env NODE_ENV=test yarn run coverage && codecov",
+
+    "premonitor": "yarn run clean:dist && yarn run build",
+    "monitor": "nodejs-dashboard node dist"
+  }
+}

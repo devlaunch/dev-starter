@@ -1,0 +1,13 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "target": {
+          "node": "current"
+        },
+        "useBuiltIns": "true"
+      }
+    ]
+  ]
+}

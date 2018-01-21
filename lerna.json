@@ -1,0 +1,14 @@
+{
+  "lerna": "2.8.0",
+  "commands": {
+    "publish": {
+      "allowBranch": "master",
+      "message": "chore(release): publish %s",
+      "ignore": ["ignored-file", "*.md"]
+    }
+  },
+  "packages": ["packages/*"],
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "version": "independent"
+}
