@@ -1,6 +1,6 @@
 # dev-starter
 
-[![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://github.com/phaneendra/javascript-badges/) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/) [![Standard Version](https://img.shields.io/badge/release-standard%20version-brightgreen.svg)](https://github.com/conventional-changelog/standard-version) [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
+[![JavaScript Style Guide](https://img.shields.io/badge/code%20style-airbnb-blue.svg)](https://github.com/phaneendra/javascript-badges/) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/) [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
 
 _Javascript application development starter with Babel ES6 / ES7 Support, Testing, CI Integration, Code Coverage, JS Standard Style, Commit Guidelines, Git Hooks, Security Checks, Automatic Semantic Versioning, Benchmarking, Debugging, Monitoring, Source Map Generation, Auto Reload, Linting and more cool stuff ..._
 
@@ -11,11 +11,11 @@ _Javascript application development starter with Babel ES6 / ES7 Support, Testin
 ## Features
 
 - [x] Monorepo approach with [Yarn workspaces](https://yarnpkg.com/en/docs/workspaces)
-- [x] Central running npm scripts from all packages with [Lerna](https://lernajs.io/)
+- [x] Central running npm scripts from all packages with [Lerna run](https://lernajs.io/)
 - [ ] Javascript Linting with [ESLint](https://github.com/eslint/eslint)
-- [ ] Javascript Code Style [Standard](https://github.com/feross/standard)
-- [ ] Javascript Style Linting via [eslint-config-standard](https://github.com/feross/eslint-config-standard)
-- [ ] Automatic Semantic Releasing with [Lerna](https://lernajs.io/)
+- [ ] Javascript Code Style [Airbnb](https://github.com/airbnb/javascript)
+- [ ] Javascript Style Linting via [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb)
+- [ ] Automatic Semantic Releasing with [Lerna publish](https://lernajs.io/)
 - [ ] Code Benchmark Testing with [benchmark.js](https://github.com/bestiejs/benchmark.js)
 - [ ] Vulnerability scan via [snyk](https://github.com/Snyk/snyk)
 - [ ] ES6+ Testing via [babel-register](https://github.com/babel/babel/tree/master/packages/babel-register) with [Mocha](https://github.com/mochajs/mocha), [Chai](https://github.com/chaijs/chai), [Sinon](https://github.com/sinonjs/sinon) and [sinon-chai](https://github.com/domenic/sinon-chai)
@@ -25,7 +25,7 @@ _Javascript application development starter with Babel ES6 / ES7 Support, Testin
 - [ ] Use Standard Conventional Commit Messages via [commitizen](https://github.com/commitizen/cz-cli)
 - [ ] Commitizen Emoji Support for [cz-conventional-changelog-emoji](https://github.com/phaneendra/cz-conventional-changelog-emoji)
 - [ ] Automatic generate Changelog with Emoji Support [conventional-changelog-angular-emoji](https://github.com/phaneendra/conventional-changelog-angular-emoji)
-- [ ] Lint Commit Messages via [conventional-changelog-lint](https://github.com/marionebl/conventional-changelog-lint)
+- [ ] Lint Commit Messages via [commitlint](http://marionebl.github.io/commitlint)
 - [ ] Lint Markdown files with [markdownlint](https://github.com/DavidAnson/markdownlint)
 - [ ] Check if links in Markdown are online via [markdown-link-check](https://github.com/tcort/markdown-link-check)
 - [ ] Lint .travis.yml with [travis-lint](https://github.com/pwmckenna/node-travis-lint)
