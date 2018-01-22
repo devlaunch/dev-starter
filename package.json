@@ -24,8 +24,8 @@
     "lint:travis": "travis-lint .travis.yml",
     "lint:markdown": "markdownlint readme.md",
     "lint:markdown-links": "markdown-link-check readme.md",
-    "precommit": "yarn run format",
-    "commit": "git add --all && git status && git-cz",
+    "precz": "yarn run format",
+    "cz": "git add --all && git status && git-cz",
     "commitmsg": "commitlint -e",
     "prerelease":
       "yarn run setenv:prod && yarn run clean && yarn run build && yarn run update-dependencies && yarn run lint && yarn run test && yarn run coverage",
