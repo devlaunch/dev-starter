@@ -40,14 +40,14 @@ const types = [
 ];
 
 const scopes = getPackages().map(function(scope) {
-  return { name: scope.name };
+  return { name: scope };
 });
 
 module.exports = {
   types,
-  scopes: [...scopes, { name: 'meta', name: '*' }],
+  scopes: [...scopes, { name: 'meta' }, { name: '*' }],
   scopeOverrides: {
-    chore: [...scopes, { name: 'npm' }],
+    chore: [...scopes, { name: 'meta' }, { name: 'npm' }],
   },
   // allowCustomScopes: true,
   allowBreakingChanges: ['feat', 'fix', 'perf', 'refactor'],

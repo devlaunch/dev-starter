@@ -20,14 +20,15 @@
     "benchmark:watch": "nodemon src/index.js --exec babel-node benchmark",
     "changelog": "standard-changelog --preset angular-emoji --outfile changelog.md",
     "lint": "eslint packages",
-    "format": "prettier-eslint \"packages/**/*.js\"",
+    "format": "prettier-eslint --write \"packages/**/*.js\"",
     "lint:travis": "travis-lint .travis.yml",
     "lint:markdown": "markdownlint readme.md",
     "lint:markdown-links": "markdown-link-check readme.md",
     "precommit": "yarn run format",
     "commit": "git add --all && git status && git-cz",
     "commitmsg": "commitlint -e",
-    "prerelease": "yarn run setenv:prod && yarn run clean && yarn run build && yarn run update-dependencies && yarn run lint && yarn run test && yarn run coverage",
+    "prerelease":
+      "yarn run setenv:prod && yarn run clean && yarn run build && yarn run update-dependencies && yarn run lint && yarn run test && yarn run coverage",
     "release": "standard-version --no-verify",
     "postrelease": "greenkeeper-postpublish && yarn run setenv:dev",
     "security:test": "snyk test",
@@ -62,7 +63,5 @@
     "prettier-eslint": "^8.8.1",
     "prettier-eslint-cli": "^4.7.0"
   },
-  "workspaces": [
-    "packages/*"
-  ]
+  "workspaces": ["packages/*"]
 }
