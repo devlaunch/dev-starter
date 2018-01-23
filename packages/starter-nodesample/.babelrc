@@ -1,12 +1,12 @@
 {
   "presets": [
     [
-      "env",
+      "@babel/env",
       {
         "target": {
           "node": "current"
         },
-        "useBuiltIns": "true"
+        "useBuiltIns": "usage"
       }
     ]
   ]

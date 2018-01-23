@@ -3,8 +3,8 @@
   "commands": {
     "publish": {
       "allowBranch": "master",
-      "message": "chore(release): publish %s",
-      "ignore": ["ignored-file", "*.md"]
+      "conventionalCommits": true,
+      "message": "chore(release): publish"
     }
   },
   "packages": ["packages/*"],

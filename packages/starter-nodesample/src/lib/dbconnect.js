@@ -3,10 +3,14 @@ const dbConfig = {
   isOnline: true,
 };
 
-async function dbconnect(params) {
+function dbconnect(params) {
   console.log(`Try connecting to database ${dbConfig.server}`);
-  return await new Promise((resolve, reject) => {
-    params ? resolve('DB Online') : reject('DB offline');
+  return new Promise((resolve, reject) => {
+    if (params) {
+      resolve('DB Online');
+    } else {
+      reject(new Error('DB offline'));
+    }
   });
 }
 
