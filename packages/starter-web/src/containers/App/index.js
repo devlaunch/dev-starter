@@ -1,19 +1,22 @@
-import agent from '../agent';
-import Header from './Header';
 import React from 'react';
 import { connect } from 'react-redux';
-import { APP_LOAD, REDIRECT } from '../constants/actionTypes';
-import { Route, Switch } from 'react-router-dom';
-import Article from '../components/Article';
-import Editor from '../components/Editor';
-import Home from '../components/Home';
-import Login from '../components/Login';
-import Profile from '../components/Profile';
-import ProfileFavorites from '../components/ProfileFavorites';
-import Register from '../components/Register';
-import Settings from '../components/Settings';
-import { store } from '../store';
 import { push } from 'react-router-redux';
+import { Route, Switch } from 'react-router-dom';
+
+import agent from '../agent';
+import Header from '../../components/Header';
+
+import { APP_LOAD, REDIRECT } from '../constants/actionTypes';
+import { store } from '../store';
+
+import Article from '../Article';
+import Editor from '../Editor';
+import Home from '../Home';
+import Login from '../Login';
+import Profile from '../Profile';
+import ProfileFavorites from '../ProfileFavorites';
+import Register from '../Register';
+import Settings from '../Settings';
 
 const mapStateToProps = state => ({
   appLoaded: state.common.appLoaded,
@@ -34,14 +37,6 @@ const mapDispatchToProps = dispatch => ({
 });
 
 class App extends React.Component {
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.redirectTo) {
-      // this.context.router.replace(nextProps.redirectTo);
-      store.dispatch(push(nextProps.redirectTo));
-      this.props.onRedirect();
-    }
-  }
-
   componentWillMount() {
     const token = window.localStorage.getItem('jwt');
     if (token) {
@@ -49,6 +44,14 @@ class App extends React.Component {
     }
 
     this.props.onLoad(token ? agent.Auth.current() : null, token);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.redirectTo) {
+      // this.context.router.replace(nextProps.redirectTo);
+      store.dispatch(push(nextProps.redirectTo));
+      this.props.onRedirect();
+    }
   }
 
   render() {

@@ -1,3 +1,8 @@
+import { createAction, handleActions } from 'redux-actions';
+
+// Actions
+export const loadApp = createAction('APP_LOAD');
+
 import {
   APP_LOAD,
   REDIRECT,
@@ -17,7 +22,7 @@ import {
   REGISTER_PAGE_UNLOADED,
 } from '../constants/actionTypes';
 
-const defaultState = {
+const initialState = {
   appName: 'Conduit',
   token: null,
   viewChangeCounter: 0,
