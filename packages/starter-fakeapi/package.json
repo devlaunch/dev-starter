@@ -1,0 +1,24 @@
+{
+  "name": "starter-fakeapi",
+  "version": "0.0.1",
+  "description": "fake api generator for quick mocks",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "babel-node src/server.js",
+    "data": "babel-node src/data_generator.js"
+  },
+  "dependencies": {
+    "faker": "^4.1.0",
+    "json-schema-faker": "^0.5.0-rc12",
+    "json-server": "^0.12.1",
+    "jsonwebtoken": "^8.1.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.38",
+    "@babel/core": "^7.0.0-beta.38",
+    "@babel/node": "^7.0.0-beta.38",
+    "@babel/preset-env": "^7.0.0-beta.38"
+  }
+}
