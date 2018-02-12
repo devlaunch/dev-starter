@@ -1,7 +1,4 @@
-import superagentPromise from 'superagent-promise';
-import _superagent from 'superagent';
-
-const superagent = superagentPromise(_superagent, global.Promise);
+import axios from 'axios';
 
 const API_ROOT = 'https://conduit.productionready.io/api';
 
@@ -17,22 +14,22 @@ const tokenPlugin = (req) => {
 
 const requests = {
   del: url =>
-    superagent
-      .del(`${API_ROOT}${url}`)
+    axios
+      .delete(`${API_ROOT}${url}`)
       .use(tokenPlugin)
       .then(responseBody),
   get: url =>
-    superagent
+    axios
       .get(`${API_ROOT}${url}`)
       .use(tokenPlugin)
       .then(responseBody),
   put: (url, body) =>
-    superagent
+    axios
       .put(`${API_ROOT}${url}`, body)
       .use(tokenPlugin)
       .then(responseBody),
   post: (url, body) =>
-    superagent
+    axios
       .post(`${API_ROOT}${url}`, body)
       .use(tokenPlugin)
       .then(responseBody),
