@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import ListErrors from '../../components/ListErrors';
 import SettingsForm from './SettingsForm';
 import { saveSettings, unloadSettings } from '../../modules/settings';
+import { logout } from '../../modules/auth';
 
 const Settings = props => (
   <div className="settings-page">
@@ -48,7 +49,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  onClickLogout: () => dispatch({ type: LOGOUT }),
+  onClickLogout: () => dispatch(logout()),
   onSubmitForm: user => dispatch(saveSettings(user)),
   onUnload: () => dispatch(unloadSettings()),
 });

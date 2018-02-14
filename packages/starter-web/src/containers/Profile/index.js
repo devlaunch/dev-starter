@@ -1,76 +1,10 @@
-import ArticleList from './ArticleList';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import agent from '../agent';
 import { connect } from 'react-redux';
-import {
-  FOLLOW_USER,
-  UNFOLLOW_USER,
-  PROFILE_PAGE_LOADED,
-  PROFILE_PAGE_UNLOADED,
-} from '../constants/actionTypes';
 
-const EditProfileSettings = (props) => {
-  if (props.isUser) {
-    return (
-      <Link to="/settings" className="btn btn-sm btn-outline-secondary action-btn">
-        <i className="ion-gear-a" /> Edit Profile Settings
-      </Link>
-    );
-  }
-  return null;
-};
-
-const FollowUserButton = (props) => {
-  if (props.isUser) {
-    return null;
-  }
-
-  let classes = 'btn btn-sm action-btn';
-  if (props.user.following) {
-    classes += ' btn-secondary';
-  } else {
-    classes += ' btn-outline-secondary';
-  }
-
-  const handleClick = (ev) => {
-    ev.preventDefault();
-    if (props.user.following) {
-      props.unfollow(props.user.username);
-    } else {
-      props.follow(props.user.username);
-    }
-  };
-
-  return (
-    <button className={classes} onClick={handleClick}>
-      <i className="ion-plus-round" />
-      &nbsp;
-      {props.user.following ? 'Unfollow' : 'Follow'} {props.user.username}
-    </button>
-  );
-};
-
-const mapStateToProps = state => ({
-  ...state.articleList,
-  currentUser: state.common.currentUser,
-  profile: state.profile,
-});
-
-const mapDispatchToProps = dispatch => ({
-  onFollow: username =>
-    dispatch({
-      type: FOLLOW_USER,
-      payload: agent.Profile.follow(username),
-    }),
-  onLoad: payload => dispatch({ type: PROFILE_PAGE_LOADED, payload }),
-  onUnfollow: username =>
-    dispatch({
-      type: UNFOLLOW_USER,
-      payload: agent.Profile.unfollow(username),
-    }),
-  onUnload: () => dispatch({ type: PROFILE_PAGE_UNLOADED }),
-});
+import ArticleList from '../../components/ArticleList';
+import EditProfileSettings from './EditProfileSettings';
+import FollowUserButton from './FollowUserButton';
 
 class Profile extends React.Component {
   componentWillMount() {
@@ -151,6 +85,27 @@ class Profile extends React.Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  ...state.articleList,
+  currentUser: state.common.currentUser,
+  profile: state.profile,
+});
+
+const mapDispatchToProps = dispatch => ({
+  onFollow: username =>
+    dispatch({
+      type: FOLLOW_USER,
+      payload: agent.Profile.follow(username),
+    }),
+  onLoad: payload => dispatch({ type: PROFILE_PAGE_LOADED, payload }),
+  onUnfollow: username =>
+    dispatch({
+      type: UNFOLLOW_USER,
+      payload: agent.Profile.unfollow(username),
+    }),
+  onUnload: () => dispatch({ type: PROFILE_PAGE_UNLOADED }),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);
 export { Profile, mapStateToProps };

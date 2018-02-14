@@ -3,11 +3,10 @@ import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import { Route, Switch } from 'react-router-dom';
 
-import agent from '../agent';
 import Header from '../../components/Header';
 
-import { APP_LOAD, REDIRECT } from '../constants/actionTypes';
 import { store } from '../../modules/redux/store';
+import { loadApp, redirect } from '../../modules/common';
 
 import Article from '../Article';
 import Editor from '../Editor';
@@ -18,35 +17,10 @@ import ProfileFavorites from '../ProfileFavorites';
 import Register from '../Register';
 import Settings from '../Settings';
 
-const mapStateToProps = state => ({
-  appLoaded: state.common.appLoaded,
-  appName: state.common.appName,
-  currentUser: state.common.currentUser,
-  redirectTo: state.common.redirectTo,
-});
-
-const mapDispatchToProps = dispatch => ({
-  onLoad: (payload, token) =>
-    dispatch({
-      type: APP_LOAD,
-      payload,
-      token,
-      skipTracking: true,
-    }),
-  onRedirect: () =>
-    dispatch({
-      type: REDIRECT,
-    }),
-});
-
 class App extends React.Component {
   componentWillMount() {
     const token = window.localStorage.getItem('jwt');
-    if (token) {
-      agent.setToken(token);
-    }
-
-    this.props.onLoad(token ? agent.Auth.current() : null, token);
+    this.props.onLoad(token);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -86,5 +60,17 @@ class App extends React.Component {
 // App.contextTypes = {
 //   router: PropTypes.object.isRequired
 // };
+
+const mapStateToProps = state => ({
+  appLoaded: state.common.appLoaded,
+  appName: state.common.appName,
+  currentUser: state.common.currentUser,
+  redirectTo: state.common.redirectTo,
+});
+
+const mapDispatchToProps = dispatch => ({
+  onLoad: token => dispatch(loadApp(token)),
+  onRedirect: () => dispatch(redirect()),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

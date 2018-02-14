@@ -1,0 +1,32 @@
+FROM mhart/alpine-node:8
+
+LABEL version="1.0"
+
+ARG http_proxy=""
+ARG https_proxy=""
+ARG proxy_auth=""
+ARG no_proxy=""
+
+ENV http_proxy $http_proxy
+ENV https_proxy $https_proxy
+ENV HTTP_PROXY_AUTH $proxy_auth
+ENV NO_PROXY $no_proxy
+
+
+USER root
+RUN mkdir -p /opt/app \
+    && adduser -D -h /opt/app app \
+    && apk update \
+    && apk add curl \
+    && apk add bash \
+    && rm -rf /var/cache/apk/*
+
+ENV NPM_CONFIG_PREFIX=/opt/app/.npm-global
+
+USER app
+WORKDIR /opt/app
+COPY ./docker-entrypoint.sh /opt/app/docker-entrypoint.sh
+ENTRYPOINT [ "/opt/app/docker-entrypoint.sh" ]
+
+EXPOSE 4000
+CMD ["yarn", "start"]

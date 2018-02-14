@@ -2,9 +2,7 @@ import { createAction, handleActions } from 'redux-actions';
 import agent from '../utils/agent';
 
 // Actions
-export const saveSettings = createAction('SETTINGS_SAVE', (user) => {
-  agent.Auth.save(user);
-});
+export const saveSettings = createAction('SETTINGS_SAVE', user => agent.Auth.save(user));
 export const unloadSettings = createAction('SETTINGS_UNLOAD');
 export const ASYNC_START = createAction('ASYNC_START');
 

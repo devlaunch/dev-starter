@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  nodejs:
+    container_name: nodejs
+    build:
+      context: ./docker_nodejs
+      args:
+        http_proxy: ${PROXY_URL}
+        https_proxy: ${PROXY_URL}
+        proxy_auth: ${PROXY_AUTH}
+    restart: 'always'
+    environment:
+      - NODE_ENV=devlopment
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./logs:/logs
+      - ./data:/data
+      - .:/opt/app
