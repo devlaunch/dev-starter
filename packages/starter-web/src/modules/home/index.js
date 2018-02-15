@@ -2,11 +2,11 @@ import { createAction, handleActions, combineActions } from 'redux-actions';
 import agent from '../utils/agent';
 
 // Actions
-export const saveSettings = createAction('SETTINGS_SAVE', async (user) => {
-  const response = await agent.Auth.save(user);
-  return response;
+export const unloadHomePage = createAction('HOME_PAGE_UNLOAD');
+export const loadHomePage = createAction('HOME_PAGE_LOAD', (token) => {
+  const articlesPromise = token ? agent.Articles.feed : agent.Articles.all;
+  return Promise.all([agent.Tags.getAll(), articlesPromise()]);
 });
-export const unloadSettings = createAction('SETTINGS_UNLOAD');
 
 const initialState = {};
 
@@ -23,7 +23,7 @@ export default handleActions(
       inProgress: true,
       errors: null,
     }),
-    SETTINGS_UNLOAD: () => ({}),
+    HOME_PAGE_UNLOAD: () => ({}),
   },
   initialState,
 );

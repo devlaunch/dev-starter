@@ -13,7 +13,7 @@ import Editor from '../Editor';
 import Home from '../Home';
 import Login from '../Login';
 import Profile from '../Profile';
-import ProfileFavorites from '../ProfileFavorites';
+import ProfileFavorites from '../Profile/ProfileFavorites';
 import Register from '../Register';
 import Settings from '../Settings';
 

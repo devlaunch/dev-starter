@@ -1,8 +1,6 @@
-import ArticleList from '../ArticleList';
 import React from 'react';
-import agent from '../../agent';
 import { connect } from 'react-redux';
-import { CHANGE_TAB } from '../../constants/actionTypes';
+import ArticleList from '../../components/ArticleList';
 
 const YourFeedTab = (props) => {
   if (props.token) {

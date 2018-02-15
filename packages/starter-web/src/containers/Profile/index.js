@@ -5,13 +5,16 @@ import { connect } from 'react-redux';
 import ArticleList from '../../components/ArticleList';
 import EditProfileSettings from './EditProfileSettings';
 import FollowUserButton from './FollowUserButton';
+import {
+  followUser,
+  unfollowUser,
+  loadProfilePage,
+  unloadProfilePage,
+} from '../../modules/profile';
 
 class Profile extends React.Component {
   componentWillMount() {
-    this.props.onLoad(Promise.all([
-      agent.Profile.get(this.props.match.params.username),
-      agent.Articles.byAuthor(this.props.match.params.username),
-    ]));
+    this.props.onLoad(this.props.match.params.username);
   }
 
   componentWillUnmount() {
@@ -93,19 +96,11 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  onFollow: username =>
-    dispatch({
-      type: FOLLOW_USER,
-      payload: agent.Profile.follow(username),
-    }),
-  onLoad: payload => dispatch({ type: PROFILE_PAGE_LOADED, payload }),
-  onUnfollow: username =>
-    dispatch({
-      type: UNFOLLOW_USER,
-      payload: agent.Profile.unfollow(username),
-    }),
-  onUnload: () => dispatch({ type: PROFILE_PAGE_UNLOADED }),
+  onFollow: username => dispatch(followUser(username)),
+  onUnfollow: username => dispatch(unfollowUser(username)),
+  onLoad: username => dispatch(loadProfilePage(username)),
+  onUnload: () => dispatch(unloadProfilePage()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);
-export { Profile, mapStateToProps };
+// export { Profile, mapStateToProps };
