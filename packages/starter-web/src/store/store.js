@@ -5,23 +5,27 @@ import promiseMiddleware from 'redux-promise-middleware';
 import createHistory from 'history/createBrowserHistory';
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 
-import { localStorageMiddleware } from './middleware';
+// import { localStorageMiddleware } from './middleware';
 import reducer from './reducer';
 
 export const history = createHistory();
 
 // Build the middleware for intercepting and dispatching navigation actions
-const myRouterMiddleware = routerMiddleware(history);
+const appRouterMiddleware = routerMiddleware(history);
 
 const getMiddleware = () => {
   if (process.env.NODE_ENV === 'production') {
-    return applyMiddleware(myRouterMiddleware, promiseMiddleware, localStorageMiddleware);
+    return applyMiddleware(
+      appRouterMiddleware,
+      promiseMiddleware,
+      // localStorageMiddleware
+    );
   }
   // Enable additional logging in non-production environments.
   return applyMiddleware(
-    myRouterMiddleware,
+    appRouterMiddleware,
     promiseMiddleware,
-    localStorageMiddleware,
+    // localStorageMiddleware,
     createLogger(),
   );
 };

@@ -1,19 +1,9 @@
-import { Link } from 'react-router-dom';
-import ListErrors from './ListErrors';
 import React from 'react';
-import agent from '../agent';
 import { connect } from 'react-redux';
-import { UPDATE_FIELD_AUTH, LOGIN, LOGIN_PAGE_UNLOADED } from '../constants/actionTypes';
+import { Link } from 'react-router-dom';
 
-const mapStateToProps = state => ({ ...state.auth });
-
-const mapDispatchToProps = dispatch => ({
-  onChangeEmail: value => dispatch({ type: UPDATE_FIELD_AUTH, key: 'email', value }),
-  onChangePassword: value => dispatch({ type: UPDATE_FIELD_AUTH, key: 'password', value }),
-  onSubmit: (email, password) =>
-    dispatch({ type: LOGIN, payload: agent.Auth.login(email, password) }),
-  onUnload: () => dispatch({ type: LOGIN_PAGE_UNLOADED }),
-});
+import ListErrors from 'components/ListErrors';
+import { updateAuthField, login, unloadLoginPage } from 'modules/auth';
 
 class Login extends React.Component {
   constructor() {
@@ -83,5 +73,14 @@ class Login extends React.Component {
     );
   }
 }
+
+const mapStateToProps = state => ({ ...state.auth });
+
+const mapDispatchToProps = dispatch => ({
+  onChangeEmail: value => dispatch(updateAuthField('email', value)),
+  onChangePassword: value => dispatch(updateAuthField('password', value)),
+  onSubmit: (email, password) => dispatch(login(email, password)),
+  onUnload: () => dispatch(unloadLoginPage()),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

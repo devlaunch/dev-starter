@@ -13,12 +13,12 @@ const initialState = {};
 // Reducers
 export default handleActions(
   {
-    [combineActions('SETTINGS_SAVE_FULFILLED', 'SETTINGS_SAVE_REJECTED')]: (state, action) => ({
+    [combineActions('HOME_PAGE_LOAD_FULFILLED', 'HOME_PAGE_LOAD_REJECTED')]: (state, action) => ({
       ...state,
       inProgress: false,
       errors: action.error ? action.payload.errors : null,
     }),
-    SETTINGS_SAVE_PENDING: state => ({
+    HOME_PAGE_LOAD_PENDING: state => ({
       ...state,
       inProgress: true,
       errors: null,

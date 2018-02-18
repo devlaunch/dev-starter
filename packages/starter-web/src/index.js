@@ -4,8 +4,8 @@ import { Provider } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import { ConnectedRouter } from 'react-router-redux';
 
-import App from './containers/App';
-import { store, history } from './modules/redux/store';
+import App from 'containers/App';
+import { store, history } from 'store/store';
 
 ReactDOM.render(
   <Provider store={store}>

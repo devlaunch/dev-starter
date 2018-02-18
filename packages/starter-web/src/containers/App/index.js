@@ -2,57 +2,61 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import { Route, Switch } from 'react-router-dom';
+import { Provider } from 'rebass';
 
-import Header from '../../components/Header';
+import Header from 'components/Header';
 
-import { store } from '../../modules/redux/store';
-import { loadApp, redirect } from '../../modules/common';
+import theme from 'modules/utils/theme';
+import { store } from 'store/store';
 
-import Article from '../Article';
-import Editor from '../Editor';
-import Home from '../Home';
-import Login from '../Login';
-import Profile from '../Profile';
-import ProfileFavorites from '../Profile/ProfileFavorites';
-import Register from '../Register';
-import Settings from '../Settings';
+// import { loadApp, redirect } from '../../modules/common';
+
+// import Article from '../Article';
+// import Editor from '../Editor';
+// import Home from '../Home';
+// import Login from '../Login';
+// import Profile from '../Profile';
+// import ProfileFavorites from '../Profile/ProfileFavorites';
+// import Register from '../Register';
+// import Settings from '../Settings';
 
 class App extends React.Component {
   componentWillMount() {
     const token = window.localStorage.getItem('jwt');
-    this.props.onLoad(token);
+    // this.props.onLoad(token);
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.redirectTo) {
       // this.context.router.replace(nextProps.redirectTo);
-      store.dispatch(push(nextProps.redirectTo));
-      this.props.onRedirect();
+      // store.dispatch(push(nextProps.redirectTo));
+      // this.props.onRedirect();
     }
   }
 
   render() {
     if (this.props.appLoaded) {
       return (
-        <div>
-          <Header appName={this.props.appName} currentUser={this.props.currentUser} />{' '}
-          <Switch>
-            <Route exact path="/" component={Home} /> <Route path="/login" component={Login} />{' '}
-            <Route path="/register" component={Register} />{' '}
-            <Route path="/editor/:slug" component={Editor} />{' '}
-            <Route path="/editor" component={Editor} />{' '}
-            <Route path="/article/:id" component={Article} />{' '}
-            <Route path="/settings" component={Settings} />{' '}
-            <Route path="/@:username/favorites" component={ProfileFavorites} />{' '}
-            <Route path="/@:username" component={Profile} />{' '}
-          </Switch>{' '}
-        </div>
+        <Provider theme={{ theme }}>
+          <Header appName={this.props.appName} currentUser={this.props.currentUser} />
+          {/* <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
+            <Route path="/editor/:slug" component={Editor} />
+            <Route path="/editor" component={Editor} />
+            <Route path="/article/:id" component={Article} />
+            <Route path="/settings" component={Settings} />
+            <Route path="/@:username/favorites" component={ProfileFavorites} />
+            <Route path="/@:username" component={Profile} />
+          </Switch> */}
+        </Provider>
       );
     }
     return (
-      <div>
+      <Provider theme={{ theme }}>
         <Header appName={this.props.appName} currentUser={this.props.currentUser} />{' '}
-      </div>
+      </Provider>
     );
   }
 }
@@ -69,8 +73,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  onLoad: token => dispatch(loadApp(token)),
-  onRedirect: () => dispatch(redirect()),
+  // onLoad: token => dispatch(loadApp(token)),
+  // onRedirect: () => dispatch(redirect()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

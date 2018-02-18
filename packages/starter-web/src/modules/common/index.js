@@ -15,7 +15,7 @@ export const redirect = createAction('REDIRECT');
 export const logout = createAction('LOGOUT');
 
 const initialState = {
-  appName: 'Conduit',
+  appName: 'Dev Starter',
   token: null,
   appLoaded: false,
   viewChangeCounter: 0,
