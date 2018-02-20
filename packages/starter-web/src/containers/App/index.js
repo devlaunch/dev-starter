@@ -6,7 +6,7 @@ import { Provider } from 'rebass';
 
 import Header from 'components/Header';
 
-import theme from 'modules/utils/theme';
+import { theme, baseStyles } from 'modules/theme';
 import { store } from 'store/store';
 
 // import { loadApp, redirect } from '../../modules/common';
@@ -35,6 +35,7 @@ class App extends React.Component {
   }
 
   render() {
+    baseStyles();
     if (this.props.appLoaded) {
       return (
         <Provider theme={{ theme }}>

@@ -1,27 +1,12 @@
 import React from 'react';
-import { Absolute, NavLink, Box, Image, BlockLink } from 'rebass';
+import { Absolute, Box, Image, BlockLink } from 'rebass';
 
-import { Toolbar } from 'components';
+import { Toolbar, NavLink } from 'components';
 
-const LoggedOutLinks = (props) => {
-  if (!props.currentUser) {
-    return (
-      <Box>
-        <NavLink color="gray8" href="/login">
-          Sign in
-        </NavLink>
-        <NavLink color="gray8" href="/register">
-          Sign up
-        </NavLink>
-      </Box>
-    );
-  }
-  return null;
-};
-
-const LoggedInLinks = (props) => {
+const Header = (props) => {
+  let links = null;
   if (props.currentUser) {
-    return (
+    links = (
       <Box>
         <NavLink color="gray8" href="/editor">
           <i className="ion-compose" />&nbsp;New Post
@@ -35,31 +20,29 @@ const LoggedInLinks = (props) => {
         </BlockLink>
       </Box>
     );
+  } else {
+    links = (
+      <Box>
+        <NavLink color="gray8" href="/login">
+          Sign in
+        </NavLink>
+        <NavLink color="gray8" href="/register">
+          Sign up
+        </NavLink>
+      </Box>
+    );
   }
-
-  return null;
+  return (
+    <Absolute z={2} top={0} left={0} right={0}>
+      <Toolbar bg="white" {...props}>
+        <NavLink color="gray8" href="/">
+          {props.appName}
+        </NavLink>
+        <Box mx="auto" />
+        {links}
+      </Toolbar>
+    </Absolute>
+  );
 };
-
-const Header = props => (
-  <Absolute z={2} top left right>
-    <Toolbar bg="white" {...props}>
-      <NavLink color="gray8" href="/">
-        {props.appName}
-      </NavLink>
-      <Box mx="auto" />
-      <LoggedOutLinks currentUser={props.currentUser} />
-      <LoggedInLinks currentUser={props.currentUser} />
-    </Toolbar>
-  </Absolute>
-
-  // <nav className="navbar navbar-light">
-  //   <div className="container">
-  //     <Link to="/" className="navbar-brand">
-  //       {props.appName.toLowerCase()}
-  //     </Link>
-
-  //   </div>
-  // </nav>
-);
 
 export default Header;
