@@ -1,51 +1,30 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import Banner from './Banner';
-import MainView from './MainView';
-import Tags from './Tags';
+// import { unloadHomePage, loadHomePage } from 'modules/home';
 
-import { unloadHomePage, loadHomePage } from '../../modules/home';
+import { Container } from 'rebass';
 
-import {
-  HOME_PAGE_LOADED,
-  HOME_PAGE_UNLOADED,
-  APPLY_TAG_FILTER,
-} from '../../constants/actionTypes';
-
-const Promise = global.Promise;
+import Hero from './sections/Hero';
+// import MainView from './MainView';
+// import Tags from './Tags';
 
 class Home extends React.Component {
   componentWillMount() {
-    const tab = this.props.token ? 'feed' : 'all';
-    const articlesPromise = this.props.token ? agent.Articles.feed : agent.Articles.all;
-
-    this.props.onLoad(tab, articlesPromise, Promise.all([agent.Tags.getAll(), articlesPromise()]));
+    // this.props.onLoad(this.props.token);
   }
 
   componentWillUnmount() {
-    this.props.onUnload();
+    // this.props.onUnload();
   }
 
   render() {
     return (
-      <div className="home-page">
-        <Banner token={this.props.token} appName={this.props.appName} />
-
-        <div className="container page">
-          <div className="row">
-            <MainView />
-
-            <div className="col-md-3">
-              <div className="sidebar">
-                <p>Popular Tags</p>
-
-                <Tags tags={this.props.tags} onClickTag={this.props.onClickTag} />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Container>
+        <Hero token={this.props.token} appName={this.props.appName} />
+        {/* <MainView />
+        <Tags tags={this.props.tags} /> */}
+      </Container>
     );
   }
 }
@@ -57,21 +36,15 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  onClickTag: (tag, pager, payload) =>
-    dispatch({
-      type: APPLY_TAG_FILTER,
-      tag,
-      pager,
-      payload,
-    }),
-  onLoad: (tab, pager, payload) =>
-    dispatch({
-      type: HOME_PAGE_LOADED,
-      tab,
-      pager,
-      payload,
-    }),
-  onUnload: () => dispatch(unloadHomePage()),
+  // onClickTag: (tag, pager, payload) =>
+  //   dispatch({
+  //     type: APPLY_TAG_FILTER,
+  //     tag,
+  //     pager,
+  //     payload,
+  //   }),
+  // onLoad: token => dispatch(loadHomePage(token)),
+  // onUnload: () => dispatch(unloadHomePage()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

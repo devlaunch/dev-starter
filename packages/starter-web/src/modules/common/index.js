@@ -7,12 +7,12 @@ export const loadApp = createAction('APP_LOAD', (token) => {
     agent.setToken(token);
   }
   return {
-    user: agent.Auth.current(),
+    // user: agent.Auth.current(),
+    user: null,
     token,
   };
 });
 export const redirect = createAction('REDIRECT');
-export const logout = createAction('LOGOUT');
 
 const initialState = {
   appName: 'Dev Starter',
