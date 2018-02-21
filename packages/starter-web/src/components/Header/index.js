@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Absolute, Box, Image, BlockLink } from 'rebass';
 
 import { Toolbar, NavLink } from 'components';
@@ -8,13 +9,13 @@ const Header = (props) => {
   if (props.currentUser) {
     links = (
       <Box>
-        <NavLink color="gray8" href="/editor">
+        <NavLink color="gray.6" href="/editor">
           <i className="ion-compose" />&nbsp;New Post
         </NavLink>
-        <NavLink color="gray8" href="/settings">
+        <NavLink color="gray.6" href="/settings">
           <i className="ion-gear-a" />&nbsp;Settings
         </NavLink>
-        <BlockLink color="gray8" href={`/@${props.currentUser.username}`}>
+        <BlockLink color="gray.6" href={`/@${props.currentUser.username}`}>
           <Image src={props.currentUser.image} alt={props.currentUser.username} />
           {props.currentUser.username}
         </BlockLink>
@@ -23,10 +24,10 @@ const Header = (props) => {
   } else {
     links = (
       <Box>
-        <NavLink color="gray8" href="/login">
+        <NavLink color="gray.6" href="/login">
           Sign in
         </NavLink>
-        <NavLink color="gray8" href="/register">
+        <NavLink color="gray.6" href="/register">
           Sign up
         </NavLink>
       </Box>
@@ -34,8 +35,8 @@ const Header = (props) => {
   }
   return (
     <Absolute z={2} top={0} left={0} right={0}>
-      <Toolbar bg="white" {...props}>
-        <NavLink color="gray8" href="/">
+      <Toolbar px={[0, 3]} bg="white">
+        <NavLink is={Link} color="gray.7" to="/">
           {props.appName}
         </NavLink>
         <Box mx="auto" />

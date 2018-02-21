@@ -4,7 +4,6 @@ const StyledToolBar = Toolbar.extend`
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
   max-height: 60px;
   height: 100%;
-  padding: 8px;
 `;
 
 export default StyledToolBar;

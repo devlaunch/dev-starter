@@ -19,7 +19,7 @@ const options = {
   linkHoverColor: colors.blue[4],
   linkHoverDecoration: 'underline',
   tableCellPadding: '.75rem',
-  textMuted: '#868e96',
+  textMuted: colors.gray[6],
 };
 
 const rebootCss = reboot(options);

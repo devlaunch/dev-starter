@@ -22,14 +22,15 @@ import Home from '../Home';
 class App extends React.Component {
   componentWillMount() {
     const token = window.localStorage.getItem('jwt');
-    this.props.onLoad(token);
+    console.log(token);
+    this.props.loadApp(token);
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.redirectTo) {
       this.context.router.replace(nextProps.redirectTo);
       store.dispatch(push(nextProps.redirectTo));
-      this.props.onRedirect();
+      this.props.redirect();
     }
   }
 
@@ -37,7 +38,7 @@ class App extends React.Component {
     baseStyles();
     if (this.props.appLoaded) {
       return (
-        <Provider theme={{ theme }}>
+        <Provider theme={theme}>
           <Header appName={this.props.appName} currentUser={this.props.currentUser} />
           <Switch>
             <Route exact path="/" component={Home} />
@@ -54,7 +55,7 @@ class App extends React.Component {
       );
     }
     return (
-      <Provider theme={{ theme }}>
+      <Provider theme={theme}>
         <Header appName={this.props.appName} currentUser={this.props.currentUser} />{' '}
       </Provider>
     );
@@ -72,9 +73,17 @@ const mapStateToProps = state => ({
   redirectTo: state.common.redirectTo,
 });
 
-const mapDispatchToProps = dispatch => ({
-  onLoad: token => dispatch(loadApp(token)),
-  onRedirect: () => dispatch(redirect()),
-});
+// const mapDispatchToProps = dispatch => ({
+//   onLoad: (token) => {
+//     console.log('onload:', token);
+//     dispatch(loadApp(token));
+//   },
+//   onRedirect: () => dispatch(redirect()),
+// });
+
+const mapDispatchToProps = {
+  loadApp,
+  redirect,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
