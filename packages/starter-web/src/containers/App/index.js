@@ -23,14 +23,14 @@ class App extends React.Component {
   componentWillMount() {
     const token = window.localStorage.getItem('jwt');
     console.log(token);
-    this.props.loadApp(token);
+    this.props.onLoad(token);
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.redirectTo) {
       this.context.router.replace(nextProps.redirectTo);
       store.dispatch(push(nextProps.redirectTo));
-      this.props.redirect();
+      this.props.onRedirect();
     }
   }
 
@@ -73,17 +73,12 @@ const mapStateToProps = state => ({
   redirectTo: state.common.redirectTo,
 });
 
-// const mapDispatchToProps = dispatch => ({
-//   onLoad: (token) => {
-//     console.log('onload:', token);
-//     dispatch(loadApp(token));
-//   },
-//   onRedirect: () => dispatch(redirect()),
-// });
-
-const mapDispatchToProps = {
-  loadApp,
-  redirect,
-};
+const mapDispatchToProps = dispatch => ({
+  onLoad: (token) => {
+    console.log('onload:', token);
+    dispatch(loadApp(token));
+  },
+  onRedirect: () => dispatch(redirect()),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
