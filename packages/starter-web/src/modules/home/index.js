@@ -16,6 +16,7 @@ export default handleActions(
     [combineActions('HOME_PAGE_LOAD_FULFILLED', 'HOME_PAGE_LOAD_REJECTED')]: (state, action) => ({
       ...state,
       inProgress: false,
+      tags: action.payload[0].tags,
       errors: action.error ? action.payload.errors : null,
     }),
     HOME_PAGE_LOAD_PENDING: state => ({

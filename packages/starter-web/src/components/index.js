@@ -1,6 +1,7 @@
 // Elements
 export { default as Toolbar } from './elements/Toolbar';
 export { default as NavLink } from './elements/NavLink';
+export { default as Tag } from './elements/Tag';
 
 // Sections
 export { default as Header } from './Header';

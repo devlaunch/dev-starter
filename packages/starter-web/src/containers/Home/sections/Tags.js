@@ -1,31 +1,29 @@
 import React from 'react';
-import agent from '../../agent';
+import { Container, Heading, Text } from 'rebass';
+import { Tag } from 'components';
 
-const Tags = (props) => {
-  const tags = props.tags;
+const TagList = (props) => {
+  const { tags } = props.tags;
+  const handleClick = (ev, tag) => {
+    ev.preventDefault();
+    props.onClickTag(tag);
+  };
+
   if (tags) {
     return (
-      <div className="tag-list">
-        {tags.map((tag) => {
-          const handleClick = (ev) => {
-            ev.preventDefault();
-            props.onClickTag(
-              tag,
-              page => agent.Articles.byTag(tag, page),
-              agent.Articles.byTag(tag),
-            );
-          };
-
-          return (
-            <a href="" className="tag-default tag-pill" key={tag} onClick={handleClick}>
-              {tag}
-            </a>
-          );
-        })}
-      </div>
+      <Container color="gray.8" bg="white">
+        <Heading is="h2" fontSize={[4, 5, 6, 7]}>
+          Explore more
+        </Heading>
+        {tags.map(tag => (
+          <Tag articles={props.articles} onClick={handleClick(tag)}>
+            {tag}
+          </Tag>
+        ))}
+      </Container>
     );
   }
-  return <div>Loading Tags...</div>;
+  return <Text>Loading Tags...</Text>;
 };
 
-export default Tags;
+export default TagList;

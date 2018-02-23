@@ -3,7 +3,6 @@ import agent from '../utils/agent';
 
 // Actions
 export const loadApp = createAction('APP_LOAD', (token) => {
-  console.log('token', token);
   if (token) {
     agent.setToken(token);
   }
@@ -15,9 +14,6 @@ export const loadApp = createAction('APP_LOAD', (token) => {
 });
 export const redirect = createAction('REDIRECT');
 
-console.log(loadApp(null));
-console.log(redirect);
-
 const initialState = {
   appName: 'Dev Starter',
   token: null,
@@ -26,7 +22,7 @@ const initialState = {
 };
 
 // Reducers
-const commonreducer = handleActions(
+export default handleActions(
   {
     [loadApp]: (state, action) => ({
       ...state,
@@ -41,7 +37,3 @@ const commonreducer = handleActions(
   },
   initialState,
 );
-
-console.log(commonreducer(initialState, loadApp('junk token')));
-
-export default commonreducer;
