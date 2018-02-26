@@ -1,4 +1,5 @@
 import { loadTags, applyTagFilter } from './tags';
+import { loadArticlePage, unloadArticlePage, addComment, deleteComment } from './article';
 
 // reducers
 export { default as tags } from './tags';
@@ -9,4 +10,8 @@ export { default as articles } from './articleList';
 export const actions = {
   loadTags,
   applyTagFilter,
+  loadArticlePage,
+  unloadArticlePage,
+  addComment,
+  deleteComment,
 };

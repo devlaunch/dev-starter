@@ -12,6 +12,12 @@ const tokenPlugin = (req) => {
   }
 };
 
+const requests = axios.create();
+requests.defaults.timeout = 2500;
+requests.defaults.baseURL = `${API_ROOT}`;
+requests.defaults.headers.common.Authorization = AUTH_TOKEN;
+requests.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+
 const requests = {
   del: url =>
     axios
