@@ -1,33 +1,35 @@
-import {
-  ARTICLE_PAGE_LOADED,
-  ARTICLE_PAGE_UNLOADED,
-  ADD_COMMENT,
-  DELETE_COMMENT,
-} from '../constants/actionTypes';
+import { createAction, handleActions } from 'redux-actions';
+import agent from '../utils/agent';
 
-export default (state = {}, action) => {
-  switch (action.type) {
-    case ARTICLE_PAGE_LOADED:
-      return {
-        ...state,
-        article: action.payload[0].article,
-        comments: action.payload[1].comments,
-      };
-    case ARTICLE_PAGE_UNLOADED:
-      return {};
-    case ADD_COMMENT:
-      return {
-        ...state,
-        commentErrors: action.error ? action.payload.errors : null,
-        comments: action.error ? null : (state.comments || []).concat([action.payload.comment]),
-      };
-    case DELETE_COMMENT:
-      const commentId = action.commentId;
-      return {
-        ...state,
-        comments: state.comments.filter(comment => comment.id !== commentId),
-      };
-    default:
-      return state;
-  }
+// Actions
+export const loadArticlePage = createAction('ARTICLE_PAGE_LOAD');
+export const unloadArticlePage = createAction('ARTICLE_PAGE_UNLOAD');
+export const addComment = createAction('COMMENT_ADD');
+export const deleteComment = createAction('COMMENT_DELETE');
+
+const initialState = {
+  article: null,
+  comments: null,
 };
+
+// Reducers
+export default handleActions(
+  {
+    [loadArticlePage]: (state, action) => ({
+      ...state,
+      article: action.payload[0].article,
+      comments: action.payload[1].comments,
+    }),
+    [unloadArticlePage]: (state, action) => ({}),
+    [addComment]: (state, action) => ({
+      ...state,
+      commentErrors: action.error ? action.payload.errors : null,
+      comments: action.error ? null : (state.comments || []).concat([action.payload.comment]),
+    }),
+    [deleteComment]: (state, action) => ({
+      ...state,
+      comments: state.comments.filter(comment => comment.id !== commentId),
+    }),
+  },
+  initialState,
+);

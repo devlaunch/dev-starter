@@ -15,11 +15,7 @@ const TagList = (props) => {
         <Heading is="h2" fontSize={[4, 5, 6, 7]}>
           Explore more
         </Heading>
-        {tags.map(tag => (
-          <Tag articles={props.articles} onClick={handleClick(tag)}>
-            {tag}
-          </Tag>
-        ))}
+        {tags.map(tag => <Tag onClick={handleClick(tag)}>{tag}</Tag>)}
       </Container>
     );
   }

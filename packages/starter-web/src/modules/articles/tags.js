@@ -2,14 +2,18 @@ import { createAction, handleActions } from 'redux-actions';
 import agent from '../utils/agent';
 
 // Actions
-export const loadTags = createAction('TAGS_LOAD', () => {
-  agent.Tags.getAll();
-});
+export const loadTags = createAction('TAGS_LOAD', () =>
+  // agent.Tags.getAll();
+  ({
+    tags: null,
+  }));
 export const applyTagFilter = createAction('TAG_FILTER', (tag) => {
-  agent.Articles.byTag(tag);
+  // agent.Articles.byTag(tag);
 });
 
-const initialState = {};
+const initialState = {
+  tags: null,
+};
 
 // Reducers
 export default handleActions(
