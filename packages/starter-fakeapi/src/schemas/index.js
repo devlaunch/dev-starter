@@ -1,12 +1,10 @@
 const schema = {
   type: 'object',
   properties: {
-    article: {
-      type: 'array',
-      minItems: 10,
-      maxItems: 30,
-      items: {
-        $ref: '#/definitions/Article',
+    articles: {
+      type: 'object',
+      properties: {
+        $ref: '#/definitions/MultipleArticlesResponse',
       },
     },
     profile: {
@@ -26,7 +24,7 @@ const schema = {
       },
     },
   },
-  required: ['user', 'article', 'profile'],
+  required: ['user', 'articles', 'profile'],
   definitions: {
     PositiveInt: {
       type: 'integer',
@@ -112,18 +110,16 @@ const schema = {
           type: 'array',
           items: {
             type: 'string',
-            faker: 'lorem.word',
+            faker: 'lorem.words',
           },
         },
         createdAt: {
           type: 'string',
-          format: 'date-time',
-          faker: 'date.past',
+          format: 'pastDate',
         },
         updatedAt: {
           type: 'string',
-          format: 'date-time',
-          faker: 'date.recent',
+          format: 'recentDate',
         },
         favorited: {
           type: 'boolean',
@@ -158,6 +154,26 @@ const schema = {
         'author',
         'comment',
       ],
+    },
+    MultipleArticlesResponse: {
+      type: 'object',
+      properties: {
+        articles: {
+          type: 'array',
+          minItems: 10,
+          maxItems: 30,
+          items: {
+            $ref: '#/definitions/Article',
+          },
+        },
+        articlesCount: {
+          type: 'integer',
+          faker: {
+            'random.number': [100],
+          },
+        },
+      },
+      required: ['articles', 'articlesCount'],
     },
     Comment: {
       type: 'object',

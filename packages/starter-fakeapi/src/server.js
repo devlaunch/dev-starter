@@ -23,7 +23,7 @@ server.post('/auth/login', (req, res) => {
 server.use(/^(?!\/auth).*$/, (req, res, next) => {
   if (
     req.headers.authorization === undefined ||
-    req.headers.authorization.split(' ')[0] !== 'Bearer'
+    req.headers.authorization.split(' ')[0] !== 'Token'
   ) {
     const status = 401;
     const message = 'Error in authorization format';
@@ -31,7 +31,11 @@ server.use(/^(?!\/auth).*$/, (req, res, next) => {
     return;
   }
   try {
-    verifyToken(req.headers.authorization.split(' ')[1]);
+    // unsafe authentication - use for simple mock testing
+    const token = req.headers.authorization.split(' ')[1];
+    if (token) {
+      verifyToken(token);
+    }
     next();
   } catch (err) {
     const status = 401;
@@ -42,6 +46,6 @@ server.use(/^(?!\/auth).*$/, (req, res, next) => {
 
 server.use(router);
 
-server.listen(3000, () => {
-  console.log('Run Auth API Server');
+server.listen(3001, () => {
+  console.log('Running Auth API Json Server');
 });

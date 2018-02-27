@@ -1,44 +1,22 @@
 import axios from 'axios';
 
-const API_ROOT = 'https://conduit.productionready.io/api';
+const API_ROOT = 'http://localhost:3001';
 
 const encode = encodeURIComponent;
-const responseBody = res => res.body;
 
 let token = null;
-const tokenPlugin = (req) => {
-  if (token) {
-    req.set('authorization', `Token ${token}`);
-  }
-};
 
-const requests = axios.create();
-requests.defaults.timeout = 2500;
-requests.defaults.baseURL = `${API_ROOT}`;
-requests.defaults.headers.common.Authorization = AUTH_TOKEN;
-requests.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+const instance = axios.create();
+instance.defaults.timeout = 2500;
+instance.defaults.baseURL = `${API_ROOT}`;
+instance.defaults.headers.common.Authorization = token ? `Bearer ${token}` : '';
+instance.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
 const requests = {
-  del: url =>
-    axios
-      .delete(`${API_ROOT}${url}`)
-      .use(tokenPlugin)
-      .then(responseBody),
-  get: url =>
-    axios
-      .get(`${API_ROOT}${url}`)
-      .use(tokenPlugin)
-      .then(responseBody),
-  put: (url, body) =>
-    axios
-      .put(`${API_ROOT}${url}`, body)
-      .use(tokenPlugin)
-      .then(responseBody),
-  post: (url, body) =>
-    axios
-      .post(`${API_ROOT}${url}`, body)
-      .use(tokenPlugin)
-      .then(responseBody),
+  get: (url, options = {}) => instance.get(url, { ...options }),
+  post: (url, data, options = {}) => instance.post(url, data, { ...options }),
+  put: (url, data, options = {}) => instance.put(url, data, { ...options }),
+  del: (url, options = {}) => instance.delete(url, { ...options }),
 };
 
 const Auth = {
@@ -90,5 +68,9 @@ export default {
   Tags,
   setToken: (_token) => {
     token = _token;
+    instance.defaults.headers.common.Authorization = '';
+    delete axios.defaults.headers.common.Authorization;
+
+    instance.defaults.headers.common.Authorization = token ? `Bearer ${token}` : '';
   },
 };

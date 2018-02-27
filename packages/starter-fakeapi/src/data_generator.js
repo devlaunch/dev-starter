@@ -5,6 +5,8 @@ import faker from 'faker';
 import schema from './schemas';
 
 jsf.extend('faker', () => faker);
+jsf.format('pastDate', () => faker.date.past().toISOString());
+jsf.format('recentDate', () => faker.date.recent().toISOString());
 const json = JSON.stringify(jsf(schema));
 
 const writeFile = (path, data, opts = 'utf8') =>
