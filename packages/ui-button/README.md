@@ -1,0 +1,148 @@
+# @devlaunch/ui-button
+
+[![npm](https://img.shields.io/npm/v/@devlaunch/ui-button.svg?style=flat-square)](https://www.npmjs.com/package/@devlaunch/ui-button)
+[![Travis branch](https://img.shields.io/travis/devlaunch/dev-starter/master.svg?style=flat-square)](https://travis-ci.org/devlaunch/dev-starter)
+[![Codecov branch](https://img.shields.io/codecov/c/github/devlaunch/dev-starter/master.svg?style=flat-square)](https://codecov.io/gh/devlaunch/dev-starter)
+[![storybook](https://img.shields.io/badge/docs%20with-storybook-f1618c.svg?style=flat-square)](https://devlaunch.github.io/dev-starter)
+[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg?style=flat-square)](https://lernajs.io/)
+
+> The [bootstrap](https://getbootstrap.com) button component made with [styled-components](https://styled-components.com).
+
+## Table of Contents
+
+* [Documentation](https://devlaunch.github.io/dev-starter)
+* [Why?](#why)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Properties](#properties)
+* [Related](#related)
+* [License](#license)
+
+## Why?
+
+This is a modular approach to use [bootstrap](https://getbootstrap.com) components for quick prototypes, as an entrypoint of your own component library, or if you need just one [bootstrap](https://getbootstrap.com) component for your application. To work with ease with any other libary or framework this component is built with [styled-components](https://styled-components.com).
+
+## Installation
+
+> Note: this component has a peer dependency on `styled-components` and `styled-system`. To use this component you also need to `npm i styled-components styled-system -S`.
+
+```sh
+$ npm i @devlaunch/ui-button -S
+```
+
+or
+
+```sh
+$ yarn add @devlaunch/ui-button
+```
+
+## Usage
+
+For detailed information take a look at the [documentation](https://devlaunch.github.io/dev-starter).
+
+```jsx
+/*
+  if you installed `dev-starter` use
+
+    import { ... } from 'dev-starter'
+
+  instead.
+*/
+import {
+  Button,
+  ButtonGroups,
+  ButtonToolbar,
+} from '@devlaunch/ui-button';
+
+const MyButtonComponent = (props) => (
+  {/* use different props to change the visual appearance */}
+  <Button primary outline disabled>My Button</Button>
+);
+
+const MyButtonGroupComponent = (props) => (
+  {/* use different props to change the visual appearance */}
+  <ButtonGroup>
+    <Button secondary>Left</Button>
+    <Button secondary>Middle</Button>
+    <Button secondary>Right</Button>
+  </ButtonGroup>
+);
+
+const MyButtonToolbarComponent = (props) => (
+  {/* use different props to change the visual appearance */}
+  <ButtonToolbar>
+    <ButtonGroup mr="0.5rem">
+      <Button secondary>1</Button>
+      <Button secondary>2</Button>
+      <Button secondary>3</Button>
+      <Button secondary>4</Button>
+    </ButtonGroup>
+    <ButtonGroup mr="0.5rem">
+      <Button secondary>5</Button>
+      <Button secondary>6</Button>
+      <Button secondary>7</Button>
+    </ButtonGroup>
+    <ButtonGroup>
+      <Button secondary>8</Button>
+    </ButtonGroup>
+  </ButtonToolbar>
+);
+```
+
+## Properties
+
+Properties which can be added to the component to change the visual appearance. This component uses [styled-system](http://jxnblk.com/styled-system/).
+
+* `primary` **Type**: boolean
+* `secondary` **Type**: boolean
+* `success` **Type**: boolean
+* `danger` **Type**: boolean
+* `warning` **Type**: boolean
+* `info` **Type**: boolean
+* `light` **Type**: boolean
+* `dark` **Type**: boolean
+* `active` **Type**: boolean
+* `disabled` **Type**: boolean
+* `outline` **Type**: boolean
+* `block` **Type**: boolean
+* `sm` small **Type**: boolean
+* `lg` large **Type**: boolean
+* `vertical` only on ButtonGroup **Type**: boolean
+* `m`  margin **Type**: string
+* `mt` margin-top **Type**: string
+* `mr` margin-right **Type**: string
+* `mb` margin-bottom **Type**: string
+* `ml` margin-left **Type**: string
+* `mx` margin-left and margin-right **Type**: string
+* `my` margin-top and margin-bottom **Type**: string
+* `p`  padding **Type**: string
+* `pt` padding-top **Type**: string
+* `pr` padding-right **Type**: string
+* `pb` padding-bottom **Type**: string
+* `pl` padding-left **Type**: string
+* `px` padding-left and padding-right **Type**: string
+* `py` padding-top and padding-bottom **Type**: string
+* `width` **Type**: string
+* `fontSize` **Type**: string
+* `fontWeight` **Type**: string
+* `textAlign` **Type**: string
+* `lineHeight` **Type**: string
+* `display` **Type**: string
+* `color` **Type**: string
+* `borderRadius` **Type**: string
+* `borderColor` **Type**: string
+* `border` **Type**: string
+* `borderTop` **Type**: string
+* `borderRight` **Type**: string
+* `borderBottom` **Type**: string
+* `borderLeft` **Type**: string
+
+## Related
+
+* [bootstrap](https://getbootstrap.com)
+* [styled-components](https://styled-components.com)
+* [styled-system](http://jxnblk.com/styled-system/)
+
+## License
+
+MIT © Devlaunch

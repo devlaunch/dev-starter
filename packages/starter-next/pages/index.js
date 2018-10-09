@@ -1,12 +1,12 @@
-import styled from "styled-components";
-import Link from "next/link";
-import Layout from "components/Layout";
+import styled from 'styled-components';
+import Link from 'next/link';
+import Layout from 'components/Layout';
 
 const Title = styled.h1`
   color: red;
-`
+`;
 
-const PostLink = (props) => (
+const PostLink = props => (
   <li>
     <Link as={`/p/${props.id}`} href={`/posts?title=${props.title}`}>
       <a>{props.title}</a>

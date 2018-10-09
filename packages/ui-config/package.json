@@ -1,0 +1,39 @@
+{
+  "name": "@devlaunch/ui-config",
+  "version": "1.0.0",
+  "description": "The configuration for ui components based on styled-bootstrap",
+  "main": "./lib/index.js",
+  "private": false,
+  "scripts": {
+    "test": "jest --coverage",
+    "prepublish": "babel src --out-dir lib"
+  },
+  "author": "Devlaunch <devlaunchorg@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "configuration"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devlaunch/dev-starter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/devlaunch/dev-starter/issues"
+  },
+  "homepage": "https://github.com/devlaunch/dev-starter",
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "<rootDir>/config/webpack/test.js"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "babel-core": "^7.0.0-bridge",
+    "babel-jest": "^23.6.0",
+    "jest": "^23.6.0"
+  },
+  "dependencies": {}
+}
