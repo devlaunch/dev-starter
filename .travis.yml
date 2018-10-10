@@ -1,0 +1,20 @@
+language: node_js
+node_js:
+  - "8.12.0"
+cache: yarn
+
+install:
+  - yarn global add lerna jest
+  - lerna bootstrap
+
+matrix:
+  include:
+    - name: "Ui Config Pipeline"
+      env: PACKAGE_LOCATION=packages/ui-config
+    - name: "Ui Alert Component Pipeline"
+      env: PACKAGE_LOCATION=packages/ui-alert
+
+script:
+  - cd $PACKAGE_LOCATION
+  - yarn test
+  - yarn build

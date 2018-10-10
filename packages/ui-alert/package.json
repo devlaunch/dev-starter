@@ -6,6 +6,7 @@
   "private": false,
   "scripts": {
     "test": "jest --coverage",
+    "build": "babel src --out-dir lib",
     "prepublish": "babel src --out-dir lib"
   },
   "author": "Devlaunch <devlaunchorg@gmail.com>",
