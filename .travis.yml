@@ -5,7 +5,6 @@ cache: yarn
 
 install:
   - yarn global add lerna jest
-  - lerna bootstrap
 
 matrix:
   include:

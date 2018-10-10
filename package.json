@@ -4,7 +4,7 @@
   "description": "Javascript application development starter",
   "main": "index.js",
   "repository": "https://github.com/devlaunch/dev-starter.git",
-  "author": "devlaunch <devlaunch.krishnareddy@gmail.com>",
+  "author": "devlaunch <devlaunchorg@gmail.com>",
   "license": "MIT",
   "private": true,
   "config": {

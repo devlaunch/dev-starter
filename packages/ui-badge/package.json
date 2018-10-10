@@ -1,6 +1,6 @@
 {
   "name": "@devlaunch/ui-badge",
-  "version": "1.3.0",
+  "version": "1.0.0",
   "description": "The bootstrap badge component created with styled-components",
   "main": "./lib/index.js",
   "private": false,
@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/devlaunch/dev-starter",
   "dependencies": {
-    "@devlaunch/ui-base": "^1.3.0"
+    "@devlaunch/ui-base": "^1.0.0"
   },
   "peerDependencies": {
     "react": "^16.2.0",
