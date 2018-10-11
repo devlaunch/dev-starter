@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 import {
   space,
   color,
@@ -10,10 +10,10 @@ import {
   display,
   borderRadius,
   borderColor,
-  borders,
-} from 'styled-system';
-import { Input as Ipt, Textarea as TA, Select as S } from '@devlaunch/ui-base';
-import { screenSize } from '@devlaunch/ui-config';
+  borders
+} from "styled-system";
+import { Input as Ipt, Textarea as TA, Select as S } from "@devlaunch/ui-base";
+import { screenSize } from "@devlaunch/ui-config";
 
 const formControlDisabledReadonly = props =>
   (props.disabled || props.readonly) &&
@@ -56,7 +56,7 @@ const formControlFormInline = props =>
     }
   `;
 
-const formControlSmall = (props) => {
+const formControlSmall = props => {
   if (props.sm) {
     if (!props.multiple && props.select) {
       return css`
@@ -80,10 +80,10 @@ const formControlSmall = (props) => {
     `;
   }
 
-  return '';
+  return "";
 };
 
-const formControlLarge = (props) => {
+const formControlLarge = props => {
   if (props.lg) {
     if (!props.multiple && props.select) {
       return css`
@@ -107,7 +107,7 @@ const formControlLarge = (props) => {
     `;
   }
 
-  return '';
+  return "";
 };
 
 const formControlStyle = () => css`
@@ -180,7 +180,7 @@ const FormControlSelect = styled(S)`
   }
 `;
 
-export const FormControl = (props) => {
+export const FormControl = props => {
   if (props.textarea) {
     return new FormControlTextarea(props);
   } else if (props.select) {

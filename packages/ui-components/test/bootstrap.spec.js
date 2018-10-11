@@ -1,6 +1,6 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-import 'jest-styled-components';
+import React from "react";
+import renderer from "react-test-renderer";
+import "jest-styled-components";
 
 import {
   Alert,
@@ -113,10 +113,10 @@ import {
   Tr,
   Tooltip,
   TooltipArrow,
-  TooltipInner,
-} from '../src';
+  TooltipInner
+} from "../src";
 
-test('Simply check if all components are imported and exported correctly', () => {
+test("Simply check if all components are imported and exported correctly", () => {
   const alert = renderer.create(<Alert />).toJSON();
   expect(alert).toMatchSnapshot();
 
@@ -320,7 +320,7 @@ test('Simply check if all components are imported and exported correctly', () =>
   const cardTitle = renderer.create(<CardTitle />).toJSON();
   expect(cardTitle).toMatchSnapshot();
 
-  expect(screenSize.sm).toBe('576px');
+  expect(screenSize.sm).toBe("576px");
 
   const container = renderer.create(<Container />).toJSON();
   expect(container).toMatchSnapshot();
@@ -349,7 +349,9 @@ test('Simply check if all components are imported and exported correctly', () =>
   const formControlFile = renderer.create(<FormControlFile />).toJSON();
   expect(formControlFile).toMatchSnapshot();
 
-  const formControlPlainText = renderer.create(<FormControlPlainText />).toJSON();
+  const formControlPlainText = renderer
+    .create(<FormControlPlainText />)
+    .toJSON();
   expect(formControlPlainText).toMatchSnapshot();
 
   const formGroup = renderer.create(<FormGroup />).toJSON();

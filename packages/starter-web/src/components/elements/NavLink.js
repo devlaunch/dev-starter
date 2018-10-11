@@ -1,4 +1,4 @@
-import { NavLink } from 'rebass';
+import { NavLink } from "rebass";
 
 const StyledNavLink = NavLink.extend`
   font-weight: ${props => props.theme.fontWeights.normal};

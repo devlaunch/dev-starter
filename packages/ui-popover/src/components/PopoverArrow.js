@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 import {
   space,
   color,
@@ -10,8 +10,8 @@ import {
   display,
   borderRadius,
   borderColor,
-  borders,
-} from 'styled-system';
+  borders
+} from "styled-system";
 
 const popoverArrowTop = props =>
   props.top &&
@@ -106,7 +106,7 @@ export const PopoverArrow = styled.div`
   &::after {
     position: absolute;
     display: block;
-    content: '';
+    content: "";
     border-color: transparent;
     border-style: solid;
   }

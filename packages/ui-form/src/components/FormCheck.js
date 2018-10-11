@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 import {
   space,
   color,
@@ -10,8 +10,8 @@ import {
   display,
   borderRadius,
   borderColor,
-  borders,
-} from 'styled-system';
+  borders
+} from "styled-system";
 
 const formCheckInline = props =>
   props.inline &&

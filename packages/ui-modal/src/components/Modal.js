@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 import {
   space,
   color,
@@ -10,32 +10,32 @@ import {
   display,
   borderRadius,
   borderColor,
-  borders,
-} from 'styled-system';
-import { screenSize } from '@devlaunch/ui-config';
+  borders
+} from "styled-system";
+import { screenSize } from "@devlaunch/ui-config";
 
-export const smallModalWidth = (props) => {
+export const smallModalWidth = props => {
   if (props.sm) {
-    return '300px';
+    return "300px";
   }
 
-  return '';
+  return "";
 };
 
-export const largeModalWidth = (props) => {
+export const largeModalWidth = props => {
   if (props.lg) {
-    return '800px';
+    return "800px";
   }
 
-  return '';
+  return "";
 };
 
-const modalDisplay = (props) => {
+const modalDisplay = props => {
   if (props.hidden) {
-    return 'none';
+    return "none";
   }
 
-  return 'block';
+  return "block";
 };
 
 export const Modal = styled.div`

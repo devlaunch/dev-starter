@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 import {
   space,
   color,
@@ -10,11 +10,11 @@ import {
   display,
   borderRadius,
   borderColor,
-  borders,
-} from 'styled-system';
-import { NavLink } from '@devlaunch/ui-nav';
+  borders
+} from "styled-system";
+import { NavLink } from "@devlaunch/ui-nav";
 
-const navbarLinkLight = (props) => {
+const navbarLinkLight = props => {
   if (props.light) {
     if (props.active) {
       return css`
@@ -43,10 +43,10 @@ const navbarLinkLight = (props) => {
     `;
   }
 
-  return '';
+  return "";
 };
 
-const navbarLinkDark = (props) => {
+const navbarLinkDark = props => {
   if (props.dark) {
     if (props.active) {
       return css`
@@ -75,7 +75,7 @@ const navbarLinkDark = (props) => {
     `;
   }
 
-  return '';
+  return "";
 };
 
 const navbarLinkBrand = props =>

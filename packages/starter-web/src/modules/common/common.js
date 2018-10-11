@@ -1,7 +1,4 @@
-import { createAction, handleActions } from 'redux-actions';
-
-// Actions
-export const loadApp = createAction('APP_LOAD');
+import { createAction, handleActions } from "redux-actions";
 
 import {
   APP_LOAD,
@@ -19,13 +16,16 @@ import {
   PROFILE_FAVORITES_PAGE_UNLOADED,
   SETTINGS_PAGE_UNLOADED,
   LOGIN_PAGE_UNLOADED,
-  REGISTER_PAGE_UNLOADED,
-} from '../constants/actionTypes';
+  REGISTER_PAGE_UNLOADED
+} from "../constants/actionTypes";
+
+// Actions
+export const loadApp = createAction("APP_LOAD");
 
 const initialState = {
-  appName: 'Conduit',
+  appName: "Conduit",
   token: null,
-  viewChangeCounter: 0,
+  viewChangeCounter: 0
 };
 
 export default (state = defaultState, action) => {
@@ -35,16 +35,16 @@ export default (state = defaultState, action) => {
         ...state,
         token: action.token || null,
         appLoaded: true,
-        currentUser: action.payload ? action.payload.user : null,
+        currentUser: action.payload ? action.payload.user : null
       };
     case REDIRECT:
       return { ...state, redirectTo: null };
     case LOGOUT:
       return {
         ...state,
-        redirectTo: '/',
+        redirectTo: "/",
         token: null,
-        currentUser: null,
+        currentUser: null
       };
     case ARTICLE_SUBMITTED:
       const redirectUrl = `/article/${action.payload.article.slug}`;
@@ -52,19 +52,19 @@ export default (state = defaultState, action) => {
     case SETTINGS_SAVED:
       return {
         ...state,
-        redirectTo: action.error ? null : '/',
-        currentUser: action.error ? null : action.payload.user,
+        redirectTo: action.error ? null : "/",
+        currentUser: action.error ? null : action.payload.user
       };
     case LOGIN:
     case REGISTER:
       return {
         ...state,
-        redirectTo: action.error ? null : '/',
+        redirectTo: action.error ? null : "/",
         token: action.error ? null : action.payload.user.token,
-        currentUser: action.error ? null : action.payload.user,
+        currentUser: action.error ? null : action.payload.user
       };
     case DELETE_ARTICLE:
-      return { ...state, redirectTo: '/' };
+      return { ...state, redirectTo: "/" };
     case ARTICLE_PAGE_UNLOADED:
     case EDITOR_PAGE_UNLOADED:
     case HOME_PAGE_UNLOADED:

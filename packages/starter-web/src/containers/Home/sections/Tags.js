@@ -1,8 +1,8 @@
-import React from 'react';
-import { Container, Heading, Text } from 'rebass';
-import { Tag } from 'components';
+import React from "react";
+import { Container, Heading, Text } from "rebass";
+import { Tag } from "components";
 
-const TagList = (props) => {
+const TagList = props => {
   const { tags } = props.tags;
   const handleClick = (ev, tag) => {
     ev.preventDefault();
@@ -15,7 +15,9 @@ const TagList = (props) => {
         <Heading is="h2" fontSize={[4, 5, 6, 7]}>
           Explore more
         </Heading>
-        {tags.map(tag => <Tag onClick={handleClick(tag)}>{tag}</Tag>)}
+        {tags.map(tag => (
+          <Tag onClick={handleClick(tag)}>{tag}</Tag>
+        ))}
       </Container>
     );
   }

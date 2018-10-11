@@ -1,11 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import React from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
-import ListErrors from '../../components/ListErrors';
-import SettingsForm from './SettingsForm';
-import { saveSettings, unloadSettings } from '../../modules/settings';
-import { logout } from '../../modules/auth';
+import ListErrors from "../../components/ListErrors";
+import SettingsForm from "./SettingsForm";
+import { saveSettings, unloadSettings } from "../../modules/settings";
+import { logout } from "../../modules/auth";
 
 const Settings = props => (
   <div className="settings-page">
@@ -16,11 +16,17 @@ const Settings = props => (
 
           <ListErrors errors={props.errors} />
 
-          <SettingsForm currentUser={props.currentUser} onSubmitForm={props.onSubmitForm} />
+          <SettingsForm
+            currentUser={props.currentUser}
+            onSubmitForm={props.onSubmitForm}
+          />
 
           <hr />
 
-          <button className="btn btn-outline-danger" onClick={props.onClickLogout}>
+          <button
+            className="btn btn-outline-danger"
+            onClick={props.onClickLogout}
+          >
             Or click here to logout.
           </button>
         </div>
@@ -33,25 +39,28 @@ Settings.defaultProps = {
   errors: null,
   currentUser: null,
   onSubmitForm: null,
-  onClickLogout: null,
+  onClickLogout: null
 };
 
 Settings.propTypes = {
   errors: PropTypes.objectOf(PropTypes.string),
   currentUser: PropTypes.objectOf(PropTypes.object),
   onSubmitForm: PropTypes.func,
-  onClickLogout: PropTypes.func,
+  onClickLogout: PropTypes.func
 };
 
 const mapStateToProps = state => ({
   ...state.settings,
-  currentUser: state.common.currentUser,
+  currentUser: state.common.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({
   onClickLogout: () => dispatch(logout()),
   onSubmitForm: user => dispatch(saveSettings(user)),
-  onUnload: () => dispatch(unloadSettings()),
+  onUnload: () => dispatch(unloadSettings())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Settings);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Settings);

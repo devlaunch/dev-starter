@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 import {
   space,
   color,
@@ -10,10 +10,10 @@ import {
   display,
   borderRadius,
   borderColor,
-  borders,
-} from 'styled-system';
+  borders
+} from "styled-system";
 
-const listGroupItemActive = (props) => {
+const listGroupItemActive = props => {
   if (props.active) {
     if (props.primary) {
       return css`
@@ -81,10 +81,10 @@ const listGroupItemActive = (props) => {
     `;
   }
 
-  return '';
+  return "";
 };
 
-const listGroupItemPrimary = (props) => {
+const listGroupItemPrimary = props => {
   if (props.primary) {
     if (props.action) {
       return css`
@@ -111,10 +111,10 @@ const listGroupItemPrimary = (props) => {
     `;
   }
 
-  return '';
+  return "";
 };
 
-const listGroupItemSecondary = (props) => {
+const listGroupItemSecondary = props => {
   if (props.secondary) {
     if (props.action) {
       return css`
@@ -141,10 +141,10 @@ const listGroupItemSecondary = (props) => {
     `;
   }
 
-  return '';
+  return "";
 };
 
-const listGroupItemSuccess = (props) => {
+const listGroupItemSuccess = props => {
   if (props.success) {
     if (props.action) {
       return css`
@@ -171,10 +171,10 @@ const listGroupItemSuccess = (props) => {
     `;
   }
 
-  return '';
+  return "";
 };
 
-const listGroupItemInfo = (props) => {
+const listGroupItemInfo = props => {
   if (props.info) {
     if (props.action) {
       return css`
@@ -201,10 +201,10 @@ const listGroupItemInfo = (props) => {
     `;
   }
 
-  return '';
+  return "";
 };
 
-const listGroupItemWarning = (props) => {
+const listGroupItemWarning = props => {
   if (props.warning) {
     if (props.action) {
       return css`
@@ -231,10 +231,10 @@ const listGroupItemWarning = (props) => {
     `;
   }
 
-  return '';
+  return "";
 };
 
-const listGroupItemDanger = (props) => {
+const listGroupItemDanger = props => {
   if (props.danger) {
     if (props.action) {
       return css`
@@ -261,10 +261,10 @@ const listGroupItemDanger = (props) => {
     `;
   }
 
-  return '';
+  return "";
 };
 
-const listGroupItemLight = (props) => {
+const listGroupItemLight = props => {
   if (props.light) {
     if (props.action) {
       return css`
@@ -291,10 +291,10 @@ const listGroupItemLight = (props) => {
     `;
   }
 
-  return '';
+  return "";
 };
 
-const listGroupItemDark = (props) => {
+const listGroupItemDark = props => {
   if (props.dark) {
     if (props.action) {
       return css`
@@ -321,7 +321,7 @@ const listGroupItemDark = (props) => {
     `;
   }
 
-  return '';
+  return "";
 };
 
 const listGroupItemDisabled = props =>
@@ -331,7 +331,7 @@ const listGroupItemDisabled = props =>
     background-color: #fff;
   `;
 
-const listGroupItemAction = (props) => {
+const listGroupItemAction = props => {
   if (props.action) {
     if (props.active) {
       return css`
@@ -366,7 +366,7 @@ const listGroupItemAction = (props) => {
     `;
   }
 
-  return '';
+  return "";
 };
 
 export const ListGroupItem = styled.li`

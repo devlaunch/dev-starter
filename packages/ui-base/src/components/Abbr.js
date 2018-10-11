@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Abbr = styled.abbr`
   text-decoration: underline dotted;

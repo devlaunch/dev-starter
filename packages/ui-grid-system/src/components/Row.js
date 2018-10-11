@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 import {
   space,
   color,
@@ -19,8 +19,8 @@ import {
   flexDirection,
   flex,
   justifySelf,
-  alignSelf,
-} from 'styled-system';
+  alignSelf
+} from "styled-system";
 
 export const Row = styled.div`
   box-sizing: border-box;

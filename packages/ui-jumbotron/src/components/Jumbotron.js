@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 import {
   space,
   color,
@@ -10,9 +10,9 @@ import {
   display,
   borderRadius,
   borderColor,
-  borders,
-} from 'styled-system';
-import { screenSize } from '@devlaunch/ui-config';
+  borders
+} from "styled-system";
+import { screenSize } from "@devlaunch/ui-config";
 
 const jumbotronFluid = props =>
   props.fluid &&

@@ -1,11 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { Route, Switch } from 'react-router-dom';
-import { ConnectedRouter } from 'react-router-redux';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { Route, Switch } from "react-router-dom";
+import { ConnectedRouter } from "react-router-redux";
 
-import App from 'containers/App';
-import { store, history } from 'store/store';
+import App from "containers/App";
+import { store, history } from "store/store";
 
 ReactDOM.render(
   <Provider store={store}>
@@ -15,5 +15,5 @@ ReactDOM.render(
       </Switch>
     </ConnectedRouter>
   </Provider>,
-  document.getElementById('root'),
+  document.getElementById("root")
 );

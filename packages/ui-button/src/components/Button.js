@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 import {
   space,
   color,
@@ -10,19 +10,19 @@ import {
   display,
   borderRadius,
   borderColor,
-  borders,
-} from 'styled-system';
-import { Button as Btn } from '@devlaunch/ui-base';
-import { screenSize } from '@devlaunch/ui-config';
+  borders
+} from "styled-system";
+import { Button as Btn } from "@devlaunch/ui-base";
+import { screenSize } from "@devlaunch/ui-config";
 
 const buttonDisabled = props =>
-  (props.disabled
+  props.disabled
     ? css`
         opacity: 0.65;
       `
     : css`
         cursor: pointer;
-      `);
+      `;
 
 const buttonActive = props =>
   props.active &&
@@ -30,7 +30,7 @@ const buttonActive = props =>
     background-image: none;
   `;
 
-const buttonPrimaryFull = (props) => {
+const buttonPrimaryFull = props => {
   if (props.disabled) {
     return css`
       color: #fff;
@@ -62,7 +62,7 @@ const buttonPrimaryFull = (props) => {
   `;
 };
 
-const buttonPrimaryOutline = (props) => {
+const buttonPrimaryOutline = props => {
   if (props.disabled) {
     return css`
       color: #007bff;
@@ -112,7 +112,7 @@ const buttonPrimaryActive = () =>
     }
   `;
 
-const buttonPrimary = (props) => {
+const buttonPrimary = props => {
   if (props.primary) {
     if (props.active) {
       return buttonPrimaryActive(props);
@@ -123,10 +123,10 @@ const buttonPrimary = (props) => {
     return buttonPrimaryFull(props);
   }
 
-  return '';
+  return "";
 };
 
-const buttonSecondaryFull = (props) => {
+const buttonSecondaryFull = props => {
   if (props.disabled) {
     return css`
       color: #fff;
@@ -158,7 +158,7 @@ const buttonSecondaryFull = (props) => {
   `;
 };
 
-const buttonSecondaryOutline = (props) => {
+const buttonSecondaryOutline = props => {
   if (props.disabled) {
     return css`
       color: #6c757d;
@@ -208,7 +208,7 @@ const buttonSecondaryActive = () =>
     }
   `;
 
-const buttonSecondary = (props) => {
+const buttonSecondary = props => {
   if (props.secondary) {
     if (props.active) {
       return buttonSecondaryActive(props);
@@ -219,10 +219,10 @@ const buttonSecondary = (props) => {
     return buttonSecondaryFull(props);
   }
 
-  return '';
+  return "";
 };
 
-const buttonSuccessFull = (props) => {
+const buttonSuccessFull = props => {
   if (props.disabled) {
     return css`
       color: #fff;
@@ -254,7 +254,7 @@ const buttonSuccessFull = (props) => {
   `;
 };
 
-const buttonSuccessOutline = (props) => {
+const buttonSuccessOutline = props => {
   if (props.disabled) {
     return css`
       color: #28a745;
@@ -304,7 +304,7 @@ const buttonSuccessActive = () =>
     }
   `;
 
-const buttonSuccess = (props) => {
+const buttonSuccess = props => {
   if (props.success) {
     if (props.active) {
       return buttonSuccessActive(props);
@@ -315,10 +315,10 @@ const buttonSuccess = (props) => {
     return buttonSuccessFull(props);
   }
 
-  return '';
+  return "";
 };
 
-const buttonInfoFull = (props) => {
+const buttonInfoFull = props => {
   if (props.disabled) {
     return css`
       color: #fff;
@@ -350,7 +350,7 @@ const buttonInfoFull = (props) => {
   `;
 };
 
-const buttonInfoOutline = (props) => {
+const buttonInfoOutline = props => {
   if (props.disabled) {
     return css`
       color: #17a2b8;
@@ -400,7 +400,7 @@ const buttonInfoActive = () =>
     }
   `;
 
-const buttonInfo = (props) => {
+const buttonInfo = props => {
   if (props.info) {
     if (props.active) {
       return buttonInfoActive(props);
@@ -411,10 +411,10 @@ const buttonInfo = (props) => {
     return buttonInfoFull(props);
   }
 
-  return '';
+  return "";
 };
 
-const buttonWarningFull = (props) => {
+const buttonWarningFull = props => {
   if (props.disabled) {
     return css`
       color: #212529;
@@ -446,7 +446,7 @@ const buttonWarningFull = (props) => {
   `;
 };
 
-const buttonWarningOutline = (props) => {
+const buttonWarningOutline = props => {
   if (props.disabled) {
     return css`
       color: #ffc107;
@@ -496,7 +496,7 @@ const buttonWarningActive = () =>
     }
   `;
 
-const buttonWarning = (props) => {
+const buttonWarning = props => {
   if (props.warning) {
     if (props.active) {
       return buttonWarningActive(props);
@@ -507,10 +507,10 @@ const buttonWarning = (props) => {
     return buttonWarningFull(props);
   }
 
-  return '';
+  return "";
 };
 
-const buttonDangerFull = (props) => {
+const buttonDangerFull = props => {
   if (props.disabled) {
     return css`
       color: #fff;
@@ -542,7 +542,7 @@ const buttonDangerFull = (props) => {
   `;
 };
 
-const buttonDangerOutline = (props) => {
+const buttonDangerOutline = props => {
   if (props.disabled) {
     return css`
       color: #dc3545;
@@ -592,7 +592,7 @@ const buttonDangerActive = () =>
     }
   `;
 
-const buttonDanger = (props) => {
+const buttonDanger = props => {
   if (props.danger) {
     if (props.active) {
       return buttonDangerActive(props);
@@ -603,10 +603,10 @@ const buttonDanger = (props) => {
     return buttonDangerFull(props);
   }
 
-  return '';
+  return "";
 };
 
-const buttonLightFull = (props) => {
+const buttonLightFull = props => {
   if (props.disabled) {
     return css`
       color: #212529;
@@ -638,7 +638,7 @@ const buttonLightFull = (props) => {
   `;
 };
 
-const buttonLightOutline = (props) => {
+const buttonLightOutline = props => {
   if (props.disabled) {
     return css`
       color: #f8f9fa;
@@ -688,7 +688,7 @@ const buttonLightActive = () =>
     }
   `;
 
-const buttonLight = (props) => {
+const buttonLight = props => {
   if (props.light) {
     if (props.active) {
       return buttonLightActive(props);
@@ -699,10 +699,10 @@ const buttonLight = (props) => {
     return buttonLightFull(props);
   }
 
-  return '';
+  return "";
 };
 
-const buttonDarkFull = (props) => {
+const buttonDarkFull = props => {
   if (props.disabled) {
     return css`
       color: #fff;
@@ -734,7 +734,7 @@ const buttonDarkFull = (props) => {
   `;
 };
 
-const buttonDarkOutline = (props) => {
+const buttonDarkOutline = props => {
   if (props.disabled) {
     return css`
       color: #343a40;
@@ -784,7 +784,7 @@ const buttonDarkActive = () =>
     }
   `;
 
-const buttonDark = (props) => {
+const buttonDark = props => {
   if (props.dark) {
     if (props.active) {
       return buttonDarkActive(props);
@@ -795,7 +795,7 @@ const buttonDark = (props) => {
     return buttonDarkFull(props);
   }
 
-  return '';
+  return "";
 };
 
 export const buttonSmall = props =>
@@ -835,7 +835,7 @@ const buttonDropdownToggle = props =>
       height: 0;
       margin-left: 0.255em;
       vertical-align: 0.255em;
-      content: '';
+      content: "";
       border-top: 0.3em solid;
       border-right: 0.3em solid transparent;
       border-bottom: 0;
@@ -846,7 +846,7 @@ const buttonDropdownToggle = props =>
     }
   `;
 
-const buttonSplit = (props) => {
+const buttonSplit = props => {
   if (props.split) {
     if (props.sm) {
       return css`
@@ -878,10 +878,10 @@ const buttonSplit = (props) => {
     `;
   }
 
-  return '';
+  return "";
 };
 
-const buttonToggler = (props) => {
+const buttonToggler = props => {
   if (props.dark) {
     return css`
       color: rgba(255, 255, 255, 0.5);
@@ -904,11 +904,11 @@ const buttonToggler = (props) => {
     `;
   }
 
-  return '';
+  return "";
 };
 
-const buttonToggleCollapse = (props) => {
-  let thisScreenSize = '';
+const buttonToggleCollapse = props => {
+  let thisScreenSize = "";
 
   if (props.expandSm) {
     thisScreenSize = screenSize.sm;
@@ -934,7 +934,7 @@ const buttonToggleCollapse = (props) => {
     `;
   }
 
-  return '';
+  return "";
 };
 
 export const Button = styled(Btn)`

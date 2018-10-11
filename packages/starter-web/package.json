@@ -1,34 +1,76 @@
 {
-  "name": "starter-web",
+  "name": "@devlaunch/starter-web",
   "version": "0.1.0",
+  "description": "A base starter website using create react app",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "development": [
+      "last 2 chrome versions",
+      "last 2 firefox versions",
+      "last 2 edge versions"
+    ],
+    "production": [
+      ">1%",
+      "last 4 versions",
+      "Firefox ESR",
+      "not ie < 11"
+    ]
+  },
+  "author": "Devlaunch <devlaunchorg@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "configuration"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devlaunch/dev-starter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/devlaunch/dev-starter/issues"
+  },
+  "homepage": "https://github.com/devlaunch/dev-starter",
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "jest-styled-components": "^6.2.1",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-scripts": "2.0.4",
+    "react-test-renderer": "^16.5.2",
+    "styled-components": "^3.4.10",
+    "styled-system": "^3.1.6"
+  },
   "dependencies": {
     "axios": "^0.17.1",
     "history": "^4.7.2",
-    "prop-types": "^15.6.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
     "react-feather": "^1.0.8",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^5.0.0-alpha.9",
-    "react-scripts": "1.1.0",
     "rebass": "^2.0.0-0",
     "redux": "^3.7.2",
     "redux-actions": "^2.2.1",
     "redux-devtools-extension": "^2.13.2",
     "redux-logger": "^3.0.6",
     "redux-promise-middleware": "^5.0.0",
-    "styled-components": "^3.1.6",
-    "styled-reboot": "^1.1.1",
-    "react-app-rewire-yarn-workspaces": "^1.0.2",
-    "react-app-rewired": "^1.4.0"
-  },
-  "scripts": {
-    "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
-    "test": "react-app-rewired test --env=jsdom",
-    "eject": "react-scripts eject"
-  },
-  "devDependencies": {}
+    "styled-components": "^3.4.10",
+    "styled-system": "^2.1.0",
+    "styled-reboot": "^1.1.1"
+  }
 }

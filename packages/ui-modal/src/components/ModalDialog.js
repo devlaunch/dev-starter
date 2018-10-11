@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 import {
   space,
   color,
@@ -10,11 +10,11 @@ import {
   display,
   borderRadius,
   borderColor,
-  borders,
-} from 'styled-system';
-import { screenSize } from '@devlaunch/ui-config';
+  borders
+} from "styled-system";
+import { screenSize } from "@devlaunch/ui-config";
 
-const dialogCentered = (props) => {
+const dialogCentered = props => {
   if (props.centered) {
     return css`
       display: flex;
@@ -26,7 +26,7 @@ const dialogCentered = (props) => {
     `;
   }
 
-  return '';
+  return "";
 };
 
 export const ModalDialog = styled.div`

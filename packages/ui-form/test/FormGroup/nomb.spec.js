@@ -1,11 +1,11 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-import 'jest-styled-components';
+import React from "react";
+import renderer from "react-test-renderer";
+import "jest-styled-components";
 
-import { FormGroup } from '../../src';
+import { FormGroup } from "../../src";
 
-test('Styles matches FormGroup nomb', () => {
+test("Styles matches FormGroup nomb", () => {
   const tree = renderer.create(<FormGroup nomb />).toJSON();
   expect(tree).toMatchSnapshot();
-  expect(tree).toHaveStyleRule('margin-bottom', '0');
+  expect(tree).toHaveStyleRule("margin-bottom", "0");
 });

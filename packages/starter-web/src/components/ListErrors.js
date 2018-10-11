@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-const ListErrors = (props) => {
+const ListErrors = props => {
   const { errors } = props.errors;
   if (errors) {
     return (
@@ -18,11 +18,11 @@ const ListErrors = (props) => {
 };
 
 ListErrors.defaultProps = {
-  errors: null,
+  errors: null
 };
 
 ListErrors.propTypes = {
-  errors: PropTypes.objectOf(PropTypes.string),
+  errors: PropTypes.objectOf(PropTypes.string)
 };
 
 export default ListErrors;

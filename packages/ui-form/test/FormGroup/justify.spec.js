@@ -1,12 +1,12 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-import 'jest-styled-components';
+import React from "react";
+import renderer from "react-test-renderer";
+import "jest-styled-components";
 
-import { FormGroup } from '../../src';
+import { FormGroup } from "../../src";
 
-test('Styles matches FormGroup justify', () => {
+test("Styles matches FormGroup justify", () => {
   const tree = renderer.create(<FormGroup justify />).toJSON();
   expect(tree).toMatchSnapshot();
-  expect(tree).toHaveStyleRule('align-items', 'center');
-  expect(tree).toHaveStyleRule('justify-content', 'center');
+  expect(tree).toHaveStyleRule("align-items", "center");
+  expect(tree).toHaveStyleRule("justify-content", "center");
 });

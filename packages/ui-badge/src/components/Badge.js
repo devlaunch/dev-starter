@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 import {
   space,
   color,
@@ -10,8 +10,8 @@ import {
   display,
   borderRadius,
   borderColor,
-  borders,
-} from 'styled-system';
+  borders
+} from "styled-system";
 
 const badgePill = props =>
   props.pill &&
@@ -21,7 +21,7 @@ const badgePill = props =>
     border-radius: 10rem;
   `;
 
-const badgePrimary = (props) => {
+const badgePrimary = props => {
   if (props.primary) {
     if (props.action) {
       return css`
@@ -49,10 +49,10 @@ const badgePrimary = (props) => {
     `;
   }
 
-  return '';
+  return "";
 };
 
-const badgeSecondary = (props) => {
+const badgeSecondary = props => {
   if (props.secondary) {
     if (props.action) {
       return css`
@@ -80,10 +80,10 @@ const badgeSecondary = (props) => {
     `;
   }
 
-  return '';
+  return "";
 };
 
-const badgeSuccess = (props) => {
+const badgeSuccess = props => {
   if (props.success) {
     if (props.action) {
       return css`
@@ -111,10 +111,10 @@ const badgeSuccess = (props) => {
     `;
   }
 
-  return '';
+  return "";
 };
 
-const badgeInfo = (props) => {
+const badgeInfo = props => {
   if (props.info) {
     if (props.action) {
       return css`
@@ -142,10 +142,10 @@ const badgeInfo = (props) => {
     `;
   }
 
-  return '';
+  return "";
 };
 
-const badgeWarning = (props) => {
+const badgeWarning = props => {
   if (props.warning) {
     if (props.action) {
       return css`
@@ -173,10 +173,10 @@ const badgeWarning = (props) => {
     `;
   }
 
-  return '';
+  return "";
 };
 
-const badgeDanger = (props) => {
+const badgeDanger = props => {
   if (props.danger) {
     if (props.action) {
       return css`
@@ -204,10 +204,10 @@ const badgeDanger = (props) => {
     `;
   }
 
-  return '';
+  return "";
 };
 
-const badgeLight = (props) => {
+const badgeLight = props => {
   if (props.light) {
     if (props.action) {
       return css`
@@ -235,10 +235,10 @@ const badgeLight = (props) => {
     `;
   }
 
-  return '';
+  return "";
 };
 
-const badgeDark = (props) => {
+const badgeDark = props => {
   if (props.dark) {
     if (props.action) {
       return css`
@@ -266,7 +266,7 @@ const badgeDark = (props) => {
     `;
   }
 
-  return '';
+  return "";
 };
 
 export const Badge = styled.span`

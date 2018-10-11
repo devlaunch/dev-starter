@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 import {
   space,
   color,
@@ -10,17 +10,17 @@ import {
   display,
   borderRadius,
   borderColor,
-  borders,
-} from 'styled-system';
+  borders
+} from "styled-system";
 
 const dropdownMenuHidden = props =>
-  (props.hidden
+  props.hidden
     ? css`
         display: none;
       `
     : css`
         display: block;
-      `);
+      `;
 
 export const DropdownMenu = styled.div`
   position: absolute;

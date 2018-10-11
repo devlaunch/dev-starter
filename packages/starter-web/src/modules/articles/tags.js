@@ -1,18 +1,19 @@
-import { createAction, handleActions } from 'redux-actions';
-import agent from '../utils/agent';
+import { createAction, handleActions } from "redux-actions";
+import agent from "../utils/agent";
 
 // Actions
-export const loadTags = createAction('TAGS_LOAD', () =>
+export const loadTags = createAction("TAGS_LOAD", () =>
   // agent.Tags.getAll();
   ({
-    tags: null,
-  }));
-export const applyTagFilter = createAction('TAG_FILTER', (tag) => {
+    tags: null
+  })
+);
+export const applyTagFilter = createAction("TAG_FILTER", tag => {
   // agent.Articles.byTag(tag);
 });
 
 const initialState = {
-  tags: null,
+  tags: null
 };
 
 // Reducers
@@ -22,12 +23,12 @@ export default handleActions(
       ...state,
       articles: action.payload.articles,
       articlesCount: action.payload.articlesCount,
-      tag: action.payload.tag,
+      tag: action.payload.tag
     }),
     [loadTags]: (state, action) => ({
       ...state,
-      tags: action.payload.tags,
-    }),
+      tags: action.payload.tags
+    })
   },
-  initialState,
+  initialState
 );

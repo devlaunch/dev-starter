@@ -1,16 +1,16 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
+import React from "react";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
-import ArticleList from '../../components/ArticleList';
-import EditProfileSettings from './EditProfileSettings';
-import FollowUserButton from './FollowUserButton';
+import ArticleList from "../../components/ArticleList";
+import EditProfileSettings from "./EditProfileSettings";
+import FollowUserButton from "./FollowUserButton";
 import {
   followUser,
   unfollowUser,
   loadProfilePage,
-  unloadProfilePage,
-} from '../../modules/profile';
+  unloadProfilePage
+} from "../../modules/profile";
 
 class Profile extends React.Component {
   componentWillMount() {
@@ -25,13 +25,19 @@ class Profile extends React.Component {
     return (
       <ul className="nav nav-pills outline-active">
         <li className="nav-item">
-          <Link className="nav-link active" to={`/@${this.props.profile.username}`}>
+          <Link
+            className="nav-link active"
+            to={`/@${this.props.profile.username}`}
+          >
             My Articles
           </Link>
         </li>
 
         <li className="nav-item">
-          <Link className="nav-link" to={`/@${this.props.profile.username}/favorites`}>
+          <Link
+            className="nav-link"
+            to={`/@${this.props.profile.username}/favorites`}
+          >
             Favorited Articles
           </Link>
         </li>
@@ -46,7 +52,8 @@ class Profile extends React.Component {
     }
 
     const isUser =
-      this.props.currentUser && this.props.profile.username === this.props.currentUser.username;
+      this.props.currentUser &&
+      this.props.profile.username === this.props.currentUser.username;
 
     return (
       <div className="profile-page">
@@ -54,7 +61,11 @@ class Profile extends React.Component {
           <div className="container">
             <div className="row">
               <div className="col-xs-12 col-md-10 offset-md-1">
-                <img src={profile.image} className="user-img" alt={profile.username} />
+                <img
+                  src={profile.image}
+                  className="user-img"
+                  alt={profile.username}
+                />
                 <h4>{profile.username}</h4>
                 <p>{profile.bio}</p>
 
@@ -92,15 +103,18 @@ class Profile extends React.Component {
 const mapStateToProps = state => ({
   ...state.articleList,
   currentUser: state.common.currentUser,
-  profile: state.profile,
+  profile: state.profile
 });
 
 const mapDispatchToProps = dispatch => ({
   onFollow: username => dispatch(followUser(username)),
   onUnfollow: username => dispatch(unfollowUser(username)),
   onLoad: username => dispatch(loadProfilePage(username)),
-  onUnload: () => dispatch(unloadProfilePage()),
+  onUnload: () => dispatch(unloadProfilePage())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Profile);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Profile);
 // export { Profile, mapStateToProps };

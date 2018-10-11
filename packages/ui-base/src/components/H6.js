@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const H6 = styled.h6`
   margin-top: 0;

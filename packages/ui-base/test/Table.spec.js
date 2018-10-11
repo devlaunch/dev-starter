@@ -1,11 +1,11 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-import 'jest-styled-components';
+import React from "react";
+import renderer from "react-test-renderer";
+import "jest-styled-components";
 
-import { Table } from '../src';
+import { Table } from "../src";
 
-test('Styles matches Table', () => {
+test("Styles matches Table", () => {
   const tree = renderer.create(<Table />).toJSON();
   expect(tree).toMatchSnapshot();
-  expect(tree).toHaveStyleRule('border-collapse', 'collapse');
+  expect(tree).toHaveStyleRule("border-collapse", "collapse");
 });

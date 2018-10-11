@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 import {
   space,
   color,
@@ -10,10 +10,10 @@ import {
   display,
   borderRadius,
   borderColor,
-  borders,
-} from 'styled-system';
-import { Nav as Navigation } from '@devlaunch/ui-base';
-import { screenSize } from '@devlaunch/ui-config';
+  borders
+} from "styled-system";
+import { Nav as Navigation } from "@devlaunch/ui-base";
+import { screenSize } from "@devlaunch/ui-config";
 
 const navJustifyContentCenter = props =>
   props.center &&
@@ -64,8 +64,8 @@ const navTabs = props =>
   `;
 
 /* istanbul ignore next */
-const navCollapse = (props) => {
-  let thisScreenSize = '';
+const navCollapse = props => {
+  let thisScreenSize = "";
 
   if (props.expandSm) {
     thisScreenSize = screenSize.sm;
@@ -115,7 +115,7 @@ const navCollapse = (props) => {
     `;
   }
 
-  return '';
+  return "";
 };
 
 export const Nav = styled(Navigation)`

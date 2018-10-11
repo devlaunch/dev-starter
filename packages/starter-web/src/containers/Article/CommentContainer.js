@@ -1,9 +1,9 @@
-import CommentInput from './CommentInput';
-import CommentList from './CommentList';
-import { Link } from 'react-router-dom';
-import React from 'react';
+import CommentInput from "./CommentInput";
+import CommentList from "./CommentList";
+import { Link } from "react-router-dom";
+import React from "react";
 
-const CommentContainer = (props) => {
+const CommentContainer = props => {
   if (props.currentUser) {
     return (
       <div className="col-xs-12 col-md-8 offset-md-2">
@@ -12,7 +12,11 @@ const CommentContainer = (props) => {
           <CommentInput slug={props.slug} currentUser={props.currentUser} />
         </div>
 
-        <CommentList comments={props.comments} slug={props.slug} currentUser={props.currentUser} />
+        <CommentList
+          comments={props.comments}
+          slug={props.slug}
+          currentUser={props.currentUser}
+        />
       </div>
     );
   }
@@ -25,7 +29,11 @@ const CommentContainer = (props) => {
         &nbsp;to add comments on this article.
       </p>
 
-      <CommentList comments={props.comments} slug={props.slug} currentUser={props.currentUser} />
+      <CommentList
+        comments={props.comments}
+        slug={props.slug}
+        currentUser={props.currentUser}
+      />
     </div>
   );
 };

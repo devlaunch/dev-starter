@@ -1,6 +1,6 @@
-import React from 'react';
-import { Container, Heading, Lead } from 'rebass';
-import { ArticleList } from 'components/ArticleList';
+import React from "react";
+import { Container, Heading, Lead } from "rebass";
+import { ArticleList } from "components/ArticleList";
 
 const GlobalArticleFeed = props => (
   <Container color="gray.8" bg="white">

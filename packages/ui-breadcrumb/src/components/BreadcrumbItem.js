@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 import {
   space,
   color,
@@ -10,8 +10,8 @@ import {
   display,
   borderRadius,
   borderColor,
-  borders,
-} from 'styled-system';
+  borders
+} from "styled-system";
 
 const breadcrumbitemActive = props =>
   props.active &&
@@ -25,7 +25,7 @@ export const BreadcrumbItem = styled.li`
     padding-right: 0.5rem;
     padding-left: 0.5rem;
     color: #6c757d;
-    content: '/';
+    content: "/";
   }
   & + &:hover::before {
     text-decoration: none;

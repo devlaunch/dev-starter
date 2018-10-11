@@ -1,22 +1,27 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Absolute, Box, Image, BlockLink } from 'rebass';
+import React from "react";
+import { Link } from "react-router-dom";
+import { Absolute, Box, Image, BlockLink } from "rebass";
 
-import { Toolbar, NavLink } from 'components';
+import { Toolbar, NavLink } from "components";
 
-const Header = (props) => {
+const Header = props => {
   let links = null;
   if (props.currentUser) {
     links = (
       <Box>
         <NavLink color="gray.6" href="/editor">
-          <i className="ion-compose" />&nbsp;New Post
+          <i className="ion-compose" />
+          &nbsp;New Post
         </NavLink>
         <NavLink color="gray.6" href="/settings">
-          <i className="ion-gear-a" />&nbsp;Settings
+          <i className="ion-gear-a" />
+          &nbsp;Settings
         </NavLink>
         <BlockLink color="gray.6" href={`/@${props.currentUser.username}`}>
-          <Image src={props.currentUser.image} alt={props.currentUser.username} />
+          <Image
+            src={props.currentUser.image}
+            alt={props.currentUser.username}
+          />
           {props.currentUser.username}
         </BlockLink>
       </Box>

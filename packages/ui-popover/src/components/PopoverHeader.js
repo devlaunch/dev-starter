@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 import {
   space,
   color,
@@ -10,9 +10,9 @@ import {
   display,
   borderRadius,
   borderColor,
-  borders,
-} from 'styled-system';
-import { H1, H2, H3, H4, H5, H6 } from '@devlaunch/ui-base';
+  borders
+} from "styled-system";
+import { H1, H2, H3, H4, H5, H6 } from "@devlaunch/ui-base";
 
 const popoverHeaderBottom = props =>
   props.bottom &&
@@ -23,7 +23,7 @@ const popoverHeaderBottom = props =>
     display: block;
     width: 1rem;
     margin-left: -0.5rem;
-    content: '';
+    content: "";
     border-bottom: 1px solid #f7f7f7;
   `;
 
@@ -78,7 +78,7 @@ const PopoverHeaderH6 = styled(H6)`
   ${popoverHeaderStyle};
 `;
 
-export const PopoverHeader = (props) => {
+export const PopoverHeader = props => {
   if (props.h1) {
     return new PopoverHeaderH1(props);
   } else if (props.h2) {

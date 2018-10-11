@@ -1,11 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
-const EditProfileSettings = (props) => {
+const EditProfileSettings = props => {
   if (props.isUser) {
     return (
-      <Link to="/settings" className="btn btn-sm btn-outline-secondary action-btn">
+      <Link
+        to="/settings"
+        className="btn btn-sm btn-outline-secondary action-btn"
+      >
         <i className="ion-gear-a" /> Edit Profile Settings
       </Link>
     );
@@ -14,11 +17,11 @@ const EditProfileSettings = (props) => {
 };
 
 EditProfileSettings.defaultProps = {
-  isUser: false,
+  isUser: false
 };
 
 EditProfileSettings.propTypes = {
-  isUser: PropTypes.bool,
+  isUser: PropTypes.bool
 };
 
 export default EditProfileSettings;

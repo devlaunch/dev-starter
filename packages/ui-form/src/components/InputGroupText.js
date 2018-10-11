@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 import {
   space,
   color,
@@ -10,8 +10,8 @@ import {
   display,
   borderRadius,
   borderColor,
-  borders,
-} from 'styled-system';
+  borders
+} from "styled-system";
 
 export const InputGroupText = styled.span`
   display: flex;
@@ -27,8 +27,8 @@ export const InputGroupText = styled.span`
   background-color: #e9ecef;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
-  & input[type='radio'],
-  & input[type='checkbox'] {
+  & input[type="radio"],
+  & input[type="checkbox"] {
     margin-top: 0;
     margin-right: 0;
     margin-bottom: 0.4125rem;

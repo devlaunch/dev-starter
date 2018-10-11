@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 import {
   space,
   color,
@@ -10,9 +10,9 @@ import {
   display,
   borderRadius,
   borderColor,
-  borders,
-} from 'styled-system';
-import { Img } from '@devlaunch/ui-base';
+  borders
+} from "styled-system";
+import { Img } from "@devlaunch/ui-base";
 
 export const CardImageHeader = styled(Img)`
   width: 100%;

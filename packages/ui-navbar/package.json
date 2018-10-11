@@ -2,11 +2,35 @@
   "name": "@devlaunch/ui-navbar",
   "version": "1.0.0",
   "description": "The bootstrap navbar component created with styled-components",
-  "main": "./lib/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "private": false,
   "scripts": {
-    "test": "jest --coverage",
-    "prepublish": "babel src --out-dir lib"
+    "start": "react-scripts start",
+    "build-examples": "react-scripts build",
+    "test": "react-scripts test",
+    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
+    "prepublish": "yarn build"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "development": [
+      "last 2 chrome versions",
+      "last 2 firefox versions",
+      "last 2 edge versions"
+    ],
+    "production": [
+      ">1%",
+      "last 4 versions",
+      "Firefox ESR",
+      "not ie < 11"
+    ]
   },
   "author": "Devlaunch <devlaunchorg@gmail.com>",
   "license": "MIT",
@@ -29,28 +53,24 @@
     "url": "https://github.com/devlaunch/dev-starter/issues"
   },
   "homepage": "https://github.com/devlaunch/dev-starter",
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "jest-styled-components": "^6.2.1",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-scripts": "2.0.4",
+    "react-test-renderer": "^16.5.2",
+    "styled-components": "^3.4.10",
+    "styled-system": "^3.1.6"
+  },
+  "peerDependencies": {
+    "react": "^16.5.2",
+    "styled-components": "^3.4.10",
+    "styled-system": "^2.1.0"
+  },
   "dependencies": {
     "@devlaunch/ui-base": "^1.0.0",
     "@devlaunch/ui-config": "^1.0.0",
     "@devlaunch/ui-nav": "^1.0.0"
-  },
-  "peerDependencies": {
-    "react": "^16.2.0",
-    "styled-components": "^3.1.4",
-    "styled-system": "^2.1.0"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-jest": "^22.4.1",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-runtime": "^6.26.0",
-    "jest": "^22.4.2",
-    "jest-styled-components": "^5.0.0",
-    "react": "^16.2.0",
-    "react-test-renderer": "^16.2.0",
-    "styled-components": "^3.1.4",
-    "styled-system": "^2.1.0"
   }
 }

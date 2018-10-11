@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Address = styled.address`
   margin-bottom: 1rem;

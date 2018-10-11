@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 import {
   space,
   color,
@@ -10,8 +10,8 @@ import {
   display,
   borderRadius,
   borderColor,
-  borders,
-} from 'styled-system';
+  borders
+} from "styled-system";
 
 const tooltipArrowTop = props =>
   props.top &&
@@ -74,7 +74,7 @@ export const TooltipArrow = styled.div`
   height: 0.4rem;
   &::before {
     position: absolute;
-    content: '';
+    content: "";
     border-color: transparent;
     border-style: solid;
   }

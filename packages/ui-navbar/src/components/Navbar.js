@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 import {
   space,
   color,
@@ -10,10 +10,10 @@ import {
   display,
   borderRadius,
   borderColor,
-  borders,
-} from 'styled-system';
-import { Nav as Navigation } from '@devlaunch/ui-base';
-import { screenSize } from '@devlaunch/ui-config';
+  borders
+} from "styled-system";
+import { Nav as Navigation } from "@devlaunch/ui-base";
+import { screenSize } from "@devlaunch/ui-config";
 
 const navbarLight = props =>
   props.light &&
@@ -32,8 +32,8 @@ const navbarDark = props =>
   `;
 
 /* istanbul ignore next */
-const navbarExpand = (props) => {
-  let thisScreenSize = '';
+const navbarExpand = props => {
+  let thisScreenSize = "";
 
   if (props.expandSm) {
     thisScreenSize = screenSize.sm;
@@ -57,7 +57,7 @@ const navbarExpand = (props) => {
     `;
   }
 
-  return '';
+  return "";
 };
 
 export const Navbar = styled(Navigation)`

@@ -1,18 +1,18 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { push } from 'react-router-redux';
-import { Route, Switch } from 'react-router-dom';
-import { Provider } from 'rebass';
+import React from "react";
+import { connect } from "react-redux";
+import { push } from "react-router-redux";
+import { Route, Switch } from "react-router-dom";
+import { Provider } from "rebass";
 
-import { store } from 'store/store';
-import { loadApp, redirect } from 'modules/common';
-import { theme, baseStyles } from 'modules/theme';
+import { store } from "store/store";
+import { loadApp, redirect } from "modules/common";
+import { theme, baseStyles } from "modules/theme";
 
-import Header from 'components/Header';
+import Header from "components/Header";
 
 // import Article from '../Article';
 // import Editor from '../Editor';
-import Home from '../Home';
+import Home from "../Home";
 // import Login from '../Login';
 // import Profile from '../Profile';
 // import ProfileFavorites from '../Profile/ProfileFavorites';
@@ -21,7 +21,7 @@ import Home from '../Home';
 
 class App extends React.Component {
   componentWillMount() {
-    const token = window.localStorage.getItem('jwt');
+    const token = window.localStorage.getItem("jwt");
     console.log(token);
     this.props.onLoad(token);
   }
@@ -39,7 +39,10 @@ class App extends React.Component {
     if (this.props.appLoaded) {
       return (
         <Provider theme={theme}>
-          <Header appName={this.props.appName} currentUser={this.props.currentUser} />
+          <Header
+            appName={this.props.appName}
+            currentUser={this.props.currentUser}
+          />
           <Switch>
             <Route exact path="/" component={Home} />
             {/* <Route path="/login" component={Login} />
@@ -56,7 +59,10 @@ class App extends React.Component {
     }
     return (
       <Provider theme={theme}>
-        <Header appName={this.props.appName} currentUser={this.props.currentUser} />{' '}
+        <Header
+          appName={this.props.appName}
+          currentUser={this.props.currentUser}
+        />{" "}
       </Provider>
     );
   }
@@ -70,15 +76,18 @@ const mapStateToProps = state => ({
   appLoaded: state.common.appLoaded,
   appName: state.common.appName,
   currentUser: state.common.currentUser,
-  redirectTo: state.common.redirectTo,
+  redirectTo: state.common.redirectTo
 });
 
 const mapDispatchToProps = dispatch => ({
-  onLoad: (token) => {
-    console.log('onload:', token);
+  onLoad: token => {
+    console.log("onload:", token);
     dispatch(loadApp(token));
   },
-  onRedirect: () => dispatch(redirect()),
+  onRedirect: () => dispatch(redirect())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);

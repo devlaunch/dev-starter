@@ -1,16 +1,16 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
-import ListErrors from 'components/ListErrors';
-import { updateAuthField, login, unloadLoginPage } from 'modules/auth';
+import ListErrors from "components/ListErrors";
+import { updateAuthField, login, unloadLoginPage } from "modules/auth";
 
 class Login extends React.Component {
   constructor() {
     super();
     this.changeEmail = ev => this.props.onChangeEmail(ev.target.value);
     this.changePassword = ev => this.props.onChangePassword(ev.target.value);
-    this.submitForm = (email, password) => (ev) => {
+    this.submitForm = (email, password) => ev => {
       ev.preventDefault();
       this.props.onSubmit(email, password);
     };
@@ -77,10 +77,13 @@ class Login extends React.Component {
 const mapStateToProps = state => ({ ...state.auth });
 
 const mapDispatchToProps = dispatch => ({
-  onChangeEmail: value => dispatch(updateAuthField('email', value)),
-  onChangePassword: value => dispatch(updateAuthField('password', value)),
+  onChangeEmail: value => dispatch(updateAuthField("email", value)),
+  onChangePassword: value => dispatch(updateAuthField("password", value)),
   onSubmit: (email, password) => dispatch(login(email, password)),
-  onUnload: () => dispatch(unloadLoginPage()),
+  onUnload: () => dispatch(unloadLoginPage())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Login);

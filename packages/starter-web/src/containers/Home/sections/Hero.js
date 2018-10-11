@@ -1,5 +1,5 @@
-import React from 'react';
-import { Banner, Heading, Lead } from 'rebass';
+import React from "react";
+import { Banner, Heading, Lead } from "rebass";
 
 const Hero = ({ appName, token }) => {
   if (token) {

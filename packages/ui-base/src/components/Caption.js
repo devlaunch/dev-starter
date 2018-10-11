@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Caption = styled.caption`
   padding-top: 0.75rem;

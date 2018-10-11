@@ -1,10 +1,15 @@
-import { loadTags, applyTagFilter } from './tags';
-import { loadArticlePage, unloadArticlePage, addComment, deleteComment } from './article';
+import { loadTags, applyTagFilter } from "./tags";
+import {
+  loadArticlePage,
+  unloadArticlePage,
+  addComment,
+  deleteComment
+} from "./article";
 
 // reducers
-export { default as tags } from './tags';
-export { default as article } from './article';
-export { default as articles } from './articleList';
+export { default as tags } from "./tags";
+export { default as article } from "./article";
+export { default as articles } from "./articleList";
 
 // actions
 export const actions = {
@@ -13,5 +18,5 @@ export const actions = {
   loadArticlePage,
   unloadArticlePage,
   addComment,
-  deleteComment,
+  deleteComment
 };

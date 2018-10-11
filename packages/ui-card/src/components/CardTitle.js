@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 import {
   space,
   color,
@@ -10,9 +10,9 @@ import {
   display,
   borderRadius,
   borderColor,
-  borders,
-} from 'styled-system';
-import { H1, H2, H3, H4, H5, H6 } from '@devlaunch/ui-base';
+  borders
+} from "styled-system";
+import { H1, H2, H3, H4, H5, H6 } from "@devlaunch/ui-base";
 
 const cardTitleSubtitle = props =>
   props.subtitle &&
@@ -68,7 +68,7 @@ export const CardTitleH6 = styled(H6)`
   ${cardTitleStyle};
 `;
 
-export const CardTitle = (props) => {
+export const CardTitle = props => {
   if (props.h1) {
     return new CardTitleH1(props);
   } else if (props.h2) {

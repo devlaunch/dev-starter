@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 import {
   space,
   color,
@@ -10,8 +10,8 @@ import {
   display,
   borderRadius,
   borderColor,
-  borders,
-} from 'styled-system';
+  borders
+} from "styled-system";
 
 const popoverTop = props =>
   props.top &&
@@ -38,13 +38,13 @@ const popoverLeft = props =>
   `;
 
 const popoverHidden = props =>
-  (props.hidden
+  props.hidden
     ? css`
         display: none;
       `
     : css`
         display: block;
-      `);
+      `;
 
 export const Popover = styled.div`
   position: absolute;
@@ -52,8 +52,9 @@ export const Popover = styled.div`
   left: 0;
   z-index: 1060;
   max-width: 276px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
-    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;

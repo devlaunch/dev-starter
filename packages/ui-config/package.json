@@ -2,12 +2,35 @@
   "name": "@devlaunch/ui-config",
   "version": "1.0.0",
   "description": "The configuration for ui components based on styled-bootstrap",
-  "main": "./lib/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "private": false,
   "scripts": {
-    "test": "jest --coverage",
-    "build": "babel src --out-dir lib",
-    "prepublish": "babel src --out-dir lib"
+    "start": "react-scripts start",
+    "build-examples": "react-scripts build",
+    "test": "react-scripts test",
+    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
+    "prepublish": "yarn build"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "development": [
+      "last 2 chrome versions",
+      "last 2 firefox versions",
+      "last 2 edge versions"
+    ],
+    "production": [
+      ">1%",
+      "last 4 versions",
+      "Firefox ESR",
+      "not ie < 11"
+    ]
   },
   "author": "Devlaunch <devlaunchorg@gmail.com>",
   "license": "MIT",
@@ -22,19 +45,20 @@
     "url": "https://github.com/devlaunch/dev-starter/issues"
   },
   "homepage": "https://github.com/devlaunch/dev-starter",
-  "jest": {
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "<rootDir>/config/webpack/test.js"
-    ]
-  },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
-    "@babel/core": "^7.1.2",
-    "@babel/preset-env": "^7.1.0",
-    "babel-core": "^7.0.0-bridge",
-    "babel-jest": "^23.6.0",
-    "jest": "^23.6.0"
+    "jest-styled-components": "^6.2.1",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-scripts": "2.0.4",
+    "react-test-renderer": "^16.5.2",
+    "styled-components": "^3.4.10",
+    "styled-system": "^3.1.6"
+  },
+  "peerDependencies": {
+    "react": "^16.5.2",
+    "styled-components": "^3.4.10",
+    "styled-system": "^2.1.0"
   },
   "dependencies": {}
 }
