@@ -47,7 +47,6 @@
     "@commitlint/config-lerna-scopes": "^7.1.2",
     "commitizen": "^3.0.2",
     "cz-customizable": "^5.2.0",
-    "husky": "^0.14.3",
     "lerna": "^3.4.3",
     "lerna-wizard": "^1.0.9",
     "nodemon": "^1.14.11",
