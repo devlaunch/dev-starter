@@ -1,5 +1,5 @@
 {
-  "name": "starter-nodesample",
+  "name": "@devlaunch/starter-nodesample",
   "version": "0.1.0",
   "description": "authoring node js libraries in es7 using babel 7",
   "main": "index.js",

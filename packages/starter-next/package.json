@@ -1,5 +1,5 @@
 {
-  "name": "serverless-next",
+  "name": "@devlaunch/starter-next",
   "version": "0.0.1",
   "description": "base starter for web runtime microservice on serverless ",
   "main": "index.js",

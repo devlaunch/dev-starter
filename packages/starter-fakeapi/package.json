@@ -1,5 +1,5 @@
 {
-  "name": "starter-fakeapi",
+  "name": "@devlaunch/starter-fakeapi",
   "version": "0.0.1",
   "description": "fake api generator for quick mocks",
   "main": "index.js",

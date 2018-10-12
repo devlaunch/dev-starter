@@ -70,7 +70,7 @@
     "redux-logger": "^3.0.6",
     "redux-promise-middleware": "^5.0.0",
     "styled-components": "^3.4.10",
-    "styled-system": "^2.1.0",
+    "styled-system": "^3.1.10",
     "styled-reboot": "^1.1.1"
   }
 }
