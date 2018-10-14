@@ -1,4 +1,5 @@
-import { Breadcrumb } from "./components/Breadcrumb";
-import { BreadcrumbItem } from "./components/BreadcrumbItem";
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "demo/App";
 
-export { Breadcrumb, BreadcrumbItem };
+ReactDOM.render(<App />, document.getElementById("root"));

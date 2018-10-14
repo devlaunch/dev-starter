@@ -1,4 +1,5 @@
-import { Column } from "./components/Column";
-import { Row } from "./components/Row";
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "demo/App";
 
-export { Column, Row };
+ReactDOM.render(<App />, document.getElementById("root"));

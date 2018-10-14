@@ -1,5 +1,5 @@
-import { Button } from "./components/Button";
-import { ButtonGroup } from "./components/ButtonGroup";
-import { ButtonToolbar } from "./components/ButtonToolbar";
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "demo/App";
 
-export { Button, ButtonGroup, ButtonToolbar };
+ReactDOM.render(<App />, document.getElementById("root"));

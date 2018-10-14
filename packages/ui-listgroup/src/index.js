@@ -1,4 +1,5 @@
-import { ListGroup } from "./components/ListGroup";
-import { ListGroupItem } from "./components/ListGroupItem";
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "demo/App";
 
-export { ListGroup, ListGroupItem };
+ReactDOM.render(<App />, document.getElementById("root"));

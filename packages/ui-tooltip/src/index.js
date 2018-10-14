@@ -1,5 +1,5 @@
-import { Tooltip } from "./components/Tooltip";
-import { TooltipArrow } from "./components/TooltipArrow";
-import { TooltipInner } from "./components/TooltipInner";
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "demo/App";
 
-export { Tooltip, TooltipArrow, TooltipInner };
+ReactDOM.render(<App />, document.getElementById("root"));

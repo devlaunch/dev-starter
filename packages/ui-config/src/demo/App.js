@@ -1,12 +1,12 @@
 import React from "react";
-import { screenSize } from "../lib";
+import { screenSize } from "lib";
 
 const App = () => (
   <div>
-    Small 576px {screenSize.sm}
-    Medium 768px {screenSize.md}
-    Large 992px {screenSize.lg}
-    XtraLarge 1200px {screenSize.xl}
+    Small 576px == {screenSize.sm} <br />
+    Medium 768px == {screenSize.md} <br />
+    Large 992px == {screenSize.lg} <br />
+    XtraLarge 1200px == {screenSize.xl} <br />
   </div>
 );
 

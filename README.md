@@ -32,9 +32,9 @@ _Javascript application development starter with Babel ES6 / ES7 Support, Testin
 
 - [ ] Code Benchmark Testing with [benchmark.js](https://github.com/bestiejs/benchmark.js)
 - [ ] Vulnerability scan via [snyk](https://github.com/Snyk/snyk)
-- [ ] ES6+ Testing via [babel-register](https://github.com/babel/babel/tree/master/packages/babel-register) with [Mocha](https://github.com/mochajs/mocha), [Chai](https://github.com/chaijs/chai), [Sinon](https://github.com/sinonjs/sinon) and [sinon-chai](https://github.com/domenic/sinon-chai)
-- [ ] Generate HTML Reports from tests via [mochawesome](https://github.com/adamgruber/mochawesome)
-- [ ] ES6+ Code Coverage with [babel-istanbul](https://github.com/jmcriffey/babel-istanbul)
+- [ ] ES6+ Testing via [jest](https://jestjs.io/)
+- [ ] Generate HTML Reports from tests via [jest --coverage](https://jestjs.io/)
+- [ ] ES6+ Code Coverage with [jest --coverage](https://jestjs.io/)
 - [ ] Ready for Continuous Integration & Delivery with [travis-ci](https://travis-ci.org)
 
 ### Publishing and Release
@@ -47,7 +47,7 @@ _Javascript application development starter with Babel ES6 / ES7 Support, Testin
 ### Common Node js features
 
 - [x] Node optimized ES6 / ES7 Transpilation and Source Maps with [Babel](https://github.com/babel/babel)
-- [ ] ES6+ aware Code Minification based on the Babel toolchain [babel-minify](https://github.com/babel/minify)
+- [ ] ES6+ aware Code Minification based on the Babel toolchain
 - [x] Restart Node on Application Changes with [nodemon](https://github.com/remy/nodemon)
 - [ ] Node Server Performance Monitoring with [nodejs-dashboard](https://github.com/FormidableLabs/nodejs-dashboard)
 
@@ -82,7 +82,7 @@ yarn
 
 ### Info
 
-At the moment im busy working on this boilerplate and lot stuff is changing.  
+At the moment we are busy working on this boilerplate and lot stuff is changing.  
 When things getting more stable i will bump the version to 1.0.0 and write a detailed documentation.
 
 ### Contact / Social Media

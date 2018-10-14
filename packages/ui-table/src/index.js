@@ -1,4 +1,5 @@
-import { Table } from "./components/Table";
-import { Tr } from "./components/Tr";
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "demo/App";
 
-export { Table, Tr };
+ReactDOM.render(<App />, document.getElementById("root"));

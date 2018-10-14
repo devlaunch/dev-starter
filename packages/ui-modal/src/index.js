@@ -1,17 +1,5 @@
-import { Modal } from "./components/Modal";
-import { ModalBody } from "./components/ModalBody";
-import { ModalContent } from "./components/ModalContent";
-import { ModalDialog } from "./components/ModalDialog";
-import { ModalFooter } from "./components/ModalFooter";
-import { ModalHeader } from "./components/ModalHeader";
-import { ModalTitle } from "./components/ModalTitle";
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "demo/App";
 
-export {
-  Modal,
-  ModalBody,
-  ModalContent,
-  ModalDialog,
-  ModalFooter,
-  ModalHeader,
-  ModalTitle
-};
+ReactDOM.render(<App />, document.getElementById("root"));

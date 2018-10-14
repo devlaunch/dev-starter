@@ -1,3 +1,5 @@
-import { Jumbotron } from "./components/Jumbotron";
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "demo/App";
 
-export { Jumbotron };
+ReactDOM.render(<App />, document.getElementById("root"));

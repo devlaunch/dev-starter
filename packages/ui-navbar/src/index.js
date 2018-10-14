@@ -1,4 +1,5 @@
-import { Navbar } from "./components/Navbar";
-import { NavbarLink } from "./components/NavbarLink";
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "demo/App";
 
-export { Navbar, NavbarLink };
+ReactDOM.render(<App />, document.getElementById("root"));

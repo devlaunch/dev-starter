@@ -1,4 +1,5 @@
-import { Nav } from "./components/Nav";
-import { NavLink } from "./components/NavLink";
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "demo/App";
 
-export { Nav, NavLink };
+ReactDOM.render(<App />, document.getElementById("root"));

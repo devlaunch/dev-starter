@@ -1,6 +1,5 @@
-import { Popover } from "./components/Popover";
-import { PopoverArrow } from "./components/PopoverArrow";
-import { PopoverBody } from "./components/PopoverBody";
-import { PopoverHeader } from "./components/PopoverHeader";
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "demo/App";
 
-export { Popover, PopoverArrow, PopoverBody, PopoverHeader };
+ReactDOM.render(<App />, document.getElementById("root"));
