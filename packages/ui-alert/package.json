@@ -32,6 +32,11 @@
       "not ie < 11"
     ]
   },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
+  },
   "author": "Devlaunch <devlaunchorg@gmail.com>",
   "license": "MIT",
   "keywords": [
@@ -55,6 +60,9 @@
   "homepage": "https://github.com/devlaunch/dev-starter",
   "devDependencies": {
     "@babel/cli": "^7.1.2",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
+    "jest-enzyme": "^7.0.0",
     "jest-styled-components": "^6.2.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",

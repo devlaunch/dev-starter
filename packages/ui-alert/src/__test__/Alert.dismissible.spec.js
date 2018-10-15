@@ -1,11 +1,11 @@
 import React from "react";
-import renderer from "react-test-renderer";
-import "jest-styled-components";
+import { mount } from "enzyme";
+// import renderer from "react-test-renderer";
 
-import { Alert } from "../src";
+import { Alert } from "lib";
 
 test("Styles matches dismissible", () => {
-  const tree = renderer.create(<Alert dismissible />).toJSON();
-  expect(tree).toMatchSnapshot();
-  expect(tree).toHaveStyleRule("padding-right", "4rem");
+  const component = mount(<Alert dismissible />);
+  expect(component).toMatchSnapshot();
+  expect(component).toHaveStyleRule("padding-right", "4rem");
 });

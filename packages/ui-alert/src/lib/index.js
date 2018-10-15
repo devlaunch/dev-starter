@@ -1,3 +1,3 @@
-import Alert from "lib/components/Alert";
+import { Alert } from "lib/components/Alert";
 
-export default Alert;
+export { Alert };

@@ -188,5 +188,3 @@ const Alert = styled.div`
   ${borderColor};
   ${borders};
 `;
-
-export default Alert;

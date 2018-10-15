@@ -1,22 +1,22 @@
 import React from "react";
-import renderer from "react-test-renderer";
-import "jest-styled-components";
+import { mount } from "enzyme";
+// import renderer from "react-test-renderer";
 
-import { Alert } from "../src";
+import { Alert } from "../lib";
 
 test("Styles matches warning", () => {
-  const tree = renderer.create(<Alert warning />).toJSON();
-  expect(tree).toMatchSnapshot();
-  expect(tree).toHaveStyleRule("color", "#856404");
-  expect(tree).toHaveStyleRule("background-color", "#fff3cd");
-  expect(tree).toHaveStyleRule("border-color", "#ffeeba");
-  expect(tree).toHaveStyleRule("border-top-color", "#ffe8a1", {
+  const component = mount(<Alert warning />);
+  expect(component).toMatchSnapshot();
+  expect(component).toHaveStyleRule("color", "#856404");
+  expect(component).toHaveStyleRule("background-color", "#fff3cd");
+  expect(component).toHaveStyleRule("border-color", "#ffeeba");
+  expect(component).toHaveStyleRule("border-top-color", "#ffe8a1", {
     modifier: "& > hr"
   });
-  expect(tree).toHaveStyleRule("color", "#533f03", {
+  expect(component).toHaveStyleRule("color", "#533f03", {
     modifier: "& > a"
   });
-  expect(tree).toHaveStyleRule("color", "#533f03", {
+  expect(component).toHaveStyleRule("color", "#533f03", {
     modifier: "& > a:hover"
   });
 });
