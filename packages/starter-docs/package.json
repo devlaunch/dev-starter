@@ -35,7 +35,11 @@
   },
   "homepage": "https://github.com/devlaunch/dev-starter",
   "devDependencies": {},
-  "peerDependencies": {},
+  "peerDependencies": {
+    "react": "^16.5.2",
+    "styled-components": "^3.4.10",
+    "styled-system": "^3.1.10"
+  },
   "dependencies": {
     "docz": "^0.12.5",
     "remark-external-links": "^3.0.0"

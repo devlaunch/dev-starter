@@ -34,7 +34,11 @@ exports[`Styles matches dark 1`] = `
   color: #040505;
 }
 
-<div
-  className="c0"
-/>
+<styled.div
+  dark={true}
+>
+  <div
+    className="c0"
+  />
+</styled.div>
 `;

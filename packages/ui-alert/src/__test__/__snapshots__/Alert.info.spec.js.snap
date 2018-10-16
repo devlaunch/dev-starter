@@ -34,7 +34,11 @@ exports[`Styles matches info 1`] = `
   color: #062c33;
 }
 
-<div
-  className="c0"
-/>
+<styled.div
+  info={true}
+>
+  <div
+    className="c0"
+  />
+</styled.div>
 `;

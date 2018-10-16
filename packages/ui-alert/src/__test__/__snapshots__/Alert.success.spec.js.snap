@@ -34,7 +34,11 @@ exports[`Styles matches success 1`] = `
   color: #0b2e13;
 }
 
-<div
-  className="c0"
-/>
+<styled.div
+  success={true}
+>
+  <div
+    className="c0"
+  />
+</styled.div>
 `;

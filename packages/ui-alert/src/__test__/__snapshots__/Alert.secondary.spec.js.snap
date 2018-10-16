@@ -34,7 +34,11 @@ exports[`Styles matches secondary 1`] = `
   color: #202326;
 }
 
-<div
-  className="c0"
-/>
+<styled.div
+  secondary={true}
+>
+  <div
+    className="c0"
+  />
+</styled.div>
 `;

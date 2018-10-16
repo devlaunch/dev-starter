@@ -37,12 +37,14 @@ exports[`Styles matches Container 1`] = `
   }
 }
 
-<div
-  className="c0"
-/>
+<styled.div>
+  <div
+    className="c0"
+  />
+</styled.div>
 `;
 
-exports[`Styles matches Container 2`] = `
+exports[`Styles matches Container fluid 1`] = `
 .c0 {
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   width: 100%;
@@ -79,7 +81,11 @@ exports[`Styles matches Container 2`] = `
   }
 }
 
-<div
-  className="c0"
-/>
+<styled.div
+  fluid={true}
+>
+  <div
+    className="c0"
+  />
+</styled.div>
 `;

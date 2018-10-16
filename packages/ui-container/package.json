@@ -12,9 +12,15 @@
   "scripts": {
     "start": "react-scripts start",
     "build-examples": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage",
+    "snapshot": "CI=true react-scripts test --updateSnapshot",
     "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
     "prepublish": "yarn build"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -55,6 +61,9 @@
   "homepage": "https://github.com/devlaunch/dev-starter",
   "devDependencies": {
     "@babel/cli": "^7.1.2",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
+    "jest-enzyme": "^7.0.0",
     "jest-styled-components": "^6.2.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",

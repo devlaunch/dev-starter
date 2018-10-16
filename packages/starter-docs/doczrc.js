@@ -4,7 +4,7 @@ import externalLinks from "remark-external-links";
 const modifyBundlerConfig = config => {
   config.resolve.alias = Object.assign({}, config.resolve.alias, {
     "@devlaunch": path.resolve(__dirname, "../"),
-    "@docs": path.resolve(__dirname, "docs")
+    "@docs": path.resolve(__dirname, "./docs")
   });
 
   return config;
@@ -18,7 +18,7 @@ export default {
   propsParser: true,
   mdPlugins: [externalLinks.default],
   modifyBundlerConfig,
-  wrapper: "docs/config/Wrapper.js",
+  wrapper: "config/Wrapper.js",
   menu: ["Home", "Getting Started", "Foundation", "Components", "Utilities"],
   themeConfig: {
     repository: "https://github.com/devlaunch/dev-starter",
@@ -27,8 +27,7 @@ export default {
       link: "#5e72e4"
     },
     logo: {
-      src:
-        "https://raw.githubusercontent.com/smooth-code/smooth-ui/master/resources/smooth-ui-logo-horizontal.png",
+      src: "./logo.svg",
       width: 200
     }
   }

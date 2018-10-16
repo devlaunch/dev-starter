@@ -34,7 +34,11 @@ exports[`Styles matches danger 1`] = `
   color: #491217;
 }
 
-<div
-  className="c0"
-/>
+<styled.div
+  danger={true}
+>
+  <div
+    className="c0"
+  />
+</styled.div>
 `;

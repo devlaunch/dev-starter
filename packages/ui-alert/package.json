@@ -12,7 +12,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build-examples": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage",
+    "snapshot": "CI=true react-scripts test --updateSnapshot",
     "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
     "prepublish": "yarn build"
   },

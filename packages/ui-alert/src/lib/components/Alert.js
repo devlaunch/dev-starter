@@ -30,6 +30,7 @@ const alertPrimary = props =>
       border-top-color: #9fcdff;
     }
 
+    & > a,
     & > a:hover {
       color: #002752;
     }
@@ -46,6 +47,7 @@ const alertSecondary = props =>
       border-top-color: #c8cbcf;
     }
 
+    & > a,
     & > a:hover {
       color: #202326;
     }
@@ -62,6 +64,7 @@ const alertSuccess = props =>
       border-top-color: #b1dfbb;
     }
 
+    & > a,
     & > a:hover {
       color: #0b2e13;
     }
@@ -78,6 +81,7 @@ const alertInfo = props =>
       border-top-color: #abdde5;
     }
 
+    & > a,
     & > a:hover {
       color: #062c33;
     }
@@ -94,6 +98,7 @@ const alertWarning = props =>
       border-top-color: #ffe8a1;
     }
 
+    & > a,
     & > a:hover {
       color: #533f03;
     }
@@ -110,6 +115,7 @@ const alertDanger = props =>
       border-top-color: #f1b0b7;
     }
 
+    & > a,
     & > a:hover {
       color: #491217;
     }
@@ -126,6 +132,7 @@ const alertLight = props =>
       border-top-color: #ececf6;
     }
 
+    & > a,
     & > a:hover {
       color: #686868;
     }
@@ -142,12 +149,13 @@ const alertDark = props =>
       border-top-color: #b9bbbe;
     }
 
+    & > a,
     & > a:hover {
       color: #040505;
     }
   `;
 
-const Alert = styled.div`
+export const Alert = styled.div`
   position: relative;
   padding: 0.75rem 1.25rem;
   margin-bottom: 1rem;

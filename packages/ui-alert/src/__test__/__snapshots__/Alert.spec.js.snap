@@ -22,7 +22,9 @@ exports[`Styles matches plane 1`] = `
   color: inherit;
 }
 
-<div
-  className="c0"
-/>
+<styled.div>
+  <div
+    className="c0"
+  />
+</styled.div>
 `;

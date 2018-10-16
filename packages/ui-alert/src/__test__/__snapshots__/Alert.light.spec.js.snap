@@ -34,7 +34,11 @@ exports[`Styles matches light 1`] = `
   color: #686868;
 }
 
-<div
-  className="c0"
-/>
+<styled.div
+  light={true}
+>
+  <div
+    className="c0"
+  />
+</styled.div>
 `;

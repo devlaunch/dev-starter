@@ -34,7 +34,11 @@ exports[`Styles matches primary 1`] = `
   color: #002752;
 }
 
-<div
-  className="c0"
-/>
+<styled.div
+  primary={true}
+>
+  <div
+    className="c0"
+  />
+</styled.div>
 `;
