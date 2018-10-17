@@ -1,10 +1,13 @@
 import * as path from "path";
 import externalLinks from "remark-external-links";
 
+const PUBLIC = path.resolve(__dirname, "public");
+
 const modifyBundlerConfig = config => {
   config.resolve.alias = Object.assign({}, config.resolve.alias, {
     "@devlaunch": path.resolve(__dirname, "../"),
-    "@docs": path.resolve(__dirname, "./docs")
+    "@docs": path.resolve(__dirname, "./docs"),
+    "@public": path.resolve(__dirname, "./public")
   });
 
   return config;
@@ -25,10 +28,10 @@ export default {
     colors: {
       primary: "#5e72e4",
       link: "#5e72e4"
-    },
-    logo: {
-      src: "./logo.svg",
-      width: 200
     }
+    // logo: {
+    //   src: "/public/logo.svg",
+    //   width: 200
+    // }
   }
 };
