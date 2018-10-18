@@ -34,11 +34,23 @@ exports[`Styles matches dark 1`] = `
   color: #040505;
 }
 
-<styled.div
-  dark={true}
+<Alert
+  modifiers={
+    Array [
+      "dark",
+    ]
+  }
 >
-  <div
-    className="c0"
-  />
-</styled.div>
+  <styled.div
+    modifiers={
+      Array [
+        "dark",
+      ]
+    }
+  >
+    <div
+      className="c0"
+    />
+  </styled.div>
+</Alert>
 `;

@@ -34,11 +34,23 @@ exports[`Styles matches danger 1`] = `
   color: #491217;
 }
 
-<styled.div
-  danger={true}
+<Alert
+  modifiers={
+    Array [
+      "danger",
+    ]
+  }
 >
-  <div
-    className="c0"
-  />
-</styled.div>
+  <styled.div
+    modifiers={
+      Array [
+        "danger",
+      ]
+    }
+  >
+    <div
+      className="c0"
+    />
+  </styled.div>
+</Alert>
 `;

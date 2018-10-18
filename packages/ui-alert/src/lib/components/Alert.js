@@ -1,3 +1,4 @@
+import React from "react";
 import styled, { css } from "styled-components";
 import {
   space,
@@ -10,18 +11,19 @@ import {
   display,
   borderRadius,
   borderColor,
+  themeGet,
   borders
 } from "styled-system";
+import {
+  applyStyleModifiers,
+  styleModifierPropTypes
+} from "styled-components-modifiers";
 
-const alertDismissible = props =>
-  props.dismissible &&
-  css`
+const config = {
+  dismissible: () => `
     padding-right: 4rem;
-  `;
-
-const alertPrimary = props =>
-  props.primary &&
-  css`
+  `,
+  primary: () => `
     color: #004085;
     background-color: #cce5ff;
     border-color: #b8daff;
@@ -34,11 +36,8 @@ const alertPrimary = props =>
     & > a:hover {
       color: #002752;
     }
-  `;
-
-const alertSecondary = props =>
-  props.secondary &&
-  css`
+  `,
+  secondary: () => `
     color: #383d41;
     background-color: #e2e3e5;
     border-color: #d6d8db;
@@ -51,11 +50,8 @@ const alertSecondary = props =>
     & > a:hover {
       color: #202326;
     }
-  `;
-
-const alertSuccess = props =>
-  props.success &&
-  css`
+  `,
+  success: () => `
     color: #155724;
     background-color: #d4edda;
     border-color: #c3e6cb;
@@ -68,11 +64,8 @@ const alertSuccess = props =>
     & > a:hover {
       color: #0b2e13;
     }
-  `;
-
-const alertInfo = props =>
-  props.info &&
-  css`
+  `,
+  info: () => `
     color: #0c5460;
     background-color: #d1ecf1;
     border-color: #bee5eb;
@@ -85,11 +78,8 @@ const alertInfo = props =>
     & > a:hover {
       color: #062c33;
     }
-  `;
-
-const alertWarning = props =>
-  props.warning &&
-  css`
+  `,
+  warning: () => `
     color: #856404;
     background-color: #fff3cd;
     border-color: #ffeeba;
@@ -102,11 +92,8 @@ const alertWarning = props =>
     & > a:hover {
       color: #533f03;
     }
-  `;
-
-const alertDanger = props =>
-  props.danger &&
-  css`
+  `,
+  danger: () => `
     color: #721c24;
     background-color: #f8d7da;
     border-color: #f5c6cb;
@@ -119,11 +106,8 @@ const alertDanger = props =>
     & > a:hover {
       color: #491217;
     }
-  `;
-
-const alertLight = props =>
-  props.light &&
-  css`
+  `,
+  light: () => `
     color: #818182;
     background-color: #fefefe;
     border-color: #fdfdfe;
@@ -136,11 +120,8 @@ const alertLight = props =>
     & > a:hover {
       color: #686868;
     }
-  `;
-
-const alertDark = props =>
-  props.dark &&
-  css`
+  `,
+  dark: () => `
     color: #1b1e21;
     background-color: #d6d8d9;
     border-color: #c6c8ca;
@@ -153,9 +134,10 @@ const alertDark = props =>
     & > a:hover {
       color: #040505;
     }
-  `;
+  `
+};
 
-export const Alert = styled.div`
+const AlertStyled = styled.div`
   position: relative;
   padding: 0.75rem 1.25rem;
   margin-bottom: 1rem;
@@ -175,15 +157,7 @@ export const Alert = styled.div`
     color: inherit;
   }
 
-  ${alertDismissible};
-  ${alertPrimary};
-  ${alertSecondary};
-  ${alertSuccess};
-  ${alertInfo};
-  ${alertWarning};
-  ${alertDanger};
-  ${alertLight};
-  ${alertDark};
+  ${applyStyleModifiers(config)};
   ${space};
   ${width};
   ${color};
@@ -196,3 +170,25 @@ export const Alert = styled.div`
   ${borderColor};
   ${borders};
 `;
+
+export const Alert = props => <AlertStyled {...props} />;
+
+Alert.propTypes = {
+  modifiers: styleModifierPropTypes(config),
+  ...space.propTypes,
+  ...width.propTypes,
+  ...color.propTypes,
+  ...fontSize.propTypes,
+  ...fontWeight.propTypes,
+  ...textAlign.propTypes,
+  ...lineHeight.propTypes,
+  ...display.propTypes,
+  ...borderRadius.propTypes,
+  ...borderColor.propTypes,
+  ...borders.propTypes,
+  ...width.propTypes
+};
+
+Alert.defaultProps = {
+  modifiers: ["light"]
+};

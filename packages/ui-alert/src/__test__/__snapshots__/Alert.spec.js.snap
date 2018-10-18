@@ -7,6 +7,9 @@ exports[`Styles matches plane 1`] = `
   margin-bottom: 1rem;
   border: 1px solid transparent;
   border-radius: 0.25rem;
+  color: #818182;
+  background-color: #fefefe;
+  border-color: #fdfdfe;
 }
 
 .c0 > a {
@@ -22,9 +25,32 @@ exports[`Styles matches plane 1`] = `
   color: inherit;
 }
 
-<styled.div>
-  <div
-    className="c0"
-  />
-</styled.div>
+.c0 > hr {
+  border-top-color: #ececf6;
+}
+
+.c0 > a,
+.c0 > a:hover {
+  color: #686868;
+}
+
+<Alert
+  modifiers={
+    Array [
+      "light",
+    ]
+  }
+>
+  <styled.div
+    modifiers={
+      Array [
+        "light",
+      ]
+    }
+  >
+    <div
+      className="c0"
+    />
+  </styled.div>
+</Alert>
 `;

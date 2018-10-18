@@ -2,36 +2,57 @@
 name: Alert
 menu: Components
 ---
-import { PropsTable, Playground } from 'docz'
-import { Alert } from "@devlaunch/ui-alert"
-import { Container } from "@devlaunch/ui-container"
 
 # Alert
+
 Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
 
+// import Readme from '../../../ui-alert/README.md'
+// <Readme />
+
 ## Simple
-Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the eight required contextual props (e.g., success). 
+
+Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the eight required contextual props (e.g., success).
+
+import { PropsTable, Playground } from "docz";
+import { Alert } from "@devlaunch/ui-alert";
+import { Container } from "@devlaunch/ui-container";
 
 <Playground>
   <Container>
-    <Alert primary>This is a primary alert — check it out!</Alert>
-    <Alert secondary>This is a secondary alert — check it out!</Alert>
-    <Alert success>This is a success alert — check it out!</Alert>
-    <Alert danger>This is a danger alert — check it out!</Alert>
-    <Alert warning>This is a warning alert — check it out!</Alert>
-    <Alert info>This is a info alert — check it out!</Alert>
-    <Alert light>This is a light alert — check it out!</Alert>
-    <Alert dark>This is a dark alert — check it out!</Alert>
+    <Alert modifiers={["primary"]}>
+      This is a primary alert — check it out!
+    </Alert>
+    <Alert modifiers={["secondary"]}>
+      This is a secondary alert — check it out!
+    </Alert>
+    <Alert modifiers={["success"]}>
+      This is a success alert — check it out!
+    </Alert>
+    <Alert modifiers={["danger"]}>This is a danger alert — check it out!</Alert>
+    <Alert modifiers={["warning"]}>
+      This is a warning alert — check it out!
+    </Alert>
+    <Alert modifiers={["info"]}>This is a info alert — check it out!</Alert>
+    <Alert modifiers={["light"]}>This is a light alert — check it out!</Alert>
+    <Alert modifiers={["dark"]}>This is a dark alert — check it out!</Alert>
   </Container>
 </Playground>
 
 ## Dismissing
+
 It’s possible to dismiss any alert inline.
 
 ## With Icons
 
 ## Link Colors
+
 quickly provide matching colored links within any alert
 
 ## Additional Content
+
 Alerts can also contain additional HTML elements like headings, paragraphs and dividers.
+
+## API
+
+<PropsTable of={Alert} />

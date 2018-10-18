@@ -18,6 +18,7 @@ export default {
   description: "Modern UI library for React",
   repository: "https://github.com/devlaunch/dev-starter",
   ordering: "ascending",
+  files: "**/*.{md,markdown,mdx}",
   propsParser: true,
   mdPlugins: [externalLinks.default],
   modifyBundlerConfig,

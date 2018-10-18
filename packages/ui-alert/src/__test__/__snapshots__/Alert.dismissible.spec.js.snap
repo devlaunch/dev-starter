@@ -23,11 +23,23 @@ exports[`Styles matches dismissible 1`] = `
   color: inherit;
 }
 
-<styled.div
-  dismissible={true}
+<Alert
+  modifiers={
+    Array [
+      "dismissible",
+    ]
+  }
 >
-  <div
-    className="c0"
-  />
-</styled.div>
+  <styled.div
+    modifiers={
+      Array [
+        "dismissible",
+      ]
+    }
+  >
+    <div
+      className="c0"
+    />
+  </styled.div>
+</Alert>
 `;

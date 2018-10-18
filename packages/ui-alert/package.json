@@ -78,6 +78,7 @@
     "styled-system": "^3.1.10"
   },
   "dependencies": {
-    "@devlaunch/ui-base": "^1.0.0"
+    "@devlaunch/ui-base": "^1.0.0",
+    "styled-components-modifiers": "^1.0.3"
   }
 }

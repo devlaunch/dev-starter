@@ -5,7 +5,7 @@ import { mount } from "enzyme";
 import { Alert } from "../lib";
 
 test("Styles matches warning", () => {
-  const component = mount(<Alert warning />);
+  const component = mount(<Alert modifiers={["warning"]} />);
   expect(component).toMatchSnapshot();
   expect(component).toHaveStyleRule("color", "#856404");
   expect(component).toHaveStyleRule("background-color", "#fff3cd");

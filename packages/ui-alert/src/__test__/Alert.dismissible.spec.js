@@ -5,7 +5,7 @@ import { mount } from "enzyme";
 import { Alert } from "lib";
 
 test("Styles matches dismissible", () => {
-  const component = mount(<Alert dismissible />);
+  const component = mount(<Alert modifiers={["dismissible"]} />);
   expect(component).toMatchSnapshot();
   expect(component).toHaveStyleRule("padding-right", "4rem");
 });

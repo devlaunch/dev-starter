@@ -6,7 +6,7 @@ import "jest-styled-components";
 import { Alert } from "lib";
 
 test("Styles matches light", () => {
-  const component = mount(<Alert light />);
+  const component = mount(<Alert modifiers={["light"]} />);
   expect(component).toMatchSnapshot();
   expect(component).toHaveStyleRule("color", "#818182");
   expect(component).toHaveStyleRule("background-color", "#fefefe");

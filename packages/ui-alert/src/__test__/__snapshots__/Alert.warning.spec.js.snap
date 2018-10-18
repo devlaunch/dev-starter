@@ -34,11 +34,23 @@ exports[`Styles matches warning 1`] = `
   color: #533f03;
 }
 
-<styled.div
-  warning={true}
+<Alert
+  modifiers={
+    Array [
+      "warning",
+    ]
+  }
 >
-  <div
-    className="c0"
-  />
-</styled.div>
+  <styled.div
+    modifiers={
+      Array [
+        "warning",
+      ]
+    }
+  >
+    <div
+      className="c0"
+    />
+  </styled.div>
+</Alert>
 `;

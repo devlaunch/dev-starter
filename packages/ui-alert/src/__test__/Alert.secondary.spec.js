@@ -5,7 +5,7 @@ import { mount } from "enzyme";
 import { Alert } from "lib";
 
 test("Styles matches secondary", () => {
-  const component = mount(<Alert secondary />);
+  const component = mount(<Alert modifiers={["secondary"]} />);
   expect(component).toMatchSnapshot();
   expect(component).toHaveStyleRule("color", "#383d41");
   expect(component).toHaveStyleRule("background-color", "#e2e3e5");
