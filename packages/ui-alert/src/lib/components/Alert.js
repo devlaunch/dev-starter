@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import {
   space,
   color,
@@ -11,7 +11,7 @@ import {
   display,
   borderRadius,
   borderColor,
-  themeGet,
+  // themeGet,
   borders
 } from "styled-system";
 import {
@@ -173,6 +173,8 @@ const AlertStyled = styled.div`
 
 export const Alert = props => <AlertStyled {...props} />;
 
+Alert.displayName = "Alert";
+
 Alert.propTypes = {
   modifiers: styleModifierPropTypes(config),
   ...space.propTypes,
@@ -185,8 +187,7 @@ Alert.propTypes = {
   ...display.propTypes,
   ...borderRadius.propTypes,
   ...borderColor.propTypes,
-  ...borders.propTypes,
-  ...width.propTypes
+  ...borders.propTypes
 };
 
 Alert.defaultProps = {

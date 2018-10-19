@@ -1,12 +1,13 @@
 import * as path from "path";
 import externalLinks from "remark-external-links";
 
-const PUBLIC = path.resolve(__dirname, "public");
+const config = path.resolve(__dirname, "./config");
+console.log(config);
 
 const modifyBundlerConfig = config => {
   config.resolve.alias = Object.assign({}, config.resolve.alias, {
-    "@devlaunch": path.resolve(__dirname, "../"),
-    "@docs": path.resolve(__dirname, "./docs"),
+    "@packages": path.resolve(__dirname, "../packages"),
+    "@docs": path.resolve(__dirname, "./"),
     "@public": path.resolve(__dirname, "./public")
   });
 
@@ -18,11 +19,10 @@ export default {
   description: "Modern UI library for React",
   repository: "https://github.com/devlaunch/dev-starter",
   ordering: "ascending",
-  files: "**/*.{md,markdown,mdx}",
   propsParser: true,
   mdPlugins: [externalLinks.default],
   modifyBundlerConfig,
-  wrapper: "config/Wrapper.js",
+  wrapper: "docs/config/Wrapper.js",
   menu: ["Home", "Getting Started", "Foundation", "Components", "Utilities"],
   themeConfig: {
     repository: "https://github.com/devlaunch/dev-starter",

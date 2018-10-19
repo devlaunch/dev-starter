@@ -1,12 +1,12 @@
 # dev-starter
 
-[![JavaScript Style Guide](https://img.shields.io/badge/code%20style-airbnb-blue.svg)](https://github.com/devlaunch/javascript-badges/) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/) [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
+[![JavaScript Style Guide](https://img.shields.io/badge/code%20style-airbnb-blue.svg?style=flat-square)](https://github.com/devlaunch/javascript-badges/) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)](http://commitizen.github.io/cz-cli/) [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg?style=flat-square)](https://lernajs.io/) [![docz](https://img.shields.io/badge/docs%20with-docz-f1618c.svg?style=flat-square)](https://devlaunch.github.io/dev-starter)
 
 _Javascript application development starter with Babel ES6 / ES7 Support, Testing, CI Integration, Code Coverage, JS Airbnb Style, Commit Guidelines, Git Hooks, Security Checks, Automatic Semantic Versioning, Benchmarking, Debugging, Monitoring, Source Map Generation, Auto Reload, Linting and more cool stuff ..._
 
 ## Project Status
 
-[![Build Status](https://travis-ci.org/devlaunch/dev-starter.svg?branch=master)](https://travis-ci.org/devlaunch/dev-starter) [![codecov](https://codecov.io/gh/devlaunch/dev-starter/branch/master/graph/badge.svg)](https://codecov.io/gh/devlaunch/dev-starter) ![dependencies](https://david-dm.org/devlaunch/dev-starter.svg)
+[![Build Status](https://img.shields.io/travis-ci/devlaunch/dev-starter.svg?style=flat-square)](https://travis-ci.org/devlaunch/dev-starter) ![dependencies](https://david-dm.org/devlaunch/dev-starter.svg?style=flat-square)
 
 ## Features
 

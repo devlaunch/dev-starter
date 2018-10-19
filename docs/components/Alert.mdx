@@ -2,21 +2,18 @@
 name: Alert
 menu: Components
 ---
-
-# Alert
-
-Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
-
-// import Readme from '../../../ui-alert/README.md'
-// <Readme />
-
-## Simple
-
-Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the eight required contextual props (e.g., success).
-
-import { PropsTable, Playground } from "docz";
+import { Playground } from "docz";
 import { Alert } from "@devlaunch/ui-alert";
 import { Container } from "@devlaunch/ui-container";
+import Readme from '@packages/ui-alert/README.md';
+
+<Readme />
+
+# Examples
+
+## Basic
+
+Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the eight required contextual props (e.g., success).
 
 <Playground>
   <Container>
@@ -53,6 +50,3 @@ quickly provide matching colored links within any alert
 
 Alerts can also contain additional HTML elements like headings, paragraphs and dividers.
 
-## API
-
-<PropsTable of={Alert} />
