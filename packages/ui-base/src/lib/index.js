@@ -17,6 +17,7 @@ import { Fieldset } from "./components/Fieldset";
 import { Figcaption } from "./components/Figcaption";
 import { Figure } from "./components/Figure";
 import { Footer } from "./components/Footer";
+import { GlobalStyle } from "./components/GlobalStyle";
 import { H1 } from "./components/H1";
 import { H2 } from "./components/H2";
 import { H3 } from "./components/H3";
@@ -73,6 +74,7 @@ export {
   Figcaption,
   Figure,
   Footer,
+  GlobalStyle,
   H1,
   H2,
   H3,

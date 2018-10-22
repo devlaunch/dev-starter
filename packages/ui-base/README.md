@@ -1,26 +1,8 @@
 # @devlaunch/ui-base
 
-[![npm](https://img.shields.io/npm/v/@devlaunch/ui-base.svg?style=flat-square)](https://www.npmjs.com/package/@devlaunch/ui-base)
-[![Travis branch](https://img.shields.io/travis/devlaunch/dev-starter/master.svg?style=flat-square)](https://travis-ci.org/devlaunch/dev-starter)
-[![Codecov branch](https://img.shields.io/codecov/c/github/devlaunch/dev-starter/master.svg?style=flat-square)](https://codecov.io/gh/devlaunch/dev-starter)
-[![storybook](https://img.shields.io/badge/docs%20with-storybook-f1618c.svg?style=flat-square)](https://devlaunch.github.io/dev-starter)
-[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg?style=flat-square)](https://lernajs.io/)
+[![npm](https://img.shields.io/npm/v/@devlaunch/ui-base.svg?style=flat-square)](https://www.npmjs.com/package/@devlaunch/ui-base) [![Travis branch](https://img.shields.io/travis/devlaunch/dev-starter/master.svg?style=flat-square)](https://travis-ci.org/devlaunch/dev-starter) [![docz](https://img.shields.io/badge/docs%20with-docz-f1618c.svg?style=flat-square)](https://devlaunch.github.io/dev-starter) [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg?style=flat-square)](https://lernajs.io/)
 
 > The [bootstrap](https://getbootstrap.com) base components made with [styled-components](https://styled-components.com).
-
-## Table of Contents
-
-* [Documentation](https://devlaunch.github.io/dev-starter)
-* [Why?](#why)
-* [Installation](#installation)
-* [Usage](#usage)
-* [Properties](#properties)
-* [Related](#related)
-* [License](#license)
-
-## Why?
-
-This is a modular approach to use [bootstrap](https://getbootstrap.com) components for quick prototypes, as an entrypoint of your own component library, or if you need just one [bootstrap](https://getbootstrap.com) component for your application. To work with ease with any other libary or framework this component is built with [styled-components](https://styled-components.com).
 
 ## Installation
 
@@ -42,9 +24,9 @@ $ yarn add @devlaunch/ui-base
 
 ```jsx
 /*
-  if you installed `dev-starter` use
+  if you installed `devlaunch` use
 
-    import { ... } from 'dev-starter'
+    import { ... } from '@devlaunch/ui-components'
 
   instead.
 */
@@ -101,12 +83,12 @@ import {
   Table,
   Textarea,
   Th,
-  Ul,
-} from '@devlaunch/ui-base';
+  Ul
+} from "@devlaunch/ui-base";
 
-const MyComponent = (props) => (
-  {/* use the base components */}
-);
+const MyComponent = props => ({
+  /* use the base components */
+});
 ```
 
 ## Properties
@@ -115,9 +97,9 @@ This components do not have any specific props, they are just pre-styled html el
 
 ## Related
 
-* [bootstrap](https://getbootstrap.com)
-* [styled-components](https://styled-components.com)
-* [styled-system](http://jxnblk.com/styled-system/)
+- [bootstrap](https://getbootstrap.com)
+- [styled-components](https://styled-components.com)
+- [styled-system](http://jxnblk.com/styled-system/)
 
 ## License
 
