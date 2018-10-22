@@ -20,7 +20,6 @@ $ yarn add @devlaunch/ui-alert
 
 ## Usage
 
-For detailed information take a look at the [documentation](https://devlaunch.github.io/dev-starter).
 
 ```jsx
 /*

@@ -23,7 +23,19 @@ export default {
   mdPlugins: [externalLinks.default],
   modifyBundlerConfig,
   wrapper: "docs/config/Wrapper.js",
-  menu: ["Home", "Getting Started", "Foundation", "Components", "Utilities"],
+  menu: [
+    "Home",
+    "Getting Started",
+    "Foundation",
+    "General",
+    "Layout",
+    "Navigation",
+    "DataEntry",
+    "DataDisplay",
+    "Feedback",
+    "Others",
+    "Utilities"
+  ],
   themeConfig: {
     repository: "https://github.com/devlaunch/dev-starter",
     colors: {

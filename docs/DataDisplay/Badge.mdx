@@ -1,0 +1,26 @@
+---
+name: Badge
+menu: DataDisplay
+---
+import { Playground } from "docz";
+import { Badge } from "@devlaunch/ui-badge";
+import { Container } from "@devlaunch/ui-container";
+import { H1, H2, H3, H4, H5, H6 } from "@devlaunch/ui-base";
+import Readme from '@packages/ui-badge/README.md';
+
+<Readme />
+
+# Examples
+
+## Basic
+
+<Playground>
+  <Container>
+    <H1>Example heading <Badge modifiers={["secondary"]}>New</Badge></H1>
+    <H2>Example heading <Badge modifiers={["secondary"]}>New</Badge></H2>
+    <H3>Example heading <Badge modifiers={["secondary"]}>New</Badge></H3>
+    <H4>Example heading <Badge modifiers={["secondary"]}>New</Badge></H4>
+    <H5>Example heading <Badge modifiers={["secondary"]}>New</Badge></H5>
+    <H6>Example heading <Badge modifiers={["secondary"]}>New</Badge></H6>
+  </Container>
+</Playground>
