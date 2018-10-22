@@ -1,43 +1,43 @@
 import React from "react";
-import renderer from "react-test-renderer";
+import TestRenderer from "react-test-renderer";
 import "jest-styled-components";
-
-import { Badge } from "../src";
+import { Badge } from "lib";
+const mount = el => TestRenderer.create(el).toJSON();
 
 test("Styles matches warning", () => {
-  const tree = renderer.create(<Badge warning />).toJSON();
-  expect(tree).toMatchSnapshot();
-  expect(tree).toHaveStyleRule("color", "#212529");
-  expect(tree).toHaveStyleRule("background-color", "#ffc107");
+  const component = mount(<Badge modifiers={["warning"]} />);
+  expect(component).toMatchSnapshot();
+  expect(component).toHaveStyleRule("color", "#212529");
+  expect(component).toHaveStyleRule("background-color", "#ffc107");
 });
 
 test("Styles matches warning action", () => {
-  const tree = renderer.create(<Badge warning action />).toJSON();
-  expect(tree).toMatchSnapshot();
-  expect(tree).toHaveStyleRule("color", "#212529");
-  expect(tree).toHaveStyleRule("background-color", "#ffc107");
-  expect(tree).toHaveStyleRule("text-decoration", "none", {
+  const component = mount(<Badge modifiers={["warning"]} as="a" href="#" />);
+  expect(component).toMatchSnapshot();
+  expect(component).toHaveStyleRule("color", "#212529");
+  expect(component).toHaveStyleRule("background-color", "#ffc107");
+  expect(component).toHaveStyleRule("text-decoration", "none", {
     modifier: "& > a"
   });
-  expect(tree).toHaveStyleRule("color", "#212529", {
+  expect(component).toHaveStyleRule("color", "#212529", {
     modifier: "& > a"
   });
-  expect(tree).toHaveStyleRule("text-decoration", "none", {
+  expect(component).toHaveStyleRule("text-decoration", "none", {
     modifier: "& > a:hover"
   });
-  expect(tree).toHaveStyleRule("color", "#212529", {
+  expect(component).toHaveStyleRule("color", "#212529", {
     modifier: "& > a:hover"
   });
-  expect(tree).toHaveStyleRule("text-decoration", "none", {
+  expect(component).toHaveStyleRule("text-decoration", "none", {
     modifier: "& > a:focus"
   });
-  expect(tree).toHaveStyleRule("color", "#212529", {
+  expect(component).toHaveStyleRule("color", "#212529", {
     modifier: "& > a:focus"
   });
-  expect(tree).toHaveStyleRule("background-color", "#d39e00", {
+  expect(component).toHaveStyleRule("background-color", "#d39e00", {
     modifier: "&:focus"
   });
-  expect(tree).toHaveStyleRule("background-color", "#d39e00", {
+  expect(component).toHaveStyleRule("background-color", "#d39e00", {
     modifier: "&:focus"
   });
 });

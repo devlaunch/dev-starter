@@ -1,4 +1,5 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
+import PropTypes from "prop-types";
 import {
   space,
   color,
@@ -11,262 +12,91 @@ import {
   borderRadius,
   borderColor,
   borders
+  // themeGet,
 } from "styled-system";
+import {
+  applyStyleModifiers,
+  styleModifierPropTypes
+} from "styled-components-modifiers";
 
-const badgePill = props =>
-  props.pill &&
-  css`
+const actionVariant = (color, bg, focusbg) => `
+  color: ${color};
+  background-color: ${bg};
+  text-decoration: none;
+  & > a {
+    text-decoration: none;
+    color: ${color};
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: ${color};
+    }
+  }
+  &:hover,
+  &:focus {
+    background-color: ${focusbg};
+  }
+`;
+
+const variant = (color, bg) => `
+  color: ${color};
+  background-color: ${bg};
+`;
+
+const config = {
+  pill: () => `
     padding-right: 0.6em;
     padding-left: 0.6em;
     border-radius: 10rem;
-  `;
-
-const badgePrimary = props => {
-  if (props.primary) {
-    if (props.action) {
-      return css`
-        color: #fff;
-        background-color: #007bff;
-        & > a {
-          text-decoration: none;
-          color: #fff;
-          &:hover,
-          &:focus {
-            text-decoration: none;
-            color: #fff;
-          }
-        }
-        &:hover,
-        &:focus {
-          background-color: #0062cc;
-        }
-      `;
+  `,
+  primary: props => {
+    if (props.href) {
+      return actionVariant("#fff", "#007bff", "#0062cc");
     }
-
-    return css`
-      color: #fff;
-      background-color: #007bff;
-    `;
-  }
-
-  return "";
-};
-
-const badgeSecondary = props => {
-  if (props.secondary) {
-    if (props.action) {
-      return css`
-        color: #fff;
-        background-color: #6c757d;
-        & > a {
-          text-decoration: none;
-          color: #fff;
-          &:hover,
-          &:focus {
-            text-decoration: none;
-            color: #fff;
-          }
-        }
-        &:hover,
-        &:focus {
-          background-color: #545b62;
-        }
-      `;
+    return variant("#fff", "#007bff");
+  },
+  secondary: props => {
+    if (props.href) {
+      return actionVariant("#fff", "#6c757d", "#545b62");
     }
-
-    return css`
-      color: #fff;
-      background-color: #6c757d;
-    `;
-  }
-
-  return "";
-};
-
-const badgeSuccess = props => {
-  if (props.success) {
-    if (props.action) {
-      return css`
-        color: #fff;
-        background-color: #28a745;
-        & > a {
-          text-decoration: none;
-          color: #fff;
-          &:hover,
-          &:focus {
-            text-decoration: none;
-            color: #fff;
-          }
-        }
-        &:hover,
-        &:focus {
-          background-color: #1e7e34;
-        }
-      `;
+    return variant("#fff", "#6c757d");
+  },
+  success: props => {
+    if (props.href) {
+      return actionVariant("#fff", "#28a745", "#1e7e34");
     }
-
-    return css`
-      color: #fff;
-      background-color: #28a745;
-    `;
-  }
-
-  return "";
-};
-
-const badgeInfo = props => {
-  if (props.info) {
-    if (props.action) {
-      return css`
-        color: #fff;
-        background-color: #17a2b8;
-        & > a {
-          text-decoration: none;
-          color: #fff;
-          &:hover,
-          &:focus {
-            text-decoration: none;
-            color: #fff;
-          }
-        }
-        &:hover,
-        &:focus {
-          background-color: #117a8b;
-        }
-      `;
+    return variant("#fff", "#28a745");
+  },
+  warning: props => {
+    if (props.href) {
+      return actionVariant("#212529", "#ffc107", "#d39e00");
     }
-
-    return css`
-      color: #fff;
-      background-color: #17a2b8;
-    `;
-  }
-
-  return "";
-};
-
-const badgeWarning = props => {
-  if (props.warning) {
-    if (props.action) {
-      return css`
-        color: #212529;
-        background-color: #ffc107;
-        & > a {
-          text-decoration: none;
-          color: #212529;
-          &:hover,
-          &:focus {
-            text-decoration: none;
-            color: #212529;
-          }
-        }
-        &:hover,
-        &:focus {
-          background-color: #d39e00;
-        }
-      `;
+    return variant("#212529", "#ffc107");
+  },
+  danger: props => {
+    if (props.href) {
+      return actionVariant("#fff", "#dc3545", "#bd2130");
     }
-
-    return css`
-      color: #212529;
-      background-color: #ffc107;
-    `;
-  }
-
-  return "";
-};
-
-const badgeDanger = props => {
-  if (props.danger) {
-    if (props.action) {
-      return css`
-        color: #fff;
-        background-color: #dc3545;
-        & > a {
-          text-decoration: none;
-          color: #fff;
-          &:hover,
-          &:focus {
-            text-decoration: none;
-            color: #fff;
-          }
-        }
-        &:hover,
-        &:focus {
-          background-color: #bd2130;
-        }
-      `;
+    return variant("#fff", "#dc3545");
+  },
+  info: props => {
+    if (props.href) {
+      return actionVariant("#fff", "#17a2b8", "#117a8b");
     }
-
-    return css`
-      color: #fff;
-      background-color: #dc3545;
-    `;
-  }
-
-  return "";
-};
-
-const badgeLight = props => {
-  if (props.light) {
-    if (props.action) {
-      return css`
-        color: #212529;
-        background-color: #f8f9fa;
-        & > a {
-          text-decoration: none;
-          color: #212529;
-          &:hover,
-          &:focus {
-            text-decoration: none;
-            color: #212529;
-          }
-        }
-        &:hover,
-        &:focus {
-          background-color: #dae0e5;
-        }
-      `;
+    return variant("#fff", "#17a2b8");
+  },
+  light: props => {
+    if (props.href) {
+      return actionVariant("#212529", "#f8f9fa", "#dae0e5");
     }
-
-    return css`
-      color: #212529;
-      background-color: #f8f9fa;
-    `;
-  }
-
-  return "";
-};
-
-const badgeDark = props => {
-  if (props.dark) {
-    if (props.action) {
-      return css`
-        color: #fff;
-        background-color: #343a40;
-        & > a {
-          text-decoration: none;
-          color: #fff;
-          &:hover,
-          &:focus {
-            text-decoration: none;
-            color: #fff;
-          }
-        }
-        &:hover,
-        &:focus {
-          background-color: #1d2124;
-        }
-      `;
+    return variant("#212529", "#f8f9fa");
+  },
+  dark: props => {
+    if (props.href) {
+      return actionVariant("#fff", "#343a40", "#1d2124");
     }
-
-    return css`
-      color: #fff;
-      background-color: #343a40;
-    `;
+    return variant("#fff", "#343a40");
   }
-
-  return "";
 };
 
 export const Badge = styled.span`
@@ -279,18 +109,12 @@ export const Badge = styled.span`
   white-space: nowrap;
   vertical-align: baseline;
   border-radius: 0.25rem;
+
   &:empty {
     display: none;
   }
-  ${badgePill};
-  ${badgePrimary};
-  ${badgeSecondary};
-  ${badgeSuccess};
-  ${badgeInfo};
-  ${badgeWarning};
-  ${badgeDanger};
-  ${badgeLight};
-  ${badgeDark};
+
+  ${applyStyleModifiers(config)};
   ${space};
   ${width};
   ${color};
@@ -303,3 +127,25 @@ export const Badge = styled.span`
   ${borderColor};
   ${borders};
 `;
+
+Badge.displayName = "Badge";
+
+Badge.propTypes = {
+  modifiers: styleModifierPropTypes(config),
+  href: PropTypes.string,
+  ...space.propTypes,
+  ...width.propTypes,
+  ...color.propTypes,
+  ...fontSize.propTypes,
+  ...fontWeight.propTypes,
+  ...textAlign.propTypes,
+  ...lineHeight.propTypes,
+  ...display.propTypes,
+  ...borderRadius.propTypes,
+  ...borderColor.propTypes,
+  ...borders.propTypes
+};
+
+Badge.defaultProps = {
+  modifiers: ["light"]
+};

@@ -13,6 +13,7 @@
     "start": "react-scripts start",
     "build-examples": "react-scripts build",
     "test": "react-scripts test",
+    "snapshot": "CI=true react-scripts test --updateSnapshot",
     "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
     "prepublish": "yarn build"
   },
@@ -31,6 +32,20 @@
       "Firefox ESR",
       "not ie < 11"
     ]
+  },
+  "jest": {
+    "coverageReporters": [
+      "html",
+      "lcov"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    }
   },
   "author": "Devlaunch <devlaunchorg@gmail.com>",
   "license": "MIT",
@@ -55,20 +70,24 @@
   "homepage": "https://github.com/devlaunch/dev-starter",
   "devDependencies": {
     "@babel/cli": "^7.1.2",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
+    "jest-enzyme": "^7.0.0",
     "jest-styled-components": "^6.2.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-scripts": "2.0.4",
     "react-test-renderer": "^16.5.2",
-    "styled-components": "^3.4.10",
+    "styled-components": "^4.0.2",
     "styled-system": "^3.1.6"
   },
   "peerDependencies": {
     "react": "^16.5.2",
-    "styled-components": "^3.4.10",
+    "styled-components": "^4.0.2",
     "styled-system": "^3.1.10"
   },
   "dependencies": {
-    "@devlaunch/ui-base": "^1.0.0"
+    "@devlaunch/ui-base": "^1.0.0",
+    "styled-components-modifiers": "^1.0.3"
   }
 }

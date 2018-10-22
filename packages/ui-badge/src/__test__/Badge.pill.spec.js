@@ -1,13 +1,13 @@
 import React from "react";
-import renderer from "react-test-renderer";
+import TestRenderer from "react-test-renderer";
 import "jest-styled-components";
-
-import { Badge } from "../src";
+import { Badge } from "lib";
+const mount = el => TestRenderer.create(el).toJSON();
 
 test("Styles matches pill", () => {
-  const tree = renderer.create(<Badge pill />).toJSON();
-  expect(tree).toMatchSnapshot();
-  expect(tree).toHaveStyleRule("padding-right", "0.6em");
-  expect(tree).toHaveStyleRule("padding-left", "0.6em");
-  expect(tree).toHaveStyleRule("border-radius", "10rem");
+  const component = mount(<Badge modifiers={["pill"]} />);
+  expect(component).toMatchSnapshot();
+  expect(component).toHaveStyleRule("padding-right", "0.6em");
+  expect(component).toHaveStyleRule("padding-left", "0.6em");
+  expect(component).toHaveStyleRule("border-radius", "10rem");
 });
