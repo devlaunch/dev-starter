@@ -1,0 +1,354 @@
+---
+name: Typography
+menu: Foundation
+---
+import { Playground } from "docz";
+import { H1, H2, H3, H4, H5, H6 } from "@devlaunch/ui-base";
+import { Container } from "@devlaunch/ui-container";
+
+
+# Typography
+Documentation and examples for Bootstrap typography, including global settings, headings, body text, lists, and more.
+
+## Headings
+
+All HTML headings, `<h1>` through `<h6>`, are available.
+
+<Playground>
+  <Container>
+    <table>
+      <thead>
+        <tr>
+          <th>Heading</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            `<h1></h1>`
+          </td>
+          <td><H1>h1. Bootstrap heading</H1></td>
+        </tr>
+        <tr>
+          <td>
+            `<h2></h2>`
+          </td>
+          <td><H2>h2. Bootstrap heading</H2></td>
+        </tr>
+        <tr>
+          <td>
+            `<h3></h3>`
+          </td>
+          <td><H3>h3. Bootstrap heading</H3></td>
+        </tr>
+        <tr>
+          <td>
+            `<h4></h4>`
+          </td>
+          <td><H4>h4. Bootstrap heading</H4></td>
+        </tr>
+        <tr>
+          <td>
+            `<h5></h5>`
+          </td>
+          <td><H5>h5. Bootstrap heading</H5></td>
+        </tr>
+        <tr>
+          <td>
+            `<h6></h6>`
+          </td>
+          <td><H6>h6. Bootstrap heading</H6></td>
+        </tr>
+      </tbody>
+    </table>
+  </Container>
+</Playground>
+
+## Display headings
+
+Traditional heading elements are designed to work best in the meat of your page content. When you need a heading to stand out, consider using a **display heading**—a larger, slightly more opinionated heading style.
+
+<Playground>
+  <Container>
+    <table class="table">
+      <tbody>
+        <tr>
+          <td><span class="display-1">Display 1</span></td>
+        </tr>
+        <tr>
+        <td><span class="display-2">Display 2</span></td>
+        </tr>
+        <tr>
+        <td><span class="display-3">Display 3</span></td>
+        </tr>
+        <tr>
+        <td><span class="display-4">Display 4</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </Container>
+</Playground>
+
+## Lead
+
+Make a paragraph stand out by adding `.lead`.
+
+<Playground>
+  <Container>
+    <P class="lead">
+      Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.
+    </P>
+  </Container>
+</Playground>
+
+## Inline text elements
+
+Styling for common inline HTML5 elements.
+
+<Playground>
+  <Container>
+    <P>You can use the mark tag to <mark>highlight</mark> text.</P>
+    <P><del>This line of text is meant to be treated as deleted text.</del></P>
+    <P><s>This line of text is meant to be treated as no longer accurate.</s></P>
+    <P><ins>This line of text is meant to be treated as an addition to the document.</ins></P>
+    <P><u>This line of text will render as underlined</u></P>
+    <P><small>This line of text is meant to be treated as fine print.</small></P>
+    <P><strong>This line rendered as bold text.</strong></P>
+    <P><em>This line rendered as italicized text.</em></P>
+  </Container>
+</Playground>
+
+While not shown above, feel free to use `<b>` and `<i>` in HTML5. `<b>` is meant to highlight words or phrases without conveying additional importance while `<i>` is mostly for voice, technical terms, etc.
+
+## Abbreviations
+
+Stylized implementation of HTML's `<abbr>` element for abbreviations and acronyms to show the expanded version on hover. Abbreviations have a default underline and gain a help cursor to provide additional context on hover and to users of assistive technologies.
+
+Add `.initialism` to an abbreviation for a slightly smaller font-size.
+
+<Playground>
+  <Container>
+    <P><Abbr title="attribute">attr</Abbr></P>
+    <P><Abbr title="HyperText Markup Language" class="initialism">HTML</Abbr></P>
+  </Container>
+</Playground>
+
+## Blockquotes
+
+For quoting blocks of content from another source within your document. Wrap `<blockquote class="blockquote">` around any <abbr title="HyperText Markup Language">HTML</abbr> as the quote.
+
+<Playground>
+  <Container>
+    <Blockquote>
+      <P class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</P>
+    </Blockquote>
+  </Container>
+</Playground>
+
+### Naming a source
+
+Add a `<footer class="blockquote-footer">` for identifying the source. Wrap the name of the source work in `<cite>`.
+
+<Playground>
+  <Container>
+    <Blockquote>
+      <P class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</P>
+      <Footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></Footer>
+    </Blockquote>
+  </Container>
+</Playground>
+
+### Alignment
+
+Use text utilities as needed to change the alignment of your blockquote.
+
+{% capture example %}
+<blockquote class="blockquote text-center">
+  <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+  <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+</blockquote>
+{% endcapture %}
+{% include example.html content=example %}
+
+{% capture example %}
+<blockquote class="blockquote text-right">
+  <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+  <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+</blockquote>
+{% endcapture %}
+{% include example.html content=example %}
+
+## Lists
+
+### Unstyled
+
+Remove the default `list-style` and left margin on list items (immediate children only). **This only applies to immediate children list items**, meaning you will need to add the class for any nested lists as well.
+
+{% capture example %}
+<ul class="list-unstyled">
+  <li>Lorem ipsum dolor sit amet</li>
+  <li>Consectetur adipiscing elit</li>
+  <li>Integer molestie lorem at massa</li>
+  <li>Facilisis in pretium nisl aliquet</li>
+  <li>Nulla volutpat aliquam velit
+    <ul>
+      <li>Phasellus iaculis neque</li>
+      <li>Purus sodales ultricies</li>
+      <li>Vestibulum laoreet porttitor sem</li>
+      <li>Ac tristique libero volutpat at</li>
+    </ul>
+  </li>
+  <li>Faucibus porta lacus fringilla vel</li>
+  <li>Aenean sit amet erat nunc</li>
+  <li>Eget porttitor lorem</li>
+</ul>
+{% endcapture %}
+{% include example.html content=example %}
+
+### Inline
+
+Remove a list's bullets and apply some light `margin` with a combination of two classes, `.list-inline` and `.list-inline-item`.
+
+{% capture example %}
+<ul class="list-inline">
+  <li class="list-inline-item">Lorem ipsum</li>
+  <li class="list-inline-item">Phasellus iaculis</li>
+  <li class="list-inline-item">Nulla volutpat</li>
+</ul>
+{% endcapture %}
+{% include example.html content=example %}
+
+### Description list alignment
+
+Align terms and descriptions horizontally by using our grid system's predefined classes (or semantic mixins). For longer terms, you can optionally add a `.text-truncate` class to truncate the text with an ellipsis.
+
+{% capture example %}
+<dl class="row">
+  <dt class="col-sm-3">Description lists</dt>
+  <dd class="col-sm-9">A description list is perfect for defining terms.</dd>
+
+  <dt class="col-sm-3">Euismod</dt>
+  <dd class="col-sm-9">
+    <p>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</p>
+    <p>Donec id elit non mi porta gravida at eget metus.</p>
+  </dd>
+
+  <dt class="col-sm-3">Malesuada porta</dt>
+  <dd class="col-sm-9">Etiam porta sem malesuada magna mollis euismod.</dd>
+
+  <dt class="col-sm-3 text-truncate">Truncated term is truncated</dt>
+  <dd class="col-sm-9">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
+
+  <dt class="col-sm-3">Nesting</dt>
+  <dd class="col-sm-9">
+    <dl class="row">
+      <dt class="col-sm-4">Nested definition list</dt>
+      <dd class="col-sm-8">Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc.</dd>
+    </dl>
+  </dd>
+</dl>
+{% endcapture %}
+{% include example.html content=example %}
+
+## Responsive typography
+
+*Responsive typography* refers to scaling text and components by simply adjusting the root element's `font-size` within a series of media queries. Bootstrap doesn't do this for you, but it's fairly easy to add if you need it.
+
+Here's an example of it in practice. Choose whatever `font-size`s and media queries you wish.
+
+{% highlight scss %}
+html {
+  font-size: 1rem;
+}
+
+@include media-breakpoint-up(sm) {
+  html {
+    font-size: 1.2rem;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 1.4rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  html {
+    font-size: 1.6rem;
+  }
+}
+{% endhighlight %}
+
+## Inline code
+
+Wrap inline snippets of code with `<code>`. Be sure to escape HTML angle brackets.
+
+{% capture example %}
+For example, <code>&lt;section&gt;</code> should be wrapped as inline.
+{% endcapture %}
+{% include example.html content=example %}
+
+## Code blocks
+
+Use `<pre>`s for multiple lines of code. Once again, be sure to escape any angle brackets in the code for proper rendering. You may optionally add the `.pre-scrollable` class, which will set a max-height of 340px and provide a y-axis scrollbar.
+
+{% capture example %}
+<pre><code>&lt;p&gt;Sample text here...&lt;/p&gt;
+&lt;p&gt;And another line of sample text here...&lt;/p&gt;
+</code></pre>
+{% endcapture %}
+{% include example.html content=example %}
+
+## Variables
+
+For indicating variables use the `<var>` tag.
+
+{% capture example %}
+<var>y</var> = <var>m</var><var>x</var> + <var>b</var>
+{% endcapture %}
+{% include example.html content=example %}
+
+## User input
+
+Use the `<kbd>` to indicate input that is typically entered via keyboard.
+
+{% capture example %}
+To switch directories, type <kbd>cd</kbd> followed by the name of the directory.<br>
+To edit settings, press <kbd><kbd>ctrl</kbd> + <kbd>,</kbd></kbd>
+{% endcapture %}
+{% include example.html content=example %}
+
+## Sample output
+
+For indicating sample output from a program use the `<samp>` tag.
+
+{% capture example %}
+<samp>This text is meant to be treated as sample output from a computer program.</samp>
+{% endcapture %}
+{% include example.html content=example %}
+
+## Figures
+
+Anytime you need to display a piece of content—like an image with an optional caption, consider using a `<figure>`.
+
+Use the included `.figure` , `.figure-img` and `.figure-caption` classes to provide some baseline styles for the HTML5 `<figure>` and `<figcaption>` elements. Images in figures have no explicit size, so be sure to add the `.img-fluid` class to your `<img>` to make it responsive.
+
+{% capture example %}
+<figure class="figure">
+  <img data-src="holder.js/400x300" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+  <figcaption class="figure-caption">A caption for the above image.</figcaption>
+</figure>
+{% endcapture %}
+{% include example.html content=example %}
+
+Aligning the figure's caption is easy with our [text utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/text/#text-alignment).
+
+{% capture example %}
+<figure class="figure">
+  <img data-src="holder.js/400x300" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+  <figcaption class="figure-caption text-right">A caption for the above image.</figcaption>
+</figure>
+{% endcapture %}
+{% include example.html content=example %}
