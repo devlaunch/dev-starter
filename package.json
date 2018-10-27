@@ -14,7 +14,7 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "[[ -n $HUSKY_BYPASS ]] || commitlint -E HUSKY_GIT_PARAMS"
+      "commit-msg": "[[ -n $HUSKY_BYPASS ]] || commitlint -e"
     }
   },
   "scripts": {
@@ -34,7 +34,7 @@
     "lint:markdown-links": "markdown-link-check readme.md",
     "precz": "yarn run format",
     "cz": "git add --all && git status && git-cz",
-    "commitmsg": "commitlint -e",
+    "commit": "git status && git-cz",
     "preczpush": "yarn lint && yarn lint:travis && yarn lint:markdown && yarn lint:markdown-links && yarn cz",
     "czpush": "git push --follow-tags origin master",
     "release": "cross-env HUSKY_BYPASS=true lerna publish from-git --yes --conventional-commits --changelog-preset=angular ",

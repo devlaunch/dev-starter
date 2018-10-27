@@ -43,7 +43,8 @@ const types = [
 const scopes = JSON.parse(
   shelljs.exec("lerna ls --all --json", { silent: true }).stdout
 ).map(function(scope) {
-  return { name: scope.name };
+  var scopeName = scope.name.replace("@devlaunch/", "");
+  return { name: scopeName };
 });
 
 module.exports = {
