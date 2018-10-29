@@ -1,45 +1,23 @@
 import React from "react";
-import { GlobalStyle } from "lib";
-import { HtmlHeadings } from "./examples/HtmlHeadings.js";
-import { HtmlArticle } from "./examples/HtmlArticle.js";
-import { HtmlBlockquote } from "./examples/HtmlBlockquote.js";
-import { HtmlTables } from "./examples/HtmlTables.js";
-import { HtmlDefinitionList } from "./examples/HtmlDefinitionList.js";
-import { HtmlLists } from "./examples/HtmlLists.js";
-import { HtmlAddress } from "./examples/HtmlAddress.js";
-import { HtmlPre } from "./examples/HtmlPre.js";
-import { HtmlFigure } from "./examples/HtmlFigure.js";
-import { HtmlForm } from "./examples/HtmlForm.js";
-import { Container } from "@devlaunch/ui-container";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { HtmlExamples } from "./sections/HtmlExamples";
+import { MainMenu } from "./sections/MainMenu";
+import { LinkExamples } from "./sections/LinkExamples";
 
 const App = () => (
-  <div>
-    {" "}
-    <GlobalStyle />
-    <Container>
-      <main>
-        <HtmlHeadings />
-        <hr />
-        <HtmlArticle />
-        <hr />
-        <HtmlBlockquote />
-        <hr />
-        <HtmlTables />
-        <hr />
-        <HtmlDefinitionList />
-        <hr />
-        <HtmlLists />
-        <hr />
-        <HtmlAddress />
-        <hr />
-        <HtmlPre />
-        <hr />
-        <HtmlFigure />
-        <hr />
-        <HtmlForm />
-      </main>
-    </Container>
-  </div>
+  <Router>
+    <div>
+      <Route exact path="/" component={MainMenu} />
+      <Route exact path="/html" component={HtmlExamples} />
+      <Route exact path="/link" component={LinkExamples} />
+      <Route exact path="/text" component={MainMenu} />
+      <Route exact path="/article" component={MainMenu} />
+      <Route exact path="/form" component={MainMenu} />
+      <Route exact path="/image" component={MainMenu} />
+      <Route exact path="/list" component={MainMenu} />
+      <Route exact path="/table" component={MainMenu} />
+    </div>
+  </Router>
 );
 
 export default App;

@@ -21,10 +21,14 @@ export const theme = {
   dt_font_weight: "700",
 
   // link
-  link_color: "#007bff",
-  link_decoration: "none",
-  link_hover_color: "#0056b3",
-  link_hover_decoration: "underline",
+  link: {
+    color: "#007bff",
+    decoration: "none",
+    hover: {
+      color: "#0056b3",
+      decoration: "underline"
+    }
+  },
 
   // label
   label_margin_bottom: "0.5rem",

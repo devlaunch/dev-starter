@@ -138,15 +138,15 @@ export const GlobalStyle = createGlobalStyle`
   sup { top: -.5em; }
 
   a {
-    color: ${themeGet("link_color", theme.link_color)};
-    text-decoration: ${themeGet("link_decoration", theme.link_decoration)};
+    color: ${themeGet("link.color", theme.link.color)};
+    text-decoration: ${themeGet("link.decoration", theme.link.decoration)};
     background-color: transparent;
 
     &:hover {
-      color:${themeGet("link_hover_color", theme.link_hover_color)};
+      color:${themeGet("link.hover.color", theme.link.hover.color)};
       text-decoration: ${themeGet(
-        "link_hover_decoration",
-        theme.link_hover_decoration
+        "link.hover.decoration",
+        theme.link.hover.decoration
       )};
     }
   }
