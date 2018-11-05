@@ -1,11 +1,29 @@
 import styled from "styled-components";
+import { Text } from "lib/components/Text/Text";
+import { themeGet } from "styled-system";
+import { theme } from "lib/theme/base-theme";
 
-export const H2 = styled.h2`
+export const H2 = styled(Text)`
   margin-top: 0;
-  margin-bottom: 0.5rem;
-  font-family: inherit;
-  font-weight: 500;
-  line-height: 1.2;
-  color: inherit;
-  font-size: 2rem;
+  margin-bottom: ${themeGet(
+    "text.headings.marginBottom",
+    theme.text.headings.marginBottom
+  )};
+  font-family: ${themeGet("text.headings.font", theme.text.headings.font)};
+  font-weight: ${themeGet(
+    "text.headings.fontWeight",
+    theme.text.headings.fontWeight
+  )};
+  line-height: ${themeGet(
+    "text.headings.lineHeight",
+    theme.text.headings.lineHeight
+  )};
+  color: ${themeGet("text.headings.color", theme.text.headings.color)};
+  font-size: ${themeGet("text.h2.fontSize", theme.text.h2.fontSize)};
 `;
+
+H2.displayName = "H2";
+
+H2.defaultProps = {
+  as: "h2"
+};

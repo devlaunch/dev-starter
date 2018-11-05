@@ -1,16 +1,28 @@
 import styled from "styled-components";
+import { Text } from "lib/components/Text/Text";
+import { themeGet } from "styled-system";
+import { theme } from "lib/theme/base-theme";
 
-export const Kbd = styled.kbd`
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
-  padding: 0.2rem 0.4rem;
-  font-size: 87.5%;
-  color: #fff;
-  background-color: #212529;
-  border-radius: 0.2rem;
+export const Kbd = styled(Text)`
+  font-family: ${themeGet("fonts.monospace", theme.fonts.monospace)};
+  padding: ${themeGet("text.kdb.py", theme.text.kdb.py)}
+    ${themeGet("text.kdb.px", theme.text.kdb.px)};
+  font-size: ${themeGet("text.code.fontSize", theme.text.code.fontSize)};
+  color: ${themeGet("text.kdb.color", theme.text.kdb.color)};
+  background-color: ${themeGet("text.kdb.bg", theme.text.kdb.bg)};
+  border-radius: ${themeGet("borderRadius.sm", theme.borderRadius.sm)};
   & > kbd {
     padding: 0;
     font-size: 100%;
-    font-weight: 700;
+    font-weight: ${themeGet(
+      "text.kdb.nestedFontWeight",
+      theme.text.kdb.nestedFontWeight
+    )};
   }
 `;
+
+Kbd.displayName = "Kbd";
+
+Kbd.defaultProps = {
+  as: "kbd"
+};

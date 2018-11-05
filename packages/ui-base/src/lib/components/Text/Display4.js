@@ -3,7 +3,7 @@ import { Text } from "lib/components/Text/Text";
 import { themeGet } from "styled-system";
 import { theme } from "lib/theme/base-theme";
 
-export const H1 = styled(Text)`
+export const Display4 = styled(Text)`
   margin-top: 0;
   margin-bottom: ${themeGet(
     "text.headings.marginBottom",
@@ -19,11 +19,14 @@ export const H1 = styled(Text)`
     theme.text.headings.lineHeight
   )};
   color: ${themeGet("text.headings.color", theme.text.headings.color)};
-  font-size: ${themeGet("text.h1.fontSize", theme.text.h1.fontSize)};
+  font-size: ${themeGet(
+    "text.display4.fontSize",
+    theme.text.display4.fontSize
+  )};
 `;
 
-H1.displayName = "H1";
+Display4.displayName = "Display4";
 
-H1.defaultProps = {
-  as: "h1"
+Display4.defaultProps = {
+  as: "display4"
 };

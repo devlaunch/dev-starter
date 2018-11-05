@@ -1,11 +1,29 @@
 import styled from "styled-components";
+import { Text } from "lib/components/Text/Text";
+import { themeGet } from "styled-system";
+import { theme } from "lib/theme/base-theme";
 
-export const H5 = styled.h5`
+export const H5 = styled(Text)`
   margin-top: 0;
-  margin-bottom: 0.5rem;
-  font-family: inherit;
-  font-weight: 500;
-  line-height: 1.2;
-  color: inherit;
-  font-size: 1.25rem;
+  margin-bottom: ${themeGet(
+    "text.headings.marginBottom",
+    theme.text.headings.marginBottom
+  )};
+  font-family: ${themeGet("text.headings.font", theme.text.headings.font)};
+  font-weight: ${themeGet(
+    "text.headings.fontWeight",
+    theme.text.headings.fontWeight
+  )};
+  line-height: ${themeGet(
+    "text.headings.lineHeight",
+    theme.text.headings.lineHeight
+  )};
+  color: ${themeGet("text.headings.color", theme.text.headings.color)};
+  font-size: ${themeGet("text.h5.fontSize", theme.text.h5.fontSize)};
 `;
+
+H5.displayName = "H5";
+
+H5.defaultProps = {
+  as: "h5"
+};

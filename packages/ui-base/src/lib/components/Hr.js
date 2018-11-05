@@ -1,11 +1,14 @@
 import styled from "styled-components";
+import { themeGet } from "styled-system";
+import { theme } from "lib/theme/base-theme";
 
 export const Hr = styled.hr`
   box-sizing: content-box;
   height: 0;
   overflow: visible;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: ${themeGet("hr.marginY", theme.hr.marginY)};
+  margin-bottom: ${themeGet("hr.marginY", theme.hr.marginY)};
   border: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: ${themeGet("hr.border.width", theme.hr.border.width)}
+    ${themeGet("hr.border.color", theme.hr.border.color)};
 `;

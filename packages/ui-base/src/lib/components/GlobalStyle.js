@@ -9,7 +9,7 @@
 
 import { createGlobalStyle } from "styled-components";
 import { themeGet } from "styled-system";
-import { theme } from "../theme/base-theme";
+import { theme } from "lib/theme/base-theme";
 
 export const GlobalStyle = createGlobalStyle`
   *,
@@ -37,13 +37,13 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     margin: 0;
-    font-family: ${themeGet("font_family_base", theme.font_family_base)};
-    font-size: ${themeGet("font_size_base", theme.font_size_base)};
-    font-weight: ${themeGet("font_weight_base", theme.font_weight_base)};
-    line-height: ${themeGet("line_height_base", theme.line_height_base)};
-    color: ${themeGet("body_color", theme.body_color)};
+    font-family: ${themeGet("fonts.base", theme.fonts.base)};
+    font-size: ${themeGet("fontSize", theme.fontSize)};
+    font-weight: ${themeGet("fontWeight", theme.fontWeight)};
+    line-height: ${themeGet("lineHeight", theme.lineHeight)};
+    color: ${themeGet("body.color", theme.body.color)};
     text-align: left;
-    background-color: ${themeGet("body_bg", theme.body_bg)};
+    background-color: ${themeGet("body.bg", theme.body.bg)};
   }
 
   [tabindex="-1"]:focus {
@@ -59,16 +59,16 @@ export const GlobalStyle = createGlobalStyle`
   h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
     margin-bottom: ${themeGet(
-      "headings_margin_bottom",
-      theme.headings_margin_bottom
+      "text.headings.marginBottom",
+      theme.text.headings.marginBottom
     )};
   }
 
   p {
     margin-top: 0;
     margin-bottom: ${themeGet(
-      "paragraph_margin_bottom",
-      theme.paragraph_margin_bottom
+      "text.paragraph.marginBottom",
+      theme.text.paragraph.marginBottom
     )};
   }
 
@@ -170,10 +170,7 @@ export const GlobalStyle = createGlobalStyle`
   code,
   kbd,
   samp {
-    font-family: ${themeGet(
-      "font_family_monospace",
-      theme.font_family_monospace
-    )};
+    font-family: ${themeGet("fonts.monospace", theme.fonts.monospace)};
     font-size: 1em;
   }
 
