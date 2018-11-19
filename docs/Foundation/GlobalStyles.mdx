@@ -52,11 +52,11 @@ $font-family-sans-serif:
 
 This `font-family` is applied to the `<body>` and automatically inherited globally throughout. To switch the global `font-family`, update `$font-family-base` in theme object.
 
-## Examples
+## Headings and paragraphs
+All heading elements—e.g., `<h1>` — `<h6>` and `<p>` are reset to have their margin-top removed. Headings have margin-bottom: .5rem added and paragraphs margin-bottom: 1rem for easy spacing.
 
 <Playground>
   <GlobalStyle/>
-  <main>
     <section>
       <hgroup>
         <h1>h1 HTML5 Kitchen Sink</h1>
@@ -67,7 +67,13 @@ This `font-family` is applied to the `<body>` and automatically inherited global
         <h6>h6 Pack my box with five dozen liquor jugs.</h6>
       </hgroup>
     </section>
-    <hr />
+</Playground>
+
+## Inline elements
+The `<abbr>` element receives basic styling to make it stand out amongst paragraph text.
+
+<Playground>
+  <GlobalStyle/>
     <section>
       <header>
         <nav>
@@ -86,7 +92,13 @@ This `font-family` is applied to the `<body>` and automatically inherited global
       <aside>This is an aside.</aside>
       <footer>This is footer for this section</footer>
     </section>
-    <hr />
+</Playground>
+
+## Blockquote
+The default `margin` on blockquotes is `1em 40px`, so we reset that to `0 0 1rem` for something more consistent with other elements.
+
+<Playground>
+  <GlobalStyle/>
     <section>
       <blockquote>
         <p>Blockquote: I quickly explained that many big jobs involve few hazards</p>
@@ -98,40 +110,102 @@ This `font-family` is applied to the `<body>` and automatically inherited global
         </p>
       </blockquote>
     </section>
-    <hr />
-    <section>
-      <table>
-        <caption>Tables can have captions now.</caption>
-        <tbody>
-          <tr>
-            <th>Person</th>
-            <th>Number</th>
-            <th>Third Column</th>
-          </tr>
-          <tr>
-            <td>Someone Lastname</td>
-            <td>900</td>
-            <td>Nullam quis risus eget urna mollis ornare vel eu leo.</td>
-          </tr>
-          <tr>
-            <td><a href="#">Person Name</a></td>
-            <td>1200</td>
-            <td>Vestibulum id ligula porta felis euismod semper. Donec ullamcorper nulla non metus auctor fringilla.</td>
-          </tr>
-          <tr>
-            <td>Another Person</td>
-            <td>1500</td>
-            <td>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam id dolor id nibh ultricies vehicula ut id elit.</td>
-          </tr>
-          <tr>
-            <td>Last One</td>
-            <td>2800</td>
-            <td>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-    <hr />
+</Playground>
+
+## Tables
+Tables are slightly adjusted to style `<caption>`s, collapse borders, and ensure consistent text-align throughout. Additional changes for borders, padding, and more come with the `<Table/>` component.
+
+<Playground>
+  <GlobalStyle/>
+  <section>
+    <table>
+      <caption>Tables can have captions now.</caption>
+      <tbody>
+        <tr>
+          <th>Person</th>
+          <th>Number</th>
+          <th>Third Column</th>
+        </tr>
+        <tr>
+          <td>Someone Lastname</td>
+          <td>900</td>
+          <td>Nullam quis risus eget urna mollis ornare vel eu leo.</td>
+        </tr>
+        <tr>
+          <td><a href="#">Person Name</a></td>
+          <td>1200</td>
+          <td>Vestibulum id ligula porta felis euismod semper. Donec ullamcorper nulla non metus auctor fringilla.</td>
+        </tr>
+        <tr>
+          <td>Another Person</td>
+          <td>1500</td>
+          <td>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam id dolor id nibh ultricies vehicula ut id elit.</td>
+        </tr>
+        <tr>
+          <td>Last One</td>
+          <td>2800</td>
+          <td>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</Playground>
+
+## Lists
+All lists `<ul>`, `<ol>`, and `<dl>` have their margin-top removed and a margin-bottom: 1rem. Nested lists have no margin-bottom.
+
+<Playground>
+  <GlobalStyle/>
+  <section>
+    <ul>
+      <li>Unordered List item one
+        <ul>
+          <li>Nested list item
+            <ul>
+              <li>Level 3, item one</li>
+              <li>Level 3, item two</li>
+              <li>Level 3, item three</li>
+              <li>Level 3, item four</li>
+            </ul>
+          </li>
+          <li>List item two</li>
+          <li>List item three</li>
+          <li>List item four</li>
+        </ul>
+      </li>
+      <li>List item two</li>
+      <li>List item three</li>
+      <li>List item four</li>
+    </ul>
+  </section>
+  <section>
+    <ol>
+      <li>List item one
+        <ol>
+          <li>List item one
+            <ol>
+              <li>List item one</li>
+              <li>List item two</li>
+              <li>List item three</li>
+              <li>List item four</li>
+            </ol>
+          </li>
+          <li>List item two</li>
+          <li>List item three</li>
+          <li>List item four</li>
+        </ol>
+      </li>
+      <li>List item two</li>
+      <li>List item three</li>
+      <li>List item four</li>
+    </ol>
+  </section>
+</Playground>
+
+For simpler styling, clear hierarchy, and better spacing, description lists have updated margins. `<dd>`s reset margin-left to 0 and add margin-bottom: .5rem. `<dt>`s are bolded.
+
+<Playground>
+  <GlobalStyle/>
     <section>
       <dl>
         <dt>Definition List Title</dt>
@@ -144,76 +218,60 @@ This `font-family` is applied to the `<body>` and automatically inherited global
         <dd>Defines a section that is quoted from another source</dd>
       </dl>
     </section>
-    <hr />
-    <section>
-      <ul>
-        <li>Unordered List item one
-          <ul>
-            <li>Nested list item
-              <ul>
-                <li>Level 3, item one</li>
-                <li>Level 3, item two</li>
-                <li>Level 3, item three</li>
-                <li>Level 3, item four</li>
-              </ul>
-            </li>
-            <li>List item two</li>
-            <li>List item three</li>
-            <li>List item four</li>
-          </ul>
-        </li>
-        <li>List item two</li>
-        <li>List item three</li>
-        <li>List item four</li>
-      </ul>
-      <hr />
-      <ol>
-        <li>List item one
-          <ol>
-            <li>List item one
-              <ol>
-                <li>List item one</li>
-                <li>List item two</li>
-                <li>List item three</li>
-                <li>List item four</li>
-              </ol>
-            </li>
-            <li>List item two</li>
-            <li>List item three</li>
-            <li>List item four</li>
-          </ol>
-        </li>
-        <li>List item two</li>
-        <li>List item three</li>
-        <li>List item four</li>
-      </ol>
-    </section>
-    <hr />
+</Playground>
+
+## Address
+The `<address>` element is updated to reset the browser default `font-style` from `italic` to normal. line-height is also now inherited, and `margin-bottom: 1rem` has been added. `<address>`s are for presenting contact information for the nearest ancestor (or an entire body of work). Preserve formatting by ending lines with `<br>`.
+
+<Playground>
+  <GlobalStyle/>
     <section>
       <address>1 Infinite Loop<br/> Cupertino, CA 95014<br/> United States</address>
     </section>
-    <hr />
-    <section>
-      <pre>{`
-        pre {
-          display: block;
-          padding: 7px;
-          background-color: #F5F5F5;
-          border: 1px solid #E1E1E8;
-          border-radius: 3px;
-          white-space: pre-wrap;
-          word-break: break-all;
-          font-family: Menlo, Monaco;
-          line-height: 160%;
-        }
-      `}</pre>
-    </section>
-    <hr />
+</Playground>
+
+## Preformatted text
+The `<pre>` element is reset to remove its margin-top and use rem units for its margin-bottom.
+
+<Playground>
+  <GlobalStyle/>
+  <section>
+    <pre>{`
+      pre {
+        display: block;
+        padding: 7px;
+        background-color: #F5F5F5;
+        border: 1px solid #E1E1E8;
+        border-radius: 3px;
+        white-space: pre-wrap;
+        word-break: break-all;
+        font-family: Menlo, Monaco;
+        line-height: 160%;
+      }
+    `}</pre>
+  </section>
+</Playground>
+
+<Playground>
+  <GlobalStyle/>
     <figure>
       <img src="https://www.fillmurray.com/505/314"/>
       <figcaption>Fig1. A picture of Bill Murray from <a href="https://www.fillmurray.com/">fillmurray.com</a></figcaption>
     </figure>
-    <hr />
+</Playground>
+
+## Forms
+Various form elements have been rebooted for simpler base styles. Here are some of the most notable changes:
+
+- `<fieldset>`s have no borders, padding, or margin so they can be easily used as wrappers for individual inputs or groups of inputs.
+- `<legend>`s, like fieldsets, have also been restyled to be displayed as a heading of sorts.
+- `<label>`s are set to `display: inline-block` to allow `margin` to be applied.
+- `<input>`s, `<select>`s, `<textarea>`s, and `<button>`s are mostly addressed by Normalize, but Reboot removes their margin and sets `line-height: inherit`, too.
+- `<textarea>`s are modified to only be resizable vertically as horizontal resizing often “breaks” page layout.
+These changes, and more, are demonstrated below.
+
+<Playground>
+  <GlobalStyle/>
     <section>
       <form>
         <p>
@@ -334,5 +392,4 @@ This `font-family` is applied to the `<body>` and automatically inherited global
         </p>
       </form>
     </section>
-  </main>
 </Playground>

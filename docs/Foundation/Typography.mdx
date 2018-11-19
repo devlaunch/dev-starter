@@ -3,9 +3,8 @@ name: Typography
 menu: Foundation
 ---
 import { Playground } from "docz";
-import { H1, H2, H3, H4, H5, H6 } from "@devlaunch/ui-base";
+import { A, Abbr, Address, Article, Aside, B, Blockquote, Button, Caption, Code, Dd, Dfn, Display1, Display2, Display3, Display4, Dl, Dt, Fieldset, Figcaption, Figure, Footer, GlobalStyle, H1, H2, H3, H4, H5, H6, Header, Hgroup, Hr, Img, Input, Initialism, Kbd, Lead, Legend, Label, Mark, Main, Nav, Ol, Optgroup, Output, P, Pre, Progress, Samp, Section, Select, Small, Strong, Sub, Summary, Sup, Svg, Table, Textarea, Th, Ul, Box, Flex } from "@devlaunch/ui-base";
 import { Container } from "@devlaunch/ui-container";
-
 
 # Typography
 Documentation and examples for Bootstrap typography, including global settings, headings, body text, lists, and more.
@@ -26,37 +25,37 @@ All HTML headings, `<h1>` through `<h6>`, are available.
       <tbody>
         <tr>
           <td>
-            `<h1></h1>`
+            {`<h1></h1>`}
           </td>
           <td><H1>h1. Bootstrap heading</H1></td>
         </tr>
         <tr>
           <td>
-            `<h2></h2>`
+            {`<h2></h2>`}
           </td>
           <td><H2>h2. Bootstrap heading</H2></td>
         </tr>
         <tr>
           <td>
-            `<h3></h3>`
+            {`<h3></h3>`}
           </td>
           <td><H3>h3. Bootstrap heading</H3></td>
         </tr>
         <tr>
           <td>
-            `<h4></h4>`
+            {`<h4></h4>`}
           </td>
           <td><H4>h4. Bootstrap heading</H4></td>
         </tr>
         <tr>
           <td>
-            `<h5></h5>`
+            {`<h5></h5>`}
           </td>
           <td><H5>h5. Bootstrap heading</H5></td>
         </tr>
         <tr>
           <td>
-            `<h6></h6>`
+            {`<h6></h6>`}
           </td>
           <td><H6>h6. Bootstrap heading</H6></td>
         </tr>
@@ -71,19 +70,19 @@ Traditional heading elements are designed to work best in the meat of your page 
 
 <Playground>
   <Container>
-    <table class="table">
+    <table>
       <tbody>
         <tr>
-          <td><span class="display-1">Display 1</span></td>
+          <td><Display1>Display 1</Display1></td>
         </tr>
         <tr>
-        <td><span class="display-2">Display 2</span></td>
+        <td><Display2>Display 2</Display2></td>
         </tr>
         <tr>
-        <td><span class="display-3">Display 3</span></td>
+        <td><Display3>Display 3</Display3></td>
         </tr>
         <tr>
-        <td><span class="display-4">Display 4</span></td>
+        <td><Display4>Display 4</Display4></td>
         </tr>
       </tbody>
     </table>
@@ -96,9 +95,9 @@ Make a paragraph stand out by adding `.lead`.
 
 <Playground>
   <Container>
-    <P class="lead">
+    <Lead>
       Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.
-    </P>
+    </Lead>
   </Container>
 </Playground>
 
@@ -108,13 +107,13 @@ Styling for common inline HTML5 elements.
 
 <Playground>
   <Container>
-    <P>You can use the mark tag to <mark>highlight</mark> text.</P>
+    <P>You can use the mark tag to <Mark>highlight</Mark> text.</P>
     <P><del>This line of text is meant to be treated as deleted text.</del></P>
     <P><s>This line of text is meant to be treated as no longer accurate.</s></P>
     <P><ins>This line of text is meant to be treated as an addition to the document.</ins></P>
     <P><u>This line of text will render as underlined</u></P>
-    <P><small>This line of text is meant to be treated as fine print.</small></P>
-    <P><strong>This line rendered as bold text.</strong></P>
+    <P><Small>This line of text is meant to be treated as fine print.</Small></P>
+    <P><Strong>This line rendered as bold text.</Strong></P>
     <P><em>This line rendered as italicized text.</em></P>
   </Container>
 </Playground>
@@ -125,36 +124,36 @@ While not shown above, feel free to use `<b>` and `<i>` in HTML5. `<b>` is meant
 
 Stylized implementation of HTML's `<abbr>` element for abbreviations and acronyms to show the expanded version on hover. Abbreviations have a default underline and gain a help cursor to provide additional context on hover and to users of assistive technologies.
 
-Add `.initialism` to an abbreviation for a slightly smaller font-size.
+Add `<Initialism>` to an abbreviation for a slightly smaller font-size.
 
 <Playground>
   <Container>
     <P><Abbr title="attribute">attr</Abbr></P>
-    <P><Abbr title="HyperText Markup Language" class="initialism">HTML</Abbr></P>
+    <P><Initialism title="HyperText Markup Language">html</Initialism></P>
   </Container>
 </Playground>
 
 ## Blockquotes
 
-For quoting blocks of content from another source within your document. Wrap `<blockquote class="blockquote">` around any <abbr title="HyperText Markup Language">HTML</abbr> as the quote.
+For quoting blocks of content from another source within your document. Wrap `<Blockquote>` around any html as the quote.
 
 <Playground>
   <Container>
     <Blockquote>
-      <P class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</P>
+      <P>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</P>
     </Blockquote>
   </Container>
 </Playground>
 
 ### Naming a source
 
-Add a `<footer class="blockquote-footer">` for identifying the source. Wrap the name of the source work in `<cite>`.
+Add a `<Blockquote.Footer>` for identifying the source. Wrap the name of the source work in `<cite>`.
 
 <Playground>
   <Container>
     <Blockquote>
-      <P class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</P>
-      <Footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></Footer>
+      <P mb="0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</P>
+      <Blockquote.Footer>Someone famous in <cite title="Source Title">Source Title</cite></Blockquote.Footer>
     </Blockquote>
   </Container>
 </Playground>
@@ -165,18 +164,18 @@ Use text utilities as needed to change the alignment of your blockquote.
 
 <Playground>
   <Container>
-    <Blockquote class="blockquote text-center">
-      <P class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</P>
-      <Footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></Footer>
+    <Blockquote textAlign="center">
+      <P mb="0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</P>
+      <Blockquote.Footer>Someone famous in <cite title="Source Title">Source Title</cite></Blockquote.Footer>
     </Blockquote>
   </Container>
 </Playground>
 
 <Playground>
   <Container>
-    <Blockquote class="blockquote text-right">
-      <P class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</P>
-      <Footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></Footer>
+    <Blockquote textAlign="right">
+      <P mb="0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</P>
+      <Blockquote.Footer>Someone famous in <cite title="Source Title">Source Title</cite></Blockquote.Footer>
     </Blockquote>
   </Container>
 </Playground>
@@ -189,18 +188,18 @@ Remove the default `list-style` and left margin on list items (immediate childre
 
 <Playground>
   <Container>
-    <Ul class="list-unstyled">
+    <Ul>
       <li>Lorem ipsum dolor sit amet</li>
       <li>Consectetur adipiscing elit</li>
       <li>Integer molestie lorem at massa</li>
       <li>Facilisis in pretium nisl aliquet</li>
       <li>Nulla volutpat aliquam velit
-        <ul>
+        <Ul>
           <li>Phasellus iaculis neque</li>
           <li>Purus sodales ultricies</li>
           <li>Vestibulum laoreet porttitor sem</li>
           <li>Ac tristique libero volutpat at</li>
-        </ul>
+        </Ul>
       </li>
       <li>Faucibus porta lacus fringilla vel</li>
       <li>Aenean sit amet erat nunc</li>
@@ -215,10 +214,10 @@ Remove a list's bullets and apply some light `margin` with a combination of two 
 
 <Playground>
   <Container>
-    <Ul class="list-inline">
-      <li class="list-inline-item">Lorem ipsum</li>
-      <li class="list-inline-item">Phasellus iaculis</li>
-      <li class="list-inline-item">Nulla volutpat</li>
+    <Ul>
+      <li>Lorem ipsum</li>
+      <li>Phasellus iaculis</li>
+      <li>Nulla volutpat</li>
     </Ul>
   </Container>
 </Playground>
@@ -229,27 +228,23 @@ Align terms and descriptions horizontally by using our grid system's predefined 
 
 <Playground>
   <Container>
-    <Dl class="row">
-      <Dt class="col-sm-3">Description lists</Dt>
-      <Dd class="col-sm-9">A description list is perfect for defining terms.</Dd>
-
-      <Dt class="col-sm-3">Euismod</Dt>
-      <Dd class="col-sm-9">
+    <Dl>
+      <Dt>Description lists</Dt>
+      <Dd>A description list is perfect for defining terms.</Dd>
+      <Dt>Euismod</Dt>
+      <Dd>
         <P>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</P>
         <P>Donec id elit non mi porta gravida at eget metus.</P>
       </Dd>
-
-      <Dt class="col-sm-3">Malesuada porta</Dt>
-      <Dd class="col-sm-9">Etiam porta sem malesuada magna mollis euismod.</Dd>
-
-      <Dt class="col-sm-3 text-truncate">Truncated term is truncated</Dt>
-      <Dd class="col-sm-9">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</Dd>
-
-      <Dt class="col-sm-3">Nesting</Dt>
-      <Dd class="col-sm-9">
-        <Dl class="row">
-          <Dt class="col-sm-4">Nested definition list</Dt>
-          <Dd class="col-sm-8">Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc.</Dd>
+      <Dt>Malesuada porta</Dt>
+      <Dd>Etiam porta sem malesuada magna mollis euismod.</Dd>
+      <Dt>Truncated term is truncated</Dt>
+      <Dd>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</Dd>
+      <Dt>Nesting</Dt>
+      <Dd>
+        <Dl>
+          <Dt>Nested definition list</Dt>
+          <Dd>Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc.</Dd>
         </Dl>
       </Dd>
     </Dl>
@@ -314,7 +309,7 @@ For indicating variables use the `<var>` tag.
 
 <Playground>
   <Container>
-    <Var>y</Var> = <Var>m</Var><Var>x</Var> + <Var>b</Var>
+    <var>y</var> = <var>m</var><var>x</var> + <var>b</var>
   </Container>
 </Playground>
 
@@ -324,7 +319,7 @@ Use the `<kbd>` to indicate input that is typically entered via keyboard.
 
 <Playground>
   <Container>
-    To switch directories, type <Kbd>cd</Kbd> followed by the name of the directory.<br>
+    To switch directories, type <Kbd>cd</Kbd> followed by the name of the directory.<br/>
     To edit settings, press <Kbd><Kbd>ctrl</Kbd> + <Kbd>,</Kbd></Kbd>
   </Container>
 </Playground>
@@ -347,20 +342,20 @@ Use the included `.figure` , `.figure-img` and `.figure-caption` classes to prov
 
 <Playground>
   <Container>
-    <Figure class="figure">
-      <Img data-src="holder.js/400x300" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
-      <Figcaption class="figure-caption">A caption for the above image.</Figcaption>
+    <Figure>
+      <Img data-src="holder.js/400x300" alt="A generic square placeholder image with rounded corners in a figure." />
+      <Figcaption>A caption for the above image.</Figcaption>
     </Figure>
   </Container>
 </Playground>
 
-Aligning the figure's caption is easy with our [text utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/text/#text-alignment).
+Aligning the figure's caption is easy with our text utilities.
 
 <Playground>
   <Container>
-    <Figure class="figure">
-      <Img data-src="holder.js/400x300" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
-      <Figcaption class="figure-caption text-right">A caption for the above image.</Figcaption>
+    <Figure>
+      <Img data-src="holder.js/400x300" alt="A generic square placeholder image with rounded corners in a figure." />
+      <Figcaption>A caption for the above image.</Figcaption>
     </Figure>
   </Container>
 </Playground>
