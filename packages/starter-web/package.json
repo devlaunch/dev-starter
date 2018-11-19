@@ -50,9 +50,7 @@
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-scripts": "2.0.4",
-    "react-test-renderer": "^16.5.2",
-    "styled-components": "^3.4.10",
-    "styled-system": "^3.1.6"
+    "react-test-renderer": "^16.5.2"
   },
   "dependencies": {
     "axios": "^0.17.1",
@@ -69,8 +67,9 @@
     "redux-devtools-extension": "^2.13.2",
     "redux-logger": "^3.0.6",
     "redux-promise-middleware": "^5.0.0",
-    "styled-components": "^3.4.10",
-    "styled-system": "^3.1.10",
-    "styled-reboot": "^1.1.1"
+    "styled-reboot": "^1.1.1",
+    "styled-components": "^4.0.3",
+    "styled-components-modifiers": "^1.0.3",
+    "styled-system": "^3.1.11"
   }
 }
