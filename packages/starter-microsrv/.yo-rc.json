@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "applicationType": "microservice",
+    "gitCompany": "",
+    "baseName": "demoapp",
+    "packageName": "io.github.devlaunch.demoapp",
+    "packageFolder": "io/github/devlaunch/demoapp",
+    "serverPort": 8081,
+    "serviceDiscoveryType": "eureka",
+    "authenticationType": "jwt",
+    "uaaBaseName": "../uaa",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mariadb",
+    "searchEngine": false,
+    "enableSwaggerCodegen": "true",
+    "messageBroker": false,
+    "buildTool": "gradle",
+    "useSass": false,
+    "clientPackageManager": "npm",
+    "testFrameworks": [
+      "cucumber"
+    ],
+    "enableTranslation": false,
+    "nativeLanguage": "en",
+    "languages": [
+      "en"
+    ],
+    "clientFramework": "angularX",
+    "jhiPrefix": "jhi",
+    "jhipsterVersion": "5.7.0",
+    "jwtSecretKey": "ODAwOThhYzA4YmViMTc0MTY3YmE0MWM4ZjM2OTYyYTM5Y2FiMTIyNDQ1ZjNiNzJiNDdjMWQ5ZTEzNWUyZmNiMzlmNDgyZWQ3YTZmZjIyNjVmMTZhNWI5ZDEzNjk2MDZkYjM3ZWJkOWUxYjg1NDM2YjJlZDM4MTBhN2QyNzE5M2Y=",
+    "otherModules": [],
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}
