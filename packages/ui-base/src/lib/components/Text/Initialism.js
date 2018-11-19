@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Text } from "lib/components/Text/Text";
+import { Text } from "./Text";
 
 export const Initialism = styled(Text)`
   font-size: 90%;

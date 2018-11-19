@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { Text } from "lib/components/Text/Text";
+import { Text } from "./Text";
 import { themeGet } from "styled-system";
-import { theme } from "lib/theme/base-theme";
+import { theme } from "../../theme/base-theme";
 
 export const P = styled(Text)`
   margin-top: 0;

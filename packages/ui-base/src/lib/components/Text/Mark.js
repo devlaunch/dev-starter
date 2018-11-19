@@ -1,15 +1,15 @@
 import styled from "styled-components";
-import { Text } from "lib/components/Text/Text";
+import { Text } from "./Text";
 import { themeGet } from "styled-system";
-import { theme } from "lib/theme/base-theme";
+import { theme } from "../../theme/base-theme";
 
-export const mark = styled(Text)`
+export const Mark = styled(Text)`
   padding: ${themeGet("text.mark.padding", theme.text.mark.padding)};
   background-color: ${themeGet("text.mark.color.bg", theme.text.mark.color.bg)};
 `;
 
-mark.displayName = "Mark";
+Mark.displayName = "Mark";
 
-mark.defaultProps = {
+Mark.defaultProps = {
   as: "mark"
 };

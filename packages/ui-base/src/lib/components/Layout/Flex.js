@@ -6,7 +6,7 @@ import {
   justifyContent
 } from "styled-system";
 
-import { Box } from "lib/components/Layout/Box";
+import { Box } from "./Box";
 
 const themed = key => props => props.theme[key];
 

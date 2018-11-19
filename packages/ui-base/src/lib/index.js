@@ -5,6 +5,10 @@ import { Address } from "./components/Text/Address";
 import { B } from "./components/Text/B";
 import { Blockquote } from "./components/Text/Blockquote";
 import { Code } from "./components/Text/Code";
+import { Display1 } from "./components/Text/Display1";
+import { Display2 } from "./components/Text/Display2";
+import { Display3 } from "./components/Text/Display3";
+import { Display4 } from "./components/Text/Display4";
 import { H1 } from "./components/Text/H1";
 import { H2 } from "./components/Text/H2";
 import { H3 } from "./components/Text/H3";
@@ -12,7 +16,10 @@ import { H4 } from "./components/Text/H4";
 import { H5 } from "./components/Text/H5";
 import { H6 } from "./components/Text/H6";
 import { Hgroup } from "./components/Text/Hgroup";
+import { Initialism } from "./components/Text/Initialism";
 import { Kbd } from "./components/Text/Kbd";
+import { Lead } from "./components/Text/Lead";
+import { Mark } from "./components/Text/Mark";
 import { P } from "./components/Text/P";
 import { Pre } from "./components/Text/Pre";
 import { Samp } from "./components/Text/Samp";
@@ -77,6 +84,10 @@ export {
   Code,
   Dd,
   Dfn,
+  Display1,
+  Display2,
+  Display3,
+  Display4,
   Dl,
   Dt,
   Fieldset,
@@ -95,9 +106,12 @@ export {
   Hr,
   Img,
   Input,
+  Initialism,
   Kbd,
+  Lead,
   Legend,
   Label,
+  Mark,
   Main,
   Nav,
   Ol,

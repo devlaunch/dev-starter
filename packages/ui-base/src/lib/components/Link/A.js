@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { themeGet } from "styled-system";
-import { Box } from "lib/components/Layout/Box";
-import { theme } from "lib/theme/base-theme";
+import { Box } from "../Layout/Box";
+import { theme } from "../../theme/base-theme";
 
 export const A = styled(Box)`
   color: ${themeGet("link.color", theme.link.color)};

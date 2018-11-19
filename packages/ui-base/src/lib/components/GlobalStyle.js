@@ -9,7 +9,7 @@
 
 import { createGlobalStyle } from "styled-components";
 import { themeGet } from "styled-system";
-import { theme } from "lib/theme/base-theme";
+import { theme } from "../theme/base-theme";
 
 export const GlobalStyle = createGlobalStyle`
   *,

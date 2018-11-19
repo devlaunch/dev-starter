@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Text } from "lib/components/Text/Text";
+import { Text } from "./Text";
 
 export const Hgroup = styled(Text)`
   display: block;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { Text } from "lib/components/Text/Text";
+import { Text } from "./Text";
 import { themeGet } from "styled-system";
-import { theme } from "lib/theme/base-theme";
+import { theme } from "../../theme/base-theme";
 
 export const Kbd = styled(Text)`
   font-family: ${themeGet("fonts.monospace", theme.fonts.monospace)};

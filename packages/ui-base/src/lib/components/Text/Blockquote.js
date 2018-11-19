@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { Text } from "lib/components/Text/Text";
+import { Text } from "./Text";
 import { themeGet } from "styled-system";
-import { theme } from "lib/theme/base-theme";
+import { theme } from "../../theme/base-theme";
 
 export const Blockquote = styled(Text)`
   margin: 0 0 1rem;

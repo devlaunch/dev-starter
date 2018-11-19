@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { themeGet } from "styled-system";
-import { theme } from "lib/theme/base-theme";
+import { theme } from "../theme/base-theme";
 
 export const Hr = styled.hr`
   box-sizing: content-box;
