@@ -1,6 +1,6 @@
 /*
- * Copyright 2018 the original author or authors.Licensed under the Apache License, Version 2.0
- * http://www.apache.org/licenses/LICENSE-2.0
+ * Copyright 2018 the original author or authors.Licensed under the Apache
+ * License, Version 2.0 http://www.apache.org/licenses/LICENSE-2.0
  */
 package io.github.devlaunch.demoapp;
 
@@ -8,16 +8,21 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Arrays;
 import java.util.Collection;
+
 import javax.annotation.PostConstruct;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.liquibase.LiquibaseProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.core.env.Environment;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import org.apache.commons.lang3.StringUtils;
+
 import io.github.devlaunch.demoapp.config.ApplicationProperties;
 import io.github.devlaunch.demoapp.config.DefaultProfileUtil;
 import io.github.jhipster.config.JHipsterConstants;

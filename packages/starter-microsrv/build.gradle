@@ -40,6 +40,8 @@ repositories {
 wrapper { gradleVersion = '4.10.2' }
 // ############################################################
 
+
+
 // ############################################################
 // Java plugin to control version compatibility
 // ############################################################
@@ -53,13 +55,15 @@ assert System.properties['java.specification.version'] == '1.8'
 
 apply plugin: 'maven'
 apply plugin: 'idea'
-
-apply plugin: 'org.springframework.boot'
-apply plugin: 'war'
 apply plugin: 'propdeps'
 
-defaultTasks 'bootRun'
 
+
+// ############################################################
+// Spring boot packaging //
+// ############################################################
+apply plugin: 'org.springframework.boot'
+apply plugin: 'war'
 bootWar { mainClassName = 'io.github.devlaunch.demoapp.DemoappApp' }
 
 war {
@@ -98,6 +102,8 @@ configurations {
   providedRuntime
   compile.exclude module: "spring-boot-starter-tomcat"
 }
+// ############################################################
+
 
 
 // ############################################################
@@ -137,6 +143,8 @@ task formatCode(dependsOn: [
 ])
 // ############################################################
 
+
+
 // ############################################################
 // Tests with cucumber
 // ############################################################
@@ -172,6 +180,8 @@ task cucumberTestReport(type: TestReport) {
 }
 // ############################################################
 
+
+
 // ############################################################
 // Include common gradle files
 // ############################################################
@@ -186,16 +196,16 @@ if (project.hasProperty('prod')) {
   apply from: 'gradle/profile_dev.gradle'
 }
 
-
 if (project.hasProperty('zipkin')) {
   apply from: 'gradle/zipkin.gradle'
 }
 // ############################################################
 
+
+
 // ############################################################
 // Liquibase settings
 // ############################################################
-
 if (!project.hasProperty('runList')) {
   project.ext.runList = 'main'
 }
@@ -340,6 +350,8 @@ group = 'io.github.devlaunch.demoapp'
 version = '0.0.1-SNAPSHOT'
 
 description = ''
+
+defaultTasks 'bootRun'
 
 task cleanResources(type: Delete) { delete 'build/resources' }
 
