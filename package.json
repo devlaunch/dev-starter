@@ -54,6 +54,7 @@
     "cz-customizable": "^5.2.0",
     "docz": "^0.12.5",
     "husky": "^1.1.2",
+    "hygen": "^1.6.2",
     "lerna": "^3.4.3",
     "lerna-wizard": "^1.0.9",
     "prettier-eslint": "^8.8.1",

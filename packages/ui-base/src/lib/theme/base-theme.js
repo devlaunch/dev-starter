@@ -1,7 +1,18 @@
 const DEFAULTS = {
   breakpoints: [32, 48, 64],
   space: [0, "0.25rem", "0.5rem", "1rem", "1.5rem", "3rem"],
-  fontSizes: ["1rem", "1.25rem", "1.5rem", "1.75rem", "2rem", "2.5rem", "3.5rem", "4.5rem", "5.5rem", "6rem"],
+  fontSizes: [
+    "1rem",
+    "1.25rem",
+    "1.5rem",
+    "1.75rem",
+    "2rem",
+    "2.5rem",
+    "3.5rem",
+    "4.5rem",
+    "5.5rem",
+    "6rem"
+  ],
   fontWeights: {
     lighter: "lighter",
     light: "300",
@@ -27,9 +38,18 @@ const DEFAULTS = {
       '-apple-system, BlinkMacSystemFont, "avenir next", avenir, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial, sans-serif',
     base:
       '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
-    monospace: 'SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace'
+    monospace:
+      'SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace'
   },
-  borders: [0, "1px solid", "2px solid", "4px solid", "8px solid", "16px solid", "32px solid"],
+  borders: [
+    0,
+    "1px solid",
+    "2px solid",
+    "4px solid",
+    "8px solid",
+    "16px solid",
+    "32px solid"
+  ],
   radii: {
     normal: "0.25rem",
     lg: "0.3rem",

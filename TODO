@@ -1,0 +1,23 @@
+
+Microservice App:
+  Add auto formating support
+  ☐ create a sample rest api
+  ☐ add support for hygen generators for api
+  ☐ add support for hygen generators for entities
+  ☐ add support for redis cache
+  ☐ add support to consume SOAP services
+  ☐ integrate with ci/cd jenkins pipeline
+  ☐ remove jhipster branding
+  ☐ add https support
+
+Gateway App:
+  ☐ Change to create react app
+  ☐ add support for hygen generator for cra
+  ☐ add support of redoc api documentation
+
+Registry App:
+  ☐ change to create react app
+
+
+
+
