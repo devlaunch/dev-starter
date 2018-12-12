@@ -1,4 +1,11 @@
 
 Dashboard App:
   ☐ Support for CSP security headers
+  ☐ authentication provider with jwt
+  ☐ authentication provider with auth0
+  ☐ seperate storage helpers
+  ☐ use react-icons for icons
+  ☐ data provider for rest api's
+  ☐ data provider for graphql api's
+
   

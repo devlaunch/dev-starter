@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { palette } from "styled-theme";
 
-const AppHolder = styled.div`
+const StyledDashBoard = styled.div`
   .trigger {
     font-size: 18px;
     line-height: 64px;
@@ -74,4 +74,4 @@ const AppHolder = styled.div`
   }
 `;
 
-export default AppHolder;
+export default StyledDashBoard;

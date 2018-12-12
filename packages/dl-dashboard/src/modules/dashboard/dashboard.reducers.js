@@ -1,5 +1,7 @@
 import { getDefaultPath } from "helpers/urlSync";
 
+// Private function to get view type based on the width
+// Used in window resize action to colapse sidebar
 function getView(width) {
   let newView = "MobileView";
   if (width > 1220) {
@@ -14,7 +16,7 @@ export const ACTION_TYPES = {
   COLLPSE_CHANGE: "dashboard/COLLPSE_CHANGE",
   COLLPSE_OPEN_DRAWER: "dashboard/COLLPSE_OPEN_DRAWER",
   CHANGE_OPEN_KEYS: "dashboard/CHANGE_OPEN_KEYS",
-  TOGGLE_ALL: "dashboard/TOGGLE_ALL",
+  WINDOW_RESIZE: "dashboard/WINDOW_RESIZE",
   CHANGE_CURRENT: "dashboard/CHANGE_CURRENT",
   CLOSE_ALL: "dashboard/CLOSE_ALL"
 };
@@ -36,7 +38,7 @@ export default function appReducer(state = initState, action) {
       return { ...state, collapsed: !state.collapsed };
     case ACTION_TYPES.COLLPSE_OPEN_DRAWER:
       return { ...state, openDrawer: !state.openDrawer };
-    case ACTION_TYPES.TOGGLE_ALL:
+    case ACTION_TYPES.WINDOW_RESIZE:
       if (state.view !== action.view || action.height !== state.height) {
         const height = action.height ? action.height : state.height;
         return {
@@ -63,11 +65,12 @@ export const toggleCollapsed = () => ({
   type: ACTION_TYPES.COLLPSE_CHANGE
 });
 
-export const toggleAll = (width, height) => {
+// Action to collapse or show sidebar on window resize
+export const resizeWindow = (width, height) => {
   const view = getView(width);
   const collapsed = view !== "DesktopView";
   return {
-    type: ACTION_TYPES.TOGGLE_ALL,
+    type: ACTION_TYPES.WINDOW_RESIZE,
     collapsed,
     view,
     height

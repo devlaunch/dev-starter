@@ -1,5 +1,18 @@
 export default {
-  apiUrl: "http://yoursite.com/api/"
+  VERSION: process.env.VERSION,
+  SERVER_API_URL: process.env.SERVER_API_URL,
+  AUTH_TOKEN_KEY: "dl-authenticationToken",
+  AUTHORITIES: {
+    ADMIN: "ROLE_ADMIN",
+    USER: "ROLE_USER"
+  },
+  DATA_ERROR_ALERT: "Internal Error",
+  APP_DATE_FORMAT: "DD/MM/YY HH:mm",
+  APP_TIMESTAMP_FORMAT: "DD/MM/YY HH:mm:ss",
+  APP_LOCAL_DATE_FORMAT: "DD/MM/YYYY",
+  APP_LOCAL_DATETIME_FORMAT: "YYYY-MM-DDThh:mm",
+  APP_WHOLE_NUMBER_FORMAT: "0,0",
+  APP_TWO_DIGITS_AFTER_POINT_NUMBER_FORMAT: "0,0.[00]"
 };
 
 const siteConfig = {

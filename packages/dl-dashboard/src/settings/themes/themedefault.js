@@ -97,8 +97,10 @@ theme.palette = {
 };
 
 theme.fonts = {
-  primary: "Roboto, sans-serif",
-  pre: "Consolas, Liberation Mono, Menlo, Courier, monospace"
+  primary:
+    '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+  pre:
+    'SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace'
 };
 
 export default theme;

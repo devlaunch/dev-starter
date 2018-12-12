@@ -5,7 +5,14 @@
   "author": "Devlaunch <devlaunchorg@gmail.com>",
   "license": "MIT",
   "keywords": [
-    "react", "create react app", "dashboard", "html kit", "html css template", "web template, css3 template", "frontend", "responsive ui kit"
+    "react",
+    "create react app",
+    "dashboard",
+    "html kit",
+    "html css template",
+    "web template, css3 template",
+    "frontend",
+    "responsive ui kit"
   ],
   "repository": {
     "type": "git",
@@ -40,6 +47,7 @@
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-intl": "^2.3.0",
+    "react-loadable": "^5.5.0",
     "react-placeholder": "^2.0.0",
     "react-redux": "^5.0.4",
     "react-router": "^4.1.1",

@@ -2,9 +2,11 @@ import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import { ConnectedRouter } from "react-router-redux";
 import { connect } from "react-redux";
+import Loadable from "react-loadable";
 
 import Dashboard from "modules/dashboard/Dashboard";
-import asyncComponent from "./helpers/AsyncFunc";
+import PublicRoute from "helpers/routes/public-routes";
+import { Placeholder } from "components/ui-blocks/placeholder";
 
 const RestrictedRoute = ({ component: Component, isLoggedIn, ...rest }) => (
   <Route
@@ -23,20 +25,39 @@ const RestrictedRoute = ({ component: Component, isLoggedIn, ...rest }) => (
     }
   />
 );
-const PublicRoutes = ({ history, isLoggedIn }) => {
+
+const routes = [
+  {
+    path: "/",
+    component: Loadable({
+      loader: () => import("modules/signin/Signin"),
+      loading: Placeholder
+    })
+  },
+  {
+    path: "signin",
+    component: Loadable({
+      loader: () => import("modules/signin/Signin"),
+      loading: Placeholder
+    })
+  }
+];
+
+const Router = ({ history, isLoggedIn }) => {
   return (
     <ConnectedRouter history={history}>
       <div>
-        <Route
-          exact
-          path={"/"}
-          component={asyncComponent(() => import("modules/signin/Signin"))}
-        />
-        <Route
-          exact
-          path={"/signin"}
-          component={asyncComponent(() => import("modules/signin/Signin"))}
-        />
+        {routes.map(route => {
+          const { path, exact, ...otherProps } = route;
+          return (
+            <PublicRoute
+              exact={exact === false ? false : true}
+              key={route.path}
+              path={route.path}
+              {...otherProps}
+            />
+          );
+        })}
         <RestrictedRoute
           path="/dashboard"
           component={Dashboard}
@@ -49,4 +70,4 @@ const PublicRoutes = ({ history, isLoggedIn }) => {
 
 export default connect(state => ({
   isLoggedIn: state.Auth.idToken !== null
-}))(PublicRoutes);
+}))(Router);

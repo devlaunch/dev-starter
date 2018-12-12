@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import DashApp from "./dashApp";
+import DashApp from "./app";
 import * as serviceWorker from "./serviceWorker";
 import "antd/dist/antd.css";
 
