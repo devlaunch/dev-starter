@@ -1,0 +1,4 @@
+{
+  "presets": ["@babel/preset-env"],
+  "ignore": ["*/__tests__", "*/__snapshots__", "*test.js", "*spec.js", "*/docker"]
+}

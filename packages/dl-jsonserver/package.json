@@ -1,13 +1,18 @@
 {
-  "name": "@devlaunch/starter-fakeapi",
+  "name": "@devlaunch/dl-jsonserver",
   "version": "0.0.1",
   "description": "fake api generator for quick mocks",
   "main": "index.js",
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "babel-node src/server.js",
-    "data": "babel-node src/data_generator.js"
+    "dev": "babel-node src/server.js",
+    "start": "node server.js",
+    "data": "babel-node src/data_generator.js",
+    "clean": "shx rm -rf dist && mkdir dist",
+    "copy": "shx cp -R data dist",
+    "build": "yarn run clean && yarn run copy && NODE_ENV=production babel src --out-dir dist --ignore \"**/docker\"",
+    "serve": "node dist/server.js"
   },
   "dependencies": {
     "faker": "^4.1.0",
@@ -22,6 +27,8 @@
     "@babel/preset-env": "^7.1.0",
     "babel-core": "^7.0.0-bridge",
     "babel-jest": "^23.6.0",
-    "jest": "^23.6.0"
+    "jest": "^23.6.0",
+    "nodemon": "^1.14.11",
+    "shx": "^0.2.2"
   }
 }

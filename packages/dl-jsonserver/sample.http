@@ -1,0 +1,7 @@
+###
+
+POST http://jsonserver.localhost/auth/login HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+email=Gretchen28@gmail.com
+&password=FgXRiHaz2ZoUmcT

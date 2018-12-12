@@ -1,0 +1,44 @@
+FROM mhart/alpine-node:8
+
+LABEL version="1.0"
+
+# Default arguments 
+ARG http_proxy=""
+ARG https_proxy=""
+ARG proxy_auth=""
+ARG no_proxy=""
+
+# Environment variables
+ENV http_proxy $http_proxy
+ENV https_proxy $https_proxy
+ENV HTTP_PROXY_AUTH $proxy_auth
+ENV NO_PROXY $no_proxy
+ENV NODE_ENV production
+ENV NPM_CONFIG_PREFIX=/opt/app/.npm-global
+
+# Create application user app
+USER root
+RUN mkdir -p /opt/app \
+  && adduser -D -h /opt/app app \
+  && apk update \
+  && apk add curl \
+  && apk add bash \
+  && rm -rf /var/cache/apk/*
+
+USER app
+WORKDIR /opt/app
+
+# Install deps
+COPY ./package* ./
+RUN npm install && \
+  npm cache clean --force
+
+# Copy node server
+COPY dist .
+
+COPY ./src/docker/docker-entrypoint.sh /opt/app/docker-entrypoint.sh
+ENTRYPOINT [ "/opt/app/docker-entrypoint.sh" ]
+
+# Expose ports (for orchestrators and dynamic reverse proxies)
+EXPOSE 3001
+CMD ["npm", "start"]
