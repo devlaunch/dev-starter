@@ -19,9 +19,7 @@ const PrivateRouteComponent = ({
       </ErrorBoundary>
     ) : (
       <div className="insufficient-authority">
-        <div className="alert alert-danger">
-          You are not authorized to access this page.
-        </div>
+        <div className="alert alert-danger">You are not authorized to access this page.</div>
       </div>
     );
 
@@ -43,12 +41,7 @@ const PrivateRouteComponent = ({
     }
   };
 
-  if (!Component)
-    throw new Error(
-      `A component needs to be specified for private route for path ${
-        rest.path
-      }`
-    );
+  if (!Component) throw new Error(`A component needs to be specified for private route for path ${rest.path}`);
 
   return <Route {...rest} render={renderRedirect} />;
 };
@@ -72,6 +65,7 @@ const mapStateToProps = (
   sessionHasBeenFetched
 });
 
+state => ({});
 /**
  * A route wrapped in an authentication check so that routing happens only when you are authenticated.
  * Accepts same props as React router Route.

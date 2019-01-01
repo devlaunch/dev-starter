@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import LayoutContentWrapper from "components/utility/layoutWrapper";
 import LayoutContent from "components/utility/layoutContent";
 import { Button } from "components/ui-elements/general/button";
-import notification from "components/notification";
+import { createNotification as notification } from "components/ui-elements/feedback/notification";
 
 import AuthHelper from "helpers/authHelper";
 

@@ -1,17 +1,11 @@
 import Auth0Lock from "auth0-lock";
 import history from "./history";
 import { Auth0Config } from "../../config.js";
-import { notification } from "../../components";
+import { createNotification as notification } from "components/ui-elements/feedback/notification";
 
 class Auth0Helper {
   isValid = Auth0Config.clientID && Auth0Config.domain;
-  lock = this.isValid
-    ? new Auth0Lock(
-        Auth0Config.clientID,
-        Auth0Config.domain,
-        Auth0Config.options
-      )
-    : null;
+  lock = this.isValid ? new Auth0Lock(Auth0Config.clientID, Auth0Config.domain, Auth0Config.options) : null;
   constructor() {
     this.login = this.login.bind(this);
     this.logout = this.logout.bind(this);
@@ -37,9 +31,7 @@ class Auth0Helper {
   }
   setSession(authResult) {
     // Set the time that the access token will expire at
-    let expiresAt = JSON.stringify(
-      authResult.expiresIn * 1000 + new Date().getTime()
-    );
+    let expiresAt = JSON.stringify(authResult.expiresIn * 1000 + new Date().getTime());
     localStorage.setItem("access_token", authResult.accessToken);
     localStorage.setItem("id_token", authResult.idToken);
     localStorage.setItem("expires_at", expiresAt);
@@ -59,9 +51,7 @@ class Auth0Helper {
   isAuthenticated() {
     // Check whether the current time is past the
     // access token's expiry time
-    return (
-      new Date().getTime() < JSON.parse(localStorage.getItem("expires_at"))
-    );
+    return new Date().getTime() < JSON.parse(localStorage.getItem("expires_at"));
   }
 }
 export default new Auth0Helper();

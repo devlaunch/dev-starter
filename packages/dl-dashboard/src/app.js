@@ -8,26 +8,27 @@ import { store, history } from "./redux/store";
 import Boot from "./redux/boot";
 import PublicRoutes from "./router";
 import AppLocale from "./languageProvider";
-import config, {
-  getCurrentLanguage
-} from "./containers/LanguageSwitcher/config";
+import config, { getCurrentLanguage } from "./containers/LanguageSwitcher/config";
 import themes from "settings/themes";
 import { themeConfig } from "settings";
+import DevTools from "components/utility/devtools";
 import StyledApp from "./app.style";
 
-const currentAppLocale =
-  AppLocale[getCurrentLanguage(config.defaultLanguage || "english").locale];
+const devTools = process.env.NODE_ENV === "development" ? <DevTools /> : null;
+
+const currentAppLocale = AppLocale[getCurrentLanguage(config.defaultLanguage || "english").locale];
 
 const DashApp = () => (
   <LocaleProvider locale={currentAppLocale.antd}>
-    <IntlProvider
-      locale={currentAppLocale.locale}
-      messages={currentAppLocale.messages}
-    >
+    <IntlProvider locale={currentAppLocale.locale} messages={currentAppLocale.messages}>
       <ThemeProvider theme={themes[themeConfig.theme]}>
         <StyledApp>
           <Provider store={store}>
-            <PublicRoutes history={history} />
+            <div>
+              <PublicRoutes history={history} />
+              {/* If this slows down the app in dev disable it and enable when required  */}
+              {devTools}
+            </div>
           </Provider>
         </StyledApp>
       </ThemeProvider>

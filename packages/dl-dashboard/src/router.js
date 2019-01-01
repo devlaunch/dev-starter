@@ -35,7 +35,7 @@ const routes = [
     })
   },
   {
-    path: "signin",
+    path: "/signin",
     component: Loadable({
       loader: () => import("modules/signin/Signin"),
       loading: Placeholder
@@ -50,19 +50,10 @@ const Router = ({ history, isLoggedIn }) => {
         {routes.map(route => {
           const { path, exact, ...otherProps } = route;
           return (
-            <PublicRoute
-              exact={exact === false ? false : true}
-              key={route.path}
-              path={route.path}
-              {...otherProps}
-            />
+            <PublicRoute exact={exact === false ? false : true} key={route.path} path={route.path} {...otherProps} />
           );
         })}
-        <RestrictedRoute
-          path="/dashboard"
-          component={Dashboard}
-          isLoggedIn={isLoggedIn}
-        />
+        <RestrictedRoute path="/dashboard" component={Dashboard} isLoggedIn={isLoggedIn} />
       </div>
     </ConnectedRouter>
   );
