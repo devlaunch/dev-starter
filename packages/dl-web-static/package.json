@@ -1,0 +1,68 @@
+{
+  "name": "dl-web-static",
+  "version": "0.1.0",
+  "description": "A base starter website using create react app",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "private": true,
+  "browserslist": {
+    "development": [
+      "last 2 chrome versions",
+      "last 2 firefox versions",
+      "last 2 edge versions"
+    ],
+    "production": [
+      ">1%",
+      "last 4 versions",
+      "Firefox ESR",
+      "not ie < 11"
+    ]
+  },
+  "author": "Devlaunch <devlaunchorg@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "configuration"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devlaunch/dev-starter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/devlaunch/dev-starter/issues"
+  },
+  "homepage": "https://github.com/devlaunch/dev-starter",
+  "scripts": {
+    "start": "react-static start",
+    "stage": "react-static build --staging",
+    "build": "react-static build",
+    "bundle": "react-static bundle",
+    "export": "react-static export",
+    "serve": "serve dist -p 3000 -s",
+    "deploy": "yarn build && gh-pages -d dist"
+  },
+  "dependencies": {
+    "@reach/router": "^1.2.1",
+    "axios": "^0.18.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.6.3",
+    "react-hot-loader": "^4.3.12",
+    "react-static": "^6.0.18",
+    "react-static-plugin-styled-components": "^6.0.8",
+    "styled-components": "^4.0.3",
+    "styled-components-modifiers": "^1.0.3",
+    "styled-reboot": "^3.0.2",
+    "styled-system": "^3.1.11"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.3.0",
+    "docz": "^0.13.7",
+    "eslint-config-react-tools": "1.x.x",
+    "gh-pages": "^2.0.1",
+    "hygen": "^2.0.4",
+    "serve": "10.1.1"
+  }
+}
