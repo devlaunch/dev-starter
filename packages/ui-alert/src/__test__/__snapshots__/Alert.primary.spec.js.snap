@@ -34,23 +34,7 @@ exports[`Styles matches primary 1`] = `
   color: #002752;
 }
 
-<Alert
-  modifiers={
-    Array [
-      "primary",
-    ]
-  }
->
-  <styled.div
-    modifiers={
-      Array [
-        "primary",
-      ]
-    }
-  >
-    <div
-      className="c0"
-    />
-  </styled.div>
-</Alert>
+<div
+  className="c0"
+/>
 `;

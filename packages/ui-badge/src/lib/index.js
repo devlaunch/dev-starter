@@ -1,3 +1,3 @@
-import { Badge } from "./components/Badge";
+import { Badge } from './components/Badge';
 
 export { Badge };

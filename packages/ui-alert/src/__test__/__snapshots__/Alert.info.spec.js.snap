@@ -34,23 +34,7 @@ exports[`Styles matches info 1`] = `
   color: #062c33;
 }
 
-<Alert
-  modifiers={
-    Array [
-      "info",
-    ]
-  }
->
-  <styled.div
-    modifiers={
-      Array [
-        "info",
-      ]
-    }
-  >
-    <div
-      className="c0"
-    />
-  </styled.div>
-</Alert>
+<div
+  className="c0"
+/>
 `;

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { notification } from "../index";
+import { createNotification as notification } from "components/ui-elements/feedback/notification";
 import TopbarCartWrapper from "./singleCartModal.style";
 
 export default class extends Component {
@@ -14,14 +14,7 @@ export default class extends Component {
   };
 
   render() {
-    const {
-      price,
-      quantity,
-      image,
-      objectID,
-      cancelQuantity,
-      _highlightResult
-    } = this.props;
+    const { price, quantity, image, objectID, cancelQuantity, _highlightResult } = this.props;
     return (
       <TopbarCartWrapper className="dlCartItems">
         <div className="dlItemImage">
@@ -38,11 +31,7 @@ export default class extends Component {
             <span className="dlItemQuantity">{quantity}</span>
           </p>
         </div>
-        <a
-          className="dlItemRemove"
-          onClick={() => cancelQuantity(objectID)}
-          href="#!"
-        >
+        <a className="dlItemRemove" onClick={() => cancelQuantity(objectID)} href="#!">
           <i className="ion-android-close" />
         </a>
       </TopbarCartWrapper>

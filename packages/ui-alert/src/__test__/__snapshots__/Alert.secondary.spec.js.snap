@@ -34,23 +34,7 @@ exports[`Styles matches secondary 1`] = `
   color: #202326;
 }
 
-<Alert
-  modifiers={
-    Array [
-      "secondary",
-    ]
-  }
->
-  <styled.div
-    modifiers={
-      Array [
-        "secondary",
-      ]
-    }
-  >
-    <div
-      className="c0"
-    />
-  </styled.div>
-</Alert>
+<div
+  className="c0"
+/>
 `;

@@ -1,45 +1,72 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
+
 import {
-  space,
-  color,
-  width,
-  fontSize,
-  fontWeight,
-  textAlign,
-  lineHeight,
-  display,
-  borderRadius,
-  borderColor,
-  borders
-} from "styled-system";
-import { screenSize } from "@devlaunch/ui-config";
+  theme,
+  colors,
+  padding as p,
+  borderRadius as br,
+} from 'styled-config';
 
-const jumbotronFluid = props =>
-  props.fluid &&
-  css`
-    padding-right: 0;
-    padding-left: 0;
-    border-radius: 0;
-  `;
-
-export const Jumbotron = styled.div`
-  padding: 2rem 1rem;
-  margin-bottom: 2rem;
-  background-color: #e9ecef;
-  border-radius: 0.3rem;
-  @media (min-width: ${screenSize.sm}) {
-    padding: 4rem 2rem;
+const padding = (props) => {
+  if (props.fluid) {
+    return css`
+      padding-right: ${p(props, 'jumbotron').fluidRight};
+      padding-left: ${p(props, 'jumbotron').fluidLeft};
+    `;
+  } else if (props.pill) {
+    return css`
+      padding: ${p(props, 'jumbotron').pill};
+    `;
   }
-  ${jumbotronFluid};
-  ${space};
-  ${width};
-  ${color};
-  ${fontSize};
-  ${fontWeight};
-  ${textAlign};
-  ${lineHeight};
-  ${display};
-  ${borderRadius};
-  ${borderColor};
-  ${borders};
+
+  return css`
+    padding: ${p(props, 'jumbotron').default};
+  `;
+};
+
+const borderRadius = (props) => {
+  if (props.fluid || props.noRadius) {
+    return css`
+      border-radius: ${br(props, 'jumbotron').noRadius}
+    `;
+  } else if (props.pill) {
+    return css`
+      border-radius: ${br(props, 'jumbotron').pill}
+    `;
+  }
+
+  return css`
+    border-radius: ${br(props, 'jumbotron').lg}
+  `;
+};
+
+const Jumbotron = styled.div`
+  margin-bottom: 2rem;
+  background-color: ${(props) => colors(props, 'jumbotron').backgroundColor};
+  @media(min-width: ${(props) => props.theme.screenSize.sm}) {
+    padding: ${(props) => {
+    if (props.pill) {
+      return p(props, 'jumbotron').lgPill;
+    }
+
+    return p(props, 'jumbotron').sm;
+  }};
+  };
+  @media(max-width: ${(props) => props.theme.screenSize.md}) {
+    padding: ${(props) => {
+    if (props.pill) {
+      return p(props, 'jumbotron').smPill;
+    }
+
+    return p(props, 'jumbotron').sm;
+  }};
+  };
+  ${(props) => padding(props)};
+  ${(props) => borderRadius(props)};
 `;
+
+Jumbotron.defaultProps = {
+  theme,
+};
+
+export { Jumbotron };

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Icon } from "antd";
 import Input, { Textarea } from "../uielements/input";
 import Upload from "../uielements/upload";
-import notification from "../notification";
+import { createNotification as notification } from "components/ui-elements/feedback/notification";
 import { ContactCardWrapper } from "./contactCard.style";
 import "./upload.css";
 
@@ -25,10 +25,7 @@ export default class extends Component {
     const { contact, otherAttributes } = this.props;
     const name = contact.name ? contact.name : "No Name";
     const extraInfos = [];
-    const names = [
-      { value: "firstName", title: "First Name" },
-      { value: "lastName", title: "Last Name" }
-    ];
+    const names = [{ value: "firstName", title: "First Name" }, { value: "lastName", title: "Last Name" }];
     [...names, ...otherAttributes].forEach(attribute => {
       const value = contact[attribute.value];
       const editContact = event => {
@@ -60,11 +57,7 @@ export default class extends Component {
         extraInfos.push(
           <div className="dlContactCardInfos" key={attribute.value}>
             <p className="dlInfoLabel">{`${attribute.title}`}</p>
-            <Input
-              placeholder={`${attribute.title}`}
-              value={value}
-              onChange={event => editContact(event)}
-            />
+            <Input placeholder={`${attribute.title}`} value={value} onChange={event => editContact(event)} />
           </div>
         );
       }
@@ -80,11 +73,7 @@ export default class extends Component {
               beforeUpload={beforeUpload}
               action=""
             >
-              {contact.avatar ? (
-                <img src={contact.avatar} alt="" className="avatar" />
-              ) : (
-                ""
-              )}
+              {contact.avatar ? <img src={contact.avatar} alt="" className="avatar" /> : ""}
               <Icon type="plus" className="avatar-uploader-trigger" />
             </Upload>
           </div>

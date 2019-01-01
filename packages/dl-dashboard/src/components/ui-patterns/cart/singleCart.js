@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import InputNumber from "../uielements/InputNumber";
-import { notification } from "../index";
+import { createNotification as notification } from "components/ui-elements/feedback/notification";
 
 export default class extends Component {
   onChange = value => {
@@ -14,14 +14,7 @@ export default class extends Component {
   };
 
   render() {
-    const {
-      price,
-      quantity,
-      image,
-      objectID,
-      cancelQuantity,
-      _highlightResult
-    } = this.props;
+    const { price, quantity, image, objectID, cancelQuantity, _highlightResult } = this.props;
     const totalPrice = (price * quantity).toFixed(2);
     return (
       <tr>
@@ -47,13 +40,7 @@ export default class extends Component {
           {price.toFixed(2)}
         </td>
         <td className="dlItemQuantity">
-          <InputNumber
-            min={1}
-            max={1000}
-            value={quantity}
-            step={1}
-            onChange={this.onChange}
-          />
+          <InputNumber min={1} max={1000} value={quantity} step={1} onChange={this.onChange} />
         </td>
         <td className="dlItemPriceTotal">${totalPrice}</td>
       </tr>

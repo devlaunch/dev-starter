@@ -1,73 +1,69 @@
-import styled, { css } from "styled-components";
-import {
-  space,
-  color,
-  width,
-  fontSize,
-  fontWeight,
-  textAlign,
-  lineHeight,
-  display,
-  borderRadius,
-  borderColor,
-  borders
-} from "styled-system";
+import styled, { css } from 'styled-components';
 
-const tooltipArrowTop = props =>
+import {
+  theme,
+  colors,
+} from 'styled-config';
+
+const tooltipArrowTop = (props) => (
   props.top &&
   css`
     bottom: 0;
     width: 100%;
-    left: 42%;
     &::before {
-      top: 0;
+      top: 0.4rem;
+      left: calc(50% - 0.35rem);
       border-width: 0.4rem 0.4rem 0;
-      border-top-color: #000;
-    }
-  `;
+      border-top-color: ${colors(props, 'tooltipArrow').borderColor};
+    };
+  `
+);
 
-const tooltipArrowRight = props =>
-  props.right &&
-  css`
-    left: 0;
-    width: 0.4rem;
-    height: 100%;
-    top: 28%;
-    &::before {
-      right: 0;
-      border-width: 0.4rem 0.4rem 0.4rem 0;
-      border-right-color: #000;
-    }
-  `;
-
-const tooltipArrowBottom = props =>
+const tooltipArrowBottom = (props) => (
   props.bottom &&
   css`
-    top: 0;
-    width: 100%;
-    left: 42%;
-    &::before {
-      bottom: 0;
-      border-width: 0 0.4rem 0.4rem;
-      border-bottom-color: #000;
-    }
-  `;
+      top: 0;
+      width: 100%;
+      &::before {
+        bottom: 0.4rem;
+        left: calc(50% - 0.35rem);
+        border-width: 0 0.4rem 0.4rem;
+        border-bottom-color: ${colors(props, 'tooltipArrow').borderColor};
+      };
+    `
+);
 
-const tooltipArrowLeft = props =>
+const tooltipArrowRight = (props) => (
+  props.right &&
+  css`
+    width: 0.4rem;
+    left: 0;
+    height: 100%;
+    &::before {
+      right: 0;
+      top: calc(50% - 0.35rem);
+      border-width: 0.4rem 0.4rem 0.4rem 0;
+      border-right-color: ${colors(props, 'tooltipArrow').borderColor};
+    };
+  `
+);
+
+const tooltipArrowLeft = (props) => (
   props.left &&
   css`
-    right: 0;
     width: 0.4rem;
+    right: 0;
     height: 100%;
-    top: 28%;
     &::before {
       left: 0;
+      top: calc(50% - 0.35rem);
       border-width: 0.4rem 0 0.4rem 0.4rem;
-      border-left-color: #000;
-    }
-  `;
+      border-left-color: ${colors(props, 'tooltipArrow').borderColor};
+    };
+  `
+);
 
-export const TooltipArrow = styled.div`
+const TooltipArrow = styled.div`
   position: absolute;
   display: block;
   width: 0.8rem;
@@ -77,20 +73,15 @@ export const TooltipArrow = styled.div`
     content: "";
     border-color: transparent;
     border-style: solid;
-  }
+  };
   ${tooltipArrowTop};
   ${tooltipArrowRight};
   ${tooltipArrowBottom};
   ${tooltipArrowLeft};
-  ${space};
-  ${width};
-  ${color};
-  ${fontSize};
-  ${fontWeight};
-  ${textAlign};
-  ${lineHeight};
-  ${display};
-  ${borderRadius};
-  ${borderColor};
-  ${borders};
 `;
+
+TooltipArrow.defaultProps = {
+  theme,
+};
+
+export { TooltipArrow };

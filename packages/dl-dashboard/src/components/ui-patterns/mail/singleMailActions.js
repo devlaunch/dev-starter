@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Popover from "../uielements/popover";
 import Popconfirm from "../feedback/popconfirm";
-import notification from "../notification";
+import { createNotification as notification } from "components/ui-elements/feedback/notification";
 import { buckets } from "./mailBuckets";
 import { tags } from "./mailTags";
 import {
@@ -46,11 +46,7 @@ class MoveMailButton extends Component {
     ));
     const content = <MailActionDropdown>{bucketOptions}</MailActionDropdown>;
     return (
-      <Popover
-        title={`Move mail`}
-        content={content}
-        overlayClassName="mailMoveDropdown"
-      >
+      <Popover title={`Move mail`} content={content} overlayClassName="mailMoveDropdown">
         <button type="button" className="mailArchive">
           <i className="ion-android-folder" />
         </button>
@@ -73,11 +69,7 @@ class SelectTagButton extends Component {
     ));
     const content = <MailActionDropdown>{tagOptions}</MailActionDropdown>;
     return (
-      <Popover
-        title={`Select tag`}
-        content={content}
-        overlayClassName="mailMoveDropdown"
-      >
+      <Popover title={`Select tag`} content={content} overlayClassName="mailMoveDropdown">
         <button type="button" className="mailReport">
           <i className="ion-pricetags" />
         </button>
@@ -89,9 +81,7 @@ class SelectTagButton extends Component {
 export default class extends Component {
   render() {
     const { mail, filterMails, selectMail, toggleListVisible } = this.props;
-    const index = filterMails.findIndex(
-      filterMail => filterMail.id === mail.id
-    );
+    const index = filterMails.findIndex(filterMail => filterMail.id === mail.id);
     const toggleView = () => {
       toggleListVisible();
     };
@@ -137,32 +127,16 @@ export default class extends Component {
           {index === 0 ? (
             ""
           ) : (
-            <button
-              type="button"
-              className="prevPage"
-              onClick={() => selectMail(filterMails[index - 1].id)}
-            >
-              <i
-                className={
-                  rtl === "rtl" ? "ion-chevron-right" : "ion-chevron-left"
-                }
-              />
+            <button type="button" className="prevPage" onClick={() => selectMail(filterMails[index - 1].id)}>
+              <i className={rtl === "rtl" ? "ion-chevron-right" : "ion-chevron-left"} />
             </button>
           )}
 
           {index + 1 === filterMails.length ? (
             ""
           ) : (
-            <button
-              type="button"
-              className="nextPage"
-              onClick={() => selectMail(filterMails[index + 1].id)}
-            >
-              <i
-                className={
-                  rtl === "rtl" ? "ion-chevron-left" : "ion-chevron-right"
-                }
-              />
+            <button type="button" className="nextPage" onClick={() => selectMail(filterMails[index + 1].id)}>
+              <i className={rtl === "rtl" ? "ion-chevron-left" : "ion-chevron-right"} />
             </button>
           )}
         </MailPaginationWrapper>

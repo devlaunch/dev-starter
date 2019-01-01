@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Styles matches Tr danger hover 1`] = `
+.c0 > th,
+.c0 > td {
+  background-color: #f5c6cb;
+}
+
+.c0:hover > td,
+.c0:hover > th,
+.c0 tbody tr:hover,
+.c0 tbody tr:hover > th,
+.c0 tbody tr:hover > td {
+  background-color: #f1b0b7;
+}
+
+<tr
+  className="c0"
+/>
+`;

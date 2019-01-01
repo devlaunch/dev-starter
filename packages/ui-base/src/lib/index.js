@@ -68,7 +68,7 @@ import { Select } from "./components/Form/Select";
 import { Box } from "./components/Layout/Box";
 import { Flex } from "./components/Layout/Flex";
 
-import { GlobalStyle } from "./components/GlobalStyle";
+import { BootstrapBaseCss } from "./components/BootstrapBaseCss";
 import { Hr } from "./components/Hr";
 
 export {
@@ -94,7 +94,7 @@ export {
   Figcaption,
   Figure,
   Footer,
-  GlobalStyle,
+  BootstrapBaseCss,
   H1,
   H2,
   H3,

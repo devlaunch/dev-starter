@@ -10,13 +10,13 @@
 
 ## Table of Contents
 
-* [Documentation](https://devlaunch.github.io/dev-starter)
-* [Why?](#why)
-* [Installation](#installation)
-* [Usage](#usage)
-* [Properties](#properties)
-* [Related](#related)
-* [License](#license)
+- [Documentation](https://devlaunch.github.io/dev-starter)
+- [Why?](#why)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Properties](#properties)
+- [Related](#related)
+- [License](#license)
 
 ## Why?
 
@@ -40,16 +40,19 @@ $ yarn add @devlaunch/ui-button
 
 For detailed information take a look at the [documentation](https://devlaunch.github.io/dev-starter).
 
+To use HTML that uses the Boostrap style, use [ui-base](https://github.com/devlaunch/dev-starter/blob/master/packages/ui-base/README.md).
+
 ```jsx
 /*
-  if you installed `dev-starter` use
+  if you installed `@devlaunch/ui-button` use
 
-    import { ... } from 'dev-starter'
+    import { ... } from '@devlaunch/ui-button'
 
   instead.
 */
 import {
   Button,
+  LinkButton,
   ButtonGroups,
   ButtonToolbar,
 } from '@devlaunch/ui-button';
@@ -72,18 +75,18 @@ const MyButtonToolbarComponent = (props) => (
   {/* use different props to change the visual appearance */}
   <ButtonToolbar>
     <ButtonGroup mr="0.5rem">
-      <Button secondary>1</Button>
-      <Button secondary>2</Button>
-      <Button secondary>3</Button>
-      <Button secondary>4</Button>
+      <LinkButton secondary>1</LinkButton>
+      <LinkButton secondary>2</LinkButton>
+      <LinkButton secondary>3</LinkButton>
+      <LinkButton secondary>4</LinkButton>
     </ButtonGroup>
     <ButtonGroup mr="0.5rem">
-      <Button secondary>5</Button>
-      <Button secondary>6</Button>
-      <Button secondary>7</Button>
+      <LinkButton secondary>5</LinkButton>
+      <LinkButton secondary>6</LinkButton>
+      <LinkButton secondary>7</LinkButton>
     </ButtonGroup>
     <ButtonGroup>
-      <Button secondary>8</Button>
+      <LinkButton secondary>8</LinkButton>
     </ButtonGroup>
   </ButtonToolbar>
 );
@@ -91,57 +94,30 @@ const MyButtonToolbarComponent = (props) => (
 
 ## Properties
 
-Properties which can be added to the component to change the visual appearance. This component uses [styled-system](http://jxnblk.com/styled-system/).
+Properties which can be added to the component to change the visual appearance.
 
-* `primary` **Type**: boolean
-* `secondary` **Type**: boolean
-* `success` **Type**: boolean
-* `danger` **Type**: boolean
-* `warning` **Type**: boolean
-* `info` **Type**: boolean
-* `light` **Type**: boolean
-* `dark` **Type**: boolean
-* `active` **Type**: boolean
-* `disabled` **Type**: boolean
-* `outline` **Type**: boolean
-* `block` **Type**: boolean
-* `sm` small **Type**: boolean
-* `lg` large **Type**: boolean
-* `vertical` only on ButtonGroup **Type**: boolean
-* `m`  margin **Type**: string
-* `mt` margin-top **Type**: string
-* `mr` margin-right **Type**: string
-* `mb` margin-bottom **Type**: string
-* `ml` margin-left **Type**: string
-* `mx` margin-left and margin-right **Type**: string
-* `my` margin-top and margin-bottom **Type**: string
-* `p`  padding **Type**: string
-* `pt` padding-top **Type**: string
-* `pr` padding-right **Type**: string
-* `pb` padding-bottom **Type**: string
-* `pl` padding-left **Type**: string
-* `px` padding-left and padding-right **Type**: string
-* `py` padding-top and padding-bottom **Type**: string
-* `width` **Type**: string
-* `fontSize` **Type**: string
-* `fontWeight` **Type**: string
-* `textAlign` **Type**: string
-* `lineHeight` **Type**: string
-* `display` **Type**: string
-* `color` **Type**: string
-* `borderRadius` **Type**: string
-* `borderColor` **Type**: string
-* `border` **Type**: string
-* `borderTop` **Type**: string
-* `borderRight` **Type**: string
-* `borderBottom` **Type**: string
-* `borderLeft` **Type**: string
+- `pill` only on Button, LinkButton **Type**: boolean
+- `noRadius` only on Button, LinkButton **Type**: boolean
+- `primary` **Type**: boolean
+- `secondary` **Type**: boolean
+- `success` **Type**: boolean
+- `danger` **Type**: boolean
+- `warning` **Type**: boolean
+- `info` **Type**: boolean
+- `light` **Type**: boolean
+- `dark` **Type**: boolean
+- `active` **Type**: boolean
+- `disabled` **Type**: boolean
+- `outline` **Type**: boolean
+- `block` **Type**: boolean
+- `sm` small **Type**: boolean
+- `lg` large **Type**: boolean
+- `vertical` only on ButtonGroup **Type**: boolean
 
 ## Related
 
-* [bootstrap](https://getbootstrap.com)
-* [styled-components](https://styled-components.com)
-* [styled-system](http://jxnblk.com/styled-system/)
+- [bootstrap](https://getbootstrap.com)
+- [styled-components](https://styled-components.com)
 
 ## License
 

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Popconfirm from "../feedback/popconfirm";
 import Button from "../uielements/button";
-import notification from "../notification";
+import { createNotification as notification } from "components/ui-elements/feedback/notification";
 
 export default class extends Component {
   render() {

@@ -1,34 +1,20 @@
-import styled from "styled-components";
-import {
-  space,
-  color,
-  width,
-  fontSize,
-  fontWeight,
-  textAlign,
-  lineHeight,
-  display,
-  borderRadius,
-  borderColor,
-  borders
-} from "styled-system";
-import { P } from "@devlaunch/ui-base";
+import styled from 'styled-components';
 
-export const CardText = styled(P)`
-  margin-top: 0;
-  margin-bottom: 1rem;
+import {
+  theme,
+  margin,
+} from 'styled-config';
+
+const CardText = styled.p`
+  margin-top: ${(props) => margin(props, 'cardText').top};
+  margin-bottom: ${(props) => margin(props, 'cardText').bottom};
   &:last-child {
-    margin-bottom: 0;
-  }
-  ${space};
-  ${width};
-  ${color};
-  ${fontSize};
-  ${fontWeight};
-  ${textAlign};
-  ${lineHeight};
-  ${display};
-  ${borderRadius};
-  ${borderColor};
-  ${borders};
+    margin-bottom: ${(props) => margin(props, 'cardText').lastChildBottom};
+  };
 `;
+
+CardText.defaultProps = {
+  theme,
+};
+
+export { CardText };

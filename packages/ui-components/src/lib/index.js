@@ -58,23 +58,10 @@ import {
 } from "@devlaunch/ui-base";
 import { Breadcrumb, BreadcrumbItem } from "@devlaunch/ui-breadcrumb";
 import { Button, ButtonGroup, ButtonToolbar } from "@devlaunch/ui-button";
-import {
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-  CardImageHeader,
-  CardText,
-  CardTitle
-} from "@devlaunch/ui-card";
+import { Card, CardBody, CardFooter, CardHeader, CardImageHeader, CardText, CardTitle } from "@devlaunch/ui-card";
 import { screenSize } from "@devlaunch/ui-config";
 import { Container } from "@devlaunch/ui-container";
-import {
-  Dropdown,
-  DropdownItem,
-  DropdownMenu,
-  DropdownDivider
-} from "@devlaunch/ui-dropdown";
+import { Dropdown, DropdownItem, DropdownMenu, DropdownDivider } from "@devlaunch/ui-dropdown";
 import {
   FormCheck,
   FormCheckInput,
@@ -92,23 +79,10 @@ import {
 import { Column, Row } from "@devlaunch/ui-grid-system";
 import { Jumbotron } from "@devlaunch/ui-jumbotron";
 import { ListGroup, ListGroupItem } from "@devlaunch/ui-listgroup";
-import {
-  Modal,
-  ModalBody,
-  ModalContent,
-  ModalDialog,
-  ModalFooter,
-  ModalHeader,
-  ModalTitle
-} from "@devlaunch/ui-modal";
+import { Modal, ModalBody, ModalContent, ModalDialog, ModalFooter, ModalHeader, ModalTitle } from "@devlaunch/ui-modal";
 import { Nav, NavLink } from "@devlaunch/ui-nav";
 import { Navbar, NavbarLink } from "@devlaunch/ui-navbar";
-import {
-  Popover,
-  PopoverArrow,
-  PopoverBody,
-  PopoverHeader
-} from "@devlaunch/ui-popover";
+import { Popover, PopoverArrow, PopoverBody, PopoverHeader } from "@devlaunch/ui-popover";
 import { Table, Tr } from "@devlaunch/ui-table";
 import { Tooltip, TooltipArrow, TooltipInner } from "@devlaunch/ui-tooltip";
 

@@ -8,15 +8,6 @@
 
 > The configuration for dev-starter
 
-## Table of Contents
-
-- [@devlaunch/ui-config](#@devlaunch/ui-config)
-  - [Table of Contents](#table-of-contents)
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Related](#related)
-  - [License](#license)
-
 ## Installation
 
 ```sh
@@ -31,27 +22,42 @@ $ yarn add @devlaunch/ui-config
 
 ## Usage
 
-This package just holds the configuration for the dev-starter. For now they are just holding the screen sizes.
-In the future this package will hold also the configuration for colors, and borders.
+This package holds the theme for the styled-bootstrap-components.
+
+You can use is to customize your components.
 
 ```js
-import { screenSize } from "@devlaunch/ui-config";
+import { ThemeProvider } from 'styled-components';
+import { theme } from '@devlaunch/ui-config';
+import { Button  } from '@devlaunch/ui-button';
 
-// 576px
-screenSize.sm;
-// 768px
-screenSize.md;
-// 992px
-screenSize.lg;
-// 1200px
-screenSize.xl;
+// change the colors of a primary button in your app
+const App = (props) => (
+  <ThemeProvider
+    theme={{
+      ...theme
+      button: {
+        colors: {
+          primary:  {
+            color: 'white',
+            backgroundColor: 'lightgreen',
+            backgroundColorHoverFocus: 'green',
+          },
+        },
+      },
+    }}
+  >
+    <Button primary>Hi, I'm a green primary button</Button>
+  </ThemeProvider>
+)
 ```
+
+To see how to modify all the styled-bootstrap-components to create your own UI component library take a look at the [theme](https://github.com/devlaunch/dev-starter/blob/master/packages/ui-config/test/fixtures/index.js)
 
 ## Related
 
 - [bootstrap](https://getbootstrap.com)
 - [styled-components](https://styled-components.com)
-- [styled-system](http://jxnblk.com/styled-system/)
 
 ## License
 

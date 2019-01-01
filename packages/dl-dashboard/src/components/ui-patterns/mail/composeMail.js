@@ -3,15 +3,12 @@ import Async from "../../helpers/asyncComponent";
 import Button from "../uielements/button";
 import Input from "../uielements/input";
 import ComposeAutoComplete from "./composeAutoComplete";
-import notification from "../notification";
+import { createNotification as notification } from "components/ui-elements/feedback/notification";
 import IntlMessages from "../utility/intlMessages";
 import ComposeForm from "./composeMail.style";
 
 const Editor = props => (
-  <Async
-    load={import(/* webpackChunkName: "compose-mAIL--editor" */ "../uielements/editor")}
-    componentProps={props}
-  />
+  <Async load={import(/* webpackChunkName: "compose-mAIL--editor" */ "../uielements/editor")} componentProps={props} />
 );
 
 function uploadCallback(file) {

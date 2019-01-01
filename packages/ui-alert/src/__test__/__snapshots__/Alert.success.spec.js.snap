@@ -34,23 +34,7 @@ exports[`Styles matches success 1`] = `
   color: #0b2e13;
 }
 
-<Alert
-  modifiers={
-    Array [
-      "success",
-    ]
-  }
->
-  <styled.div
-    modifiers={
-      Array [
-        "success",
-      ]
-    }
-  >
-    <div
-      className="c0"
-    />
-  </styled.div>
-</Alert>
+<div
+  className="c0"
+/>
 `;

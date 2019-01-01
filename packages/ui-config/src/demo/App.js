@@ -1,13 +1,24 @@
 import React from "react";
-import { screenSize } from "lib";
+import { theme } from "@devlaunch/ui-config";
+import { Button } from "@devlaunch/ui-button";
 
 const App = () => (
-  <div>
-    Small 576px == {screenSize.sm} <br />
-    Medium 768px == {screenSize.md} <br />
-    Large 992px == {screenSize.lg} <br />
-    XtraLarge 1200px == {screenSize.xl} <br />
-  </div>
+  <ThemeProvider
+    theme={{
+      ...theme,
+      button: {
+        colors: {
+          primary: {
+            color: "white",
+            backgroundColor: "lightgreen",
+            backgroundColorHoverFocus: "green"
+          }
+        }
+      }
+    }}
+  >
+    <Button primary>Hi, I'm a green primary button</Button>
+  </ThemeProvider>
 );
 
 export default App;

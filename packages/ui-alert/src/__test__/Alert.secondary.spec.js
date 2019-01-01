@@ -1,22 +1,22 @@
-import React from "react";
-import { mount } from "enzyme";
-// import renderer from "react-test-renderer";
+import React from 'react';
+import renderer from 'react-test-renderer';
+import 'jest-styled-components';
 
-import { Alert } from "lib";
+import { Alert } from '../src';
 
-test("Styles matches secondary", () => {
-  const component = mount(<Alert modifiers={["secondary"]} />);
-  expect(component).toMatchSnapshot();
-  expect(component).toHaveStyleRule("color", "#383d41");
-  expect(component).toHaveStyleRule("background-color", "#e2e3e5");
-  expect(component).toHaveStyleRule("border-color", "#d6d8db");
-  expect(component).toHaveStyleRule("border-top-color", "#c8cbcf", {
-    modifier: "& > hr"
+test('Styles matches secondary', () => {
+  const tree = renderer.create(<Alert secondary />).toJSON();
+  expect(tree).toMatchSnapshot();
+  expect(tree).toHaveStyleRule('color', '#383d41');
+  expect(tree).toHaveStyleRule('background-color', '#e2e3e5');
+  expect(tree).toHaveStyleRule('border-color', '#d6d8db');
+  expect(tree).toHaveStyleRule('border-top-color', '#c8cbcf', {
+    modifier: '& > hr',
   });
-  expect(component).toHaveStyleRule("color", "#202326", {
-    modifier: "& > a"
+  expect(tree).toHaveStyleRule('color', '#202326', {
+    modifier: '& > a',
   });
-  expect(component).toHaveStyleRule("color", "#202326", {
-    modifier: "& > a:hover"
+  expect(tree).toHaveStyleRule('color', '#202326', {
+    modifier: '& > a:hover',
   });
 });

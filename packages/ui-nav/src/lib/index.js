@@ -1,4 +1,7 @@
-import { Nav } from "./components/Nav";
-import { NavLink } from "./components/NavLink";
+import { Nav } from './components/Nav';
+import { NavLink } from './components/NavLink';
 
-export { Nav, NavLink };
+export {
+  Nav,
+  NavLink,
+};

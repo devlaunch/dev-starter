@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Button from "../uielements/button";
 import Input from "../uielements/input";
 import Modal from "../feedback/modal";
-import { notification } from "../index";
+import { createNotification as notification } from "components/ui-elements/feedback/notification";
 import Firebase from "../../helpers/firebase/index";
 
 export default class extends Component {
@@ -35,8 +35,7 @@ export default class extends Component {
     let isError = false;
     Firebase.login(Firebase.EMAIL, { email, password })
       .catch(result => {
-        const message =
-          result && result.message ? result.message : "Sorry Some error occurs";
+        const message = result && result.message ? result.message : "Sorry Some error occurs";
         notification("error", message);
         self.setState({
           confirmLoading: false
@@ -48,10 +47,7 @@ export default class extends Component {
           return;
         }
         if (!result || result.message) {
-          const message =
-            result && result.message
-              ? result.message
-              : "Sorry Some error occurs";
+          const message = result && result.message ? result.message : "Sorry Some error occurs";
           notification("error", message);
           self.setState({
             confirmLoading: false
@@ -72,18 +68,14 @@ export default class extends Component {
       return;
     }
     Firebase.resetPassword(email)
-      .then(() =>
-        notification("success", `Password reset email sent to ${email}.`)
-      )
+      .then(() => notification("success", `Password reset email sent to ${email}.`))
       .catch(error => notification("error", "Email address not found."));
   };
   render() {
     return (
       <div>
         <Button type="primary" onClick={this.showModal} className="btnFirebase">
-          {this.props.signup
-            ? "Sign up with Firebase"
-            : "Sign in with Firebase"}
+          {this.props.signup ? "Sign up with Firebase" : "Sign in with Firebase"}
         </Button>
         <Modal
           title="Sign in with Firebase"

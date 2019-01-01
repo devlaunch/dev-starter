@@ -1,122 +1,125 @@
-import styled, { css } from "styled-components";
-import {
-  space,
-  color,
-  width,
-  fontSize,
-  fontWeight,
-  textAlign,
-  lineHeight,
-  display,
-  borderRadius,
-  borderColor,
-  borders
-} from "styled-system";
-import { Table as T } from "@devlaunch/ui-base";
+import styled, { css } from 'styled-components';
 
-const tableSmall = props =>
+import {
+  theme,
+  colors,
+  border,
+} from 'styled-config';
+
+const tableSmall = (props) => (
   props.sm &&
   css`
     & th,
     & td {
       padding: 0.3rem;
-    }
-  `;
+    };
+  `
+);
 
-const tableBordered = props =>
+const tableBordered = (props) => (
   props.bordered &&
   css`
-    border: 1px solid #dee2e6;
+    border: ${border(props, 'table').default} ${colors(props, 'table').borderedBorderColor};
     & th,
     & td {
-      border: 1px solid #dee2e6;
-    }
+      border: ${border(props, 'table').default} ${colors(props, 'table').borderedBorderColor};
+    };
     & thead th,
     & thead td {
       border-bottom-width: 2px;
-    }
-  `;
+    };
+  `
+);
 
-const tableStriped = props =>
+const tableStriped = (props) => (
   props.striped &&
   css`
     & tbody tr:nth-of-type(odd) {
-      background-color: rgba(0, 0, 0, 0.05);
-    }
-  `;
+      background-color: ${colors(props, 'table').stripedBackgroundColor};
+    };
+  `
+);
 
-const tableHover = props =>
+const tableHover = (props) => (
   props.hover &&
   css`
     & tbody tr:hover {
-      background-color: rgba(0, 0, 0, 0.075);
-    }
-  `;
+      background-color: ${colors(props, 'table').backgroundColorHoverFocus};
+    };
+  `
+);
 
-const tableHeadDark = props =>
+const tableHeadDark = (props) => (
   props.theadDark &&
   css`
     & thead th {
-      color: #fff;
-      background-color: #212529;
-      border-color: #32383e;
-    }
-  `;
+      color: ${colors(props, 'table').theadDarkColor};
+      background-color: ${colors(props, 'table').theadDarkBackgroundColor};
+      border-color: ${colors(props, 'table').theadDarkBorderColor};
+    };
+  `
+);
 
-const tableHeadLight = props =>
+const tableHeadLight = (props) => (
   props.theadLight &&
   css`
     & thead th {
-      color: #495057;
-      background-color: #e9ecef;
-      border-color: #dee2e6;
-    }
-  `;
+      color: ${colors(props, 'table').theadLightColor};
+      background-color: ${colors(props, 'table').theadLightBackgroundColor};
+      border-color: ${colors(props, 'table').theadLightBorderColor};
+    };
+  `
+);
 
-const tableDarkDarkBordered = props =>
+const tableDarkBordered = (props) => (
   props.bordered &&
   css`
     border: 0;
-  `;
+  `
+);
 
-const tableDarkDarkStriped = props =>
+const tableDarkStriped = (props) => (
   props.striped &&
   css`
     & tbody tr:nth-of-type(odd) {
-      background-color: rgba(255, 255, 255, 0.05);
-    }
-  `;
+      background-color: ${colors(props, 'table').stripedDarkBackgroundColor};
+    };
+  `
+);
 
-const tableDarkDarkHover = props =>
+const tableDarkHover = (props) => (
   props.hover &&
   css`
     & tbody tr:hover {
-      background-color: rgba(255, 255, 255, 0.075);
-    }
-  `;
+      background-color: ${colors(props, 'table').darkBackgroundColorHoverFocus};
+    };
+  `
+);
 
-const tableDarkDark = props =>
-  props.tableDark &&
+const tableDark = (props) => (
+  (props.tableDark || props.dark) &&
   css`
-    color: #fff;
-    background-color: #212529;
+    color: ${colors(props, 'table').darkColor};
+    background-color: ${colors(props, 'table').darkBackgroundColor};
     & th,
     & td,
     & thead th {
-      border-color: #32383e;
-    }
-    ${tableDarkDarkBordered};
-    ${tableDarkDarkStriped};
-    ${tableDarkDarkHover};
-  `;
+      border-color: ${colors(props, 'table').darkBorderColor};
+    };
+    ${tableDarkBordered};
+    ${tableDarkStriped};
+    ${tableDarkHover};
+  `
+);
 
-const tableResponsiveBordered = props =>
+const tableResponsiveBordered = (props) => (
   props.bordered &&
   css`
     border: 0;
-  `;
+  `
+);
 
-const tableResponsiveSmall = props =>
+const tableResponsiveSmall = (props) => (
   props.responsiveSm &&
   css`
     @media (max-width: 575.98px) {
@@ -124,10 +127,11 @@ const tableResponsiveSmall = props =>
       width: 100%;
       overflow-x: auto;
       ${tableResponsiveBordered};
-    }
-  `;
+    };
+  `
+);
 
-const tableResponsiveMedium = props =>
+const tableResponsiveMedium = (props) => (
   props.responsiveMd &&
   css`
     @media (max-width: 767.98px) {
@@ -135,10 +139,11 @@ const tableResponsiveMedium = props =>
       width: 100%;
       overflow-x: auto;
       ${tableResponsiveBordered};
-    }
-  `;
+    };
+  `
+);
 
-const tableResponsiveLarge = props =>
+const tableResponsiveLarge = (props) => (
   props.responsiveLg &&
   css`
     @media (max-width: 991.98px) {
@@ -146,10 +151,11 @@ const tableResponsiveLarge = props =>
       width: 100%;
       overflow-x: auto;
       ${tableResponsiveBordered};
-    }
-  `;
+    };
+  `
+);
 
-const tableResponsiveXLarge = props =>
+const tableResponsiveXLarge = (props) => (
   props.responsiveXl &&
   css`
     @media (max-width: 1199.98px) {
@@ -157,19 +163,21 @@ const tableResponsiveXLarge = props =>
       width: 100%;
       overflow-x: auto;
       ${tableResponsiveBordered};
-    }
-  `;
+    };
+  `
+);
 
-const tableResponsive = props =>
+const tableResponsive = (props) => (
   props.responsive &&
   css`
     display: block;
     width: 100%;
     overflow-x: auto;
     ${tableResponsiveBordered};
-  `;
+  `
+);
 
-export const Table = styled(T)`
+const Table = styled.table`
   width: 100%;
   max-width: 100%;
   margin-bottom: 1rem;
@@ -178,23 +186,23 @@ export const Table = styled(T)`
   & td {
     padding: 0.75rem;
     vertical-align: top;
-    border-top: 1px solid #dee2e6;
-  }
+    border-top: ${(props) => border(props, 'table').default} ${(props) => colors(props, 'table').borderColor};
+  };
   & thead th {
     vertical-align: bottom;
-    border-bottom: 2px solid #dee2e6;
-  }
+    border-bottom: ${(props) => border(props, 'table').bottomTop} ${(props) => colors(props, 'table').borderColor};
+  };
   & tbody + tbody {
-    border-top: 2px solid #dee2e6;
-  }
+    border-top: ${(props) => border(props, 'table').bottomTop} ${(props) => colors(props, 'table').borderColor};
+  };
   & + & {
-    background-color: #fff;
-  }
+    background-color: ${(props) => colors(props, 'table').backgroundColor};
+  };
   ${tableSmall};
   ${tableBordered};
   ${tableStriped};
   ${tableHover};
-  ${tableDarkDark};
+  ${tableDark};
   ${tableHeadDark};
   ${tableHeadLight};
   ${tableResponsiveSmall};
@@ -202,15 +210,10 @@ export const Table = styled(T)`
   ${tableResponsiveLarge};
   ${tableResponsiveXLarge};
   ${tableResponsive};
-  ${space};
-  ${width};
-  ${color};
-  ${fontSize};
-  ${fontWeight};
-  ${textAlign};
-  ${lineHeight};
-  ${display};
-  ${borderRadius};
-  ${borderColor};
-  ${borders};
 `;
+
+Table.defaultProps = {
+  theme,
+};
+
+export { Table };

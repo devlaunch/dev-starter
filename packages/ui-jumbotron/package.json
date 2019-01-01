@@ -54,11 +54,11 @@
   },
   "homepage": "https://github.com/devlaunch/dev-starter",
   "devDependencies": {
-    "@babel/cli": "^7.1.2",
-    "jest-styled-components": "^6.2.1",
+    "@babel/cli": "7.2.3",
+    "jest-styled-components": "6.3.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "react-scripts": "2.0.4",
+    "react-scripts": "2.1.2",
     "react-test-renderer": "^16.5.2"
   },
   "peerDependencies": {
@@ -66,8 +66,8 @@
   },
   "dependencies": {
     "@devlaunch/ui-config": "^1.0.0",
-    "styled-components": "^4.0.3",
-    "styled-components-modifiers": "^1.0.3",
-    "styled-system": "^3.1.11"
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "styled-components": "^4.1.3"
   }
 }
