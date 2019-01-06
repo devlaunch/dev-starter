@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
 import {
   theme,
@@ -8,36 +8,35 @@ import {
   fontFamily,
   borderRadius,
   border,
-  fontSize,
-} from 'styled-config';
+  fontSize
+} from "@devlaunch/ui-config";
 
-const display = (props) => (
+const display = props =>
   props.hidden
     ? css`
         display: none;
       `
     : css`
         display: block;
-      `
-);
+      `;
 
-const margin = (props) => {
+const margin = props => {
   if (props.top) {
     return css`
-      margin-bottom: ${m(props, 'popover').topBottom};
+      margin-bottom: ${m(props, "popover").topBottom};
     `;
   } else if (props.left) {
     return css`
-      margin-right: ${m(props, 'popover').leftRight};
+      margin-right: ${m(props, "popover").leftRight};
     `;
   } else if (props.bottom) {
     return css`
-      margin-top: ${m(props, 'popover').bottomTop};
+      margin-top: ${m(props, "popover").bottomTop};
     `;
   }
 
   return css`
-    margin-left: ${m(props, 'popover').rightLeft};
+    margin-left: ${m(props, "popover").rightLeft};
   `;
 };
 
@@ -47,9 +46,9 @@ const Popover = styled.div`
   left: 0;
   z-index: 1060;
   max-width: 276px;
-  font-family: ${(props) => fontFamily(props, 'popover').default};
+  font-family: ${props => fontFamily(props, "popover").default};
   font-style: normal;
-  font-weight: ${(props) => fontWeight(props, 'popover').default};
+  font-weight: ${props => fontWeight(props, "popover").default};
   line-height: 1.5;
   text-align: left;
   text-decoration: none;
@@ -60,18 +59,18 @@ const Popover = styled.div`
   word-spacing: normal;
   white-space: normal;
   line-break: auto;
-  font-size: ${(props) => fontSize(props, 'popover').sm};
+  font-size: ${props => fontSize(props, "popover").sm};
   word-wrap: break-word;
-  background-color: ${(props) => colors(props, 'popover').backgroundColor};
+  background-color: ${props => colors(props, "popover").backgroundColor};
   background-clip: padding-box;
-  border: ${(props) => border(props, 'popover').default} ${(props) => colors(props, 'popover').borderColor};
-  border-radius: ${(props) => borderRadius(props, 'popover').lg};
-  ${(props) => margin(props)};
-  ${(props) => display(props)};
+  border: ${props => border(props, "popover").default} ${props => colors(props, "popover").borderColor};
+  border-radius: ${props => borderRadius(props, "popover").lg};
+  ${props => margin(props)};
+  ${props => display(props)};
 `;
 
 Popover.defaultProps = {
-  theme,
+  theme
 };
 
 export { Popover };

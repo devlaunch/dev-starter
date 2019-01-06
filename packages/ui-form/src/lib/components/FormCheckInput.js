@@ -1,31 +1,26 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
-import {
-  theme,
-  colors,
-  margin,
-} from 'styled-config';
+import { theme, colors, margin } from "@devlaunch/ui-config";
 
-const color = (props) => (
+const color = props =>
   props.disabled &&
   css`
-    color: ${colors(props, 'formCheckInput').colorDisabled};
+    color: ${colors(props, "formCheckInput").colorDisabled};
     & + label {
-      color: ${colors(props, 'formCheckInput').colorDisabledLabel};
-    };
-  `
-);
+      color: ${colors(props, "formCheckInput").colorDisabledLabel};
+    }
+  `;
 
 const FormCheckInput = styled.input`
   position: absolute;
-  margin-top: ${(props) => margin(props, 'formCheckInput').top};
-  margin-left: ${(props) => margin(props, 'formCheckInput').left};
+  margin-top: ${props => margin(props, "formCheckInput").top};
+  margin-left: ${props => margin(props, "formCheckInput").left};
   box-sizing: border-box;
-  ${(props) => color(props)};
+  ${props => color(props)};
 `;
 
 FormCheckInput.defaultProps = {
-  theme,
+  theme
 };
 
 export { FormCheckInput };

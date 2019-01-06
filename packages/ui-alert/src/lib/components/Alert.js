@@ -8,7 +8,7 @@ import {
   border,
   borderRadius as br,
   fontWeight,
-} from 'styled-config';
+} from '@devlaunch/ui-config';
 
 const alertDismissible = (props) => (
   props.dismissible &&

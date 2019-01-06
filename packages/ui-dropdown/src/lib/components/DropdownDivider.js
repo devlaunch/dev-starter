@@ -1,23 +1,18 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import {
-  theme,
-  colors,
-  border,
-  margin,
-  padding,
-} from 'styled-config';
+import { theme, colors, border, margin, padding } from "@devlaunch/ui-config";
 
 const DropdownDivider = styled.div`
   height: 0;
-  padding-top: ${(props) => padding(props, 'dropdownDivider').top};
-  margin-top: ${(props) => margin(props, 'dropdownDivider').top};
+  padding-top: ${props => padding(props, "dropdownDivider").top};
+  margin-top: ${props => margin(props, "dropdownDivider").top};
   overflow: hidden;
-  border-top: ${(props) => border(props, 'dropdownDivider').default} ${(props) => colors(props, 'dropdownDivider').borderTop};
+  border-top: ${props => border(props, "dropdownDivider").default}
+    ${props => colors(props, "dropdownDivider").borderTop};
 `;
 
 DropdownDivider.defaultProps = {
-  theme,
+  theme
 };
 
 export { DropdownDivider };

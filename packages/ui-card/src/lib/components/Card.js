@@ -5,7 +5,7 @@ import {
   colors,
   borderRadius as br,
   border,
-} from 'styled-config';
+} from '@devlaunch/ui-config';
 
 const borderRadius = (props) => {
   if (props.noRadius) {

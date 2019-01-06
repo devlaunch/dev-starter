@@ -1,34 +1,29 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
-import {
-  theme,
-  colors,
-  padding,
-} from 'styled-config';
+import { theme, colors, padding } from "@devlaunch/ui-config";
 
-const active = (props) => (
+const active = props =>
   props.active &&
   css`
-    color: ${colors(props, 'breadcrumbItem').color};
-  `
-);
+    color: ${colors(props, "breadcrumbItem").color};
+  `;
 
 const BreadcrumbItem = styled.li`
   &:not(:first-child)::before {
     display: inline-block;
-    padding-right: ${(props) => padding(props, 'breadcrumbItem').right};
-    padding-left: ${(props) => padding(props, 'breadcrumbItem').left};
-    color: ${(props) => colors(props, 'breadcrumbItem').color};
+    padding-right: ${props => padding(props, "breadcrumbItem").right};
+    padding-left: ${props => padding(props, "breadcrumbItem").left};
+    color: ${props => colors(props, "breadcrumbItem").color};
     content: "/";
-  };
+  }
   & + &:hover::before {
     text-decoration: none;
-  };
+  }
   ${active};
 `;
 
 BreadcrumbItem.defaultProps = {
-  theme,
+  theme
 };
 
 export { BreadcrumbItem };

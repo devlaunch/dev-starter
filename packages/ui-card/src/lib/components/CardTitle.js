@@ -1,32 +1,26 @@
-import React from 'react';
-import styled, { css } from 'styled-components';
+import React from "react";
+import styled, { css } from "styled-components";
 
-import {
-  theme,
-  colors,
-  margin as m,
-} from 'styled-config';
+import { theme, colors, margin as m } from "@devlaunch/ui-config";
 
-const margin = (props) => (
+const margin = props =>
   props.subtitle &&
   css`
-    margin-top: ${m(props, 'cardTitle').subtitleTop};
-    margin-bottom: ${m(props, 'cardTitle').subtitleBottom};
-  `
-);
+    margin-top: ${m(props, "cardTitle").subtitleTop};
+    margin-bottom: ${m(props, "cardTitle").subtitleBottom};
+  `;
 
-const color = (props) => (
+const color = props =>
   props.muted &&
   css`
-    color: ${colors(props, 'cardTitle').colorMuted};
-  `
-);
+    color: ${colors(props, "cardTitle").colorMuted};
+  `;
 
 const cardTitleStyle = () => css`
-    margin-bottom: ${(props) => m(props, 'cardTitle').bottom};
-    ${(props) => margin(props)};
-    ${(props) => color(props)};
-  `;
+  margin-bottom: ${props => m(props, "cardTitle").bottom};
+  ${props => margin(props)};
+  ${props => color(props)};
+`;
 
 const CardTitleH1 = styled.h1`
   ${cardTitleStyle};
@@ -52,7 +46,7 @@ const CardTitleH6 = styled.h6`
   ${cardTitleStyle};
 `;
 
-const CardTitle = (props) => {
+const CardTitle = props => {
   if (props.h1) {
     return <CardTitleH1 {...props} />;
   } else if (props.h2) {
@@ -71,7 +65,7 @@ const CardTitle = (props) => {
 };
 
 CardTitle.defaultProps = {
-  theme,
+  theme
 };
 
 export { CardTitle };

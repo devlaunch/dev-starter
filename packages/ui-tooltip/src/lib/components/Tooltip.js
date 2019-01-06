@@ -1,42 +1,33 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
-import {
-  theme,
-  padding as p,
-  margin,
-  fontWeight,
-  fontSize,
-  fontFamily,
-} from 'styled-config';
+import { theme, padding as p, margin, fontWeight, fontSize, fontFamily } from "@devlaunch/ui-config";
 
-const padding = (props) => (
-  (props.left || props.right)
+const padding = props =>
+  props.left || props.right
     ? css`
-        padding: ${p(props, 'tooltip').leftRight};
+        padding: ${p(props, "tooltip").leftRight};
       `
     : css`
-      padding: ${p(props, 'tooltip').topBottom};
-    `
-);
+        padding: ${p(props, "tooltip").topBottom};
+      `;
 
-const opacity = (props) => (
+const opacity = props =>
   props.hidden
     ? css`
-      opacity: 0;
-    `
+        opacity: 0;
+      `
     : css`
-      opacity: 0.9;
-    `
-);
+        opacity: 0.9;
+      `;
 
 const Tooltip = styled.div`
   position: absolute;
   z-index: 1070;
   display: block;
-  margin: ${(props) => margin(props, 'tooltip').default};
-  font-family: ${(props) => fontFamily(props, 'tooltip').default};
+  margin: ${props => margin(props, "tooltip").default};
+  font-family: ${props => fontFamily(props, "tooltip").default};
   font-style: normal;
-  font-weight: ${(props) => fontWeight(props, 'tooltip').default};
+  font-weight: ${props => fontWeight(props, "tooltip").default};
   line-height: 1.5;
   text-align: left;
   text-decoration: none;
@@ -47,14 +38,14 @@ const Tooltip = styled.div`
   word-spacing: normal;
   white-space: normal;
   line-break: auto;
-  font-size: ${(props) => fontSize(props, 'tooltip').default};
+  font-size: ${props => fontSize(props, "tooltip").default};
   word-wrap: break-word;
-  ${(props) => padding(props)};
-  ${(props) => opacity(props)};
+  ${props => padding(props)};
+  ${props => opacity(props)};
 `;
 
 Tooltip.defaultProps = {
-  theme,
+  theme
 };
 
 export { Tooltip };

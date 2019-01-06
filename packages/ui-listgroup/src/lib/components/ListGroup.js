@@ -1,41 +1,34 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
-import {
-  theme,
-  padding,
-  margin,
-  border as b,
-  borderRadius,
-} from 'styled-config';
+import { theme, padding, margin, border as b, borderRadius } from "@devlaunch/ui-config";
 
-const border = (props) => (
+const border = props =>
   props.flush &&
   css`
-    & > a, 
+    & > a,
     & > li {
-      border-right: ${b(props, 'listGroup').aLiFlushRight};
-      border-left: ${b(props, 'listGroup').aLiFlushLeft};
-      border-radius: ${borderRadius(props, 'listGroup').noRadius};
+      border-right: ${b(props, "listGroup").aLiFlushRight};
+      border-left: ${b(props, "listGroup").aLiFlushLeft};
+      border-radius: ${borderRadius(props, "listGroup").noRadius};
       &:first-child {
-        border-top: ${b(props, 'listGroup').aLiFlushFirstChildTop};
-      };
+        border-top: ${b(props, "listGroup").aLiFlushFirstChildTop};
+      }
       &:last-child {
-        border-bottom: ${b(props, 'listGroup').aLiFlushLastChildBottom};
-      };
-    };
-  `
-);
+        border-bottom: ${b(props, "listGroup").aLiFlushLastChildBottom};
+      }
+    }
+  `;
 
 const ListGroup = styled.ul`
   display: flex;
   flex-direction: column;
-  padding-left: ${(props) => padding(props, 'listGroup').left};
-  margin-bottom: ${(props) => margin(props, 'listGroup').bottom};
-  ${(props) => border(props)};
+  padding-left: ${props => padding(props, "listGroup").left};
+  margin-bottom: ${props => margin(props, "listGroup").bottom};
+  ${props => border(props)};
 `;
 
 ListGroup.defaultProps = {
-  theme,
+  theme
 };
 
 export { ListGroup };

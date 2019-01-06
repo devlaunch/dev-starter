@@ -1,47 +1,41 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
-import {
-  theme,
-  padding,
-  colors,
-  borderRadius as br,
-} from 'styled-config';
+import { theme, padding, colors, borderRadius as br } from "@devlaunch/ui-config";
 
-const borderRadius = (props) => {
+const borderRadius = props => {
   if (props.noRadius) {
     return css`
-      border-radius: ${br(props, 'tooltipInner').noRadius}
+      border-radius: ${br(props, "tooltipInner").noRadius};
     `;
   } else if (props.pill) {
     return css`
-      border-radius: ${br(props, 'tooltipInner').pill}
+      border-radius: ${br(props, "tooltipInner").pill};
     `;
   }
 
   return css`
-    border-radius: ${br(props, 'tooltipInner').default}
+    border-radius: ${br(props, "tooltipInner").default};
   `;
 };
 
-const pill = (props) => (
+const pill = props =>
   props.pill &&
   css`
     margin: -2px;
-  `
-);
+  `;
 
 const TooltipInner = styled.div`
   max-width: 200px;
-  padding: ${(props) => padding(props, 'tooltipInner').default}
-  color: ${(props) => colors(props, 'tooltipInner').color};
+  padding: ${props => padding(props, "tooltipInner").default}
+  color: ${props => colors(props, "tooltipInner").color};
   text-align: center;
-  background-color: ${(props) => colors(props, 'tooltipInner').backgroundColor};
-  ${(props) => borderRadius(props)}
-  ${(props) => pill(props)}
+  background-color: ${props => colors(props, "tooltipInner").backgroundColor};
+  ${props => borderRadius(props)}
+  ${props => pill(props)}
 `;
 
 TooltipInner.defaultProps = {
-  theme,
+  theme
 };
 
 export { TooltipInner };

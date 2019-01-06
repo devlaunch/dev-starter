@@ -1,18 +1,14 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import {
-  theme,
-  colors,
-  padding,
-} from 'styled-config';
+import { theme, colors, padding } from "@devlaunch/ui-config";
 
 const PopoverBody = styled.div`
-  padding: ${(props) => padding(props, 'popoverBody').default};
-  color: ${(props) => colors(props, 'popoverBody').color};
+  padding: ${props => padding(props, "popoverBody").default};
+  color: ${props => colors(props, "popoverBody").color};
 `;
 
 PopoverBody.defaultProps = {
-  theme,
+  theme
 };
 
 export { PopoverBody };

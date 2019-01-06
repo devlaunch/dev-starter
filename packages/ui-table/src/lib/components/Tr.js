@@ -1,11 +1,8 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
-import {
-  theme,
-  colors,
-} from 'styled-config';
+import { theme, colors } from "@devlaunch/ui-config";
 
-const color = (props) => {
+const color = props => {
   if (props.active) {
     return css`
       & > th,
@@ -13,35 +10,35 @@ const color = (props) => {
       & tbody tr:hover,
       & tbody tr:hover > th,
       & tbody tr:hover > td {
-        background-color: ${colors(props, 'tr').activeBackgroundColor};
-      };
+        background-color: ${colors(props, "tr").activeBackgroundColor};
+      }
     `;
   }
 
   return css`
     & > th,
     & > td {
-      background-color: ${colors(props, 'tr').backgroundColor};
-    };
+      background-color: ${colors(props, "tr").backgroundColor};
+    }
     ${props.hover &&
-    css`
+      css`
         &:hover > td,
         &:hover > th,
         & tbody tr:hover,
         & tbody tr:hover > th,
         & tbody tr:hover > td {
-          background-color: ${colors(props, 'tr').backgroundColorHoverFocus};
-        };
+          background-color: ${colors(props, "tr").backgroundColorHoverFocus};
+        }
       `};
-    `;
+  `;
 };
 
 const Tr = styled.tr`
-  ${(props) => color(props)};
+  ${props => color(props)};
 `;
 
 Tr.defaultProps = {
-  theme,
+  theme
 };
 
 export { Tr };

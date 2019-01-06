@@ -6,7 +6,7 @@ import {
   padding as p,
   borderRadius as br,
   fontWeight,
-} from 'styled-config';
+} from '@devlaunch/ui-config';
 
 const borderRadius = (props) => {
   if (props.pill) {

@@ -1,11 +1,8 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
-import {
-  theme,
-  colors,
-} from 'styled-config';
+import { theme, colors } from "@devlaunch/ui-config";
 
-const popoverArrowTop = (props) => (
+const popoverArrowTop = props =>
   props.top &&
   css`
     width: 100%;
@@ -14,19 +11,18 @@ const popoverArrowTop = (props) => (
     &::after {
       left: calc(50% - 0.75rem);
       border-width: 0.5rem 0.5rem 0 0.5rem;
-    };
+    }
     &::before {
       bottom: 0;
-      border-top-color: ${colors(props, 'popoverArrow').borderColor};
-    };
+      border-top-color: ${colors(props, "popoverArrow").borderColor};
+    }
     &::after {
       bottom: 1px;
-      border-top-color: ${colors(props, 'popoverArrow').borderColorWhite};
-    };
-  `
-);
+      border-top-color: ${colors(props, "popoverArrow").borderColorWhite};
+    }
+  `;
 
-const popoverArrowRight = (props) => (
+const popoverArrowRight = props =>
   props.right &&
   css`
     left: calc((0.5rem + 1px) * -1);
@@ -37,19 +33,18 @@ const popoverArrowRight = (props) => (
     &::after {
       top: calc(50% - 0.75rem);
       border-width: 0.5rem 0.5rem 0.5rem 0;
-    };
+    }
     &::before {
       left: 0;
-      border-right-color: ${colors(props, 'popoverArrow').borderColor};
-    };
+      border-right-color: ${colors(props, "popoverArrow").borderColor};
+    }
     &::after {
       left: 1px;
-      border-right-color: ${colors(props, 'popoverArrow').borderColorWhite};
-    };
-  `
-);
+      border-right-color: ${colors(props, "popoverArrow").borderColorWhite};
+    }
+  `;
 
-const popoverArrowBottom = (props) => (
+const popoverArrowBottom = props =>
   props.bottom &&
   css`
     width: 100%;
@@ -58,19 +53,18 @@ const popoverArrowBottom = (props) => (
     &::after {
       left: calc(50% - 0.75rem);
       border-width: 0 0.5rem 0.5rem 0.5rem;
-    };
+    }
     &::before {
       top: 0;
-      border-bottom-color: ${colors(props, 'popoverArrow').borderColor};
-    };
+      border-bottom-color: ${colors(props, "popoverArrow").borderColor};
+    }
     &::after {
       top: 1px;
-      border-bottom-color: ${colors(props, 'popoverArrow').borderColorWhite};
-    };
-  `
-);
+      border-bottom-color: ${colors(props, "popoverArrow").borderColorWhite};
+    }
+  `;
 
-const popoverArrowLeft = (props) => (
+const popoverArrowLeft = props =>
   props.left &&
   css`
     right: calc((0.5rem + 1px) * -1);
@@ -81,17 +75,16 @@ const popoverArrowLeft = (props) => (
     &::after {
       top: calc(50% - 0.75rem);
       border-width: 0.5rem 0 0.5rem 0.5rem;
-    };
+    }
     &::before {
       right: 0;
-      border-left-color: ${colors(props, 'popoverArrow').borderColor};
-    };
+      border-left-color: ${colors(props, "popoverArrow").borderColor};
+    }
     &::after {
       right: 1px;
-      border-left-color: ${colors(props, 'popoverArrow').borderColorWhite};
-    };
-  `
-);
+      border-left-color: ${colors(props, "popoverArrow").borderColorWhite};
+    }
+  `;
 
 const PopoverArrow = styled.div`
   position: absolute;
@@ -105,7 +98,7 @@ const PopoverArrow = styled.div`
     content: "";
     border-color: transparent;
     border-style: solid;
-  };
+  }
   ${popoverArrowTop};
   ${popoverArrowRight};
   ${popoverArrowBottom};
@@ -113,7 +106,7 @@ const PopoverArrow = styled.div`
 `;
 
 PopoverArrow.defaultProps = {
-  theme,
+  theme
 };
 
 export { PopoverArrow };

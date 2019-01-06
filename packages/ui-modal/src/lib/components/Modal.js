@@ -1,23 +1,31 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
-import { theme } from 'styled-config';
+import { theme } from "@devlaunch/ui-config";
 
-const maxWidth = (props) => {
+const maxWidth = props => {
   if (props.sm) {
-    return css`max-width: 300px;`;
+    return css`
+      max-width: 300px;
+    `;
   } else if (props.lg) {
-    return css`max-width: 800px;`;
+    return css`
+      max-width: 800px;
+    `;
   }
 
-  return '';
+  return "";
 };
 
-const display = (props) => {
+const display = props => {
   if (props.hidden) {
-    return css`display: none;`;
+    return css`
+      display: none;
+    `;
   }
 
-  return css`display: block;`;
+  return css`
+    display: block;
+  `;
 };
 
 const Modal = styled.div`
@@ -31,17 +39,17 @@ const Modal = styled.div`
   outline: 0;
   overflow-x: hidden;
   overflow-y: auto;
-  @media (min-width: ${(props) => props.theme.screenSize.sm}) {
-    ${(props) => maxWidth(props)}
-  };
-  @media (min-width: ${(props) => props.theme.screenSize.lg}) {
-    ${(props) => maxWidth(props)}
-  };
-  ${(props) => display(props)}
+  @media (min-width: ${props => props.theme.screenSize.sm}) {
+    ${props => maxWidth(props)}
+  }
+  @media (min-width: ${props => props.theme.screenSize.lg}) {
+    ${props => maxWidth(props)}
+  }
+  ${props => display(props)}
 `;
 
 Modal.defaultProps = {
-  theme,
+  theme
 };
 
 export { Modal };

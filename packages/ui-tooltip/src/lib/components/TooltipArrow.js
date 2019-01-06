@@ -1,11 +1,8 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
-import {
-  theme,
-  colors,
-} from 'styled-config';
+import { theme, colors } from "@devlaunch/ui-config";
 
-const tooltipArrowTop = (props) => (
+const tooltipArrowTop = props =>
   props.top &&
   css`
     bottom: 0;
@@ -14,26 +11,24 @@ const tooltipArrowTop = (props) => (
       top: 0.4rem;
       left: calc(50% - 0.35rem);
       border-width: 0.4rem 0.4rem 0;
-      border-top-color: ${colors(props, 'tooltipArrow').borderColor};
-    };
-  `
-);
+      border-top-color: ${colors(props, "tooltipArrow").borderColor};
+    }
+  `;
 
-const tooltipArrowBottom = (props) => (
+const tooltipArrowBottom = props =>
   props.bottom &&
   css`
-      top: 0;
-      width: 100%;
-      &::before {
-        bottom: 0.4rem;
-        left: calc(50% - 0.35rem);
-        border-width: 0 0.4rem 0.4rem;
-        border-bottom-color: ${colors(props, 'tooltipArrow').borderColor};
-      };
-    `
-);
+    top: 0;
+    width: 100%;
+    &::before {
+      bottom: 0.4rem;
+      left: calc(50% - 0.35rem);
+      border-width: 0 0.4rem 0.4rem;
+      border-bottom-color: ${colors(props, "tooltipArrow").borderColor};
+    }
+  `;
 
-const tooltipArrowRight = (props) => (
+const tooltipArrowRight = props =>
   props.right &&
   css`
     width: 0.4rem;
@@ -43,12 +38,11 @@ const tooltipArrowRight = (props) => (
       right: 0;
       top: calc(50% - 0.35rem);
       border-width: 0.4rem 0.4rem 0.4rem 0;
-      border-right-color: ${colors(props, 'tooltipArrow').borderColor};
-    };
-  `
-);
+      border-right-color: ${colors(props, "tooltipArrow").borderColor};
+    }
+  `;
 
-const tooltipArrowLeft = (props) => (
+const tooltipArrowLeft = props =>
   props.left &&
   css`
     width: 0.4rem;
@@ -58,10 +52,9 @@ const tooltipArrowLeft = (props) => (
       left: 0;
       top: calc(50% - 0.35rem);
       border-width: 0.4rem 0 0.4rem 0.4rem;
-      border-left-color: ${colors(props, 'tooltipArrow').borderColor};
-    };
-  `
-);
+      border-left-color: ${colors(props, "tooltipArrow").borderColor};
+    }
+  `;
 
 const TooltipArrow = styled.div`
   position: absolute;
@@ -73,7 +66,7 @@ const TooltipArrow = styled.div`
     content: "";
     border-color: transparent;
     border-style: solid;
-  };
+  }
   ${tooltipArrowTop};
   ${tooltipArrowRight};
   ${tooltipArrowBottom};
@@ -81,7 +74,7 @@ const TooltipArrow = styled.div`
 `;
 
 TooltipArrow.defaultProps = {
-  theme,
+  theme
 };
 
 export { TooltipArrow };
