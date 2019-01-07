@@ -3,19 +3,25 @@ import { Root, Routes } from "react-static";
 import { Link } from "@reach/router";
 import { ThemeProvider } from "styled-components";
 
-import { theme } from "";
+import { BootstrapBaseCss } from "@devlaunch/ui-base";
+import { theme } from "./theme";
 
 function App() {
   return (
     <Root>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/blog">Blog</Link>
-      </nav>
-      <div className="content">
-        <Routes />
-      </div>
+      <ThemeProvider theme={{ ...theme }}>
+        <React.Fragment>
+          <BootstrapBaseCss />
+          <nav>
+            <Link to="/">Home</Link>
+            <Link to="/about">About</Link>
+            <Link to="/blog">Blog</Link>
+          </nav>
+          <div className="content">
+            <Routes />
+          </div>
+        </React.Fragment>
+      </ThemeProvider>
     </Root>
   );
 }

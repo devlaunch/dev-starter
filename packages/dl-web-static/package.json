@@ -47,22 +47,18 @@
   "dependencies": {
     "@reach/router": "^1.2.1",
     "axios": "^0.18.0",
-    "react": "^16.5.2",
-    "react-dom": "^16.6.3",
-    "react-hot-loader": "^4.3.12",
-    "react-static": "^6.0.18",
-    "react-static-plugin-styled-components": "^6.0.8",
-    "styled-components": "^4.0.3",
-    "styled-components-modifiers": "^1.0.3",
-    "styled-reboot": "^3.0.2",
-    "styled-system": "^3.1.11"
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-hot-loader": "^4.6.3",
+    "react-static": "^6.1.5",
+    "react-static-plugin-styled-components": "^6.1.1",
+    "styled-components": "^4.1.3",
+    "@devlaunch/ui-base": "^1.0.0"
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.3.0",
-    "docz": "^0.13.7",
-    "eslint-config-react-tools": "1.x.x",
+    "babel-plugin-styled-components": "^1.10.0",
+    "eslint-config-react-tools": "^1.1.6",
     "gh-pages": "^2.0.1",
-    "hygen": "^2.0.4",
-    "serve": "10.1.1"
+    "serve": "^10.1.1"
   }
 }

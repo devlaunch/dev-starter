@@ -44,6 +44,7 @@ import { tr } from "./elements/tr";
 import { tooltip } from "./elements/tooltip";
 import { tooltipArrow } from "./elements/tooltipArrow";
 import { tooltipInner } from "./elements/tooltipInner";
+import { link, text, hr, body } from "./elements/typography";
 
 const theme = {
   alert,
@@ -91,7 +92,11 @@ const theme = {
   tr,
   tooltip,
   tooltipArrow,
-  tooltipInner
+  tooltipInner,
+  link,
+  text,
+  hr,
+  body
 };
 
 export { theme };
