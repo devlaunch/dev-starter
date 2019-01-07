@@ -1,4 +1,4 @@
-import { theme } from './theme';
+import { theme } from "./theme";
 import {
   border,
   borderRadius,
@@ -12,10 +12,12 @@ import {
   padding,
   screenSize,
   width,
-} from './utils';
+  themeGet
+} from "./utils";
 
 export {
   theme,
+  themeGet,
   // utils
   border,
   borderRadius,
@@ -28,5 +30,5 @@ export {
   margin,
   padding,
   screenSize,
-  width,
+  width
 };

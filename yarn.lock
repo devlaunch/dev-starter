@@ -3584,7 +3584,7 @@ babel-plugin-react-require@3.0.0:
   resolved "https://registry.yarnpkg.com/babel-plugin-react-require/-/babel-plugin-react-require-3.0.0.tgz#2e4e7b4496b93a654a1c80042276de4e4eeb20e3"
   integrity sha1-Lk57RJa5OmVKHIAEInbeTk7rIOM=
 
-"babel-plugin-styled-components@>= 1", babel-plugin-styled-components@^1.3.0, babel-plugin-styled-components@^1.8.0:
+"babel-plugin-styled-components@>= 1", babel-plugin-styled-components@^1.10.0, babel-plugin-styled-components@^1.8.0:
   version "1.10.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-styled-components/-/babel-plugin-styled-components-1.10.0.tgz#ff1f42ad2cc78c21f26b62266b8f564dbc862939"
   integrity sha512-sQVKG8irFXx14ZfaK1bBePirfkacl3j8nZwSZK+ZjsbnadRHKQTbhXbe/RB1vT6Vgkz45E+V95LBq4KqdhZUNw==
@@ -7089,7 +7089,7 @@ eslint-config-react-app@^3.0.6:
   dependencies:
     confusing-browser-globals "^1.0.5"
 
-eslint-config-react-tools@1.x.x, eslint-config-react-tools@^1.0.0:
+eslint-config-react-tools@^1.0.0, eslint-config-react-tools@^1.1.6:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/eslint-config-react-tools/-/eslint-config-react-tools-1.1.6.tgz#dcbd067db5950a37210589f1947613ec4de58df6"
   integrity sha1-3L0GfbWVCjchBYnxlHYT7E3ljfY=
@@ -16038,7 +16038,7 @@ react-helmet@^5.2.0:
     prop-types "^15.5.4"
     react-side-effect "^1.1.0"
 
-react-hot-loader@^4.3.12, react-hot-loader@^4.6.1, react-hot-loader@^4.6.3:
+react-hot-loader@^4.6.1, react-hot-loader@^4.6.3:
   version "4.6.3"
   resolved "https://registry.yarnpkg.com/react-hot-loader/-/react-hot-loader-4.6.3.tgz#d9c8923c45b35fd51538ba4297081a00be6bccb1"
   integrity sha512-FUvRO8dwbeLnc3mgLn8ARuSh8NnLBYJyiRjFn+grY/5GupSyPqv0U7ixgwXro77hwDplhm8z9wU7FlJ8kZqiAQ==
@@ -16271,15 +16271,15 @@ react-smooth-scrollbar@^8.0.6:
   resolved "https://registry.yarnpkg.com/react-smooth-scrollbar/-/react-smooth-scrollbar-8.0.6.tgz#179072e6a547b3af589ea303c50fd86366275edc"
   integrity sha512-yWiIC4L8DwfIRkLL+PdXq5rysEm6trxHzRk1Rx82bzuu2aWDcHhT+l1vXH/73Re/zHmGjBgrxts/wIrwC6yYJA==
 
-react-static-plugin-styled-components@^6.0.8:
-  version "6.0.8"
-  resolved "https://registry.yarnpkg.com/react-static-plugin-styled-components/-/react-static-plugin-styled-components-6.0.8.tgz#25f2bd59fedaa326d987443c87527839ac864541"
-  integrity sha512-6AnC8QPdO68HMeTGp+uPdjrowT3SALZzzu1WVkBAaidSXudnwxG2w2Vf1wjWZyf6BapaBVStZqqslsY+vUdOcQ==
+react-static-plugin-styled-components@^6.1.1:
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/react-static-plugin-styled-components/-/react-static-plugin-styled-components-6.1.1.tgz#62ff93d8b68614bb96a67475d55e42d39af22ad4"
+  integrity sha512-mskkZUGdaG4IpRSLfgz2jjw6DQ13+VYFd6uO1U2XPMt7GsaanlU47z4WA4WTcW83LozrNTxDZGBdlewGq9+7Iw==
 
-react-static@^6.0.18:
-  version "6.0.18"
-  resolved "https://registry.yarnpkg.com/react-static/-/react-static-6.0.18.tgz#61dde81b440cf85c4677e9637de4a3a70bf1bb6e"
-  integrity sha512-Aw3wVe7SEnLPi3NcCGaQMeLK8W3xmCLSx42kOgjTl6vLyxb5eI9qVXaKa10GHhEBJ2+0tqGdpDEBPDBrb786kw==
+react-static@^6.1.5:
+  version "6.1.5"
+  resolved "https://registry.yarnpkg.com/react-static/-/react-static-6.1.5.tgz#b0e3f8ef5bf2f30c75ef1d81b1dbf74a84709a51"
+  integrity sha512-nTzsJbHnvHLZ5aqNwNDS4QUXCzoZGqxjoF+1Ff1S7tr2IG9g+IipTh9R/Hn10McfruASirkI+neodsIwMuqwnw==
   dependencies:
     "@babel/cli" "^7.1.5"
     "@babel/core" "^7.2.2"
@@ -17685,7 +17685,7 @@ serve-static@1.13.2:
     parseurl "~1.3.2"
     send "0.16.2"
 
-serve@10.1.1, serve@^10.1.1:
+serve@^10.1.1:
   version "10.1.1"
   resolved "https://registry.yarnpkg.com/serve/-/serve-10.1.1.tgz#29a0210fc6fc2d9bbd67e977a0e487deb0e86789"
   integrity sha512-B1ca73zGFRS/bYQkbDw6BVEpRiUKdtnkwtvkMjx598jU5tyieua9lHyqdwUoup4/ek20I74EzncTC0gZuYng4Q==
