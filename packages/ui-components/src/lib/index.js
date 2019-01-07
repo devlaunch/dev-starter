@@ -59,7 +59,21 @@ import {
 import { Breadcrumb, BreadcrumbItem } from "@devlaunch/ui-breadcrumb";
 import { Button, ButtonGroup, ButtonToolbar } from "@devlaunch/ui-button";
 import { Card, CardBody, CardFooter, CardHeader, CardImageHeader, CardText, CardTitle } from "@devlaunch/ui-card";
-import { screenSize } from "@devlaunch/ui-config";
+import {
+  theme,
+  border,
+  borderRadius,
+  boxShadow,
+  colors,
+  fontFamily,
+  fontSize,
+  fontWeight,
+  height,
+  margin,
+  padding,
+  screenSize,
+  width
+} from "@devlaunch/ui-config";
 import { Container } from "@devlaunch/ui-container";
 import { Dropdown, DropdownItem, DropdownMenu, DropdownDivider } from "@devlaunch/ui-dropdown";
 import {
@@ -155,7 +169,19 @@ export {
   CardImageHeader,
   CardText,
   CardTitle,
+  theme,
+  border,
+  borderRadius,
+  boxShadow,
+  colors,
+  fontFamily,
+  fontSize,
+  fontWeight,
+  height,
+  margin,
+  padding,
   screenSize,
+  width,
   Container,
   Dropdown,
   DropdownItem,
