@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { themeGet } from "@devlaunch/ui-config";
 
 const BootstrapBaseCss = createGlobalStyle`
   *,
@@ -20,13 +21,13 @@ const BootstrapBaseCss = createGlobalStyle`
 
   body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
+    font-family: ${themeGet("body.fontFamily.default")};
+    font-size: ${themeGet("body.fontSize.default")};
+    font-weight: ${themeGet("body.fontWeight.default")};
+    line-height: ${themeGet("body.lineHeight.default")};
+    color: ${themeGet("body.colors.default.color")};
     text-align: left;
-    background-color: #fff;
+    background-color: ${themeGet("body.colors.default.backgroundColor")};
   }
   
   [tabindex="-1"]:focus {
@@ -41,12 +42,12 @@ const BootstrapBaseCss = createGlobalStyle`
 
   h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
-    margin-bottom: 0.5rem;
+    margin-bottom: ${themeGet("text.margin.default.bottom")};
   }
   
   p {
     margin-top: 0;
-    margin-bottom: 1rem;
+    margin-bottom: ${themeGet("text.margin.paragraph.bottom")};
   }
   
   abbr[title],
@@ -80,7 +81,7 @@ const BootstrapBaseCss = createGlobalStyle`
   }
   
   dt {
-    font-weight: 700;
+    font-weight: ${themeGet("text.fontWeight.dt")};
   }
   
   dd {
@@ -118,14 +119,14 @@ const BootstrapBaseCss = createGlobalStyle`
   }
   
   a {
-    color: #007bff;
-    text-decoration: none;
+    color: ${themeGet("link.colors.primary.color")};
+    text-decoration: ${themeGet("link.decoration")};
     background-color: transparent;
   }
   
   a:hover {
-    color: #0056b3;
-    text-decoration: underline;
+    color: ${themeGet("link.colors.primary.colorHoverFocus")};
+    text-decoration: ${themeGet("link.hover.decoration")};
   }
   
   a:not([href]):not([tabindex]) {
@@ -146,7 +147,7 @@ const BootstrapBaseCss = createGlobalStyle`
   code,
   kbd,
   samp {
-    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-family: ${themeGet("text.fontFamily.pre")};
     font-size: 1em;
   }
   
@@ -176,9 +177,9 @@ const BootstrapBaseCss = createGlobalStyle`
   }
   
   caption {
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-    color: #6c757d;
+    padding-top: ${themeGet("text.padding.caption.top")};
+    padding-bottom: ${themeGet("text.padding.caption.top")};
+    color: ${themeGet("text.colors.caption.color")};
     text-align: left;
     caption-side: bottom;
   }
@@ -189,7 +190,7 @@ const BootstrapBaseCss = createGlobalStyle`
   
   label {
     display: inline-block;
-    margin-bottom: 0.5rem;
+    margin-bottom: ${themeGet("text.margin.label.bottom")};
   }
   
   button {
@@ -311,52 +312,52 @@ const BootstrapBaseCss = createGlobalStyle`
   }
   
   h1, h2, h3, h4, h5, h6 {
-    margin-bottom: 0.5rem;
-    font-family: inherit;
-    font-weight: 500;
-    line-height: 1.2;
-    color: inherit;
+    margin-bottom: ${themeGet("text.margin.headings.bottom")};
+    font-family: ${themeGet("text.fontFamily.headings")};
+    font-weight: ${themeGet("text.fontWeight.headings")};
+    line-height: ${themeGet("text.lineHeight.headings")};
+    color: ${themeGet("text.colors.headings.color")};
   }
   
   h1 {
-    font-size: 2.5rem;
+    font-size: ${themeGet("text.fontSize.h1")};
   }
   
   h2 {
-    font-size: 2rem;
+    font-size: ${themeGet("text.fontSize.h2")};
   }
   
   h3 {
-    font-size: 1.75rem;
+    font-size: ${themeGet("text.fontSize.h3")};
   }
   
   h4 {
-    font-size: 1.5rem;
+    font-size: ${themeGet("text.fontSize.h4")};
   }
   
   h5 {
-    font-size: 1.25rem;
+    font-size: ${themeGet("text.fontSize.h5")};
   }
   
   h6 {
-    font-size: 1rem;
+    font-size: ${themeGet("text.fontSize.h6")};
   }
   
   hr {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: ${themeGet("hr.margin.top")};
+    margin-bottom: ${themeGet("hr.margin.bottom")};
     border: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid ${themeGet("hr.colors.default.borderColor")};
   }
   
   small {
-    font-size: 80%;
-    font-weight: 400;
+    font-size: ${themeGet("text.fontSize.small")};
+    font-weight: ${themeGet("text.fontWeight.small")};
   }
   
   mark {
-    padding: 0.2em;
-    background-color: #fcf8e3;
+    padding: ${themeGet("text.padding.mark.default")};
+    background-color: ${themeGet("text.colors.mark.backgroundColor")};
   }
 `;
 
