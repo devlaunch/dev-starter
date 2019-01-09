@@ -1,9 +1,11 @@
 import React from "react";
 import { Root, Routes } from "react-static";
-import { Link } from "@reach/router";
+import { Switch, Route } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 
 import { BootstrapBaseCss } from "@devlaunch/ui-base";
+
+import NavbarLight from "./components/NavbarLight";
 import { theme } from "./theme";
 
 function App() {
@@ -12,13 +14,11 @@ function App() {
       <ThemeProvider theme={{ ...theme }}>
         <React.Fragment>
           <BootstrapBaseCss />
-          <nav>
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-            <Link to="/blog">Blog</Link>
-          </nav>
+          <NavbarLight />
           <div className="content">
-            <Routes />
+            <Switch>
+              <Route render={() => <Routes />} />
+            </Switch>
           </div>
         </React.Fragment>
       </ThemeProvider>

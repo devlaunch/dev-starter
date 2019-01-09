@@ -16271,6 +16271,11 @@ react-smooth-scrollbar@^8.0.6:
   resolved "https://registry.yarnpkg.com/react-smooth-scrollbar/-/react-smooth-scrollbar-8.0.6.tgz#179072e6a547b3af589ea303c50fd86366275edc"
   integrity sha512-yWiIC4L8DwfIRkLL+PdXq5rysEm6trxHzRk1Rx82bzuu2aWDcHhT+l1vXH/73Re/zHmGjBgrxts/wIrwC6yYJA==
 
+react-static-plugin-react-router@^6.1.1:
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/react-static-plugin-react-router/-/react-static-plugin-react-router-6.1.1.tgz#164c73327f4be96e536ac80a0f6d9196e4d48c4c"
+  integrity sha512-F9ZWDfEsciBTvKpjxqycPOr+D30NDOfflOrwQNH6WTohn6jyE/DQ+PPGD3WzdKTwqR4sPzHV445QyuiBznLwig==
+
 react-static-plugin-styled-components@^6.1.1:
   version "6.1.1"
   resolved "https://registry.yarnpkg.com/react-static-plugin-styled-components/-/react-static-plugin-styled-components-6.1.1.tgz#62ff93d8b68614bb96a67475d55e42d39af22ad4"
