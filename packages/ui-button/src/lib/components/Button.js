@@ -289,6 +289,7 @@ const Button = styled.button`
   ${props => buttonStyle(props)}
 `;
 
+Button.displayName = "Button";
 Button.defaultProps = {
   theme
 };
@@ -297,6 +298,7 @@ const LinkButton = styled.a`
   ${props => buttonStyle(props)}
 `;
 
+LinkButton.displayName = "LinkButton";
 LinkButton.defaultProps = {
   theme
 };

@@ -43,6 +43,7 @@ const Navbar = styled.nav`
   ${props => navbarExpand(props)}
 `;
 
+Navbar.displayName = "Navbar";
 Navbar.defaultProps = {
   theme
 };

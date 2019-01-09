@@ -124,6 +124,8 @@ const Nav = styled.nav`
   ${props => navCollapse(props)};
 `;
 
+Nav.displayName = "Nav";
+
 Nav.defaultProps = {
   theme
 };

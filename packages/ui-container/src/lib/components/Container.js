@@ -26,6 +26,7 @@ const Container = styled.div`
   }
 `;
 
+Container.displayName = "Container";
 Container.defaultProps = {
   theme
 };

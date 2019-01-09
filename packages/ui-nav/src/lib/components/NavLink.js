@@ -102,6 +102,7 @@ const NavLink = styled.a`
   ${props => borderRadius(props)};
 `;
 
+NavLink.displayName = "NavLink";
 NavLink.defaultProps = {
   theme
 };

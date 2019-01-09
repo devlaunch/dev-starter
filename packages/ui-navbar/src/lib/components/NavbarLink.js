@@ -95,6 +95,7 @@ const NavbarLink = styled(NavLink)`
   ${props => whiteSpace(props)}
 `;
 
+NavbarLink.displayName = "NavbarLink";
 NavbarLink.defaultProps = {
   theme
 };
