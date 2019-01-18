@@ -1,38 +1,20 @@
-import React from "react";
-import MailTagsList from "./mailTags.style";
-const tags = [
-  "Friend",
-  "Family",
-  "Colleague",
-  "Teachers",
-  "Students",
-  "ClassMates"
-];
-const tagColor = [
-  "#CD3131",
-  "#74B49B",
-  "#0962EA",
-  "#141829",
-  "#FFCD38",
-  "#61105E"
-];
+import React from 'react';
+import MailTagsList from './mailTags.style';
+
+const tags = ['Friend', 'Family', 'Colleague', 'Teachers', 'Students', 'ClassMates'];
+const tagColor = ['#CD3131', '#74B49B', '#0962EA', '#141829', '#FFCD38', '#61105E'];
 
 function gettags(mails, filterAttr) {
   const tags = {};
-  mails.forEach(mail => {
+  mails.forEach((mail) => {
     if (mail.tags && mail.bucket === filterAttr.bucket) {
-      mail.tags.split(" ").forEach(tag => (tags[tag] = 1));
+      mail.tags.split(' ').forEach(tag => (tags[tag] = 1));
     }
   });
   return tags;
 }
 
-export default function mailtags(
-  mails,
-  filterAction,
-  filterAttr,
-  onDrawerClose
-) {
+export default function mailtags(mails, filterAction, filterAttr, onDrawerClose) {
   const Tags = gettags(mails, filterAttr);
   const renderSingleTag = (tag, key) => {
     const onClick = () => {
@@ -42,14 +24,10 @@ export default function mailtags(
       }
     };
     const selectedTag = tag === filterAttr.tag;
-    const activeClass = selectedTag ? "active" : "";
+    const activeClass = selectedTag ? 'active' : '';
     const background = tagColor[tags.findIndex(tags => tags === tag)];
     return (
-      <li
-        key={`tag${key}`}
-        onClick={onClick}
-        className={`dlMailTag ${activeClass}`}
-      >
+      <li key={`tag${key}`} onClick={onClick} className={`dlMailTag ${activeClass}`}>
         <span className="dlLabelIndicatorColor" style={{ background }} />
         <span>{tag}</span>
       </li>

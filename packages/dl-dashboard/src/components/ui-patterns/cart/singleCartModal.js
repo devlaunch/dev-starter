@@ -1,20 +1,22 @@
-import React, { Component } from "react";
-import { createNotification as notification } from "components/ui-elements/feedback/notification";
-import TopbarCartWrapper from "./singleCartModal.style";
+import React, { Component } from 'react';
+import { createNotification as notification } from 'components/ui-elements/feedback/notification';
+import TopbarCartWrapper from './singleCartModal.style';
 
 export default class extends Component {
-  onChange = value => {
+  onChange = (value) => {
     if (!isNaN(value)) {
       if (value !== this.props.quantity) {
         this.props.changeQuantity(this.props.objectID, value);
       }
     } else {
-      notification("error", "Please give valid number");
+      notification('error', 'Please give valid number');
     }
   };
 
   render() {
-    const { price, quantity, image, objectID, cancelQuantity, _highlightResult } = this.props;
+    const {
+      price, quantity, image, objectID, cancelQuantity, _highlightResult,
+    } = this.props;
     return (
       <TopbarCartWrapper className="dlCartItems">
         <div className="dlItemImage">

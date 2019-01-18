@@ -1,3 +1,3 @@
-import { dlPopover as Popover } from "./popover";
+import { dlPopover as Popover } from './popover';
 
 export { Popover };

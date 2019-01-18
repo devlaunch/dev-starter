@@ -1,5 +1,5 @@
-import React from "react";
-import PwaLoader from "./pwaloader.style";
+import React from 'react';
+import PwaLoader from './pwaloader.style';
 
 export default PWALoader => (
   <PwaLoader>

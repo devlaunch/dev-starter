@@ -1,5 +1,5 @@
-import { Radio } from "antd";
-import AntRadiobox from "./radiobox.style";
+import { Radio } from 'antd';
+import AntRadiobox from './radiobox.style';
 
 const RadioBox = AntRadiobox(Radio);
 const RadioGroup = AntRadiobox(Radio.Group);

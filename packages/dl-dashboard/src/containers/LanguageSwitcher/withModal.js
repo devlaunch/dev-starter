@@ -1,19 +1,16 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import Modal from "../../components/feedback/modal";
-import { Button } from "components/ui-elements/general/button";
-import actions from "../../redux/languageSwitcher/actions";
-import config from "./config";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import Modal from '../../components/feedback/modal';
+import { Button } from 'components/ui-elements/general/button';
+import actions from '../../redux/languageSwitcher/actions';
+import config from './config';
 
 const { switchActivation, changeLanguage } = actions;
 
 class LanguageSwitcher extends Component {
   render() {
     const {
-      isActivated,
-      language,
-      switchActivation,
-      changeLanguage
+      isActivated, language, switchActivation, changeLanguage,
     } = this.props;
     return (
       <div className="dlButtonWrapper">
@@ -22,17 +19,16 @@ class LanguageSwitcher extends Component {
         </Button>
 
         <Modal
-          title={"Select Language"}
+          title="Select Language"
           visible={isActivated}
           onCancel={switchActivation}
           cancelText="Cancel"
           footer={[]}
         >
           <div>
-            {config.options.map(option => {
+            {config.options.map((option) => {
               const { languageId, text } = option;
-              const type =
-                languageId === language.languageId ? "primary" : "success";
+              const type = languageId === language.languageId ? 'primary' : 'success';
               return (
                 <Button
                   type={type}
@@ -54,7 +50,7 @@ class LanguageSwitcher extends Component {
 
 export default connect(
   state => ({
-    ...state.LanguageSwitcher
+    ...state.LanguageSwitcher,
   }),
-  { switchActivation, changeLanguage }
+  { switchActivation, changeLanguage },
 )(LanguageSwitcher);

@@ -23,7 +23,7 @@ export function borderRadius(radius = 0) {
 }
 
 // Box Shadow
-export function boxShadow(shadow = "none") {
+export function boxShadow(shadow = 'none') {
   return `
       -webkit-box-shadow: ${shadow};
       -moz-box-shadow: ${shadow};

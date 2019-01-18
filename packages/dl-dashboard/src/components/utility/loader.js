@@ -1,5 +1,5 @@
-import React from "react";
-import LoaderComponent from "./loader.style";
+import React from 'react';
+import LoaderComponent from './loader.style';
 
 export default Loader => (
   <LoaderComponent>

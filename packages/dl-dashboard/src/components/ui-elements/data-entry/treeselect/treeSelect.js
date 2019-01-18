@@ -1,3 +1,3 @@
-import { TreeSelect } from "antd";
+import { TreeSelect } from 'antd';
 
 export default TreeSelect;

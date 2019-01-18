@@ -63,7 +63,8 @@ const Popover = styled.div`
   word-wrap: break-word;
   background-color: ${props => colors(props, "popover").backgroundColor};
   background-clip: padding-box;
-  border: ${props => border(props, "popover").default} ${props => colors(props, "popover").borderColor};
+  border: ${props => border(props, "popover").default}
+    ${props => colors(props, "popover").borderColor};
   border-radius: ${props => borderRadius(props, "popover").lg};
   ${props => margin(props)};
   ${props => display(props)};

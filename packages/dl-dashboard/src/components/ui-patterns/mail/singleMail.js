@@ -1,15 +1,15 @@
-import React from "react";
-import ComposeMail from "./composeMail";
-import { timeDifference } from "../../helpers/utility";
-import MailAction from "./singleMailActions";
-import { tags, tagColor } from "./mailTags.js";
+import React from 'react';
+import ComposeMail from './composeMail';
+import { timeDifference } from '../../helpers/utility';
+import MailAction from './singleMailActions';
+import { tags, tagColor } from './mailTags.js';
 import {
   SingleMailContents,
   SingleMailHeader,
   SingleMailInfo,
   SingleMailBody,
-  SingleMailReply
-} from "./singleMail.style";
+  SingleMailReply,
+} from './singleMail.style';
 
 export default function singleMail(
   allMail,
@@ -18,20 +18,18 @@ export default function singleMail(
   replyMail,
   changeReplyMail,
   selectMail,
-  toggleListVisible
+  toggleListVisible,
 ) {
   const mail = allMail[index];
   const recpName = mail.name;
   const signature = {
     splitLet: recpName
       .match(/\b(\w)/g)
-      .join("")
-      .split("", 2)
+      .join('')
+      .split('', 2),
   };
 
-  const labelColor = mail.tags
-    ? tagColor[tags.findIndex(tags => tags === mail.tags)]
-    : "";
+  const labelColor = mail.tags ? tagColor[tags.findIndex(tags => tags === mail.tags)] : '';
 
   return (
     <SingleMailContents className="dlSingleMailContents">
@@ -51,16 +49,12 @@ export default function singleMail(
 
         <SingleMailInfo className="dlMailInfo">
           <div className="dlRecipentsImg">
-            {mail.img ? (
-              <img alt="#" src={mail.img} />
-            ) : (
-              <span>{signature.splitLet}</span>
-            )}
+            {mail.img ? <img alt="#" src={mail.img} /> : <span>{signature.splitLet}</span>}
           </div>
           <div className="dlMailAddress">
             <div className="dlAddress">
               <h3>
-                {mail.name}{" "}
+                {mail.name}{' '}
                 <span>
                   &lt;
                   {mail.email}
@@ -83,10 +77,7 @@ export default function singleMail(
           {replyMail ? (
             <ComposeMail allMail={allMail} />
           ) : (
-            <div
-              onClick={event => changeReplyMail(true)}
-              className="dlReplyMailBtn"
-            >
+            <div onClick={event => changeReplyMail(true)} className="dlReplyMailBtn">
               Click here to <span>Reply</span>
             </div>
           )}

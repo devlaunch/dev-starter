@@ -1,23 +1,16 @@
 /**
  * Created by leoliew on 2016/11/30.
  */
-import React from "react";
-import {
-  Card,
-  CardActions,
-  CardHeader,
-  CardMedia,
-  CardTitle,
-  CardText
-} from "material-ui/Card";
+import React from 'react';
+import { Card, CardActions, CardHeader, CardMedia, CardTitle, CardText } from 'material-ui/Card';
 
 const styles = {
   div: {
-    margin: "1%"
+    margin: '1%',
   },
   card: {
-    marginTop: "15px"
-  }
+    marginTop: '15px',
+  },
 };
 
 export default class ShowCaseCard extends React.Component {

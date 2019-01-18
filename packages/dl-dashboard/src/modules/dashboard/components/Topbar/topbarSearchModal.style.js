@@ -1,7 +1,7 @@
-import Modal from "../../components/feedback/modal";
-import styled from "styled-components";
-import { palette } from "styled-theme";
-import WithDirection from "../../settings/withDirection";
+import Modal from '../../components/feedback/modal';
+import styled from 'styled-components';
+import { palette } from 'styled-theme';
+import WithDirection from '../../settings/withDirection';
 
 const TopbarSearchModal = styled(Modal)`
   &.ant-modal {
@@ -32,26 +32,24 @@ const TopbarSearchModal = styled(Modal)`
           .ant-input {
             border: 0;
             border-radius: 0;
-            padding-left: ${props =>
-              props["data-rtl"] === "rtl" ? "15px" : "55px"};
-            padding-right: ${props =>
-              props["data-rtl"] === "rtl" ? "55px" : "15px"};
+            padding-left: ${props => (props['data-rtl'] === 'rtl' ? '15px' : '55px')};
+            padding-right: ${props => (props['data-rtl'] === 'rtl' ? '55px' : '15px')};
             height: 60px;
             font-size: 14px;
 
             &::-webkit-input-placeholder {
-              color: ${palette("grayscale", 0)};
+              color: ${palette('grayscale', 0)};
             }
 
             &:-moz-placeholder {
-              color: ${palette("grayscale", 0)};
+              color: ${palette('grayscale', 0)};
             }
 
             &::-moz-placeholder {
-              color: ${palette("grayscale", 0)};
+              color: ${palette('grayscale', 0)};
             }
             &:-ms-input-placeholder {
-              color: ${palette("grayscale", 0)};
+              color: ${palette('grayscale', 0)};
             }
 
             &:focus {
@@ -62,15 +60,15 @@ const TopbarSearchModal = styled(Modal)`
         }
 
         .ant-input-suffix {
-          right: ${props => (props["data-rtl"] === "rtl" ? "20px" : "auto")};
-          left: ${props => (props["data-rtl"] === "rtl" ? "auto" : "20px")};
+          right: ${props => (props['data-rtl'] === 'rtl' ? '20px' : 'auto')};
+          left: ${props => (props['data-rtl'] === 'rtl' ? 'auto' : '20px')};
           height: 0;
 
           &:before {
-            content: "\f4a4";
-            font-family: "ionicons";
+            content: '\f4a4';
+            font-family: 'ionicons';
             font-size: 24px;
-            color: ${palette("text", 2)};
+            color: ${palette('text', 2)};
           }
 
           .ant-input-search-icon {

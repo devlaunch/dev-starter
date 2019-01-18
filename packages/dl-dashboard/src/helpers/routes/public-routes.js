@@ -1,6 +1,6 @@
-import React from "react";
-import { Route } from "react-router-dom";
-import ErrorBoundary from "modules/error/error-boundary";
+import React from 'react';
+import { Route } from 'react-router-dom';
+import ErrorBoundary from 'modules/error/error-boundary';
 
 const PublicRoute = ({ component: Component, ...rest }) => {
   const encloseInErrorBoundary = props => (
@@ -9,8 +9,7 @@ const PublicRoute = ({ component: Component, ...rest }) => {
     </ErrorBoundary>
   );
 
-  if (!Component)
-    throw new Error(`A component needs to be specified for path ${rest.path}`);
+  if (!Component) throw new Error(`A component needs to be specified for path ${rest.path}`);
 
   return <Route {...rest} render={encloseInErrorBoundary} />;
 };

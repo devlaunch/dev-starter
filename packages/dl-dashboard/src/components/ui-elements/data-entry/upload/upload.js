@@ -1,3 +1,3 @@
-import { Upload } from "antd";
+import { Upload } from 'antd';
 
 export default Upload;

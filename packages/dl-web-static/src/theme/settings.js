@@ -39,9 +39,18 @@ const utils = {
       '-apple-system, BlinkMacSystemFont, "avenir next", avenir, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial, sans-serif',
     base:
       '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
-    monospace: 'SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace'
+    monospace:
+      'SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace'
   },
-  borders: [0, "1px solid", "2px solid", "4px solid", "8px solid", "16px solid", "32px solid"],
+  borders: [
+    0,
+    "1px solid",
+    "2px solid",
+    "4px solid",
+    "8px solid",
+    "16px solid",
+    "32px solid"
+  ],
   borderRadius: {
     noRadius: "0",
     pill: "10rem",

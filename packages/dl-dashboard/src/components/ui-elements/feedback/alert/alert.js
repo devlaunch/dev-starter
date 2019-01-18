@@ -1,3 +1,3 @@
-import Alerts from "./alert.style";
+import Alerts from './alert.style';
 
 export default Alerts;

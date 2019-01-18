@@ -1,34 +1,34 @@
-import React, { Component } from "react";
-import { Popover } from "antd";
-import { connect } from "react-redux";
-import IntlMessages from "../../components/utility/intlMessages";
-import TopbarDropdownWrapper from "./topbarDropdown.style";
+import React, { Component } from 'react';
+import { Popover } from 'antd';
+import { connect } from 'react-redux';
+import IntlMessages from '../../components/utility/intlMessages';
+import TopbarDropdownWrapper from './topbarDropdown.style';
 
 const demoNotifications = [
   {
     id: 1,
-    name: "David Doe",
+    name: 'David Doe',
     notification:
-      "A National Book Award Finalist An Edgar Award Finalist A California Book Award Gold Medal Winner"
+      'A National Book Award Finalist An Edgar Award Finalist A California Book Award Gold Medal Winner',
   },
   {
     id: 2,
-    name: "Navis Doe",
+    name: 'Navis Doe',
     notification:
-      "A National Book Award Finalist An Edgar Award Finalist A California Book Award Gold Medal Winner"
+      'A National Book Award Finalist An Edgar Award Finalist A California Book Award Gold Medal Winner',
   },
   {
     id: 3,
-    name: "Emanual Doe",
+    name: 'Emanual Doe',
     notification:
-      "A National Book Award Finalist An Edgar Award Finalist A California Book Award Gold Medal Winner"
+      'A National Book Award Finalist An Edgar Award Finalist A California Book Award Gold Medal Winner',
   },
   {
     id: 4,
-    name: "Dowain Doe",
+    name: 'Dowain Doe',
     notification:
-      "A National Book Award Finalist An Edgar Award Finalist A California Book Award Gold Medal Winner"
-  }
+      'A National Book Award Finalist An Edgar Award Finalist A California Book Award Gold Medal Winner',
+  },
 ];
 
 class TopbarNotification extends Component {
@@ -37,7 +37,7 @@ class TopbarNotification extends Component {
     this.handleVisibleChange = this.handleVisibleChange.bind(this);
     this.hide = this.hide.bind(this);
     this.state = {
-      visible: false
+      visible: false,
     };
   }
   hide() {
@@ -77,10 +77,7 @@ class TopbarNotification extends Component {
         placement="bottomLeft"
       >
         <div className="dlIconWrapper">
-          <i
-            className="ion-android-notifications"
-            style={{ color: customizedTheme.textColor }}
-          />
+          <i className="ion-android-notifications" style={{ color: customizedTheme.textColor }} />
           <span>{demoNotifications.length}</span>
         </div>
       </Popover>
@@ -90,5 +87,5 @@ class TopbarNotification extends Component {
 
 export default connect(state => ({
   ...state.App,
-  customizedTheme: state.ThemeSwitcher.topbarTheme
+  customizedTheme: state.ThemeSwitcher.topbarTheme,
 }))(TopbarNotification);

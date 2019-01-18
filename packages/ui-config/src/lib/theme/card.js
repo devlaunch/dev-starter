@@ -1,15 +1,15 @@
-import { colors } from './colors';
-import { utils } from './utils';
+import { colors } from "./colors";
+import { utils } from "./utils";
 
 const card = {
   colors: {
     default: {
       backgroundColor: colors.white,
-      borderColor: colors.borderCard,
-    },
+      borderColor: colors.borderCard
+    }
   },
   borderRadius: utils.borderRadius,
-  border: utils.border,
+  border: utils.border
 };
 
 export { card };

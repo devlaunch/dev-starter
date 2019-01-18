@@ -17,7 +17,8 @@ const get = (obj, ...paths) =>
     .split(".")
     .reduce((a, b) => (a && a[b] ? a[b] : null), obj);
 
-export const themeGet = (paths, fallback) => props => get(props.theme, paths) || fallback;
+export const themeGet = (paths, fallback) => props =>
+  get(props.theme, paths) || fallback;
 
 export {
   boxShadow,

@@ -1,3 +1,3 @@
-import { Tag } from "antd";
+import { Tag } from 'antd';
 
 export default Tag;

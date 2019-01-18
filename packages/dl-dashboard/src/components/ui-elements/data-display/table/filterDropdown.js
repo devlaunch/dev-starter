@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import Input from "../uielements/input";
-import Button from "../uielements/button";
+import React, { Component } from 'react';
+import Input from '../uielements/input';
+import Button from '../uielements/button';
 
 export default class extends Component {
   state = {};

@@ -1,3 +1,3 @@
-import { Badge } from "antd";
+import { Badge } from 'antd';
 
 export default Badge;

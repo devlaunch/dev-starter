@@ -1,9 +1,9 @@
-import styled from "styled-components";
-import { palette } from "styled-theme";
+import styled from 'styled-components';
+import { palette } from 'styled-theme';
 
 const ViewProfileWrapper = styled.div`
   background: #ffffff;
-  border: 1px solid ${palette("border", 0)};
+  border: 1px solid ${palette('border', 0)};
   overflow: auto;
   position: absolute;
   right: 0;
@@ -11,8 +11,8 @@ const ViewProfileWrapper = styled.div`
   height: 100%;
 
   .viewProfileTopBar {
-    background: ${palette("grayscale", 4)};
-    border-bottom: 1px solid ${palette("border", 0)};
+    background: ${palette('grayscale', 4)};
+    border-bottom: 1px solid ${palette('border', 0)};
     padding: 25px 20px 25px 30px;
     display: flex;
     justify-content: space-between;
@@ -49,7 +49,7 @@ const ViewProfileWrapper = styled.div`
     border-radius: 6px;
   }
   .viewProfileQuickInfo {
-    border-top: 1px solid ${palette("border", 2)};
+    border-top: 1px solid ${palette('border', 2)};
     padding-top: 40px;
   }
   @media only screen and (min-width: 768px) {
@@ -65,14 +65,14 @@ const SingleInfoWrapper = styled.div`
     font-size: 13px;
     font-weight: 500;
     font-weight: light;
-    color: ${palette("text", 0)};
+    color: ${palette('text', 0)};
     margin-bottom: 30px;
   }
   .viewProfileValue {
     width: 65%;
     text-align: right;
     font-size: 13px;
-    color: ${palette("text", 1)};
+    color: ${palette('text', 1)};
     margin-bottom: 30px;
   }
 `;

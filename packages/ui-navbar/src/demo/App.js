@@ -30,7 +30,13 @@ export class NavbarLight extends React.Component {
               <NavbarLink light brand href="#">
                 BRAND
               </NavbarLink>
-              <Button light outline toggleCollapse expandSm onClick={() => this.handleOpenCloseNav()}>
+              <Button
+                light
+                outline
+                toggleCollapse
+                expandSm
+                onClick={() => this.handleOpenCloseNav()}
+              >
                 <span>&#9776;</span>
               </Button>
             </Nav>

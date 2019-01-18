@@ -1,3 +1,3 @@
-import { Card } from "antd";
+import { Card } from 'antd';
 
 export default Card;

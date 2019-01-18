@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { palette } from "styled-theme";
+import styled from 'styled-components';
+import { palette } from 'styled-theme';
 
 export default styled(message)`
   &.ant-message {
@@ -13,7 +13,7 @@ export default styled(message)`
 
       .ant-message-custom-content {
         font-size: 13px;
-        color: ${palette("text", 1)};
+        color: ${palette('text', 1)};
 
         .anticon {
           margin-right: 8px;
@@ -24,7 +24,7 @@ export default styled(message)`
 
         &.ant-message-error {
           .anticon {
-            color: ${palette("error", 0)};
+            color: ${palette('error', 0)};
           }
         }
       }

@@ -1,6 +1,3 @@
-import {
-  dlAutoComplete as AutoComplete,
-  AutoCompleteOption
-} from "./autocomplete";
+import { dlAutoComplete as AutoComplete, AutoCompleteOption } from './autocomplete';
 
 export { AutoComplete, AutoCompleteOption };

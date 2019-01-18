@@ -1,17 +1,17 @@
-import React, { Component } from "react";
-import AutoComplete, { AutoCompleteOption } from "../uielements/autocomplete";
-import UserItem from "./inputName.style";
+import React, { Component } from 'react';
+import AutoComplete, { AutoCompleteOption } from '../uielements/autocomplete';
+import UserItem from './inputName.style';
 
 export default class extends Component {
   state = {
-    value: "",
-    result: []
+    value: '',
+    result: [],
   };
 
-  handleSearch = value => {
+  handleSearch = (value) => {
     const result = [];
     if (value) {
-      this.props.users.forEach(user => {
+      this.props.users.forEach((user) => {
         if (user.name.toLowerCase().indexOf(value.toLowerCase()) > -1) {
           result.push(user);
         }
@@ -19,9 +19,9 @@ export default class extends Component {
     }
     this.setState({ result, value });
   };
-  onSelect = id => {
+  onSelect = (id) => {
     if (id) {
-      this.state.result.forEach(user => {
+      this.state.result.forEach((user) => {
         if (user.id === id) {
           this.setState({ value: user.name });
         }
@@ -39,7 +39,7 @@ export default class extends Component {
         style={{ marginBottom: 10 }}
       >
         {result.map(user => (
-          <AutoCompleteOption key={user.id} style={{ display: "flex" }}>
+          <AutoCompleteOption key={user.id} style={{ display: 'flex' }}>
             <UserItem
               onClick={() => {
                 this.setState({ value: user.name, result: [] });

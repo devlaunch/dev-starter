@@ -1,23 +1,20 @@
-import styled from "styled-components";
-import { palette, font } from "styled-theme";
-import { transition, borderRadius, boxShadow } from "../../settings/style-util";
-import WithDirection from "../../settings/withDirection";
+import styled from 'styled-components';
+import { palette, font } from 'styled-theme';
+import { transition, borderRadius, boxShadow } from '../../settings/style-util';
+import WithDirection from '../../settings/withDirection';
 
 const WDSidebarWrapper = styled.div`
   width: 340px;
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  margin: ${props =>
-    props["data-rtl"] === "rtl" ? "0 0 0 30px" : "0 30px 0 0"};
+  margin: ${props => (props['data-rtl'] === 'rtl' ? '0 0 0 30px' : '0 30px 0 0')};
   ${transition()};
 
   @media only screen and (max-width: 767px) {
     width: 100%;
-    margin-left: ${props =>
-      props["data-rtl"] === "rtl" ? "30px" : "calc(-100% + -30px)"};
-    margin-right: ${props =>
-      props["data-rtl"] === "rtl" ? "calc(-100% + -30px)" : "30px"};
+    margin-left: ${props => (props['data-rtl'] === 'rtl' ? '30px' : 'calc(-100% + -30px)')};
+    margin-right: ${props => (props['data-rtl'] === 'rtl' ? 'calc(-100% + -30px)' : '30px')};
   }
 
   @media only screen and (min-width: 768px) and (max-width: 1199px) {
@@ -30,16 +27,15 @@ const WDSidebarWrapper = styled.div`
     max-width: 100%;
 
     .ais-SearchBox__input {
-      padding: ${props =>
-        props["data-rtl"] === "rtl" ? "0 46px 0 36px" : "0 36px 0 46px"};
-      border: 1px solid ${palette("border", 0)};
-      ${borderRadius("3px")};
+      padding: ${props => (props['data-rtl'] === 'rtl' ? '0 46px 0 36px' : '0 36px 0 46px')};
+      border: 1px solid ${palette('border', 0)};
+      ${borderRadius('3px')};
       ${boxShadow()};
     }
 
     .ais-SearchBox__submit {
-      right: ${props => (props["data-rtl"] === "rtl" ? "0" : "inherit")};
-      left: ${props => (props["data-rtl"] === "rtl" ? "inherit" : "0")};
+      right: ${props => (props['data-rtl'] === 'rtl' ? '0' : 'inherit')};
+      left: ${props => (props['data-rtl'] === 'rtl' ? 'inherit' : '0')};
     }
   }
 
@@ -50,13 +46,13 @@ const WDSidebarWrapper = styled.div`
     padding: 15px 25px;
     margin-bottom: 15px;
     background-color: #ffffff;
-    border: 1px solid ${palette("border", 0)};
-    ${borderRadius("3px")};
+    border: 1px solid ${palette('border', 0)};
+    ${borderRadius('3px')};
 
     .dlAlgoliaSidebarTitle {
       font-size: 14px;
       font-weight: 700;
-      color: ${palette("text", 0)};
+      color: ${palette('text', 0)};
       line-height: 1.3;
       margin: 0 0 20px;
       display: flex;
@@ -87,8 +83,7 @@ const WDSidebarWrapper = styled.div`
         }
 
         .ais-MultiRange__itemBox {
-          margin: ${props =>
-            props["data-rtl"] === "rtl" ? "0 0 0 8px" : "0 8px 0 0"};
+          margin: ${props => (props['data-rtl'] === 'rtl' ? '0 0 0 8px' : '0 8px 0 0')};
         }
       }
     }
@@ -105,13 +100,11 @@ const WDSidebarWrapper = styled.div`
         }
 
         .ais-StarRating__ratingLabel {
-          margin: ${props =>
-            props["data-rtl"] === "rtl" ? "0 10px 0 0" : "0 0 0 10px"};
+          margin: ${props => (props['data-rtl'] === 'rtl' ? '0 10px 0 0' : '0 0 0 10px')};
         }
 
         .ais-StarRating__ratingCount {
-          margin: ${props =>
-            props["data-rtl"] === "rtl" ? "0 auto 0 0" : "0 0 0 auto"};
+          margin: ${props => (props['data-rtl'] === 'rtl' ? '0 auto 0 0' : '0 0 0 auto')};
         }
       }
     }
@@ -129,14 +122,12 @@ const WDSidebarWrapper = styled.div`
         span {
           font-size: 13px;
           font-weight: 400;
-          color: ${palette("text", 3)};
+          color: ${palette('text', 3)};
           line-height: 1.3;
-          padding: ${props =>
-            props["data-rtl"] === "rtl" ? "0 0 0 10px" : "0 10px 0 0"};
+          padding: ${props => (props['data-rtl'] === 'rtl' ? '0 0 0 10px' : '0 10px 0 0')};
 
           &:last-child {
-            padding: ${props =>
-              props["data-rtl"] === "rtl" ? "0 10px 0 0" : "0 0 0 10px"};
+            padding: ${props => (props['data-rtl'] === 'rtl' ? '0 10px 0 0' : '0 0 0 10px')};
           }
         }
       }
@@ -147,7 +138,7 @@ const WDSidebarWrapper = styled.div`
         .rheostat-background {
           width: 100%;
           height: 6px;
-          background-color: ${palette("secondary", 1)};
+          background-color: ${palette('secondary', 1)};
           display: flex;
           margin-top: 4px;
         }
@@ -156,7 +147,7 @@ const WDSidebarWrapper = styled.div`
           position: absolute;
           top: 4px;
           height: 6px;
-          background-color: ${palette("primary", 9)};
+          background-color: ${palette('primary', 9)};
         }
 
         button {
@@ -164,7 +155,7 @@ const WDSidebarWrapper = styled.div`
           height: 14px;
           padding: 0;
           border-radius: 7px;
-          background-color: ${palette("primary", 9)};
+          background-color: ${palette('primary', 9)};
           border: 0px;
           outline: 0px;
           top: 0;
@@ -173,7 +164,7 @@ const WDSidebarWrapper = styled.div`
           z-index: 1;
 
           &::before {
-            content: "";
+            content: '';
             width: 6px;
             height: 6px;
             display: flex;
@@ -203,16 +194,14 @@ const WDSidebarWrapper = styled.div`
           display: flex;
           align-items: center;
           font-size: 13px;
-          color: ${palette("text", 1)};
+          color: ${palette('text', 1)};
 
           .ais-RefinementList__itemCount {
-            margin: ${props =>
-              props["data-rtl"] === "rtl" ? " 0 auto 0 0" : "0 0 0 auto"};
+            margin: ${props => (props['data-rtl'] === 'rtl' ? ' 0 auto 0 0' : '0 0 0 auto')};
           }
 
           .ais-RefinementList__itemBox {
-            margin: ${props =>
-              props["data-rtl"] === "rtl" ? "0 0 0 8px" : "0 8px 0 0"};
+            margin: ${props => (props['data-rtl'] === 'rtl' ? '0 0 0 8px' : '0 8px 0 0')};
           }
         }
       }
@@ -221,16 +210,15 @@ const WDSidebarWrapper = styled.div`
     .ais-HierarchicalMenu__root {
       .ais-HierarchicalMenu__item {
         margin-top: 8px;
-        float: ${props => (props["data-rtl"] === "rtl" ? "right" : "left")};
+        float: ${props => (props['data-rtl'] === 'rtl' ? 'right' : 'left')};
 
         &:after {
-          right: ${props =>
-            props["data-rtl"] === "rtl" ? "inherit" : "-22px"};
-          left: ${props => (props["data-rtl"] === "rtl" ? "-22px" : "inherit")};
+          right: ${props => (props['data-rtl'] === 'rtl' ? 'inherit' : '-22px')};
+          left: ${props => (props['data-rtl'] === 'rtl' ? '-22px' : 'inherit')};
           transform: ${props =>
-            props["data-rtl"] === "rtl"
-              ? "translateY(-50%) rotate(180deg)"
-              : "translateY(-50%) rotate(0deg)"};
+    (props['data-rtl'] === 'rtl'
+      ? 'translateY(-50%) rotate(180deg)'
+      : 'translateY(-50%) rotate(0deg)')};
         }
 
         &:first-child {
@@ -271,7 +259,7 @@ const WDContentWrapper = styled.div`
 
   @media only screen and (max-width: 767px) {
     width: 100%;
-    margin-right: ${props => (props["data-rtl"] === "rtl" ? "30px" : "0")};
+    margin-right: ${props => (props['data-rtl'] === 'rtl' ? '30px' : '0')};
   }
 
   @media only screen and (min-width: 768px) and (max-width: 1199px) {
@@ -302,27 +290,23 @@ const WDGridListViewWrapper = styled.div`
     flex-direction: column;
     padding: 0;
     background-color: #fff;
-    margin: ${props =>
-      props["data-rtl"] === "rtl" ? "0 0 20px 20px" : "0 20px 20px 0"};
+    margin: ${props => (props['data-rtl'] === 'rtl' ? '0 0 20px 20px' : '0 20px 20px 0')};
     position: relative;
-    border: 1px solid ${palette("border", 0)};
+    border: 1px solid ${palette('border', 0)};
 
     &:nth-child(2n) {
-      margin: ${props =>
-        props["data-rtl"] === "rtl" ? "0 0 20px 0" : "0 0 20px 0"};
+      margin: ${props => (props['data-rtl'] === 'rtl' ? '0 0 20px 0' : '0 0 20px 0')};
     }
 
     @media only screen and (min-width: 1400px) {
       width: calc(100% / 3 - 14px);
 
       &:nth-child(2n) {
-        margin: ${props =>
-          props["data-rtl"] === "rtl" ? "0 0 20px 20px" : "0 20px 20px 0"};
+        margin: ${props => (props['data-rtl'] === 'rtl' ? '0 0 20px 20px' : '0 20px 20px 0')};
       }
 
       &:nth-child(3n) {
-        margin: ${props =>
-          props["data-rtl"] === "rtl" ? "0 0 20px" : "0 0 20px"};
+        margin: ${props => (props['data-rtl'] === 'rtl' ? '0 0 20px' : '0 0 20px')};
       }
     }
 
@@ -354,7 +338,7 @@ const WDGridListViewWrapper = styled.div`
       position: relative;
 
       &:after {
-        content: "";
+        content: '';
         width: 100%;
         height: 100%;
         display: flex;
@@ -370,7 +354,7 @@ const WDGridListViewWrapper = styled.div`
         &.dlAlAddToCart {
           background-color: #ffffff;
           border-color: #ffffff !important;
-          color: ${palette("text", 0)};
+          color: ${palette('text', 0)};
           z-index: 1;
           position: absolute !important;
           height: 42px;
@@ -380,19 +364,17 @@ const WDGridListViewWrapper = styled.div`
           ${transition()};
 
           i {
-            margin: ${props =>
-              props["data-rtl"] === "rtl" ? "0 0 0 10px" : "0 10px 0 0"};
+            margin: ${props => (props['data-rtl'] === 'rtl' ? '0 0 0 10px' : '0 10px 0 0')};
             font-size: 14px;
           }
 
           &:hover {
-            background-color: ${palette("grayscale", 4)};
+            background-color: ${palette('grayscale', 4)};
           }
 
           &.ant-btn-loading {
             i:not(.anticon-loading) {
-              margin: ${props =>
-                props["data-rtl"] === "rtl" ? "0 10px 0 0" : "0 0 0 10px"};
+              margin: ${props => (props['data-rtl'] === 'rtl' ? '0 10px 0 0' : '0 0 0 10px')};
             }
           }
         }
@@ -431,7 +413,7 @@ const WDGridListViewWrapper = styled.div`
         .ais-Highlight__nonHighlighted {
           font-size: 14px;
           font-weight: 700;
-          color: ${palette("text", 0)};
+          color: ${palette('text', 0)};
           line-height: 1.3;
         }
       }
@@ -449,8 +431,8 @@ const WDGridListViewWrapper = styled.div`
           position: absolute;
           top: 30px;
           right: 0px;
-          background-color: ${palette("primary", 9)};
-          ${borderRadius("3px 0 0 3px")};
+          background-color: ${palette('primary', 9)};
+          ${borderRadius('3px 0 0 3px')};
         }
 
         .dlAlGridRating {
@@ -471,7 +453,7 @@ const WDGridListViewWrapper = styled.div`
         .ais-Highlight__nonHighlighted {
           font-size: 13px;
           font-weight: 400;
-          color: ${palette("text", 2)};
+          color: ${palette('text', 2)};
           line-height: 1.5;
         }
       }
@@ -497,7 +479,7 @@ const WDGridListViewWrapper = styled.div`
     padding: 10px;
     background-color: #fff;
     margin-bottom: 15px;
-    border: 1px solid ${palette("border", 0)};
+    border: 1px solid ${palette('border', 0)};
 
     @media only screen and (max-width: 991px) {
       flex-direction: column;
@@ -515,7 +497,7 @@ const WDGridListViewWrapper = styled.div`
       background-color: #ffffff;
 
       &:after {
-        content: "";
+        content: '';
         width: 100%;
         height: 100%;
         display: flex;
@@ -530,24 +512,23 @@ const WDGridListViewWrapper = styled.div`
       .dlAlAddToCart {
         background-color: #ffffff;
         border-color: #ffffff !important;
-        color: ${palette("text", 0)};
+        color: ${palette('text', 0)};
         z-index: 1;
         position: absolute !important;
         height: 42px;
         opacity: 0;
         padding: 0 20px;
-        direction: ${props => (props["data-rtl"] === "rtl" ? "rtl" : "ltr")};
+        direction: ${props => (props['data-rtl'] === 'rtl' ? 'rtl' : 'ltr')};
         transform: scale(0.8);
         ${transition()};
 
         i {
-          margin: ${props =>
-            props["data-rtl"] === "rtl" ? "0 0 0 10px" : "0 10px 0 0"};
+          margin: ${props => (props['data-rtl'] === 'rtl' ? '0 0 0 10px' : '0 10px 0 0')};
           font-size: 14px;
         }
 
         &:hover {
-          background-color: ${palette("grayscale", 4)};
+          background-color: ${palette('grayscale', 4)};
         }
       }
 
@@ -588,7 +569,7 @@ const WDGridListViewWrapper = styled.div`
         .ais-Highlight__nonHighlighted {
           font-size: 16px;
           font-weight: 700;
-          color: ${palette("text", 0)};
+          color: ${palette('text', 0)};
           line-height: 1.3;
           margin-bottom: 10px;
           display: flex;
@@ -604,7 +585,7 @@ const WDGridListViewWrapper = styled.div`
         .dlAlGridPrice {
           font-size: 14px;
           font-weight: 400;
-          color: ${palette("text", 0)};
+          color: ${palette('text', 0)};
           line-height: 1;
         }
 
@@ -623,7 +604,7 @@ const WDGridListViewWrapper = styled.div`
         .ais-Highlight__nonHighlighted {
           font-size: 13px;
           font-weight: 400;
-          color: ${palette("text", 2)};
+          color: ${palette('text', 2)};
           line-height: 1.5;
         }
       }
@@ -639,10 +620,10 @@ const WDTopbarWrapper = styled.div`
   flex-wrap: wrap;
 
   .ais-Stats__root {
-    font-family: ${font("primary", 0)};
+    font-family: ${font('primary', 0)};
     font-size: 14px;
     font-weight: 500;
-    color: ${palette("text", 0)};
+    color: ${palette('text', 0)};
 
     @media only screen and (max-width: 991px) {
       width: 100%;
@@ -651,17 +632,16 @@ const WDTopbarWrapper = styled.div`
   }
 
   .ais-SortBy__root {
-    margin-left: ${props => (props["data-rtl"] === "rtl" ? "20px" : "auto")};
-    margin-right: ${props => (props["data-rtl"] === "rtl" ? "auto" : "20px")};
-    border: 1px solid ${palette("border", 0)};
+    margin-left: ${props => (props['data-rtl'] === 'rtl' ? '20px' : 'auto')};
+    margin-right: ${props => (props['data-rtl'] === 'rtl' ? 'auto' : '20px')};
+    border: 1px solid ${palette('border', 0)};
 
     &:focus {
       background-color: #ffffff;
     }
 
     @media only screen and (max-width: 991px) {
-      margin: ${props =>
-        props["data-rtl"] === "rtl" ? "0 0 0 auto" : "0 auto 0 0"};
+      margin: ${props => (props['data-rtl'] === 'rtl' ? '0 0 0 auto' : '0 auto 0 0')};
     }
   }
 
@@ -671,7 +651,7 @@ const WDTopbarWrapper = styled.div`
 
     button {
       font-size: 16px;
-      color: ${palette("secondary", 0)};
+      color: ${palette('secondary', 0)};
       text-align: center;
       width: 35px;
       height: 35px;
@@ -681,22 +661,22 @@ const WDTopbarWrapper = styled.div`
       background-color: #ffffff;
       outline: 0;
       padding: 0;
-      border: 1px solid ${palette("border", 0)};
+      border: 1px solid ${palette('border', 0)};
       margin-left: -1px;
       cursor: pointer;
       ${transition()};
 
       i {
         font-size: 18px;
-        color: ${palette("secondary", 0)};
+        color: ${palette('secondary', 0)};
         width: 100%;
         line-height: 33px;
         ${transition()};
       }
 
       &.active {
-        background-color: ${palette("primary", 9)};
-        border-color: ${palette("primary", 9)};
+        background-color: ${palette('primary', 9)};
+        border-color: ${palette('primary', 9)};
         i {
           color: #ffffff;
         }
@@ -725,8 +705,8 @@ const WDVoiceSearchWrapper = styled.div`
   display: flex;
   background-color: #ffffff;
   margin-bottom: 15px;
-  border: 1px solid ${palette("border", 0)};
-  ${borderRadius("3px")};
+  border: 1px solid ${palette('border', 0)};
+  ${borderRadius('3px')};
 
   div {
     width: 100%;
@@ -745,15 +725,15 @@ const WDVoiceSearchWrapper = styled.div`
     outline: 0;
     cursor: pointer;
     background-color: transparent;
-    border: 2px solid ${palette("border", 0)};
+    border: 2px solid ${palette('border', 0)};
     ${transition()};
-    ${borderRadius("50%")};
+    ${borderRadius('50%')};
 
     &:before {
-      content: "";
+      content: '';
       font-size: 17px;
-      font-family: "ionicons";
-      color: ${palette("grayscale", 0)};
+      font-family: 'ionicons';
+      color: ${palette('grayscale', 0)};
       -webkit-transition: color 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
       -moz-transition: color 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
       -ms-transition: color 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -762,10 +742,10 @@ const WDVoiceSearchWrapper = styled.div`
     }
 
     &:hover {
-      border-color: ${palette("primary", 0)};
+      border-color: ${palette('primary', 0)};
 
       &:before {
-        color: ${palette("primary", 0)};
+        color: ${palette('primary', 0)};
       }
     }
   }
@@ -773,27 +753,26 @@ const WDVoiceSearchWrapper = styled.div`
   span {
     font-size: 14px;
     font-weight: 400;
-    color: ${palette("text", 2)};
+    color: ${palette('text', 2)};
     line-height: 1.4;
-    margin: ${props =>
-      props["data-rtl"] === "rtl" ? "0 10px 0 0" : "0 0 0 10px"};
+    margin: ${props => (props['data-rtl'] === 'rtl' ? '0 10px 0 0' : '0 0 0 10px')};
   }
 
   .dlVoiceSearchStart {
     button {
       &:before {
-        content: "\f2ec";
+        content: '\f2ec';
       }
     }
   }
 
   .dlVoiceSearchRunning {
     button {
-      border-color: ${palette("primary", 0)};
+      border-color: ${palette('primary', 0)};
 
       &:before {
-        content: "\f24f";
-        color: ${palette("primary", 0)};
+        content: '\f24f';
+        color: ${palette('primary', 0)};
         font-size: 13px;
       }
     }
@@ -810,10 +789,9 @@ const WDFooterWrapper = styled.footer`
   span {
     font-size: 14px;
     font-weight: 700;
-    color: ${palette("text", 2)};
+    color: ${palette('text', 2)};
     line-height: 1.3;
-    margin: ${props =>
-      props["data-rtl"] === "rtl" ? "0 0 0 20px" : "0 20px 0 0"};
+    margin: ${props => (props['data-rtl'] === 'rtl' ? '0 0 0 20px' : '0 20px 0 0')};
   }
 
   .dlLogoWrapper {
@@ -855,8 +833,8 @@ const PaginationStyleWrapper = styled.div`
     justify-content: center;
     flex-wrap: wrap;
     padding: 8px 16px;
-    border: 1px solid ${palette("border", 0)};
-    ${borderRadius("3px")};
+    border: 1px solid ${palette('border', 0)};
+    ${borderRadius('3px')};
     ${boxShadow()};
 
     .ais-Pagination__item {
@@ -864,7 +842,7 @@ const PaginationStyleWrapper = styled.div`
 
       &.ais-Pagination__itemSelected {
         &:hover {
-          background-color: ${palette("primary", 9)};
+          background-color: ${palette('primary', 9)};
           a {
             color: #ffffff;
           }
@@ -893,5 +871,5 @@ export {
   VoiceSearchWrapper,
   LoaderElement,
   TopbarWrapper,
-  PaginationStyleWrapper
+  PaginationStyleWrapper,
 };

@@ -23,7 +23,8 @@ const button = {
       colorOutlineHover: colors.white,
       backgroundColor: colors.buttonSecondaryBackgroundColor,
       backgroundColorDisabled: colors.gray,
-      backgroundColorHoverFocus: colors.buttonSecondaryHoverFocusBackgroundColor,
+      backgroundColorHoverFocus:
+        colors.buttonSecondaryHoverFocusBackgroundColor,
       backgroundColorActive: colors.grayHoverFocus,
       borderColor: colors.gray,
       borderColorDisabled: colors.gray,
@@ -133,7 +134,8 @@ const button = {
       colorOutlineHover: colors.white,
       backgroundColor: colors.buttonSecondaryBackgroundColor,
       backgroundColorDisabled: colors.gray,
-      backgroundColorHoverFocus: colors.buttonSecondaryHoverFocusBackgroundColor,
+      backgroundColorHoverFocus:
+        colors.buttonSecondaryHoverFocusBackgroundColor,
       backgroundColorActive: colors.grayHoverFocus,
       borderColor: colors.gray,
       borderColorDisabled: colors.gray,

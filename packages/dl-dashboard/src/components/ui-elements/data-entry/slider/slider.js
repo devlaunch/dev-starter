@@ -1,3 +1,3 @@
-import { Slider } from "antd";
+import { Slider } from 'antd';
 
 export default Slider;

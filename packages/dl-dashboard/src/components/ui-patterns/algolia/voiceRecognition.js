@@ -1,19 +1,19 @@
-import React, { Component } from "react";
-import { PropTypes } from "prop-types";
-import SpeechRecognition from "react-speech-recognition";
-import { VoiceSearchWrapper } from "./algoliaComponent.style";
+import React, { Component } from 'react';
+import { PropTypes } from 'prop-types';
+import SpeechRecognition from 'react-speech-recognition';
+import { VoiceSearchWrapper } from './algoliaComponent.style';
 
 const propTypes = {
   transcript: PropTypes.string,
   resetTranscript: PropTypes.func,
-  browserSupportsSpeechRecognition: PropTypes.bool
+  browserSupportsSpeechRecognition: PropTypes.bool,
 };
 const options = {
-  autoStart: false
+  autoStart: false,
 };
 class VoiceRecognition extends Component {
   state = {
-    listening: false
+    listening: false,
   };
   render() {
     const {
@@ -22,7 +22,7 @@ class VoiceRecognition extends Component {
       browserSupportsSpeechRecognition,
       startListening,
       stopListening,
-      setVoice
+      setVoice,
     } = this.props;
     if (!browserSupportsSpeechRecognition) {
       return <div />;

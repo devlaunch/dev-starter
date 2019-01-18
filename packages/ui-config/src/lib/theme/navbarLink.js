@@ -1,5 +1,5 @@
-import { colors } from './colors';
-import { utils } from './utils';
+import { colors } from "./colors";
+import { utils } from "./utils";
 
 const navbarLink = {
   colors: {
@@ -9,7 +9,7 @@ const navbarLink = {
       colorActive: colors.navbarDarkColorActive,
       colorActiveHoverFocus: colors.navbarDarkColorActive,
       color: colors.navbarDarkColor,
-      colorHoverFocus: colors.navbarDarkColorHoverFocus,
+      colorHoverFocus: colors.navbarDarkColorHoverFocus
     },
     light: {
       colorDisabled: colors.navbarLightColorDisabled,
@@ -17,7 +17,7 @@ const navbarLink = {
       colorActive: colors.navbarLightColorActive,
       colorActiveHoverFocus: colors.navbarLightColorActive,
       color: colors.navbarLightColor,
-      colorHoverFocus: colors.navbarLightColorHoverFocus,
+      colorHoverFocus: colors.navbarLightColorHoverFocus
     },
     default: {
       colorDisabled: colors.navbarLightColorDisabled,
@@ -25,14 +25,14 @@ const navbarLink = {
       colorActive: colors.navbarLightColorActive,
       colorActiveHoverFocus: colors.navbarLightColorActive,
       color: colors.navbarLightColor,
-      colorHoverFocus: colors.navbarLightColorHoverFocus,
-    },
+      colorHoverFocus: colors.navbarLightColorHoverFocus
+    }
   },
   padding: {
-    brandTop: '0.3125rem',
-    brandBottom: '0.3125rem',
+    brandTop: "0.3125rem",
+    brandBottom: "0.3125rem"
   },
-  fontSize: utils.fontSize,
+  fontSize: utils.fontSize
 };
 
 export { navbarLink };

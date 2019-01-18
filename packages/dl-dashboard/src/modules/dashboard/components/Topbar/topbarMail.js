@@ -1,40 +1,40 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-import IntlMessages from "../../components/utility/intlMessages";
-import { Popover } from "components/ui-elements/data-display/popover";
-import TopbarDropdownWrapper from "./topbarDropdown.style";
+import IntlMessages from '../../components/utility/intlMessages';
+import { Popover } from 'components/ui-elements/data-display/popover';
+import TopbarDropdownWrapper from './topbarDropdown.style';
 
 const demoMails = [
   {
     id: 1,
-    name: "David Doe",
-    time: "3 minutes ago",
+    name: 'David Doe',
+    time: '3 minutes ago',
     desc:
-      "A National Book Award Finalist An Edgar Award Finalist A California Book Award Gold Medal Winner"
+      'A National Book Award Finalist An Edgar Award Finalist A California Book Award Gold Medal Winner',
   },
   {
     id: 2,
-    name: "Navis Doe",
-    time: "4 minutes ago",
+    name: 'Navis Doe',
+    time: '4 minutes ago',
     desc:
-      "A National Book Award Finalist An Edgar Award Finalist A California Book Award Gold Medal Winner"
+      'A National Book Award Finalist An Edgar Award Finalist A California Book Award Gold Medal Winner',
   },
   {
     id: 3,
-    name: "Emanual Doe",
-    time: "5 minutes ago",
+    name: 'Emanual Doe',
+    time: '5 minutes ago',
     desc:
-      "A National Book Award Finalist An Edgar Award Finalist A California Book Award Gold Medal Winner"
+      'A National Book Award Finalist An Edgar Award Finalist A California Book Award Gold Medal Winner',
   },
   {
     id: 4,
-    name: "Dowain Doe",
-    time: "6 minutes ago",
+    name: 'Dowain Doe',
+    time: '6 minutes ago',
     desc:
-      "A National Book Award Finalist An Edgar Award Finalist A California Book Award Gold Medal Winner"
-  }
+      'A National Book Award Finalist An Edgar Award Finalist A California Book Award Gold Medal Winner',
+  },
 ];
 
 class TopbarMail extends Component {
@@ -43,7 +43,7 @@ class TopbarMail extends Component {
     this.handleVisibleChange = this.handleVisibleChange.bind(this);
     this.hide = this.hide.bind(this);
     this.state = {
-      visible: false
+      visible: false,
     };
   }
   hide() {
@@ -90,10 +90,7 @@ class TopbarMail extends Component {
         placement="bottomLeft"
       >
         <div className="dlIconWrapper">
-          <i
-            className="ion-email"
-            style={{ color: customizedTheme.textColor }}
-          />
+          <i className="ion-email" style={{ color: customizedTheme.textColor }} />
           <span>{demoMails.length}</span>
         </div>
       </Popover>
@@ -103,5 +100,5 @@ class TopbarMail extends Component {
 
 export default connect(state => ({
   ...state.Dashboard,
-  customizedTheme: state.ThemeSwitcher.topbarTheme
+  customizedTheme: state.ThemeSwitcher.topbarTheme,
 }))(TopbarMail);

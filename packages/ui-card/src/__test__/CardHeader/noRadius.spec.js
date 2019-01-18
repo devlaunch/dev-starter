@@ -1,11 +1,11 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-import 'jest-styled-components';
+import React from "react";
+import renderer from "react-test-renderer";
+import "jest-styled-components";
 
-import { CardHeader } from '../../src';
+import { CardHeader } from "../../src";
 
-test('Styles matches CardHeader noRadius', () => {
+test("Styles matches CardHeader noRadius", () => {
   const tree = renderer.create(<CardHeader noRadius />).toJSON();
   expect(tree).toMatchSnapshot();
-  expect(tree).toHaveStyleRule('border-radius', '0');
+  expect(tree).toHaveStyleRule("border-radius", "0");
 });

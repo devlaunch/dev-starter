@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 
-export default ({ text = "" }) => (
+export default ({ text = '' }) => (
   <div
     className="dlHelperText"
     style={{
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      width: "100%",
-      padding: "20px"
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: '100%',
+      padding: '20px',
     }}
   >
     <h3>{text}</h3>

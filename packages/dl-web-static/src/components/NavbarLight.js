@@ -26,10 +26,16 @@ export default class NavbarLight extends React.Component {
       <Container>
         <Navbar expandSm light>
           <Nav>
-            <NavbarLink light brand href="#">
+            <NavbarLink light brand href="#" style={{ marginRight: "3rem" }}>
               URBAN RUNNERS
             </NavbarLink>
-            <Button light outline toggleCollapse expandSm onClick={() => this.handleOpenCloseNav()}>
+            <Button
+              light
+              outline
+              toggleCollapse
+              expandSm
+              onClick={() => this.handleOpenCloseNav()}
+            >
               <span>&#9776;</span>
             </Button>
           </Nav>

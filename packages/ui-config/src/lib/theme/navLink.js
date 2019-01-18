@@ -1,5 +1,5 @@
-import { colors } from './colors';
-import { utils } from './utils';
+import { colors } from "./colors";
+import { utils } from "./utils";
 
 const navLink = {
   colors: {
@@ -13,11 +13,15 @@ const navLink = {
       color: colors.blue,
       colorHoverFocus: colors.blueHoverFocusA,
       backgroundColorPillsActive: colors.blue,
-      borderColorTabsActive: `${colors.gray200} ${colors.gray200} ${colors.white}`,
-      borderColorTabsHoverFocus: `${colors.gray200} ${colors.gray200} ${colors.gray300}`,
-      borderColorTabsDisabled: 'transparent',
+      borderColorTabsActive: `${colors.gray200} ${colors.gray200} ${
+        colors.white
+      }`,
+      borderColorTabsHoverFocus: `${colors.gray200} ${colors.gray200} ${
+        colors.gray300
+      }`,
+      borderColorTabsDisabled: "transparent",
       borderColorPillsActive: colors.blue,
-      borderColor: 'transparent',
+      borderColor: "transparent"
     },
     light: {
       colorDisabled: colors.gray,
@@ -29,11 +33,15 @@ const navLink = {
       color: colors.blue,
       colorHoverFocus: colors.blueHoverFocusA,
       backgroundColorPillsActive: colors.blue,
-      borderColorTabsActive: `${colors.gray200} ${colors.gray200} ${colors.white}`,
-      borderColorTabsHoverFocus: `${colors.gray200} ${colors.gray200} ${colors.gray300}`,
-      borderColorTabsDisabled: 'transparent',
+      borderColorTabsActive: `${colors.gray200} ${colors.gray200} ${
+        colors.white
+      }`,
+      borderColorTabsHoverFocus: `${colors.gray200} ${colors.gray200} ${
+        colors.gray300
+      }`,
+      borderColorTabsDisabled: "transparent",
       borderColorPillsActive: colors.blue,
-      borderColor: 'transparent',
+      borderColor: "transparent"
     },
     dark: {
       colorDisabled: colors.gray,
@@ -45,18 +53,22 @@ const navLink = {
       color: colors.blue,
       colorHoverFocus: colors.blueHoverFocusA,
       backgroundColorPillsActive: colors.blue,
-      borderColorTabsActive: `${colors.gray200} ${colors.gray200} ${colors.white}`,
-      borderColorTabsHoverFocus: `${colors.gray200} ${colors.gray200} ${colors.gray300}`,
-      borderColorTabsDisabled: 'transparent',
+      borderColorTabsActive: `${colors.gray200} ${colors.gray200} ${
+        colors.white
+      }`,
+      borderColorTabsHoverFocus: `${colors.gray200} ${colors.gray200} ${
+        colors.gray300
+      }`,
+      borderColorTabsDisabled: "transparent",
       borderColorPillsActive: colors.blue,
-      borderColor: 'transparent',
-    },
+      borderColor: "transparent"
+    }
   },
   padding: {
-    default: '0.5rem',
+    default: "0.5rem"
   },
   borderRadius: utils.borderRadius,
-  border: utils.border,
+  border: utils.border
 };
 
 export { navLink };

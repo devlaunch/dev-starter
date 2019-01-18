@@ -1,21 +1,20 @@
-import firebase from "firebase";
-import ReduxSagaFirebase from "redux-saga-firebase";
-import "firebase/firestore";
-import { firebaseConfig } from "../../settings";
+import firebase from 'firebase';
+import ReduxSagaFirebase from 'redux-saga-firebase';
+import 'firebase/firestore';
+import { firebaseConfig } from '../../settings';
 
-const valid =
-  firebaseConfig && firebaseConfig.apiKey && firebaseConfig.projectId;
+const valid = firebaseConfig && firebaseConfig.apiKey && firebaseConfig.projectId;
 
 const firebaseApp = valid && firebase.initializeApp(firebaseConfig);
 const firebaseAuth = valid && firebase.auth;
 
 class FirebaseHelper {
   isValid = valid;
-  EMAIL = "email";
-  FACEBOOK = "facebook";
-  GOOGLE = "google";
-  GITHUB = "github";
-  TWITTER = "twitter";
+  EMAIL = 'email';
+  FACEBOOK = 'facebook';
+  GOOGLE = 'google';
+  GITHUB = 'github';
+  TWITTER = 'twitter';
   constructor() {
     this.login = this.login.bind(this);
     this.logout = this.logout.bind(this);
@@ -25,23 +24,17 @@ class FirebaseHelper {
       const settings = { timestampsInSnapshots: true };
       this.database.settings(settings);
     }
-    this.rsf =
-      this.isValid && new ReduxSagaFirebase(firebaseApp, firebase.firestore());
+    this.rsf = this.isValid && new ReduxSagaFirebase(firebaseApp, firebase.firestore());
     this.rsfFirestore = this.isValid && this.rsf.firestore;
   }
-  createBatch = () => {
-    return this.database.batch();
-  };
+  createBatch = () => this.database.batch();
   login(provider, info) {
     if (!this.isValid) {
       return;
     }
     switch (provider) {
       case this.EMAIL:
-        return firebaseAuth().signInWithEmailAndPassword(
-          info.email,
-          info.password
-        );
+        return firebaseAuth().signInWithEmailAndPassword(info.email, info.password);
       case this.FACEBOOK:
         return firebaseAuth().FacebookAuthProvider();
       case this.GOOGLE:
@@ -58,9 +51,7 @@ class FirebaseHelper {
   }
 
   isAuthenticated() {
-    firebaseAuth().onAuthStateChanged(user => {
-      return user ? true : false;
-    });
+    firebaseAuth().onAuthStateChanged(user => !!user);
   }
   resetPassword(email) {
     return firebaseAuth().sendPasswordResetEmail(email);

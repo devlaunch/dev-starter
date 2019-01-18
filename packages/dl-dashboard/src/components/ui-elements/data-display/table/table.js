@@ -1,2 +1,3 @@
-import { Table } from "antd";
+import { Table } from 'antd';
+
 export default Table;

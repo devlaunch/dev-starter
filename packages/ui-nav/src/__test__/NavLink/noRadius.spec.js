@@ -1,11 +1,11 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-import 'jest-styled-components';
+import React from "react";
+import renderer from "react-test-renderer";
+import "jest-styled-components";
 
-import { NavLink } from '../../src';
+import { NavLink } from "../../src";
 
-test('Styles matches NavLink noRadius', () => {
+test("Styles matches NavLink noRadius", () => {
   const tree = renderer.create(<NavLink to="#" noRadius />).toJSON();
   expect(tree).toMatchSnapshot();
-  expect(tree).toHaveStyleRule('border-radius', '0');
+  expect(tree).toHaveStyleRule("border-radius", "0");
 });

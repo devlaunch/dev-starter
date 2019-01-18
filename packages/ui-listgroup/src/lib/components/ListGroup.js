@@ -1,6 +1,12 @@
 import styled, { css } from "styled-components";
 
-import { theme, padding, margin, border as b, borderRadius } from "@devlaunch/ui-config";
+import {
+  theme,
+  padding,
+  margin,
+  border as b,
+  borderRadius
+} from "@devlaunch/ui-config";
 
 const border = props =>
   props.flush &&

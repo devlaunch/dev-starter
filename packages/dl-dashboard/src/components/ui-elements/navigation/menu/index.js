@@ -1,3 +1,3 @@
-import { Menu } from "antd";
+import { Menu } from 'antd';
 
 export { Menu };

@@ -15,9 +15,11 @@ import {
 const backgroundColor = props => {
   if (props.disabled || props.readonly) {
     return css`
-      background-color: ${colors(props, "formControl").backgroundColorDisabledReadonly};
+      background-color: ${colors(props, "formControl")
+        .backgroundColorDisabledReadonly};
       &:focus {
-        background-color: ${colors(props, "formControl").backgroundColorDisabledReadonly};
+        background-color: ${colors(props, "formControl")
+          .backgroundColorDisabledReadonly};
       }
     `;
   }
@@ -48,7 +50,8 @@ const border = props => {
   }
 
   return css`
-    border: ${b(props, "formControl").default} ${colors(props, "formControl").border};
+    border: ${b(props, "formControl").default}
+      ${colors(props, "formControl").border};
     &:focus {
       border-color: ${colors(props, "formControl").border};
     }
@@ -59,13 +62,15 @@ const boxShadow = props => {
   if (props.valid) {
     return css`
       &:focus {
-        box-shadow: ${bs(props, "formControl").default} ${colors(props, "formControl").formControlBoxShadowValid};
+        box-shadow: ${bs(props, "formControl").default}
+          ${colors(props, "formControl").formControlBoxShadowValid};
       }
     `;
   } else if (props.invalid) {
     return css`
       &:focus {
-        box-shadow: ${bs(props, "formControl").default} ${colors(props, "formControl").formControlBoxShadowInvalid};
+        box-shadow: ${bs(props, "formControl").default}
+          ${colors(props, "formControl").formControlBoxShadowInvalid};
       }
     `;
   }
@@ -193,7 +198,8 @@ const formControlStyle = () => css`
     &:focus {
       color: ${props => colors(props, "formControl").color};
       outline: 0;
-      box-shadow: 0 0 0 0.2rem ${props => colors(props, "formControl").boxShadowFocus};
+      box-shadow: 0 0 0 0.2rem ${props =>
+        colors(props, "formControl").boxShadowFocus};
     };
     &::placeholder {
       color: ${props => colors(props, "formControl").placeholder};

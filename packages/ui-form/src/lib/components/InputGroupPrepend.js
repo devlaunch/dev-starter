@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const InputGroupPrepend = styled.div`
   display: flex;
@@ -6,7 +6,7 @@ const InputGroupPrepend = styled.div`
   & > button {
     position: relative;
     z-index: 2;
-  };
+  }
   & > span,
   & > button {
     border-top-right-radius: 0;
@@ -15,8 +15,8 @@ const InputGroupPrepend = styled.div`
       margin-left: -1px;
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
-    };
-  };
+    }
+  }
 `;
 
 export { InputGroupPrepend };

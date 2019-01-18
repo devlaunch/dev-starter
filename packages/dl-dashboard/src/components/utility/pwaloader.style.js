@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { palette } from "styled-theme";
+import styled from 'styled-components';
+import { palette } from 'styled-theme';
 
 export const PwaLoader = styled.div`
   .pwaLoaderWrapper,
@@ -46,18 +46,8 @@ export const PwaLoader = styled.div`
         color-stop(18%, #cccccc),
         color-stop(33%, #dddddd)
       );
-      background: -webkit-linear-gradient(
-        left,
-        #dddddd 8%,
-        #cccccc 18%,
-        #dddddd 33%
-      );
-      background: linear-gradient(
-        to right,
-        #dddddd 8%,
-        #cccccc 18%,
-        #dddddd 33%
-      );
+      background: -webkit-linear-gradient(left, #dddddd 8%, #cccccc 18%, #dddddd 33%);
+      background: linear-gradient(to right, #dddddd 8%, #cccccc 18%, #dddddd 33%);
       -webkit-background-size: 800px 104px;
       background-size: 800px 104px;
       height: 86px;

@@ -1,8 +1,8 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Route, Redirect } from "react-router-dom";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Route, Redirect } from 'react-router-dom';
 
-import ErrorBoundary from "modules/error/error-boundary";
+import ErrorBoundary from 'modules/error/error-boundary';
 
 const PrivateRouteComponent = ({
   component: Component,
@@ -13,7 +13,7 @@ const PrivateRouteComponent = ({
   ...rest
 }) => {
   const checkAuthorities = props =>
-    isAuthorized ? (
+    (isAuthorized ? (
       <ErrorBoundary>
         <Component {...props} />
       </ErrorBoundary>
@@ -21,27 +21,28 @@ const PrivateRouteComponent = ({
       <div className="insufficient-authority">
         <div className="alert alert-danger">You are not authorized to access this page.</div>
       </div>
-    );
+    ));
 
-  const renderRedirect = props => {
+  const renderRedirect = (props) => {
     if (!sessionHasBeenFetched) {
       return <div />;
-    } else {
-      return isAuthenticated ? (
-        checkAuthorities(props)
-      ) : (
-        <Redirect
-          to={{
-            pathname: "/signin",
-            search: props.location.search,
-            state: { from: props.location }
-          }}
-        />
-      );
     }
+    return isAuthenticated ? (
+      checkAuthorities(props)
+    ) : (
+      <Redirect
+        to={{
+          pathname: '/signin',
+          search: props.location.search,
+          state: { from: props.location },
+        }}
+      />
+    );
   };
 
-  if (!Component) throw new Error(`A component needs to be specified for private route for path ${rest.path}`);
+  if (!Component) {
+    throw new Error(`A component needs to be specified for private route for path ${rest.path}`);
+  }
 
   return <Route {...rest} render={renderRedirect} />;
 };
@@ -58,11 +59,11 @@ export const hasAnyAuthority = (authorities, hasAnyAuthorities) => {
 
 const mapStateToProps = (
   { authentication: { isAuthenticated, account, sessionHasBeenFetched } },
-  { hasAnyAuthorities = [] }
+  { hasAnyAuthorities = [] },
 ) => ({
   isAuthenticated,
   isAuthorized: hasAnyAuthority(account.authorities, hasAnyAuthorities),
-  sessionHasBeenFetched
+  sessionHasBeenFetched,
 });
 
 state => ({});
@@ -75,7 +76,7 @@ export const PrivateRoute = connect(
   mapStateToProps,
   null,
   null,
-  { pure: false }
+  { pure: false },
 )(PrivateRouteComponent);
 
 export default PrivateRoute;

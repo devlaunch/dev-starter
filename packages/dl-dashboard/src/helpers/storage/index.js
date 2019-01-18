@@ -1,13 +1,13 @@
 export const StorageType = {
-  SESSION: "storage/SESSION",
-  LOCAL: "storage/LOCAL"
+  SESSION: 'storage/SESSION',
+  LOCAL: 'storage/LOCAL',
 };
 
 /**
  * Get either localStorage or sessionStorage
  * @param type storage type
  */
-export const getStorage = type => {
+export const getStorage = (type) => {
   if (type === StorageType.SESSION) {
     return window.sessionStorage;
   }
@@ -32,7 +32,7 @@ const setItem = type => (key, value) => {
  */
 const getItem = type => (key, defaultVal) => {
   const val = getStorage(type).getItem(key);
-  if (!val || val === "undefined") return defaultVal;
+  if (!val || val === 'undefined') return defaultVal;
   try {
     return JSON.parse(val);
   } catch (e) {
@@ -45,7 +45,7 @@ const getItem = type => (key, defaultVal) => {
  * @param type storage type
  * @param key key to remove
  */
-const removeItem = type => key => {
+const removeItem = type => (key) => {
   getStorage(type).removeItem(key);
 };
 
@@ -53,11 +53,11 @@ export const Storage = {
   session: {
     get: getItem(StorageType.SESSION),
     set: setItem(StorageType.SESSION),
-    remove: removeItem(StorageType.SESSION)
+    remove: removeItem(StorageType.SESSION),
   },
   local: {
     get: getItem(StorageType.LOCAL),
     set: setItem(StorageType.LOCAL),
-    remove: removeItem(StorageType.LOCAL)
-  }
+    remove: removeItem(StorageType.LOCAL),
+  },
 };

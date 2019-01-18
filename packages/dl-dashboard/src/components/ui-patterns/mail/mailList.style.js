@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import { palette } from "styled-theme";
-import { borderRadius, transition } from "../../settings/style-util";
-import WithDirection from "../../settings/withDirection";
+import styled from 'styled-components';
+import { palette } from 'styled-theme';
+import { borderRadius, transition } from '../../settings/style-util';
+import WithDirection from '../../settings/withDirection';
 
 const MailListWrapper = styled.div`
   width: 100%;
@@ -15,10 +15,10 @@ const MailListWrapper = styled.div`
     padding: 30px;
     display: flex;
     flex-shrink: 0;
-    border-bottom: 1px solid ${palette("border", 0)};
+    border-bottom: 1px solid ${palette('border', 0)};
     overflow: hidden;
     position: relative;
-    text-align: ${props => (props["data-rtl"] === "rtl" ? "right" : "left")};
+    text-align: ${props => (props['data-rtl'] === 'rtl' ? 'right' : 'left')};
     cursor: pointer;
     ${transition()};
 
@@ -26,13 +26,12 @@ const MailListWrapper = styled.div`
       width: 0;
       height: 0;
       border-style: solid;
-      border-width: ${props =>
-        props["data-rtl"] === "rtl" ? "0 15px 15px 0;" : "15px 15px 0 0"};
+      border-width: ${props => (props['data-rtl'] === 'rtl' ? '0 15px 15px 0;' : '15px 15px 0 0')};
       border-color: transparent transparent transparent transparent;
       position: absolute;
       top: 0;
-      left: ${props => (props["data-rtl"] === "rtl" ? "inherit" : "0")};
-      right: ${props => (props["data-rtl"] === "rtl" ? "0" : "inherit")};
+      left: ${props => (props['data-rtl'] === 'rtl' ? 'inherit' : '0')};
+      right: ${props => (props['data-rtl'] === 'rtl' ? '0' : 'inherit')};
     }
 
     &:last-child {
@@ -49,7 +48,7 @@ const MailListWrapper = styled.div`
       justify-content: center;
       overflow: hidden;
       flex-shrink: 0;
-      ${borderRadius("50%")};
+      ${borderRadius('50%')};
 
       img {
         width: 100%;
@@ -63,7 +62,7 @@ const MailListWrapper = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: ${palette("color", 4)};
+        background-color: ${palette('color', 4)};
         font-size: 16px;
         font-weight: 300;
         color: #fff;
@@ -73,8 +72,7 @@ const MailListWrapper = styled.div`
 
     .dlMailInfo {
       width: 100%;
-      padding: ${props =>
-        props["data-rtl"] === "rtl" ? "0 20px 0 0" : "0 0 0 20px"};
+      padding: ${props => (props['data-rtl'] === 'rtl' ? '0 20px 0 0' : '0 0 0 20px')};
 
       .infoHead {
         width: 100%;
@@ -86,13 +84,13 @@ const MailListWrapper = styled.div`
         .dlRecipents {
           font-size: 13px;
           font-weight: 400;
-          color: ${palette("secondary", 2)};
+          color: ${palette('secondary', 2)};
         }
 
         .dlReceiveDate {
           font-size: 11px;
           font-weight: 400;
-          color: ${palette("secondary", 2)};
+          color: ${palette('secondary', 2)};
           flex-shrink: 0;
         }
       }
@@ -100,21 +98,21 @@ const MailListWrapper = styled.div`
       .dlSubject {
         font-size: 14px;
         font-weight: 500;
-        color: ${palette("secondary", 0)};
+        color: ${palette('secondary', 0)};
         margin: 0;
       }
     }
 
     &.unreadMail {
-      background-color: ${palette("secondary", 8)};
+      background-color: ${palette('secondary', 8)};
     }
 
     &:hover {
-      background-color: ${palette("secondary", 8)};
+      background-color: ${palette('secondary', 8)};
     }
 
     &.activeMail {
-      background-color: ${palette("secondary", 9)};
+      background-color: ${palette('secondary', 9)};
     }
   }
 

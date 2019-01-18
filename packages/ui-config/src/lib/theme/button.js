@@ -1,5 +1,5 @@
-import { colors } from './colors';
-import { utils } from './utils';
+import { colors } from "./colors";
+import { utils } from "./utils";
 
 const button = {
   colors: {
@@ -15,7 +15,7 @@ const button = {
       borderColorDisabled: colors.blue,
       borderColorActive: colors.buttonPrimaryActiveBorderColor,
       borderColorHoverFocus: colors.blueHoverFocus,
-      boxShadow: colors.blueBoxShadow,
+      boxShadow: colors.blueBoxShadow
     },
     secondary: {
       color: colors.white,
@@ -23,13 +23,14 @@ const button = {
       colorOutlineHover: colors.white,
       backgroundColor: colors.buttonSecondaryBackgroundColor,
       backgroundColorDisabled: colors.gray,
-      backgroundColorHoverFocus: colors.buttonSecondaryHoverFocusBackgroundColor,
+      backgroundColorHoverFocus:
+        colors.buttonSecondaryHoverFocusBackgroundColor,
       backgroundColorActive: colors.grayHoverFocus,
       borderColor: colors.gray,
       borderColorDisabled: colors.gray,
       borderColorActive: colors.buttonSecondaryActiveBorderColor,
       borderColorHoverFocus: colors.grayHoverFocus,
-      boxShadow: colors.grayBoxShadow,
+      boxShadow: colors.grayBoxShadow
     },
     success: {
       color: colors.white,
@@ -43,7 +44,7 @@ const button = {
       borderColorDisabled: colors.green,
       borderColorActive: colors.buttonSuccessActiveBorderColor,
       borderColorHoverFocus: colors.greenHoverFocus,
-      boxShadow: colors.greenBoxShadow,
+      boxShadow: colors.greenBoxShadow
     },
     danger: {
       color: colors.white,
@@ -57,7 +58,7 @@ const button = {
       borderColorDisabled: colors.red,
       borderColorActive: colors.buttonDangerActiveBorderColor,
       borderColorHoverFocus: colors.redHoverFocus,
-      boxShadow: colors.redBoxShadow,
+      boxShadow: colors.redBoxShadow
     },
     warning: {
       color: colors.gray900,
@@ -71,7 +72,7 @@ const button = {
       borderColorDisabled: colors.yellow,
       borderColorActive: colors.buttonWarningActiveBorderColor,
       borderColorHoverFocus: colors.yellowHoverFocus,
-      boxShadow: colors.yellowBoxShadow,
+      boxShadow: colors.yellowBoxShadow
     },
     info: {
       color: colors.white,
@@ -85,7 +86,7 @@ const button = {
       borderColorDisabled: colors.cyan,
       borderColorActive: colors.buttonInfoActiveBorderColor,
       borderColorHoverFocus: colors.cyanHoverFocus,
-      boxShadow: colors.cyanBoxShadow,
+      boxShadow: colors.cyanBoxShadow
     },
     light: {
       color: colors.gray900,
@@ -104,8 +105,8 @@ const button = {
         color: colors.navbarLightColor,
         borderColor: colors.navbarLightBorderColor,
         colorHoverFous: colors.navbarLightColor,
-        borderColorHoverFous: colors.navbarLightBorderColor,
-      },
+        borderColorHoverFous: colors.navbarLightBorderColor
+      }
     },
     dark: {
       color: colors.white,
@@ -124,8 +125,8 @@ const button = {
         color: colors.navbarDarkColor,
         borderColor: colors.navbarDarkBorderColor,
         colorHoverFous: colors.navbarDarkColor,
-        borderColorHoverFous: colors.navbarDarkBorderColor,
-      },
+        borderColorHoverFous: colors.navbarDarkBorderColor
+      }
     },
     default: {
       color: colors.white,
@@ -133,34 +134,35 @@ const button = {
       colorOutlineHover: colors.white,
       backgroundColor: colors.buttonSecondaryBackgroundColor,
       backgroundColorDisabled: colors.gray,
-      backgroundColorHoverFocus: colors.buttonSecondaryHoverFocusBackgroundColor,
+      backgroundColorHoverFocus:
+        colors.buttonSecondaryHoverFocusBackgroundColor,
       backgroundColorActive: colors.grayHoverFocus,
       borderColor: colors.gray,
       borderColorDisabled: colors.gray,
       borderColorActive: colors.buttonSecondaryActiveBorderColor,
       borderColorHoverFocus: colors.grayHoverFocus,
-      boxShadow: colors.grayBoxShadow,
-    },
+      boxShadow: colors.grayBoxShadow
+    }
   },
   margin: {
-    blockTop: '0.5rem',
-    dropDownToggleLeft: '0255rem',
+    blockTop: "0.5rem",
+    dropDownToggleLeft: "0255rem"
   },
   padding: {
     ...utils.padding.button,
-    splitSmRight: '0.375rem',
-    splitSmLeft: '0.375rem',
-    splitLgRight: '0.75rem',
-    splitLgLeft: '0.75rem',
-    splitDefaultRight: '0.5625rem',
-    splitDefaultLeft: '0.5625rem',
+    splitSmRight: "0.375rem",
+    splitSmLeft: "0.375rem",
+    splitLgRight: "0.75rem",
+    splitLgLeft: "0.75rem",
+    splitDefaultRight: "0.5625rem",
+    splitDefaultLeft: "0.5625rem"
   },
   fontSize: {
     ...utils.fontSize,
-    toggle: '1.25rem',
+    toggle: "1.25rem"
   },
   border: utils.border,
-  borderRadius: utils.borderRadius,
+  borderRadius: utils.borderRadius
 };
 
 export { button };

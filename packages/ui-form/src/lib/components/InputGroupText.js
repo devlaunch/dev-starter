@@ -1,6 +1,15 @@
 import styled from "styled-components";
 
-import { theme, colors, padding, fontSize, fontWeight, margin, borderRadius, border } from "@devlaunch/ui-config";
+import {
+  theme,
+  colors,
+  padding,
+  fontSize,
+  fontWeight,
+  margin,
+  borderRadius,
+  border
+} from "@devlaunch/ui-config";
 
 const InputGroupText = styled.span`
   display: flex;
@@ -14,13 +23,16 @@ const InputGroupText = styled.span`
   text-align: center;
   white-space: nowrap;
   background-color: ${props => colors(props, "inputGroupText").backgroundColor};
-  border: ${props => border(props, "inputGroupText").default} ${props => colors(props, "inputGroupText").borderColor};
+  border: ${props => border(props, "inputGroupText").default}
+    ${props => colors(props, "inputGroupText").borderColor};
   border-radius: ${props => borderRadius(props, "inputGroupText").default};
   & input[type="radio"],
   & input[type="checkbox"] {
     margin-top: ${props => margin(props, "inputGroupText").radioCheckboxTop};
-    margin-right: ${props => margin(props, "inputGroupText").radioCheckboxRight};
-    margin-bottom: ${props => margin(props, "inputGroupText").radioCheckboxBottom};
+    margin-right: ${props =>
+      margin(props, "inputGroupText").radioCheckboxRight};
+    margin-bottom: ${props =>
+      margin(props, "inputGroupText").radioCheckboxBottom};
   }
 `;
 

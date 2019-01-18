@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import { palette } from "styled-theme";
-import { transition } from "../../settings/style-util";
-import WithDirection from "../../settings/withDirection";
+import styled from 'styled-components';
+import { palette } from 'styled-theme';
+import { transition } from '../../settings/style-util';
+import WithDirection from '../../settings/withDirection';
 
 const MailBucket = styled.ul`
   padding: 35px 0 0;
@@ -18,7 +18,7 @@ const MailBucket = styled.ul`
     span {
       font-size: 14px;
       font-weight: 400;
-      color: ${palette("secondary", 2)};
+      color: ${palette('secondary', 2)};
       cursor: pointer;
       text-transform: capitalize;
       line-height: 1.1;
@@ -28,10 +28,9 @@ const MailBucket = styled.ul`
     .dlMailBadge {
       font-size: 12px;
       font-weight: 500;
-      color: ${palette("secondary", 2)};
+      color: ${palette('secondary', 2)};
       line-height: normal;
-      margin: ${props =>
-        props["data-rtl"] === "rtl" ? "0 auto 0 0" : "0 0 0 auto"};
+      margin: ${props => (props['data-rtl'] === 'rtl' ? '0 auto 0 0' : '0 0 0 auto')};
       display: -webkit-inline-flex;
       display: -ms-inline-flex;
       display: inline-flex;
@@ -43,13 +42,13 @@ const MailBucket = styled.ul`
     &.active {
       span:not(.dlMailBadge) {
         font-weight: 500;
-        color: ${palette("primary", 0)};
+        color: ${palette('primary', 0)};
       }
     }
 
     span:not(.dlMailBadge) {
       &:hover {
-        color: ${palette("primary", 0)};
+        color: ${palette('primary', 0)};
       }
     }
   }

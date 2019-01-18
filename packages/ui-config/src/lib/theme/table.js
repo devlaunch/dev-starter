@@ -1,5 +1,5 @@
-import { colors } from './colors';
-import { utils } from './utils';
+import { colors } from "./colors";
+import { utils } from "./utils";
 
 const table = {
   colors: {
@@ -14,12 +14,13 @@ const table = {
       theadDarkBackgroundColor: colors.gray900,
       theadDarkBorderColor: colors.tableDarkBorderColor,
       stripedDarkBackgroundColor: colors.tableDarkStripedBackgroundColor,
-      darkBackgroundColorHoverFocus: colors.tableDarkStripedBackgroundColorHoverFocus,
+      darkBackgroundColorHoverFocus:
+        colors.tableDarkStripedBackgroundColorHoverFocus,
       theadLightColor: colors.gray700,
       theadLightBackgroundColor: colors.gray200,
       theadLightBorderColor: colors.gray300,
       borderColor: colors.gray300,
-      backgroundColor: colors.white,
+      backgroundColor: colors.white
     },
     dark: {
       borderedBorderColor: colors.gray300,
@@ -32,12 +33,13 @@ const table = {
       theadDarkBackgroundColor: colors.gray900,
       theadDarkBorderColor: colors.tableDarkBorderColor,
       stripedDarkBackgroundColor: colors.tableDarkStripedBackgroundColor,
-      darkBackgroundColorHoverFocus: colors.tableDarkStripedBackgroundColorHoverFocus,
+      darkBackgroundColorHoverFocus:
+        colors.tableDarkStripedBackgroundColorHoverFocus,
       theadLightColor: colors.gray700,
       theadLightBackgroundColor: colors.gray200,
       theadLightBorderColor: colors.gray300,
       borderColor: colors.gray300,
-      backgroundColor: colors.white,
+      backgroundColor: colors.white
     },
     default: {
       borderedBorderColor: colors.gray300,
@@ -50,21 +52,22 @@ const table = {
       theadDarkBackgroundColor: colors.gray900,
       theadDarkBorderColor: colors.tableDarkBorderColor,
       stripedDarkBackgroundColor: colors.tableDarkStripedBackgroundColor,
-      darkBackgroundColorHoverFocus: colors.tableDarkStripedBackgroundColorHoverFocus,
+      darkBackgroundColorHoverFocus:
+        colors.tableDarkStripedBackgroundColorHoverFocus,
       theadLightColor: colors.gray700,
       theadLightBackgroundColor: colors.gray200,
       theadLightBorderColor: colors.gray300,
       borderColor: colors.gray300,
-      backgroundColor: colors.white,
+      backgroundColor: colors.white
     },
     padding: {
-      sm: '0.3rem',
-    },
+      sm: "0.3rem"
+    }
   },
   border: {
     ...utils.border,
-    bottomTop: '2px solid',
-  },
+    bottomTop: "2px solid"
+  }
 };
 
 export { table };

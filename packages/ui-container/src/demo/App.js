@@ -5,10 +5,14 @@ import { theme } from "@devlaunch/ui-config";
 import { Container } from "lib";
 
 /* fixed width for small, medium, large and xlarge screen width */
-const MyContainerComponent = props => <Container md>{props.children}</Container>;
+const MyContainerComponent = props => (
+  <Container md>{props.children}</Container>
+);
 
 /* always 100% width */
-const MyContainerFluidComponent = props => <Container fluid>{props.children}</Container>;
+const MyContainerFluidComponent = props => (
+  <Container fluid>{props.children}</Container>
+);
 
 const MyHeader = styled.div`
   height: 3rem;

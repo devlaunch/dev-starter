@@ -1,4 +1,4 @@
-import { colors } from './colors';
+import { colors } from "./colors";
 
 const dropdownItem = {
   colors: {
@@ -8,15 +8,15 @@ const dropdownItem = {
       colorActive: colors.white,
       backgroundColorActive: colors.blue,
       colorDisabled: colors.gray,
-      backgroundColorHoverFocus: colors.gray100,
-    },
+      backgroundColorHoverFocus: colors.gray100
+    }
   },
   fontWeight: {
-    default: '400',
+    default: "400"
   },
   padding: {
-    default: '0.25rem 1.5rem',
-  },
+    default: "0.25rem 1.5rem"
+  }
 };
 
 export { dropdownItem };

@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import { palette } from "styled-theme";
-import { transition, borderRadius, boxShadow } from "../../settings/style-util";
-import WithDirection from "../../settings/withDirection";
+import styled from 'styled-components';
+import { palette } from 'styled-theme';
+import { transition, borderRadius, boxShadow } from '../../settings/style-util';
+import WithDirection from '../../settings/withDirection';
 
 const WDContactListWrapper = styled.div`
   width: 100%;
@@ -12,7 +12,7 @@ const WDContactListWrapper = styled.div`
   .dlNoResultMsg {
     padding: 15px 20px;
     text-align: center;
-    color: ${palette("secondary", 2)};
+    color: ${palette('secondary', 2)};
     font-weight: 500;
     font-size: 14px;
   }
@@ -22,20 +22,18 @@ const WDContactListWrapper = styled.div`
       width: 100%;
       font-size: 14px;
       font-weight: 400;
-      color: ${palette("text", 0)};
+      color: ${palette('text', 0)};
       line-height: inherit;
       height: 69px;
       padding: 0 20px;
-      padding-left: ${props =>
-        props["data-rtl"] === "rtl" ? "inherit" : "35px"};
-      padding-right: ${props =>
-        props["data-rtl"] === "rtl" ? "35px" : "inherit"};
+      padding-left: ${props => (props['data-rtl'] === 'rtl' ? 'inherit' : '35px')};
+      padding-right: ${props => (props['data-rtl'] === 'rtl' ? '35px' : 'inherit')};
       border: 0;
-      border-bottom: 1px solid ${palette("border", 0)};
+      border-bottom: 1px solid ${palette('border', 0)};
       outline: 0 !important;
       overflow: hidden;
       background-color: #ffffff;
-      ${boxShadow("none")};
+      ${boxShadow('none')};
       ${borderRadius()};
       ${transition()};
 
@@ -45,22 +43,22 @@ const WDContactListWrapper = styled.div`
 
       &:hover,
       &:focus {
-        border-color: ${palette("border", 0)} !important;
+        border-color: ${palette('border', 0)} !important;
       }
 
       &::-webkit-input-placeholder {
-        color: ${palette("grayscale", 0)};
+        color: ${palette('grayscale', 0)};
       }
 
       &:-moz-placeholder {
-        color: ${palette("grayscale", 0)};
+        color: ${palette('grayscale', 0)};
       }
 
       &::-moz-placeholder {
-        color: ${palette("grayscale", 0)};
+        color: ${palette('grayscale', 0)};
       }
       &:-ms-input-placeholder {
-        color: ${palette("grayscale", 0)};
+        color: ${palette('grayscale', 0)};
       }
     }
   }
@@ -68,7 +66,7 @@ const WDContactListWrapper = styled.div`
   .ant-input-suffix {
     left: 10px;
     right: auto;
-    color: ${palette("grayscale", 0)};
+    color: ${palette('grayscale', 0)};
   }
 
   .dlContactList {
@@ -95,16 +93,15 @@ const WDContactListWrapper = styled.div`
       justify-content: flex-start;
       flex-shrink: 0;
       padding: 15px 20px;
-      padding-right: ${props =>
-        props["data-rtl"] === "rtl" ? "20px" : "35px"};
-      padding-left: ${props => (props["data-rtl"] === "rtl" ? "35px" : "20px")};
-      border-bottom: 1px solid ${palette("border", 0)};
-      text-align: ${props => (props["data-rtl"] === "rtl" ? "right" : "left")};
+      padding-right: ${props => (props['data-rtl'] === 'rtl' ? '20px' : '35px')};
+      padding-left: ${props => (props['data-rtl'] === 'rtl' ? '35px' : '20px')};
+      border-bottom: 1px solid ${palette('border', 0)};
+      text-align: ${props => (props['data-rtl'] === 'rtl' ? 'right' : 'left')};
       position: relative;
       cursor: pointer;
 
       &.active {
-        background-color: ${palette("secondary", 1)};
+        background-color: ${palette('secondary', 1)};
       }
 
       &:last-child {
@@ -117,13 +114,11 @@ const WDContactListWrapper = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-right: ${props =>
-          props["data-rtl"] === "rtl" ? "inherit" : "15px"};
-        margin-left: ${props =>
-          props["data-rtl"] === "rtl" ? "15px" : "inherit"};
+        margin-right: ${props => (props['data-rtl'] === 'rtl' ? 'inherit' : '15px')};
+        margin-left: ${props => (props['data-rtl'] === 'rtl' ? '15px' : 'inherit')};
         flex-shrink: 0;
         overflow: hidden;
-        ${borderRadius("50%")};
+        ${borderRadius('50%')};
 
         img {
           width: 100%;
@@ -140,10 +135,8 @@ const WDContactListWrapper = styled.div`
 
       .dlNoteText {
         width: calc(100% - 60px);
-        margin-right: ${props =>
-          props["data-rtl"] === "rtl" ? "inherit" : "20px"};
-        margin-left: ${props =>
-          props["data-rtl"] === "rtl" ? "20px" : "inherit"};
+        margin-right: ${props => (props['data-rtl'] === 'rtl' ? 'inherit' : '20px')};
+        margin-left: ${props => (props['data-rtl'] === 'rtl' ? '20px' : 'inherit')};
         padding: 20px 0;
         cursor: pointer;
 
@@ -152,13 +145,13 @@ const WDContactListWrapper = styled.div`
           white-space: nowrap;
           text-overflow: ellipsis;
           overflow: hidden;
-          color: ${palette("secondary", 2)};
+          color: ${palette('secondary', 2)};
           font-weight: 500;
         }
 
         .dlNoteCreatedDate {
           font-size: 13px;
-          color: ${palette("grayscale", 0)};
+          color: ${palette('grayscale', 0)};
         }
       }
 
@@ -169,16 +162,16 @@ const WDContactListWrapper = styled.div`
         flex-shrink: 0;
         position: absolute;
         top: 20px;
-        right: ${props => (props["data-rtl"] === "rtl" ? "inherit" : "5px")};
-        left: ${props => (props["data-rtl"] === "rtl" ? "5px" : "inherit")};
+        right: ${props => (props['data-rtl'] === 'rtl' ? 'inherit' : '5px')};
+        left: ${props => (props['data-rtl'] === 'rtl' ? '5px' : 'inherit')};
         padding: 0;
         border: 0;
         font-size: 14px;
-        color: ${palette("grayscale", 0)};
+        color: ${palette('grayscale', 0)};
         ${transition()};
 
         &:hover {
-          color: ${palette("primary", 0)};
+          color: ${palette('primary', 0)};
         }
       }
     }
@@ -186,7 +179,7 @@ const WDContactListWrapper = styled.div`
     .dlNotlistNotice {
       font-size: 14px;
       font-weight: 400;
-      color: ${palette("grayscale", 0)};
+      color: ${palette('grayscale', 0)};
       line-height: inherit;
       padding: 30px 0;
     }

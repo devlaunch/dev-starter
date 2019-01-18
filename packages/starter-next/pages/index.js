@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import Link from "next/link";
-import Layout from "components/Layout";
+import styled from 'styled-components';
+import Link from 'next/link';
+import Layout from 'components/Layout';
 
 const Title = styled.h1`
   color: red;

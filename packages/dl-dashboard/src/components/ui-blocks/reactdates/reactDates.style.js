@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { palette } from "styled-theme";
-import WithDirection from "../../../settings/withDirection";
+import styled from 'styled-components';
+import { palette } from 'styled-theme';
+import WithDirection from '../../../settings/withDirection';
 
 const ReactDatesStyleWrapper = styled.div`
   display: flex;
@@ -21,7 +21,7 @@ const ReactDatesStyleWrapper = styled.div`
 
     .ant-form-item-label {
       label {
-        color: ${palette("text", 3)};
+        color: ${palette('text', 3)};
         font-size: 13px;
       }
     }
@@ -33,8 +33,8 @@ const ReactDateWrapper = ComponentName => styled(ComponentName)`
     height: 100vh;
 
     .DateInput__display-text--focused {
-      background-color: ${palette("primary", 0)};
-      border-color: ${palette("primary", 0)};
+      background-color: ${palette('primary', 0)};
+      border-color: ${palette('primary', 0)};
       color: #fff;
       font-weight: 400;
     }
@@ -42,54 +42,54 @@ const ReactDateWrapper = ComponentName => styled(ComponentName)`
     .CalendarDay--selected-start,
     .CalendarDay--selected-end,
     .CalendarDay--selected {
-      background: ${palette("primary", 0)};
-      border: 1px double ${palette("primary", 0)};
+      background: ${palette('primary', 0)};
+      border: 1px double ${palette('primary', 0)};
       color: #fff;
 
       &.CalendarDay--hovered-span {
-        background: ${palette("primary", 0)};
-        border: 1px double ${palette("primary", 0)};
+        background: ${palette('primary', 0)};
+        border: 1px double ${palette('primary', 0)};
       }
 
       &:active {
-        background: ${palette("primary", 0)};
+        background: ${palette('primary', 0)};
       }
     }
 
     .CalendarDay--selected-span {
-      background: ${palette("primary", 7)};
-      border: 1px double ${palette("primary", 7)};
+      background: ${palette('primary', 7)};
+      border: 1px double ${palette('primary', 7)};
       color: #fff;
     }
 
     .CalendarDay--hovered-span,
     .CalendarDay--after-hovered-start {
-      background: ${palette("primary", 7)};
-      border: 1px double ${palette("primary", 8)};
+      background: ${palette('primary', 7)};
+      border: 1px double ${palette('primary', 8)};
       color: #fff;
 
       &:active {
-        background: ${palette("primary", 0)};
+        background: ${palette('primary', 0)};
       }
 
       &.CalendarDay--hovered {
-        background: ${palette("primary", 0)};
+        background: ${palette('primary', 0)};
       }
     }
 
     .CalendarDay--selected-span.CalendarDay--hovered,
     .CalendarDay--selected-span:active {
-      background: ${palette("primary", 0)};
-      border: 1px double ${palette("primary", 0)};
+      background: ${palette('primary', 0)};
+      border: 1px double ${palette('primary', 0)};
     }
 
     .CalendarDay--selected-span.CalendarDay--last-in-range {
-      border-right: ${palette("primary", 7)};
+      border-right: ${palette('primary', 7)};
     }
 
     .DayPickerKeyboardShortcuts__show--bottom-right {
       border-top: 26px solid transparent;
-      border-right: 33px solid ${palette("primary", 0)};
+      border-right: 33px solid ${palette('primary', 0)};
       bottom: 0;
       right: 0;
     }
@@ -99,23 +99,18 @@ const ReactDateWrapper = ComponentName => styled(ComponentName)`
         .DayPickerNavigation__prev,
         .DayPickerNavigation__next {
           -webkit-transform: ${props =>
-            props["data-rtl"] === "rtl" ? "rotate(180deg)" : "inherit"};
-          -ms-transform: ${props =>
-            props["data-rtl"] === "rtl" ? "rotate(180deg)" : "inherit"};
-          transform: ${props =>
-            props["data-rtl"] === "rtl" ? "rotate(180deg)" : "inherit"};
+    (props['data-rtl'] === 'rtl' ? 'rotate(180deg)' : 'inherit')};
+          -ms-transform: ${props => (props['data-rtl'] === 'rtl' ? 'rotate(180deg)' : 'inherit')};
+          transform: ${props => (props['data-rtl'] === 'rtl' ? 'rotate(180deg)' : 'inherit')};
         }
       }
     }
 
     .DateRangePickerInput {
       .DateRangePickerInput__arrow {
-        -webkit-transform: ${props =>
-          props["data-rtl"] === "rtl" ? "rotate(180deg)" : "inherit"};
-        -ms-transform: ${props =>
-          props["data-rtl"] === "rtl" ? "rotate(180deg)" : "inherit"};
-        transform: ${props =>
-          props["data-rtl"] === "rtl" ? "rotate(180deg)" : "inherit"};
+        -webkit-transform: ${props => (props['data-rtl'] === 'rtl' ? 'rotate(180deg)' : 'inherit')};
+        -ms-transform: ${props => (props['data-rtl'] === 'rtl' ? 'rotate(180deg)' : 'inherit')};
+        transform: ${props => (props['data-rtl'] === 'rtl' ? 'rotate(180deg)' : 'inherit')};
       }
     }
   }

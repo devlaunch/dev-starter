@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import ReactPlaceholder from "react-placeholder";
-import "react-placeholder/lib/reactPlaceholder.css";
+import React, { Component } from 'react';
+import ReactPlaceholder from 'react-placeholder';
+import 'react-placeholder/lib/reactPlaceholder.css';
 
 class AsyncComponent extends Component {
   state = { Component: undefined };
@@ -12,7 +12,7 @@ class AsyncComponent extends Component {
     const componentArguement = this.props.componentArguement;
     let Component;
     switch (componentArguement) {
-      case "googleChart":
+      case 'googleChart':
         const { Chart: googleChart } = await this.props.load;
         Component = googleChart;
         break;
@@ -22,7 +22,7 @@ class AsyncComponent extends Component {
     }
     if (this.mounted) {
       this.setState({
-        Component: <Component {...this.props.componentProps} />
+        Component: <Component {...this.props.componentProps} />,
       });
     }
   }

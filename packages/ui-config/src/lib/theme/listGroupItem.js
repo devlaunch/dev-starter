@@ -1,5 +1,5 @@
-import { colors } from './colors';
-import { utils } from './utils';
+import { colors } from "./colors";
+import { utils } from "./utils";
 
 const listGroupItem = {
   colors: {
@@ -13,7 +13,7 @@ const listGroupItem = {
       backgroundColorActive: colors.blueAlertText,
       backgroundColorHoverFocusActive: colors.blueAlertText,
       borderColorActive: colors.blueAlertText,
-      borderColor: colors.borderCard,
+      borderColor: colors.borderCard
     },
     secondary: {
       colorDisabled: colors.gray,
@@ -25,7 +25,7 @@ const listGroupItem = {
       backgroundColorActive: colors.grayAlertText,
       backgroundColorHoverFocusActive: colors.grayAlertText,
       borderColorActive: colors.grayAlertText,
-      borderColor: colors.borderCard,
+      borderColor: colors.borderCard
     },
     success: {
       colorDisabled: colors.gray,
@@ -37,7 +37,7 @@ const listGroupItem = {
       backgroundColorActive: colors.greenAlertText,
       backgroundColorHoverFocusActive: colors.greenAlertText,
       borderColorActive: colors.greenAlertText,
-      borderColor: colors.borderCard,
+      borderColor: colors.borderCard
     },
     info: {
       colorDisabled: colors.gray,
@@ -49,7 +49,7 @@ const listGroupItem = {
       backgroundColorActive: colors.cyanAlertText,
       backgroundColorHoverFocusActive: colors.cyanAlertText,
       borderColorActive: colors.cyanAlertText,
-      borderColor: colors.borderCard,
+      borderColor: colors.borderCard
     },
     warning: {
       colorDisabled: colors.gray,
@@ -61,7 +61,7 @@ const listGroupItem = {
       backgroundColorActive: colors.yellowAlertText,
       backgroundColorHoverFocusActive: colors.yellowAlertText,
       borderColorActive: colors.yellowAlertText,
-      borderColor: colors.borderCard,
+      borderColor: colors.borderCard
     },
     danger: {
       colorDisabled: colors.gray,
@@ -73,7 +73,7 @@ const listGroupItem = {
       backgroundColorActive: colors.redAlertText,
       backgroundColorHoverFocusActive: colors.redAlertText,
       borderColorActive: colors.redAlertText,
-      borderColor: colors.borderCard,
+      borderColor: colors.borderCard
     },
     light: {
       colorDisabled: colors.gray,
@@ -85,7 +85,7 @@ const listGroupItem = {
       backgroundColorActive: colors.gray100AlertText,
       backgroundColorHoverFocusActive: colors.gray100AlertText,
       borderColorActive: colors.gray100AlertText,
-      borderColor: colors.borderCard,
+      borderColor: colors.borderCard
     },
     dark: {
       colorDisabled: colors.gray,
@@ -97,7 +97,7 @@ const listGroupItem = {
       backgroundColorActive: colors.gray800AlertText,
       backgroundColorHoverFocusActive: colors.gray800AlertText,
       borderColorActive: colors.gray800AlertText,
-      borderColor: colors.borderCard,
+      borderColor: colors.borderCard
     },
     default: {
       colorDisabled: colors.gray,
@@ -110,14 +110,14 @@ const listGroupItem = {
       colorAction: colors.gray700,
       borderColor: colors.borderCard,
       borderColorActive: colors.blue,
-      backgroundColorActive: colors.blue,
-    },
+      backgroundColorActive: colors.blue
+    }
   },
   padding: {
-    default: '0.75rem 1.25rem',
+    default: "0.75rem 1.25rem"
   },
   border: utils.border,
-  borderRadius: utils.borderRadius,
+  borderRadius: utils.borderRadius
 };
 
 export { listGroupItem };

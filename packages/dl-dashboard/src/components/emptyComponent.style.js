@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { palette } from "styled-theme";
+import styled from 'styled-components';
+import { palette } from 'styled-theme';
 
 const EmptyComponent = styled.div`
   min-height: 74vh;
@@ -11,7 +11,7 @@ const EmptyComponent = styled.div`
   span {
     font-size: 36px;
     font-weight: 300;
-    color: ${palette("grayscale", 1)};
+    color: ${palette('grayscale', 1)};
     line-height: 1.5;
   }
 `;

@@ -1,6 +1,13 @@
 import styled, { css } from "styled-components";
 
-import { theme, colors, padding, margin as m, border as b, screenSize } from "@devlaunch/ui-config";
+import {
+  theme,
+  colors,
+  padding,
+  margin as m,
+  border as b,
+  screenSize
+} from "@devlaunch/ui-config";
 
 const justifyContent = props => {
   if (props.center) {
@@ -61,7 +68,8 @@ const flex = props =>
 const border = props =>
   props.tabs &&
   css`
-    border-bottom: ${b(props, "nav").default} ${colors(props, "nav").borderColorTabs};
+    border-bottom: ${b(props, "nav").default}
+      ${colors(props, "nav").borderColorTabs};
   `;
 
 const margin = props =>
@@ -74,7 +82,11 @@ const margin = props =>
 
 /* istanbul ignore next */
 const navCollapse = props => {
-  if ((props.expandSm || props.expandMd || props.expandLg || props.expandXl) && props.collapse && !props.hidden) {
+  if (
+    (props.expandSm || props.expandMd || props.expandLg || props.expandXl) &&
+    props.collapse &&
+    !props.hidden
+  ) {
     return css`
       @media (max-width: ${screenSize(props)}) {
         display: flex;
@@ -88,7 +100,11 @@ const navCollapse = props => {
         }
       }
     `;
-  } else if ((props.expandSm || props.expandMd || props.expandLg || props.expandXl) && props.collapse && props.hidden) {
+  } else if (
+    (props.expandSm || props.expandMd || props.expandLg || props.expandXl) &&
+    props.collapse &&
+    props.hidden
+  ) {
     return css`
       @media (max-width: ${screenSize(props)}) {
         display: none;

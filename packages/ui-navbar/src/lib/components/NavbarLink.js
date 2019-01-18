@@ -1,7 +1,12 @@
 import styled, { css } from "styled-components";
 
 import { NavLink } from "@devlaunch/ui-nav";
-import { theme, colors, padding as p, fontSize as fs } from "@devlaunch/ui-config";
+import {
+  theme,
+  colors,
+  padding as p,
+  fontSize as fs
+} from "@devlaunch/ui-config";
 
 const color = props => {
   if (props.dark && props.disabled) {

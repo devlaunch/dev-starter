@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import { palette } from "styled-theme";
-import { transition } from "../../settings/style-util";
-import WithDirection from "../../settings/withDirection";
+import styled from 'styled-components';
+import { palette } from 'styled-theme';
+import { transition } from '../../settings/style-util';
+import WithDirection from '../../settings/withDirection';
 
 const TopbarCartWrapper = styled.div`
   width: 100%;
@@ -10,7 +10,7 @@ const TopbarCartWrapper = styled.div`
   padding: 15px 30px;
   flex-shrink: 0;
   position: relative;
-  border-bottom: 1px solid ${palette("border", 2)};
+  border-bottom: 1px solid ${palette('border', 2)};
   ${transition()};
 
   .dlItemImage {
@@ -31,10 +31,9 @@ const TopbarCartWrapper = styled.div`
   .dlCartDetails {
     width: 100%;
     display: flex;
-    padding: ${props =>
-      props["data-rtl"] === "rtl" ? "0 20px 0 0" : "0 0 0 20px"};
+    padding: ${props => (props['data-rtl'] === 'rtl' ? '0 20px 0 0' : '0 0 0 20px')};
     flex-direction: column;
-    text-align: ${props => (props["data-rtl"] === "rtl" ? "right" : "left")};
+    text-align: ${props => (props['data-rtl'] === 'rtl' ? 'right' : 'left')};
 
     h3 {
       margin: 0 0 5px;
@@ -43,7 +42,7 @@ const TopbarCartWrapper = styled.div`
       a {
         font-size: 13px;
         font-weight: 500;
-        color: ${palette("text", 0)};
+        color: ${palette('text', 0)};
         line-height: 1.3;
         text-decoration: none;
       }
@@ -56,7 +55,7 @@ const TopbarCartWrapper = styled.div`
       span {
         font-size: 12px;
         font-weight: 400;
-        color: ${palette("text", 2)};
+        color: ${palette('text', 2)};
         line-height: 1.2;
 
         &.itemMultiplier {
@@ -68,17 +67,17 @@ const TopbarCartWrapper = styled.div`
 
   .dlItemRemove {
     position: absolute;
-    right: ${props => (props["data-rtl"] === "rtl" ? "inherit" : "15px")};
-    left: ${props => (props["data-rtl"] === "rtl" ? "15px" : "inherit")};
+    right: ${props => (props['data-rtl'] === 'rtl' ? 'inherit' : '15px')};
+    left: ${props => (props['data-rtl'] === 'rtl' ? '15px' : 'inherit')};
     font-size: 13px;
     font-weight: 500;
-    color: ${palette("text", 0)} !important;
+    color: ${palette('text', 0)} !important;
     opacity: 0;
     ${transition()};
   }
 
   &:hover {
-    background-color: ${palette("grayscale", 3)};
+    background-color: ${palette('grayscale', 3)};
 
     .dlItemRemove {
       opacity: 1;

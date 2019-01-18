@@ -1,3 +1,3 @@
-import { Collapse } from "antd";
+import { Collapse } from 'antd';
 
 export default Collapse;

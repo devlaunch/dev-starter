@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const InputGroupAppend = styled.div`
   display: flex;
@@ -6,7 +6,7 @@ const InputGroupAppend = styled.div`
   & > button {
     position: relative;
     z-index: 2;
-  };
+  }
   & > span,
   & > button {
     border-top-left-radius: 0;
@@ -15,8 +15,8 @@ const InputGroupAppend = styled.div`
       margin-right: -1px;
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
-    };
-  };
+    }
+  }
 `;
 
 export { InputGroupAppend };

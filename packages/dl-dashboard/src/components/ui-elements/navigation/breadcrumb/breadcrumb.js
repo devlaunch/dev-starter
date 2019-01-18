@@ -1,3 +1,3 @@
-import { Breadcrumb } from "antd";
+import { Breadcrumb } from 'antd';
 
 export default Breadcrumb;

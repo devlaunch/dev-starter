@@ -1,3 +1,3 @@
-import { Modal } from "antd";
+import { Modal } from 'antd';
 
 export default Modal;

@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import Popconfirm from "../feedback/popconfirm";
-import Button from "../uielements/button";
-import { createNotification as notification } from "components/ui-elements/feedback/notification";
+import React, { Component } from 'react';
+import Popconfirm from '../feedback/popconfirm';
+import Button from '../uielements/button';
+import { createNotification as notification } from 'components/ui-elements/feedback/notification';
 
 export default class extends Component {
   render() {
     const { contact, deleteContact } = this.props;
-    let name = "";
+    let name = '';
     if (contact.firstName) {
       name = `${contact.firstName} `;
     }
@@ -14,7 +14,7 @@ export default class extends Component {
       name = `${name}${contact.lastName}`;
     }
     if (!name) {
-      name = "No Name";
+      name = 'No Name';
     }
     return (
       <Popconfirm
@@ -22,7 +22,7 @@ export default class extends Component {
         okText="DELETE"
         cancelText="No"
         onConfirm={() => {
-          notification("error", `${name} Deleted`, "");
+          notification('error', `${name} Deleted`, '');
           deleteContact(contact.id);
         }}
       >

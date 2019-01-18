@@ -1,3 +1,3 @@
-import { Steps } from "antd";
+import { Steps } from 'antd';
 
 export default Steps;

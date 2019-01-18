@@ -1,6 +1,6 @@
-import { Select } from "antd";
-import { AntSelect } from "./select.style";
-import WithDirection from "../../../../settings/withDirection";
+import { Select } from 'antd';
+import { AntSelect } from './select.style';
+import WithDirection from '../../../../settings/withDirection';
 
 const WDSelect = AntSelect(Select);
 const dlSelect = WithDirection(WDSelect);

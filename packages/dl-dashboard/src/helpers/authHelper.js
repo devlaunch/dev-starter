@@ -1,30 +1,29 @@
-import jwtDecode from "jwt-decode";
-import SuperFetch from "./superFetch";
+import jwtDecode from 'jwt-decode';
+import SuperFetch from './superFetch';
 
 class AuthHelper {
-  login = async userInfo => {
+  login = async (userInfo) => {
     if (!userInfo.username || !userInfo.password) {
-      return { error: "please fill in the input" };
+      return { error: 'please fill in the input' };
     }
-    return await SuperFetch.post("login", userInfo).then(response => {
-      return this.checkExpirity(response.token);
-    });
+    return await SuperFetch.post('login', userInfo).then(response =>
+      this.checkExpirity(response.token));
   };
   async checkDemoPage(token) {
     if (this.checkExpirity(token).error) {
-      return { error: "Token expired" };
+      return { error: 'Token expired' };
     }
-    return await SuperFetch.get("secret/test", { token })
+    return await SuperFetch.get('secret/test', { token })
       .then(response => ({
-        status: "200",
-        message: "Success"
+        status: '200',
+        message: 'Success',
       }))
       .catch(error => ({ error: JSON.stringify(error) }));
   }
-  checkExpirity = token => {
+  checkExpirity = (token) => {
     if (!token) {
       return {
-        error: "not matched"
+        error: 'not matched',
       };
     }
     try {
@@ -36,15 +35,14 @@ class AuthHelper {
         return {
           ...profile,
           token,
-          expiredAt: new Date(expiredAt)
+          expiredAt: new Date(expiredAt),
         };
-      } else {
-        return { error: "Token expired" };
       }
+      return { error: 'Token expired' };
     } catch (e) {
       console.log(e);
 
-      return { error: "Server Error" };
+      return { error: 'Server Error' };
     }
   };
 }

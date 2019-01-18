@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { palette } from "styled-theme";
+import styled from 'styled-components';
+import { palette } from 'styled-theme';
 
 const HelperText = styled.div`
   width: 100%;
@@ -18,7 +18,7 @@ const HelperText = styled.div`
   h3 {
     font-size: 18px;
     font-weight: 500;
-    color: ${palette("text", 2)};
+    color: ${palette('text', 2)};
     margin: 0;
   }
 `;

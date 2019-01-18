@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-import { Popover } from "components/ui-elements/data-display/popover";
-import IntlMessages from "components/utility/intlMessages";
-import userpic from "image/user1.png";
+import { Popover } from 'components/ui-elements/data-display/popover';
+import IntlMessages from 'components/utility/intlMessages';
+import userpic from 'image/user1.png';
 
-import authAction from "redux/auth/actions";
-import TopbarDropdownWrapper from "./topbarDropdown.style";
+import authAction from 'redux/auth/actions';
+import TopbarDropdownWrapper from './topbarDropdown.style';
 
 const { logout } = authAction;
 
@@ -16,7 +16,7 @@ class TopbarUser extends Component {
     this.handleVisibleChange = this.handleVisibleChange.bind(this);
     this.hide = this.hide.bind(this);
     this.state = {
-      visible: false
+      visible: false,
     };
   }
   hide() {
@@ -50,7 +50,7 @@ class TopbarUser extends Component {
         trigger="click"
         visible={this.state.visible}
         onVisibleChange={this.handleVisibleChange}
-        arrowPointAtCenter={true}
+        arrowPointAtCenter
         placement="bottomLeft"
       >
         <div className="dlImgWrapper">
@@ -63,5 +63,5 @@ class TopbarUser extends Component {
 }
 export default connect(
   null,
-  { logout }
+  { logout },
 )(TopbarUser);

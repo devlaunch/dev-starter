@@ -14,7 +14,8 @@ const table = {
       theadDarkBackgroundColor: colors.gray900,
       theadDarkBorderColor: colors.tableDarkBorderColor,
       stripedDarkBackgroundColor: colors.tableDarkStripedBackgroundColor,
-      darkBackgroundColorHoverFocus: colors.tableDarkStripedBackgroundColorHoverFocus,
+      darkBackgroundColorHoverFocus:
+        colors.tableDarkStripedBackgroundColorHoverFocus,
       theadLightColor: colors.gray700,
       theadLightBackgroundColor: colors.gray200,
       theadLightBorderColor: colors.gray300,
@@ -32,7 +33,8 @@ const table = {
       theadDarkBackgroundColor: colors.gray900,
       theadDarkBorderColor: colors.tableDarkBorderColor,
       stripedDarkBackgroundColor: colors.tableDarkStripedBackgroundColor,
-      darkBackgroundColorHoverFocus: colors.tableDarkStripedBackgroundColorHoverFocus,
+      darkBackgroundColorHoverFocus:
+        colors.tableDarkStripedBackgroundColorHoverFocus,
       theadLightColor: colors.gray700,
       theadLightBackgroundColor: colors.gray200,
       theadLightBorderColor: colors.gray300,
@@ -50,7 +52,8 @@ const table = {
       theadDarkBackgroundColor: colors.gray900,
       theadDarkBorderColor: colors.tableDarkBorderColor,
       stripedDarkBackgroundColor: colors.tableDarkStripedBackgroundColor,
-      darkBackgroundColorHoverFocus: colors.tableDarkStripedBackgroundColorHoverFocus,
+      darkBackgroundColorHoverFocus:
+        colors.tableDarkStripedBackgroundColorHoverFocus,
       theadLightColor: colors.gray700,
       theadLightBackgroundColor: colors.gray200,
       theadLightBorderColor: colors.gray300,

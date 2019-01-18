@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { palette } from "styled-theme";
-import { transition, borderRadius, boxShadow } from "../../settings/style-util";
+import styled from 'styled-components';
+import { palette } from 'styled-theme';
+import { transition, borderRadius, boxShadow } from '../../settings/style-util';
 
 const ComposeAutoCompleteStyleWrapper = styled.div`
   .ReactTags__ {
@@ -10,8 +10,8 @@ const ComposeAutoCompleteStyleWrapper = styled.div`
       position: relative;
       margin-bottom: 10px;
       padding: 0 15px;
-      border: 1px solid ${palette("border", 0)};
-      ${borderRadius("3px")};
+      border: 1px solid ${palette('border', 0)};
+      ${borderRadius('3px')};
     }
 
     &selected {
@@ -23,19 +23,19 @@ const ComposeAutoCompleteStyleWrapper = styled.div`
       font-size: 13px;
       font-weight: 400;
       line-height: 1;
-      color: ${palette("text", 0)};
+      color: ${palette('text', 0)};
       display: inline-flex;
       align-items: center;
       padding: 0 7px 0 10px;
       margin: 2px 5px 2px 0;
-      margin-right: ${props => (props["data-rtl"] === "rtl" ? "0" : "5px")};
-      margin-left: ${props => (props["data-rtl"] === "rtl" ? "5px" : "0")};
-      text-align: ${props => (props["data-rtl"] === "rtl" ? "right" : "left")};
+      margin-right: ${props => (props['data-rtl'] === 'rtl' ? '0' : '5px')};
+      margin-left: ${props => (props['data-rtl'] === 'rtl' ? '5px' : '0')};
+      text-align: ${props => (props['data-rtl'] === 'rtl' ? 'right' : 'left')};
       height: 22px;
       word-break: break-word;
-      background-color: ${palette("grayscale", 10)};
-      border: 1px solid ${palette("border", 3)};
-      ${borderRadius("3px")};
+      background-color: ${palette('grayscale', 10)};
+      border: 1px solid ${palette('border', 3)};
+      ${borderRadius('3px')};
     }
 
     &remove {
@@ -43,11 +43,11 @@ const ComposeAutoCompleteStyleWrapper = styled.div`
       background-color: transparent;
       border: 0;
       outline: 0;
-      color: ${palette("grayscale", 0)};
+      color: ${palette('grayscale', 0)};
       padding: 0;
       margin-left: 8px;
-      margin-right: ${props => (props["data-rtl"] === "rtl" ? "8px" : "0")};
-      margin-left: ${props => (props["data-rtl"] === "rtl" ? "0" : "8px")};
+      margin-right: ${props => (props['data-rtl'] === 'rtl' ? '8px' : '0')};
+      margin-left: ${props => (props['data-rtl'] === 'rtl' ? '0' : '8px')};
       line-height: 1;
       font-size: 14px;
       font-weight: bold;
@@ -55,7 +55,7 @@ const ComposeAutoCompleteStyleWrapper = styled.div`
       ${transition()};
 
       &:hover {
-        color: ${palette("text", 3)};
+        color: ${palette('text', 3)};
       }
     }
 
@@ -66,10 +66,9 @@ const ComposeAutoCompleteStyleWrapper = styled.div`
       &Field {
         font-size: 14px;
         font-weight: 400;
-        color: ${palette("text", 0)};
+        color: ${palette('text', 0)};
         line-height: inherit;
-        text-align: ${props =>
-          props["data-rtl"] === "rtl" ? "right" : "left"};
+        text-align: ${props => (props['data-rtl'] === 'rtl' ? 'right' : 'left')};
         height: 22px;
         min-width: 240px;
         padding: 0;
@@ -79,26 +78,22 @@ const ComposeAutoCompleteStyleWrapper = styled.div`
         background-color: transparent;
 
         &::-webkit-input-placeholder {
-          text-align: ${props =>
-            props["data-rtl"] === "rtl" ? "right" : "left"};
-          color: ${palette("grayscale", 0)};
+          text-align: ${props => (props['data-rtl'] === 'rtl' ? 'right' : 'left')};
+          color: ${palette('grayscale', 0)};
         }
 
         &:-moz-placeholder {
-          text-align: ${props =>
-            props["data-rtl"] === "rtl" ? "right" : "left"};
-          color: ${palette("grayscale", 0)};
+          text-align: ${props => (props['data-rtl'] === 'rtl' ? 'right' : 'left')};
+          color: ${palette('grayscale', 0)};
         }
 
         &::-moz-placeholder {
-          text-align: ${props =>
-            props["data-rtl"] === "rtl" ? "right" : "left"};
-          color: ${palette("grayscale", 0)};
+          text-align: ${props => (props['data-rtl'] === 'rtl' ? 'right' : 'left')};
+          color: ${palette('grayscale', 0)};
         }
         &:-ms-input-placeholder {
-          text-align: ${props =>
-            props["data-rtl"] === "rtl" ? "right" : "left"};
-          color: ${palette("grayscale", 0)};
+          text-align: ${props => (props['data-rtl'] === 'rtl' ? 'right' : 'left')};
+          color: ${palette('grayscale', 0)};
         }
       }
     }
@@ -114,19 +109,19 @@ const ComposeAutoCompleteStyleWrapper = styled.div`
       overflow: hidden;
       word-break: break-word;
       border: 1px solid rgba(0, 0, 0, 0.2);
-      text-align: ${props => (props["data-rtl"] === "rtl" ? "right" : "left")};
+      text-align: ${props => (props['data-rtl'] === 'rtl' ? 'right' : 'left')};
       position: absolute;
-      right: ${props => (props["data-rtl"] === "rtl" ? "0" : "auto")};
-      left: ${props => (props["data-rtl"] === "rtl" ? "auto" : "0")};
+      right: ${props => (props['data-rtl'] === 'rtl' ? '0' : 'auto')};
+      left: ${props => (props['data-rtl'] === 'rtl' ? 'auto' : '0')};
       top: 100%;
       ${borderRadius()};
-      ${boxShadow("0 2px 4px rgba(0,0,0,0.2)")};
+      ${boxShadow('0 2px 4px rgba(0,0,0,0.2)')};
 
       li {
         font-size: 14px;
         font-weight: 400;
-        color: ${palette("text", 0)};
-        border-bottom: ${palette("border", 0)};
+        color: ${palette('text', 0)};
+        border-bottom: ${palette('border', 0)};
         line-height: 1.5;
         width: 100%;
         padding: 10px 15px;
@@ -135,7 +130,7 @@ const ComposeAutoCompleteStyleWrapper = styled.div`
         ${transition()};
 
         &:hover {
-          background-color: ${palette("grayscale", 3)};
+          background-color: ${palette('grayscale', 3)};
         }
 
         &:last-of-type {
@@ -145,7 +140,7 @@ const ComposeAutoCompleteStyleWrapper = styled.div`
     }
 
     &activeSuggestion {
-      background-color: ${palette("grayscale", 3)};
+      background-color: ${palette('grayscale', 3)};
     }
   }
 `;

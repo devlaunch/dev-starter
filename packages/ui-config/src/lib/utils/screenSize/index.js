@@ -1,4 +1,4 @@
-const screenSize = (props) => {
+const screenSize = props => {
   if (props.sm || props.expandSm) {
     return props.theme.screenSize.sm;
   } else if (props.md || props.expandMd) {
@@ -9,7 +9,7 @@ const screenSize = (props) => {
     return props.theme.screenSize.xl;
   }
 
-  return '';
+  return "";
 };
 
 export { screenSize };

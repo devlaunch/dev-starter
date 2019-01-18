@@ -1,6 +1,12 @@
 import styled, { css } from "styled-components";
 
-import { theme, margin as m, padding as p, borderRadius as br, fontSize as fs } from "@devlaunch/ui-config";
+import {
+  theme,
+  margin as m,
+  padding as p,
+  borderRadius as br,
+  fontSize as fs
+} from "@devlaunch/ui-config";
 
 const formGroupFormInline = props =>
   props.formInline &&

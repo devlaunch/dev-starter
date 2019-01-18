@@ -1,30 +1,30 @@
-import React, { Component } from "react";
-import { Route } from "react-router-dom";
-import Loadable from "react-loadable";
-import { Placeholder } from "components/ui-blocks/placeholder";
+import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
+import Loadable from 'react-loadable';
+import { Placeholder } from 'components/ui-blocks/placeholder';
 
 const routes = [
   {
-    path: "",
+    path: '',
     component: Loadable({
-      loader: () => import("modules/home/Home"),
-      loading: Placeholder
-    })
+      loader: () => import('modules/home/Home'),
+      loading: Placeholder,
+    }),
   },
   {
-    path: "blankPage",
+    path: 'blankPage',
     component: Loadable({
-      loader: () => import("modules/blank/BlankPage"),
-      loading: Placeholder
-    })
+      loader: () => import('modules/blank/BlankPage'),
+      loading: Placeholder,
+    }),
   },
   {
-    path: "authCheck",
+    path: 'authCheck',
     component: Loadable({
-      loader: () => import("modules/auth/AuthCheck"),
-      loading: Placeholder
-    })
-  }
+      loader: () => import('modules/auth/AuthCheck'),
+      loading: Placeholder,
+    }),
+  },
 ];
 
 class DashboardRouter extends Component {
@@ -32,11 +32,11 @@ class DashboardRouter extends Component {
     const { url, style } = this.props;
     return (
       <div style={style}>
-        {routes.map(route => {
+        {routes.map((route) => {
           const { path, exact, ...otherProps } = route;
           return (
             <Route
-              exact={exact === false ? false : true}
+              exact={exact !== false}
               key={route.path}
               path={`${url}/${route.path}`}
               {...otherProps}

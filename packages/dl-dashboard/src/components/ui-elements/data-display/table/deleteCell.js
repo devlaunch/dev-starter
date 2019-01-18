@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import Popconfirm from "../feedback/popconfirm";
+import React, { Component } from 'react';
+import Popconfirm from '../feedback/popconfirm';
 
 export default class extends Component {
   render() {

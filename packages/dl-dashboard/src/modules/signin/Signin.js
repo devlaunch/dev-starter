@@ -1,36 +1,33 @@
-import React, { Component } from "react";
-import { Link, Redirect } from "react-router-dom";
-import { connect } from "react-redux";
+import React, { Component } from 'react';
+import { Link, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-import { Input } from "components/ui-elements/data-entry/input";
-import { Checkbox } from "components/ui-elements/data-entry/checkbox";
-import { Button } from "components/ui-elements/general/button";
-import { Logo } from "components/ui-blocks/logo";
+import { Input } from 'components/ui-elements/data-entry/input';
+import { Checkbox } from 'components/ui-elements/data-entry/checkbox';
+import { Button } from 'components/ui-elements/general/button';
+import { Logo } from 'components/ui-blocks/logo';
 
-import authAction from "../../redux/auth/actions";
-import SignInStyleWrapper from "./signin.style";
+import authAction from '../../redux/auth/actions';
+import SignInStyleWrapper from './signin.style';
 
 const { login } = authAction;
 
 class SignIn extends Component {
   state = {
-    redirectToReferrer: false
+    redirectToReferrer: false,
   };
   componentWillReceiveProps(nextProps) {
-    if (
-      this.props.isLoggedIn !== nextProps.isLoggedIn &&
-      nextProps.isLoggedIn === true
-    ) {
+    if (this.props.isLoggedIn !== nextProps.isLoggedIn && nextProps.isLoggedIn === true) {
       this.setState({ redirectToReferrer: true });
     }
   }
   handleLogin = () => {
     const { login } = this.props;
     login();
-    this.props.history.push("/dashboard");
+    this.props.history.push('/dashboard');
   };
   render() {
-    const from = { pathname: "/dashboard" };
+    const from = { pathname: '/dashboard' };
     const { redirectToReferrer } = this.state;
 
     if (redirectToReferrer) {
@@ -73,7 +70,7 @@ class SignIn extends Component {
 
 export default connect(
   state => ({
-    isLoggedIn: state.Auth.idToken !== null ? true : false
+    isLoggedIn: state.Auth.idToken !== null,
   }),
-  { login }
+  { login },
 )(SignIn);

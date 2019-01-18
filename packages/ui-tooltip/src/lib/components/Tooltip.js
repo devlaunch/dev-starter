@@ -1,6 +1,13 @@
 import styled, { css } from "styled-components";
 
-import { theme, padding as p, margin, fontWeight, fontSize, fontFamily } from "@devlaunch/ui-config";
+import {
+  theme,
+  padding as p,
+  margin,
+  fontWeight,
+  fontSize,
+  fontFamily
+} from "@devlaunch/ui-config";
 
 const padding = props =>
   props.left || props.right

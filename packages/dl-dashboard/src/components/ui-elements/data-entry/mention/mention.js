@@ -1,3 +1,3 @@
-import { Mention } from "antd";
+import { Mention } from 'antd';
 
 export default Mention;

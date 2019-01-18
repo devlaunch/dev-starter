@@ -1,6 +1,12 @@
 import styled, { css } from "styled-components";
 
-import { theme, colors, padding, borderRadius as br, border as b } from "@devlaunch/ui-config";
+import {
+  theme,
+  colors,
+  padding,
+  borderRadius as br,
+  border as b
+} from "@devlaunch/ui-config";
 
 const color = props => {
   if (props.disabled) {
@@ -91,7 +97,8 @@ const borderRadius = props => {
 const NavLink = styled.a`
   display: block;
   padding: ${props => padding(props, "navLink").default};
-  border: ${props => b(props, "navLink").default} ${props => colors(props, "navLink").borderColor};
+  border: ${props => b(props, "navLink").default}
+    ${props => colors(props, "navLink").borderColor};
   &:hover,
   &:focus {
     text-decoration: none;

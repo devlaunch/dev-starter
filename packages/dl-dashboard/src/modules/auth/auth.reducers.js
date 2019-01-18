@@ -1,14 +1,14 @@
-import axios from "axios";
+import axios from 'axios';
 
-import authProvider, { AuthType } from "helpers/auth-provider-restapi";
-import { REQUEST, SUCCESS, FAILURE } from "redux/utils/action-type-util";
+import authProvider, { AuthType } from 'helpers/auth-provider-restapi';
+import { REQUEST, SUCCESS, FAILURE } from 'redux/utils/action-type-util';
 
 export const ACTION_TYPES = {
-  LOGIN: "authentication/LOGIN",
-  GET_SESSION: "authentication/GET_SESSION",
-  LOGOUT: "authentication/LOGOUT",
-  CLEAR_AUTH: "authentication/CLEAR_AUTH",
-  ERROR_MESSAGE: "authentication/ERROR_MESSAGE"
+  LOGIN: 'authentication/LOGIN',
+  GET_SESSION: 'authentication/GET_SESSION',
+  LOGOUT: 'authentication/LOGOUT',
+  CLEAR_AUTH: 'authentication/CLEAR_AUTH',
+  ERROR_MESSAGE: 'authentication/ERROR_MESSAGE',
 };
 
 const initialState = {
@@ -20,7 +20,7 @@ const initialState = {
   account: {},
   errorMessage: null, // Errors returned from server side
   redirectMessage: null,
-  sessionHasBeenFetched: false
+  sessionHasBeenFetched: false,
 };
 
 // Reducer
@@ -31,14 +31,14 @@ export default (state = initialState, action) => {
     case REQUEST(ACTION_TYPES.GET_SESSION):
       return {
         ...state,
-        loading: true
+        loading: true,
       };
     case FAILURE(ACTION_TYPES.LOGIN):
       return {
         ...initialState,
         errorMessage: action.payload,
         showModalLogin: true,
-        loginError: true
+        loginError: true,
       };
     case FAILURE(ACTION_TYPES.GET_SESSION):
       return {
@@ -47,7 +47,7 @@ export default (state = initialState, action) => {
         isAuthenticated: false,
         sessionHasBeenFetched: true,
         showModalLogin: true,
-        errorMessage: action.payload
+        errorMessage: action.payload,
       };
     case SUCCESS(ACTION_TYPES.LOGIN):
       return {
@@ -55,12 +55,12 @@ export default (state = initialState, action) => {
         loading: false,
         loginError: false,
         showModalLogin: false,
-        loginSuccess: true
+        loginSuccess: true,
       };
     case ACTION_TYPES.LOGOUT:
       return {
         ...initialState,
-        showModalLogin: true
+        showModalLogin: true,
       };
     case SUCCESS(ACTION_TYPES.GET_SESSION): {
       const isAuthenticated =
@@ -70,21 +70,21 @@ export default (state = initialState, action) => {
         isAuthenticated,
         loading: false,
         sessionHasBeenFetched: true,
-        account: action.payload.data
+        account: action.payload.data,
       };
     }
     case ACTION_TYPES.ERROR_MESSAGE:
       return {
         ...initialState,
         showModalLogin: true,
-        redirectMessage: action.message
+        redirectMessage: action.message,
       };
     case ACTION_TYPES.CLEAR_AUTH:
       return {
         ...state,
         loading: false,
         showModalLogin: true,
-        isAuthenticated: false
+        isAuthenticated: false,
       };
     default:
       return state;
@@ -93,32 +93,29 @@ export default (state = initialState, action) => {
 
 export const displayAuthError = message => ({
   type: ACTION_TYPES.ERROR_MESSAGE,
-  message
+  message,
 });
 
 export const getSession = () => async (dispatch, getState) => {
   dispatch({
     type: ACTION_TYPES.GET_SESSION,
-    payload: axios.get("api/account")
+    payload: axios.get('api/account'),
   });
 };
 
-export const login = (username, password, rememberMe = false) => async (
-  dispatch,
-  getState
-) => {
+export const login = (username, password, rememberMe = false) => async (dispatch, getState) => {
   await dispatch({
     type: ACTION_TYPES.LOGIN,
-    payload: authProvider(AuthType.LOGIN, { username, password, rememberMe })
+    payload: authProvider(AuthType.LOGIN, { username, password, rememberMe }),
   });
 
   await dispatch(getSession());
 };
 
-export const logout = () => dispatch => {
+export const logout = () => (dispatch) => {
   authProvider(AuthType.LOGOUT);
   dispatch({
-    type: ACTION_TYPES.LOGOUT
+    type: ACTION_TYPES.LOGOUT,
   });
 };
 
@@ -126,6 +123,6 @@ export const clearAuthentication = messageKey => (dispatch, getState) => {
   clearAuthToken();
   dispatch(displayAuthError(messageKey));
   dispatch({
-    type: ACTION_TYPES.CLEAR_AUTH
+    type: ACTION_TYPES.CLEAR_AUTH,
   });
 };

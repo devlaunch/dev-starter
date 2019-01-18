@@ -125,11 +125,13 @@ const disabled = props =>
 const border = props => {
   if (props.active) {
     return css`
-      border: ${b(props, "button").default} ${colors(props, "button").borderColorActive};
+      border: ${b(props, "button").default}
+        ${colors(props, "button").borderColorActive};
     `;
   } else if (props.disabled) {
     return css`
-      border: ${b(props, "button").default} ${colors(props, "button").borderColorDisabled};
+      border: ${b(props, "button").default}
+        ${colors(props, "button").borderColorDisabled};
     `;
   }
 
@@ -157,7 +159,9 @@ const backgroundColor = props => {
       background-color: transparent;
       &:focus,
       &:hover {
-        background-color: ${props.disabled ? "transparent" : colors(props, "button").backgroundColor};
+        background-color: ${props.disabled
+          ? "transparent"
+          : colors(props, "button").backgroundColor};
       }
     `;
   } else if (props.disabled) {
@@ -212,7 +216,10 @@ const buttonToggler = props =>
   `;
 
 const buttonToggleCollapse = props => {
-  if ((props.expandSm || props.expandMd || props.expandLg || props.expandXl) && props.toggleCollapse) {
+  if (
+    (props.expandSm || props.expandMd || props.expandLg || props.expandXl) &&
+    props.toggleCollapse
+  ) {
     return css`
       display: none;
       @media (max-width: ${screenSize(props)}) {

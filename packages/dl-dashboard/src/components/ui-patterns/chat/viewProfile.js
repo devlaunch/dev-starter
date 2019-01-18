@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { ViewProfileWrapper, SingleInfoWrapper } from "./viewProfile.style";
+import React, { Component } from 'react';
+import { ViewProfileWrapper, SingleInfoWrapper } from './viewProfile.style';
 
 const SingleInfo = ({ title, value }) => (
   <SingleInfoWrapper>
@@ -14,12 +14,7 @@ export default class extends Component {
       return <div />;
     }
     const {
-      name,
-      dob,
-      mobileNo,
-      gender,
-      language,
-      profileImageUrl
+      name, dob, mobileNo, gender, language, profileImageUrl,
     } = viewProfile;
     return (
       <ViewProfileWrapper>

@@ -1,29 +1,24 @@
-import React, { Component } from "react";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
-import "react-quill/dist/quill.core.css";
-import QuillEditor from "./editor.style";
+import React, { Component } from 'react';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
+import 'react-quill/dist/quill.core.css';
+import QuillEditor from './editor.style';
 
 export default class Editor extends Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
-    this.state = { value: "" };
+    this.state = { value: '' };
     this.quillModules = {
       toolbar: {
         container: [
           [{ header: [1, 2, false] }, { font: [] }],
-          ["bold", "italic", "underline", "strike", "blockquote"],
-          [
-            { list: "ordered" },
-            { list: "bullet" },
-            { indent: "-1" },
-            { indent: "+1" }
-          ],
-          ["link", "image", "video"],
-          ["clean"]
-        ]
-      }
+          ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+          [{ list: 'ordered' }, { list: 'bullet' }, { indent: '-1' }, { indent: '+1' }],
+          ['link', 'image', 'video'],
+          ['clean'],
+        ],
+      },
     };
   }
 
@@ -33,12 +28,12 @@ export default class Editor extends Component {
 
   render() {
     const options = {
-      theme: "snow",
+      theme: 'snow',
       formats: Editor.formats,
-      placeholder: "Write Something",
+      placeholder: 'Write Something',
       value: this.state.value,
       onChange: this.handleChange,
-      modules: this.quillModules
+      modules: this.quillModules,
     };
     return (
       <QuillEditor>

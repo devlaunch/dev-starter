@@ -1,69 +1,80 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
 import {
   theme,
   colors,
   padding as p,
   borderRadius as br,
-  fontWeight,
-} from '@devlaunch/ui-config';
+  fontWeight
+} from "@devlaunch/ui-config";
 
-const borderRadius = (props) => {
-  if (props.pill) {
-    return css`border-radius: ${br(props, 'badge').pill};`;
-  } else if (props.noRadius) {
-    return css`border-radius: ${br(props, 'badge').noRadius};`;
-  }
-
-  return css`border-radius: ${br(props, 'badge').default};`;
-};
-
-const padding = (props) => {
+const borderRadius = props => {
   if (props.pill) {
     return css`
-      padding: ${p(props, 'badge').pill};
+      border-radius: ${br(props, "badge").pill};
+    `;
+  } else if (props.noRadius) {
+    return css`
+      border-radius: ${br(props, "badge").noRadius};
     `;
   }
 
-  return css`padding: ${p(props, 'badge').default};`;
+  return css`
+    border-radius: ${br(props, "badge").default};
+  `;
 };
 
-const backgroundColor = (props) => (
-  css`background-color: ${colors(props, 'badge').backgroundColor};`
-);
+const padding = props => {
+  if (props.pill) {
+    return css`
+      padding: ${p(props, "badge").pill};
+    `;
+  }
 
-const color = (props) => (
-  css`color: ${colors(props, 'badge').color};`
-);
+  return css`
+    padding: ${p(props, "badge").default};
+  `;
+};
 
-const badgeLink = (props) => {
+const backgroundColor = props =>
+  css`
+    background-color: ${colors(props, "badge").backgroundColor};
+  `;
+
+const color = props =>
+  css`
+    color: ${colors(props, "badge").color};
+  `;
+
+const badgeLink = props => {
   if (props.action) {
     return css`
-    & > a {
-      color: ${colors(props, 'badge').linkColor};
-      text-decoration: none;
-      background-color: ${colors(props, 'badge').backgroundColor};
-      &:hover, &:focus {
-        text-decoration: none;
-        background-color: ${colors(props, 'badge').backgroundColorHoverFocus};
-      };
-    };
-    &:hover, 
-    &:focus {
-      cursor: pointer;
-      background-color: ${colors(props, 'badge').backgroundColorHoverFocus};
       & > a {
-        background-color: ${colors(props, 'badge').backgroundColorHoverFocus};
-      };
-    };
-  `;
+        color: ${colors(props, "badge").linkColor};
+        text-decoration: none;
+        background-color: ${colors(props, "badge").backgroundColor};
+        &:hover,
+        &:focus {
+          text-decoration: none;
+          background-color: ${colors(props, "badge").backgroundColorHoverFocus};
+        }
+      }
+      &:hover,
+      &:focus {
+        cursor: pointer;
+        background-color: ${colors(props, "badge").backgroundColorHoverFocus};
+        & > a {
+          background-color: ${colors(props, "badge").backgroundColorHoverFocus};
+        }
+      }
+    `;
   }
 
   return css`
     & > a {
-      color: ${colors(props, 'badge').linkColor};
+      color: ${colors(props, "badge").linkColor};
       text-decoration: none;
-      background-color: ${colors(props, 'badge').backgroundColor};
+      background-color: ${colors(props, "badge").backgroundColor};
     }
   `;
 };
@@ -71,7 +82,7 @@ const badgeLink = (props) => {
 const Badge = styled.span`
   display: inline-block;
   font-size: 75%;
-  font-weight: ${(props) => fontWeight(props, 'badge').default};
+  font-weight: ${props => fontWeight(props, "badge").default};
   line-height: 1;
   text-align: center;
   white-space: nowrap;
@@ -81,15 +92,15 @@ const Badge = styled.span`
   &:empty {
     display: none;
   };
-  ${(props) => borderRadius(props)}
-  ${(props) => padding(props)}
-  ${(props) => color(props)}
-  ${(props) => backgroundColor(props)}
-  ${(props) => badgeLink(props)}
+  ${props => borderRadius(props)}
+  ${props => padding(props)}
+  ${props => color(props)}
+  ${props => backgroundColor(props)}
+  ${props => badgeLink(props)}
 `;
 
 Badge.defaultProps = {
-  theme,
+  theme
 };
 
 export { Badge };

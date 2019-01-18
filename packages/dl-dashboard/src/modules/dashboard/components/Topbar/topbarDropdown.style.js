@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import { palette } from "styled-theme";
+import styled from 'styled-components';
+import { palette } from 'styled-theme';
 
-import { transition, borderRadius, boxShadow } from "settings/style-util";
-import WithDirection from "settings/withDirection";
+import { transition, borderRadius, boxShadow } from 'settings/style-util';
+import WithDirection from 'settings/withDirection';
 
 const TopbarDropdownWrapper = styled.div`
   display: flex;
@@ -12,8 +12,8 @@ const TopbarDropdownWrapper = styled.div`
   width: 360px;
   min-width: 160px;
   flex-shrink: 0;
-  ${borderRadius("5px")};
-  ${boxShadow("0 2px 10px rgba(0,0,0,0.2)")};
+  ${borderRadius('5px')};
+  ${boxShadow('0 2px 10px rgba(0,0,0,0.2)')};
   ${transition()};
 
   @media only screen and (max-width: 767px) {
@@ -32,7 +32,7 @@ const TopbarDropdownWrapper = styled.div`
     h3 {
       font-size: 14px;
       font-weight: 500;
-      color: ${palette("text", 0)};
+      color: ${palette('text', 0)};
       text-align: center;
       text-transform: uppercase;
       margin: 0;
@@ -46,7 +46,7 @@ const TopbarDropdownWrapper = styled.div`
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
-    background-color: ${palette("grayscale", 6)};
+    background-color: ${palette('grayscale', 6)};
 
     a {
       text-decoration: none;
@@ -59,13 +59,13 @@ const TopbarDropdownWrapper = styled.div`
       display: flex;
       flex-direction: column;
       text-decoration: none;
-      text-align: ${props => (props["data-rtl"] === "rtl" ? "right" : "left")};
+      text-align: ${props => (props['data-rtl'] === 'rtl' ? 'right' : 'left')};
       width: 100%;
-      border-bottom: 1px solid ${palette("border", 2)};
+      border-bottom: 1px solid ${palette('border', 2)};
       ${transition()};
 
       &:hover {
-        background-color: ${palette("grayscale", 3)};
+        background-color: ${palette('grayscale', 3)};
       }
 
       .dlListHead {
@@ -78,14 +78,14 @@ const TopbarDropdownWrapper = styled.div`
       h5 {
         font-size: 13px;
         font-weight: 500;
-        color: ${palette("text", 0)};
+        color: ${palette('text', 0)};
         margin-top: 0;
       }
 
       p {
         font-size: 12px;
         font-weight: 400;
-        color: ${palette("text", 2)};
+        color: ${palette('text', 2)};
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
@@ -93,7 +93,7 @@ const TopbarDropdownWrapper = styled.div`
 
       .dlDate {
         font-size: 11px;
-        color: ${palette("grayscale", 1)};
+        color: ${palette('grayscale', 1)};
         flex-shrink: 0;
       }
     }
@@ -102,7 +102,7 @@ const TopbarDropdownWrapper = styled.div`
   .dlViewAllBtn {
     font-size: 13px;
     font-weight: 500;
-    color: ${palette("text", 2)};
+    color: ${palette('text', 2)};
     padding: 10px 15px 20px;
     display: flex;
     text-decoration: none;
@@ -112,7 +112,7 @@ const TopbarDropdownWrapper = styled.div`
     ${transition()};
 
     &:hover {
-      color: ${palette("primary", 0)};
+      color: ${palette('primary', 0)};
     }
   }
 
@@ -125,19 +125,19 @@ const TopbarDropdownWrapper = styled.div`
     a {
       font-size: 13px;
       font-weight: 500;
-      color: ${palette("text", 0)};
+      color: ${palette('text', 0)};
       text-decoration: none;
       padding: 10px 20px;
       line-height: 1;
-      border: 1px solid ${palette("border", 1)};
+      border: 1px solid ${palette('border', 1)};
       display: flex;
       align-items: center;
       justify-content: center;
       ${transition()};
 
       &:hover {
-        background-color: ${palette("primary", 0)};
-        border-color: ${palette("primary", 0)};
+        background-color: ${palette('primary', 0)};
+        border-color: ${palette('primary', 0)};
         color: #ffffff;
       }
     }
@@ -145,7 +145,7 @@ const TopbarDropdownWrapper = styled.div`
     h3 {
       font-size: 14px;
       font-weight: 500;
-      color: ${palette("text", 0)};
+      color: ${palette('text', 0)};
       line-height: 1.3;
     }
   }
@@ -159,16 +159,15 @@ const TopbarDropdownWrapper = styled.div`
         width: 35px;
         height: 35px;
         overflow: hidden;
-        margin: ${props =>
-          props["data-rtl"] === "rtl" ? "0 0 0 15px" : "0 15px 0 0"};
+        margin: ${props => (props['data-rtl'] === 'rtl' ? '0 0 0 15px' : '0 15px 0 0')};
         display: -webkit-inline-flex;
         display: -ms-inline-flex;
         display: inline-flex;
         align-items: center;
         justify-content: center;
         flex-shrink: 0;
-        background-color: ${palette("grayscale", 9)};
-        ${borderRadius("50%")};
+        background-color: ${palette('grayscale', 9)};
+        ${borderRadius('50%')};
 
         img {
           width: 100%;
@@ -191,13 +190,12 @@ const TopbarDropdownWrapper = styled.div`
 
         h5 {
           margin-bottom: 0;
-          padding: ${props =>
-            props["data-rtl"] === "rtl" ? "0 0 0 15px" : "0 15px 0 0"};
+          padding: ${props => (props['data-rtl'] === 'rtl' ? '0 0 0 15px' : '0 15px 0 0')};
         }
 
         .dlDate {
           font-size: 11px;
-          color: ${palette("grayscale", 1)};
+          color: ${palette('grayscale', 1)};
           flex-shrink: 0;
         }
 
@@ -237,7 +235,7 @@ const TopbarDropdownWrapper = styled.div`
     }
 
     .dlDropdownBody {
-      background-color: ${palette("grayscale", 6)};
+      background-color: ${palette('grayscale', 6)};
       display: flex;
       flex-direction: column;
 
@@ -250,7 +248,7 @@ const TopbarDropdownWrapper = styled.div`
         span {
           font-size: 30px;
           font-weight: 300;
-          color: ${palette("grayscale", 1)};
+          color: ${palette('grayscale', 1)};
           line-height: 1.2;
         }
       }
@@ -265,13 +263,13 @@ const TopbarDropdownWrapper = styled.div`
     width: 220px;
     min-width: 160px;
     flex-shrink: 0;
-    ${borderRadius("5px")};
-    ${boxShadow("0 2px 10px rgba(0,0,0,0.2)")};
+    ${borderRadius('5px')};
+    ${boxShadow('0 2px 10px rgba(0,0,0,0.2)')};
     ${transition()};
 
     .dlDropdownLink {
       font-size: 13px;
-      color: ${palette("text", 1)};
+      color: ${palette('text', 1)};
       line-height: 1.1;
       padding: 7px 15px;
       background-color: transparent;
@@ -281,7 +279,7 @@ const TopbarDropdownWrapper = styled.div`
       ${transition()};
 
       &:hover {
-        background-color: ${palette("secondary", 6)};
+        background-color: ${palette('secondary', 6)};
       }
     }
   }

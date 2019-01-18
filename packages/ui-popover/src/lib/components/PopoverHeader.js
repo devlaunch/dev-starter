@@ -1,7 +1,14 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-import { theme, colors, padding, margin, border, fontSize } from "@devlaunch/ui-config";
+import {
+  theme,
+  colors,
+  padding,
+  margin,
+  border,
+  fontSize
+} from "@devlaunch/ui-config";
 
 const popoverHeaderBottom = props =>
   props.bottom &&
@@ -12,7 +19,8 @@ const popoverHeaderBottom = props =>
     color: inherit;
     background-color: ${colors(props, "popoverHeader").backgrondColor};
     border-bottom: 0;
-    border-top: ${border(props, "popoverHeader").default} ${colors(props, "popoverHeader").borderBottomColor};
+    border-top: ${border(props, "popoverHeader").default}
+      ${colors(props, "popoverHeader").borderBottomColor};
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     border-bottom-left-radius: calc(0.3rem - 1px);
@@ -31,7 +39,8 @@ const popoverHeaderStyle = props =>
     font-size: ${fontSize(props, "popoverHeader").default};
     color: inherit;
     background-color: ${colors(props, "popoverHeader").backgrondColor};
-    border-bottom: ${border(props, "popoverHeader").default} ${colors(props, "popoverHeader").borderBottomColor};
+    border-bottom: ${border(props, "popoverHeader").default}
+      ${colors(props, "popoverHeader").borderBottomColor};
     border-top-left-radius: calc(0.3rem - 1px);
     border-top-right-radius: calc(0.3rem - 1px);
     &::before {
@@ -42,7 +51,8 @@ const popoverHeaderStyle = props =>
       width: 1rem;
       margin-left: ${margin(props, "popoverHeader").beforeLeft};
       content: "";
-      border-bottom: ${border(props, "popoverHeader").default} ${colors(props, "popoverHeader").backgrondColor};
+      border-bottom: ${border(props, "popoverHeader").default}
+        ${colors(props, "popoverHeader").backgrondColor};
     }
     ${popoverHeaderBottom(props)};
     &:empty {

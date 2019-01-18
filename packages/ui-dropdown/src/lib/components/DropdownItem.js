@@ -30,7 +30,8 @@ const DropdownItem = styled.div`
   &:focus {
     color: ${props => colors(props, "dropdownItem").colorHoverFocus};
     text-decoration: none;
-    background-color: ${props => colors(props, "dropdownItem").backgroundColorHoverFocus};
+    background-color: ${props =>
+      colors(props, "dropdownItem").backgroundColorHoverFocus};
   }
   ${props => dropdownItemActive(props)};
   ${props => dropdownItemDisabled(props)};

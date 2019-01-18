@@ -1,35 +1,32 @@
-import React, { Component } from "react";
-import Loader from "../utility/loader";
-import HelperText from "../utility/helper-text";
-import Button from "../uielements/button";
-import PlayYoutubeVideo from "./playYoutubeVideo";
-import {
-  YoutubeSearchListStyleWrapper,
-  YoutubeSearchStyleWrapper
-} from "./youtubeSearch.style";
+import React, { Component } from 'react';
+import Loader from '../utility/loader';
+import HelperText from '../utility/helper-text';
+import Button from '../uielements/button';
+import PlayYoutubeVideo from './playYoutubeVideo';
+import { YoutubeSearchListStyleWrapper, YoutubeSearchStyleWrapper } from './youtubeSearch.style';
 
 function SearchList(result, handleSelectedVideo) {
   return (
     <YoutubeSearchListStyleWrapper className="dlYoutubeResultList">
-      {result.map(item => {
+      {result.map((item) => {
         const {
           publishedAt,
           title,
           description,
           channelTitle,
           thumbnails,
-          channelId
+          channelId,
         } = item.snippet;
         const id = item.id.videoId;
         const updateDate = new Date(publishedAt).toDateString();
-        const onClick = event => {
+        const onClick = (event) => {
           event.preventDefault();
           handleSelectedVideo(item);
         };
-        const onChannelClick = event => {
+        const onChannelClick = (event) => {
           event.preventDefault();
           event.stopPropagation();
-          window.open(`https://www.youtube.com/channel/${channelId}`, "_blank");
+          window.open(`https://www.youtube.com/channel/${channelId}`, '_blank');
         };
         return (
           <div key={id} className="dlSingleVideoResult" onClick={onClick}>
@@ -49,7 +46,7 @@ function SearchList(result, handleSelectedVideo) {
                 <span className="uploadDate">{updateDate}</span>
               </div>
 
-              {description ? <p>{description}</p> : ""}
+              {description ? <p>{description}</p> : ''}
             </div>
           </div>
         );
@@ -59,12 +56,12 @@ function SearchList(result, handleSelectedVideo) {
 }
 class YoutubeResult extends Component {
   state = {
-    selectedVideo: null
+    selectedVideo: null,
   };
   handleCancel = () => {
     this.handleSelectedVideo(null);
   };
-  handleSelectedVideo = selectedVideo => {
+  handleSelectedVideo = (selectedVideo) => {
     this.setState({ selectedVideo });
   };
   render() {
@@ -77,7 +74,7 @@ class YoutubeResult extends Component {
       error,
       nextPageToken,
       prevPageToken,
-      total_count
+      total_count,
     } = YoutubeSearch;
     if (!searcText) {
       return <div />;
@@ -103,24 +100,20 @@ class YoutubeResult extends Component {
             handleCancel={this.handleCancel}
           />
         ) : (
-          ""
+          ''
         )}
         {SearchList(result, this.handleSelectedVideo)}
 
         <div className="youtubeSearchPagination">
           {prevPageToken ? (
-            <Button onClick={() => onPageChange(searcText, prevPageToken)}>
-              Previous
-            </Button>
+            <Button onClick={() => onPageChange(searcText, prevPageToken)}>Previous</Button>
           ) : (
-            ""
+            ''
           )}
           {nextPageToken ? (
-            <Button onClick={() => onPageChange(searcText, nextPageToken)}>
-              Next
-            </Button>
+            <Button onClick={() => onPageChange(searcText, nextPageToken)}>Next</Button>
           ) : (
-            ""
+            ''
           )}
         </div>
       </YoutubeSearchStyleWrapper>

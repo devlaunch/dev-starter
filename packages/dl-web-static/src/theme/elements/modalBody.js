@@ -1,7 +1,7 @@
 const modalBody = {
   padding: {
-    default: '1rem',
-  },
+    default: "1rem"
+  }
 };
 
 export { modalBody };

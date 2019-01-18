@@ -1,5 +1,5 @@
-import { withRouter } from "next/router";
-import Layout from "components/Layout";
+import { withRouter } from 'next/router';
+import Layout from 'components/Layout';
 
 const Content = withRouter(props => (
   <React.Fragment>

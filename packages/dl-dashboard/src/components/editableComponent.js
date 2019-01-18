@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { Icon } from "antd";
-import { Textarea as Input } from "./uielements/input";
+import React, { Component } from 'react';
+import { Icon } from 'antd';
+import { Textarea as Input } from './uielements/input';
 
 export default class EditableComponent extends Component {
   constructor(props) {
@@ -10,7 +10,7 @@ export default class EditableComponent extends Component {
     this.edit = this.edit.bind(this);
     this.state = {
       value: this.props.value,
-      editable: false
+      editable: false,
     };
   }
   handleChange(event) {
@@ -33,21 +33,12 @@ export default class EditableComponent extends Component {
       <div className="dlNoteContent">
         {editable ? (
           <div className="dlNoteEditWrapper">
-            <Input
-              rows={3}
-              value={value}
-              onChange={this.handleChange}
-              onPressEnter={this.check}
-            />
-            <Icon
-              type="check"
-              className="dlNoteEditIcon"
-              onClick={this.check}
-            />
+            <Input rows={3} value={value} onChange={this.handleChange} onPressEnter={this.check} />
+            <Icon type="check" className="dlNoteEditIcon" onClick={this.check} />
           </div>
         ) : (
           <p className="dlNoteTextWrapper" onClick={this.edit}>
-            {value || " "}
+            {value || ' '}
             <Icon type="edit" className="dlNoteEditIcon" />
           </p>
         )}

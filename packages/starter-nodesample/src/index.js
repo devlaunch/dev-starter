@@ -1,5 +1,5 @@
-import sum from "./lib/sum";
-import dbconnect from "./lib/dbconnect";
+import sum from './lib/sum';
+import dbconnect from './lib/dbconnect';
 
 async function main() {
   console.log(`Sum Results: ${sum(1, 2)}`);

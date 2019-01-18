@@ -1,6 +1,12 @@
 import styled, { css } from "styled-components";
 
-import { theme, colors, padding, border, borderRadius as br } from "@devlaunch/ui-config";
+import {
+  theme,
+  colors,
+  padding,
+  border,
+  borderRadius as br
+} from "@devlaunch/ui-config";
 
 const borderRadius = props => {
   if (props.noRadius) {
@@ -17,7 +23,8 @@ const borderRadius = props => {
 const CardFooter = styled.div`
   padding: ${props => padding(props, "cardFooter").default};
   background-color: ${props => colors(props, "cardFooter").background};
-  border-top: ${props => border(props, "cardFooter").default} ${props => colors(props, "cardFooter").borderTop};
+  border-top: ${props => border(props, "cardFooter").default}
+    ${props => colors(props, "cardFooter").borderTop};
   display: flex;
   flex-flow: row wrap;
   justify-content: center;

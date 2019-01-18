@@ -1,7 +1,4 @@
-import { Breadcrumb } from './components/Breadcrumb';
-import { BreadcrumbItem } from './components/BreadcrumbItem';
+import { Breadcrumb } from "./components/Breadcrumb";
+import { BreadcrumbItem } from "./components/BreadcrumbItem";
 
-export {
-  Breadcrumb,
-  BreadcrumbItem,
-};
+export { Breadcrumb, BreadcrumbItem };

@@ -1,40 +1,40 @@
-import React, { Component } from "react";
-import { Popover } from "antd";
-import { connect } from "react-redux";
-import IntlMessages from "../../components/utility/intlMessages";
-import TopbarDropdownWrapper from "./topbarDropdown.style";
+import React, { Component } from 'react';
+import { Popover } from 'antd';
+import { connect } from 'react-redux';
+import IntlMessages from '../../components/utility/intlMessages';
+import TopbarDropdownWrapper from './topbarDropdown.style';
 
-import Image from "../../image/user3.png";
+import Image from '../../image/user3.png';
 
 const demoMassage = [
   {
     id: 1,
-    name: "David Doe",
-    time: "3 minutes ago",
+    name: 'David Doe',
+    time: '3 minutes ago',
     massage:
-      "A National Book Award Finalist An Edgar Award Finalist A California Book Award Gold Medal Winner"
+      'A National Book Award Finalist An Edgar Award Finalist A California Book Award Gold Medal Winner',
   },
   {
     id: 2,
-    name: "Navis Doe",
-    time: "4 minutes ago",
+    name: 'Navis Doe',
+    time: '4 minutes ago',
     massage:
-      "A National Book Award Finalist An Edgar Award Finalist A California Book Award Gold Medal Winner"
+      'A National Book Award Finalist An Edgar Award Finalist A California Book Award Gold Medal Winner',
   },
   {
     id: 3,
-    name: "Emanual Doe",
-    time: "5 minutes ago",
+    name: 'Emanual Doe',
+    time: '5 minutes ago',
     massage:
-      "A National Book Award Finalist An Edgar Award Finalist A California Book Award Gold Medal Winner"
+      'A National Book Award Finalist An Edgar Award Finalist A California Book Award Gold Medal Winner',
   },
   {
     id: 4,
-    name: "Dowain Doe",
-    time: "6 minutes ago",
+    name: 'Dowain Doe',
+    time: '6 minutes ago',
     massage:
-      "A National Book Award Finalist An Edgar Award Finalist A California Book Award Gold Medal Winner"
-  }
+      'A National Book Award Finalist An Edgar Award Finalist A California Book Award Gold Medal Winner',
+  },
 ];
 
 class TopbarMessage extends Component {
@@ -43,7 +43,7 @@ class TopbarMessage extends Component {
     this.handleVisibleChange = this.handleVisibleChange.bind(this);
     this.hide = this.hide.bind(this);
     this.state = {
-      visible: false
+      visible: false,
     };
   }
   hide() {
@@ -92,10 +92,7 @@ class TopbarMessage extends Component {
         placement="bottomLeft"
       >
         <div className="dlIconWrapper">
-          <i
-            className="ion-chatbubbles"
-            style={{ color: customizedTheme.textColor }}
-          />
+          <i className="ion-chatbubbles" style={{ color: customizedTheme.textColor }} />
           <span>{demoMassage.length}</span>
         </div>
       </Popover>
@@ -105,5 +102,5 @@ class TopbarMessage extends Component {
 
 export default connect(state => ({
   ...state.App,
-  customizedTheme: state.ThemeSwitcher.topbarTheme
+  customizedTheme: state.ThemeSwitcher.topbarTheme,
 }))(TopbarMessage);

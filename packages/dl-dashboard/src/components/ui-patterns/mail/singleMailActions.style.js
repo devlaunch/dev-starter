@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import { palette } from "styled-theme";
-import { transition } from "../../settings/style-util";
-import WithDirection from "../../settings/withDirection";
+import styled from 'styled-components';
+import { palette } from 'styled-theme';
+import { transition } from '../../settings/style-util';
+import WithDirection from '../../settings/withDirection';
 
 const WDSingleMailActions = styled.div`
   width: 100%;
@@ -11,8 +11,8 @@ const WDSingleMailActions = styled.div`
   align-items: center;
   justify-content: flex-start;
   padding: 0px 30px;
-  background-color: ${palette("grayscale", 6)};
-  border-bottom: 1px solid ${palette("border", 0)};
+  background-color: ${palette('grayscale', 6)};
+  border-bottom: 1px solid ${palette('border', 0)};
 
   @media only screen and (max-width: 767px) {
     padding: 0 15px;
@@ -22,7 +22,7 @@ const WDSingleMailActions = styled.div`
   }
 
   .mailBackBtn {
-    color: ${palette("secondary", 0)};
+    color: ${palette('secondary', 0)};
     width: auto;
     height: 35px;
     padding: 0 10px;
@@ -33,29 +33,27 @@ const WDSingleMailActions = styled.div`
     justify-content: center;
     background-color: #ffffff;
     outline: 0;
-    border: 1px solid ${palette("border", 0)};
-    margin: ${props =>
-      props["data-rtl"] === "rtl" ? "0 -1px 0 15px" : "0 15px 0 -1px"};
+    border: 1px solid ${palette('border', 0)};
+    margin: ${props => (props['data-rtl'] === 'rtl' ? '0 -1px 0 15px' : '0 15px 0 -1px')};
     cursor: pointer;
     ${transition()};
 
     @media only screen and (max-width: 479px) {
-      margin: ${props =>
-        props["data-rtl"] === "rtl" ? "0 -1px 0 5px" : "0 5px 0 -1px"};
+      margin: ${props => (props['data-rtl'] === 'rtl' ? '0 -1px 0 5px' : '0 5px 0 -1px')};
     }
 
     i {
       font-size: 16px;
-      color: ${palette("secondary", 0)};
+      color: ${palette('secondary', 0)};
       ${transition()};
     }
 
     &:hover {
-      color: ${palette("primary", 0)};
+      color: ${palette('primary', 0)};
       background-color: darken(#ffffff, 1%);
 
       i {
-        color: ${palette("primary", 0)};
+        color: ${palette('primary', 0)};
       }
     }
   }
@@ -67,7 +65,7 @@ const WDSingleMailActions = styled.div`
         padding: 3px 0;
 
         &:hover {
-          color: ${palette("primary", 0)};
+          color: ${palette('primary', 0)};
         }
       }
     }
@@ -81,7 +79,7 @@ const WDMailActionsWrapper = styled.div`
 
   button {
     font-size: 16px;
-    color: ${palette("secondary", 0)};
+    color: ${palette('secondary', 0)};
     text-align: center;
     width: 35px;
     height: 35px;
@@ -91,30 +89,28 @@ const WDMailActionsWrapper = styled.div`
     justify-content: center;
     background-color: #ffffff;
     outline: 0;
-    border: 1px solid ${palette("border", 0)};
-    margin: ${props =>
-      props["data-rtl"] === "rtl" ? "0 -1px 0 0" : "0 0 0 -1px"};
+    border: 1px solid ${palette('border', 0)};
+    margin: ${props => (props['data-rtl'] === 'rtl' ? '0 -1px 0 0' : '0 0 0 -1px')};
     cursor: pointer;
     ${transition()};
 
     i {
       font-size: 16px;
-      color: ${palette("secondary", 0)};
+      color: ${palette('secondary', 0)};
       width: 100%;
       ${transition()};
     }
 
     &:first-child {
-      margin: ${props =>
-        props["data-rtl"] === "rtl" ? "0 0 0 -1px" : "0 -1px 0 0"};
+      margin: ${props => (props['data-rtl'] === 'rtl' ? '0 0 0 -1px' : '0 -1px 0 0')};
     }
 
     &:hover {
-      color: ${palette("primary", 0)};
+      color: ${palette('primary', 0)};
       background-color: #fcfcfc;
 
       i {
-        color: ${palette("primary", 0)};
+        color: ${palette('primary', 0)};
       }
     }
 
@@ -127,23 +123,19 @@ const WDMailActionsWrapper = styled.div`
 `;
 
 const WDMailCategoryWrapper = WDMailActionsWrapper.extend`
-  margin: ${props =>
-    props["data-rtl"] === "rtl" ? "0 20px 0 0" : "0 0 0 20px"};
+  margin: ${props => (props['data-rtl'] === 'rtl' ? '0 20px 0 0' : '0 0 0 20px')};
 
   @media only screen and (max-width: 767px) {
-    margin: ${props =>
-      props["data-rtl"] === "rtl" ? "0 auto 0 10px" : "0 10px 0 auto"};
+    margin: ${props => (props['data-rtl'] === 'rtl' ? '0 auto 0 10px' : '0 10px 0 auto')};
   }
 
   @media only screen and (max-width: 479px) {
-    margin: ${props =>
-      props["data-rtl"] === "rtl" ? "0 0 0 5px" : "0 5px 0 0"};
+    margin: ${props => (props['data-rtl'] === 'rtl' ? '0 0 0 5px' : '0 5px 0 0')};
   }
 `;
 
 const WDMailPaginationWrapper = WDMailActionsWrapper.extend`
-  margin: ${props =>
-    props["data-rtl"] === "rtl" ? "0 auto 0 0" : "0 0 0 auto"};
+  margin: ${props => (props['data-rtl'] === 'rtl' ? '0 auto 0 0' : '0 0 0 auto')};
 `;
 
 const MailActionDropdown = styled.ul`
@@ -152,7 +144,7 @@ const MailActionDropdown = styled.ul`
     padding: 3px 0;
 
     &:hover {
-      color: ${palette("primary", 0)};
+      color: ${palette('primary', 0)};
     }
   }
 `;
@@ -167,5 +159,5 @@ export {
   MailActionsWrapper,
   MailCategoryWrapper,
   MailPaginationWrapper,
-  MailActionDropdown
+  MailActionDropdown,
 };

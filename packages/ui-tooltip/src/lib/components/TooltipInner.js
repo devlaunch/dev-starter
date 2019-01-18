@@ -1,6 +1,11 @@
 import styled, { css } from "styled-components";
 
-import { theme, padding, colors, borderRadius as br } from "@devlaunch/ui-config";
+import {
+  theme,
+  padding,
+  colors,
+  borderRadius as br
+} from "@devlaunch/ui-config";
 
 const borderRadius = props => {
   if (props.noRadius) {

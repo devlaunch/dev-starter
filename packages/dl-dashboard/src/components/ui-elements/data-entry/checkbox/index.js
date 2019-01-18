@@ -1,3 +1,3 @@
-import { dlCheckbox as Checkbox, CheckboxGroup } from "./checkbox";
+import { dlCheckbox as Checkbox, CheckboxGroup } from './checkbox';
 
 export { Checkbox, CheckboxGroup };

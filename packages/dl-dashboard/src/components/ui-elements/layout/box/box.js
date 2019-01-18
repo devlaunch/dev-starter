@@ -1,6 +1,6 @@
-import React from "react";
-import BoxTitleWrapper from "./boxTitle";
-import { BoxWrapper } from "./box.style";
+import React from 'react';
+import BoxTitleWrapper from './boxTitle';
+import { BoxWrapper } from './box.style';
 
 export default props => (
   <BoxWrapper className={`${props.className} dlBoxWrapper`} style={props.style}>

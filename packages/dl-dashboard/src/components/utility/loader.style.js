@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { palette } from "styled-theme";
+import styled from 'styled-components';
+import { palette } from 'styled-theme';
 
 const LoaderComponent = styled.div`
   width: 100%;
@@ -30,7 +30,7 @@ const LoaderComponent = styled.div`
     animation: svgSpinnerCircle 1.4s ease-in-out infinite;
     stroke-dasharray: 80px, 200px;
     stroke-dashoffset: 0px;
-    stroke: ${palette("primary", 0)};
+    stroke: ${palette('primary', 0)};
     stroke-linecap: round;
   }
 

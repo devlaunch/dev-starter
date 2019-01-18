@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import { palette } from "styled-theme";
-import { borderRadius, transition } from "../../settings/style-util";
-import WithDirection from "../../settings/withDirection";
+import styled from 'styled-components';
+import { palette } from 'styled-theme';
+import { borderRadius, transition } from '../../settings/style-util';
+import WithDirection from '../../settings/withDirection';
 
 const SingleMailContents = styled.div`
   display: flex;
@@ -24,7 +24,7 @@ const WDSingleMailHeader = styled.div`
   align-items: center;
   padding: 35px;
   flex-shrink: 0;
-  border-bottom: 1px solid ${palette("border", 0)};
+  border-bottom: 1px solid ${palette('border', 0)};
 
   @media only screen and (max-width: 767px) {
     padding: 35px 20px;
@@ -33,7 +33,7 @@ const WDSingleMailHeader = styled.div`
   h2 {
     font-size: 18px;
     font-weight: 400;
-    color: ${palette("secondary", 2)};
+    color: ${palette('secondary', 2)};
     line-height: 1.5;
     margin: 0;
     text-align: left;
@@ -47,10 +47,9 @@ const WDSingleMailHeader = styled.div`
     padding: 0 15px;
     height: 25px;
     line-height: 25px;
-    background-color: ${palette("primary", 0)};
+    background-color: ${palette('primary', 0)};
     text-transform: capitalize;
-    margin: ${props =>
-      props["data-rtl"] === "rtl" ? "0 25px 0 0" : "0 0 0 25px"};
+    margin: ${props => (props['data-rtl'] === 'rtl' ? '0 25px 0 0' : '0 0 0 25px')};
   }
 `;
 
@@ -60,7 +59,7 @@ const WDSingleMailInfo = styled.div`
   align-items: center;
   flex-shrink: 0;
   padding: 25px 35px;
-  border-bottom: 1px solid ${palette("border", 0)};
+  border-bottom: 1px solid ${palette('border', 0)};
 
   @media only screen and (max-width: 767px) {
     padding: 25px 20px;
@@ -76,7 +75,7 @@ const WDSingleMailInfo = styled.div`
     justify-content: center;
     overflow: hidden;
     flex-shrink: 0;
-    ${borderRadius("50%")};
+    ${borderRadius('50%')};
 
     img {
       width: 100%;
@@ -90,7 +89,7 @@ const WDSingleMailInfo = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: ${palette("color", 4)};
+      background-color: ${palette('color', 4)};
       font-size: 16px;
       font-weight: 300;
       color: #fff;
@@ -100,11 +99,10 @@ const WDSingleMailInfo = styled.div`
 
   .dlMailAddress {
     width: 100%;
-    padding: ${props =>
-      props["data-rtl"] === "rtl" ? "0 20px 0 0" : "0 0 0 20px"};
+    padding: ${props => (props['data-rtl'] === 'rtl' ? '0 20px 0 0' : '0 0 0 20px')};
     display: flex;
     flex-direction: column;
-    text-align: ${props => (props["data-rtl"] === "rtl" ? "right" : "left")};
+    text-align: ${props => (props['data-rtl'] === 'rtl' ? 'right' : 'left')};
 
     .dlAddress {
       width: 100%;
@@ -116,7 +114,7 @@ const WDSingleMailInfo = styled.div`
       h3 {
         font-size: 14px;
         font-weight: 700;
-        color: ${palette("text", 0)};
+        color: ${palette('text', 0)};
         line-height: 1.1;
         margin: 0 0 8px;
 
@@ -127,9 +125,8 @@ const WDSingleMailInfo = styled.div`
         span {
           font-size: inherit;
           font-weight: 400;
-          color: ${palette("secondary", 2)};
-          padding: ${props =>
-            props["data-rtl"] === "rtl" ? "0 5px 0 0" : "0 0 0 5px"};
+          color: ${palette('secondary', 2)};
+          padding: ${props => (props['data-rtl'] === 'rtl' ? '0 5px 0 0' : '0 0 0 5px')};
           display: -webkit-inline-flex;
           display: -ms-inline-flex;
           display: inline-flex;
@@ -139,13 +136,13 @@ const WDSingleMailInfo = styled.div`
       .mailDate {
         font-size: 13px;
         font-weight: 400;
-        color: ${palette("secondary", 2)};
+        color: ${palette('secondary', 2)};
         flex-shrink: 0;
 
         @media only screen and (max-width: 767px) {
           position: absolute;
-          right: ${props => (props["data-rtl"] === "rtl" ? "inherit" : "0")};
-          left: ${props => (props["data-rtl"] === "rtl" ? "0" : "inherit")};
+          right: ${props => (props['data-rtl'] === 'rtl' ? 'inherit' : '0')};
+          left: ${props => (props['data-rtl'] === 'rtl' ? '0' : 'inherit')};
         }
       }
     }
@@ -153,13 +150,13 @@ const WDSingleMailInfo = styled.div`
     p {
       font-size: 13px;
       font-weight: 400;
-      color: ${palette("secondary", 2)};
+      color: ${palette('secondary', 2)};
       line-height: 1.1;
 
       span {
         font-size: inherit;
         font-weight: 700;
-        color: ${palette("text", 0)};
+        color: ${palette('text', 0)};
       }
     }
   }
@@ -167,9 +164,9 @@ const WDSingleMailInfo = styled.div`
 
 const WDSingleMailBody = styled.div`
   padding: 30px 35px;
-  text-align: ${props => (props["data-rtl"] === "rtl" ? "right" : "left")};
+  text-align: ${props => (props['data-rtl'] === 'rtl' ? 'right' : 'left')};
   flex-shrink: 0;
-  border-bottom: 1px solid ${palette("border", 0)};
+  border-bottom: 1px solid ${palette('border', 0)};
 
   @media only screen and (max-width: 767px) {
     padding: 30px 20px;
@@ -178,7 +175,7 @@ const WDSingleMailBody = styled.div`
   p {
     font-size: 14px;
     font-weight: 400;
-    color: ${palette("text", 3)};
+    color: ${palette('text', 3)};
     line-height: 1.5;
     margin-bottom: 21px;
   }
@@ -210,21 +207,20 @@ const WDSingleMailReply = styled.div`
     justify-content: flex-start;
     align-items: flex-start;
     font-size: 14px;
-    color: ${palette("text", 2)};
-    border: 1px solid ${palette("border", 0)};
+    color: ${palette('text', 2)};
+    border: 1px solid ${palette('border', 0)};
     padding: 10px 15px;
 
     span {
       font-size: inherit;
-      color: ${palette("text", 2)};
+      color: ${palette('text', 2)};
       text-decoration: underline;
-      padding: ${props =>
-        props["data-rtl"] === "rtl" ? "0 3px 0 0" : "0 0 0 3px"};
+      padding: ${props => (props['data-rtl'] === 'rtl' ? '0 3px 0 0' : '0 0 0 3px')};
       cursor: pointer;
       ${transition()};
 
       &:hover {
-        color: ${palette("primary", 0)};
+        color: ${palette('primary', 0)};
       }
     }
   }
@@ -235,10 +231,4 @@ const SingleMailInfo = WithDirection(WDSingleMailInfo);
 const SingleMailBody = WithDirection(WDSingleMailBody);
 const SingleMailReply = WithDirection(WDSingleMailReply);
 
-export {
-  SingleMailContents,
-  SingleMailHeader,
-  SingleMailInfo,
-  SingleMailBody,
-  SingleMailReply
-};
+export { SingleMailContents, SingleMailHeader, SingleMailInfo, SingleMailBody, SingleMailReply };

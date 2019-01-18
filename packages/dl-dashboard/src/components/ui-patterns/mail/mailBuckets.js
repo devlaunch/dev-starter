@@ -1,19 +1,11 @@
-import React from "react";
-import MailBucket from "./mailBucket.style";
+import React from 'react';
+import MailBucket from './mailBucket.style';
 
-const buckets = [
-  "Inbox",
-  "Sent",
-  "Drafts",
-  "Trash",
-  "Important",
-  "spam",
-  "Starred"
-];
+const buckets = ['Inbox', 'Sent', 'Drafts', 'Trash', 'Important', 'spam', 'Starred'];
 
 function getUnread(mails) {
   const unread = {};
-  mails.forEach(mail => {
+  mails.forEach((mail) => {
     if (!unread[mail.bucket]) {
       unread[mail.bucket] = 0;
     }
@@ -24,12 +16,7 @@ function getUnread(mails) {
   return unread;
 }
 
-export default function mailbuckets(
-  mails,
-  filterAction,
-  filterAttr,
-  onDrawerClose
-) {
+export default function mailbuckets(mails, filterAction, filterAttr, onDrawerClose) {
   const unread = getUnread(mails);
   const renderSinglebucket = (bucket, key) => {
     const onClick = () => {
@@ -39,17 +26,11 @@ export default function mailbuckets(
       }
     };
     const selectedBucket = bucket === filterAttr.bucket;
-    const activeClass = selectedBucket ? "active" : "";
+    const activeClass = selectedBucket ? 'active' : '';
     return (
-      <li
-        key={`bucket${key}`}
-        onClick={onClick}
-        className={`dlSingleBucket ${activeClass}`}
-      >
+      <li key={`bucket${key}`} onClick={onClick} className={`dlSingleBucket ${activeClass}`}>
         <span>{bucket}</span>
-        <span className="dlMailBadge">
-          {unread[bucket] ? unread[bucket] : ""}
-        </span>
+        <span className="dlMailBadge">{unread[bucket] ? unread[bucket] : ''}</span>
       </li>
     );
   };

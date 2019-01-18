@@ -1,6 +1,6 @@
-import React from "react";
-import AlgoliaLogo from "../../image/algolia.svg";
-import { FooterWrapper } from "./algoliaComponent.style";
+import React from 'react';
+import AlgoliaLogo from '../../image/algolia.svg';
+import { FooterWrapper } from './algoliaComponent.style';
 
 const Footer = () => (
   <FooterWrapper className="dlAlgoliaFooter">

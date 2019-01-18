@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import { palette } from "styled-theme";
-import { transition, borderRadius, boxShadow } from "../../settings/style-util";
-import WithDirection from "../../settings/withDirection";
+import styled from 'styled-components';
+import { palette } from 'styled-theme';
+import { transition, borderRadius, boxShadow } from '../../settings/style-util';
+import WithDirection from '../../settings/withDirection';
 
 const WDContactCardWrapper = styled.div`
   width: 100%;
@@ -29,9 +29,8 @@ const WDContactCardWrapper = styled.div`
     align-items: center;
     width: 120px;
     flex-shrink: 0;
-    margin-right: ${props =>
-      props["data-rtl"] === "rtl" ? "inherit" : "50px"};
-    margin-left: ${props => (props["data-rtl"] === "rtl" ? "50px" : "inherit")};
+    margin-right: ${props => (props['data-rtl'] === 'rtl' ? 'inherit' : '50px')};
+    margin-left: ${props => (props['data-rtl'] === 'rtl' ? '50px' : 'inherit')};
     flex-shrink: 0;
 
     @media only screen and (max-width: 600px) {
@@ -51,7 +50,7 @@ const WDContactCardWrapper = styled.div`
       justify-content: center;
       margin-bottom: 10px;
       overflow: hidden;
-      ${borderRadius("5px")};
+      ${borderRadius('5px')};
 
       .avatar-uploader {
         width: 100%;
@@ -68,7 +67,7 @@ const WDContactCardWrapper = styled.div`
     .dlPersonName {
       font-size: 15px;
       font-weight: 500;
-      color: ${palette("text", 0)};
+      color: ${palette('text', 0)};
       line-height: 1.5;
       margin: 0;
     }
@@ -99,129 +98,121 @@ const WDContactCardWrapper = styled.div`
       .dlInfoLabel {
         font-size: 14px;
         font-weight: 500;
-        color: ${palette("text", 0)};
+        color: ${palette('text', 0)};
         line-height: 1.5;
         margin: 0;
-        margin-right: ${props =>
-          props["data-rtl"] === "rtl" ? "inherit" : "15px"};
-        margin-left: ${props =>
-          props["data-rtl"] === "rtl" ? "15px" : "inherit"};
-        text-align: ${props =>
-          props["data-rtl"] === "rtl" ? "right" : "left"};
+        margin-right: ${props => (props['data-rtl'] === 'rtl' ? 'inherit' : '15px')};
+        margin-left: ${props => (props['data-rtl'] === 'rtl' ? '15px' : 'inherit')};
+        text-align: ${props => (props['data-rtl'] === 'rtl' ? 'right' : 'left')};
         min-width: 80px;
         position: relative;
 
         @media only screen and (max-width: 430px) {
           margin-bottom: 5px;
-          margin-right: ${props =>
-            props["data-rtl"] === "rtl" ? "inherit" : "0"};
-          margin-left: ${props =>
-            props["data-rtl"] === "rtl" ? "0" : "inherit"};
-          padding-right: ${props =>
-            props["data-rtl"] === "rtl" ? "inherit" : "10px"};
-          padding-left: ${props =>
-            props["data-rtl"] === "rtl" ? "10px" : "inherit"};
+          margin-right: ${props => (props['data-rtl'] === 'rtl' ? 'inherit' : '0')};
+          margin-left: ${props => (props['data-rtl'] === 'rtl' ? '0' : 'inherit')};
+          padding-right: ${props => (props['data-rtl'] === 'rtl' ? 'inherit' : '10px')};
+          padding-left: ${props => (props['data-rtl'] === 'rtl' ? '10px' : 'inherit')};
           min-width: 0;
         }
 
         &::after {
-          content: ":";
+          content: ':';
           position: absolute;
-          right: ${props => (props["data-rtl"] === "rtl" ? "inherit" : "0")};
-          left: ${props => (props["data-rtl"] === "rtl" ? "0" : "inherit")};
+          right: ${props => (props['data-rtl'] === 'rtl' ? 'inherit' : '0')};
+          left: ${props => (props['data-rtl'] === 'rtl' ? '0' : 'inherit')};
         }
       }
 
       .dlInfoDetails {
         font-size: 14px;
         font-weight: 400;
-        color: ${palette("text", 2)};
+        color: ${palette('text', 2)};
         line-height: 1.5;
         margin: 0;
-        text-align: ${props =>
-          props["data-rtl"] === "rtl" ? "right" : "left"};
+        text-align: ${props => (props['data-rtl'] === 'rtl' ? 'right' : 'left')};
       }
 
       input {
         font-size: 14px;
         font-weight: 400;
-        color: ${palette("text", 2)};
+        color: ${palette('text', 2)};
         line-height: inherit;
         height: 36px;
         padding: 0 15px;
         margin: 0;
-        border: 1px solid ${palette("border", 0)};
+        border: 1px solid ${palette('border', 0)};
         outline: 0 !important;
         overflow: hidden;
         background-color: #ffffff;
-        ${boxShadow("none")};
-        ${borderRadius("3px")};
+        ${boxShadow('none')};
+        ${borderRadius('3px')};
         ${transition()};
 
         &:focus {
-          border-color: ${palette("primary", 0)};
-          ${boxShadow("0 0 0 2px rgba(68, 130, 255, 0.2)")};
+          border-color: ${palette('primary', 0)};
+          ${boxShadow('0 0 0 2px rgba(68, 130, 255, 0.2)')};
           outline: 0;
         }
 
         &:hover {
-          border-color: ${palette("primary", 0)};
+          border-color: ${palette('primary', 0)};
         }
 
         &::-webkit-input-placeholder {
-          color: ${palette("grayscale", 0)};
+          color: ${palette('grayscale', 0)};
         }
 
         &:-moz-placeholder {
-          color: ${palette("grayscale", 0)};
+          color: ${palette('grayscale', 0)};
         }
 
         &::-moz-placeholder {
-          color: ${palette("grayscale", 0)};
+          color: ${palette('grayscale', 0)};
         }
         &:-ms-input-placeholder {
-          color: ${palette("grayscale", 0)};
+          color: ${palette('grayscale', 0)};
         }
       }
 
       textarea {
         font-size: 14px;
         font-weight: 400;
-        color: ${palette("text", 2)};
+        color: ${palette('text', 2)};
         line-height: 24px;
         height: 210px;
         padding: 10px 15px;
         margin: 0;
-        border: 1px solid ${palette("border", 0)};
+        border: 1px solid ${palette('border', 0)};
         outline: 0 !important;
         background-color: #ffffff;
-        ${boxShadow("none")};
-        ${borderRadius("3px")};
+        ${boxShadow('none')};
+        ${borderRadius('3px')};
         ${transition()};
 
         &:focus {
-          border-color: ${palette("primary", 0)};
-          ${boxShadow("0 0 0 2px rgba(68, 130, 255, 0.2)")};
+          border-color: ${palette('primary', 0)};
+          ${boxShadow('0 0 0 2px rgba(68, 130, 255, 0.2)')};
           outline: 0;
         }
 
         &:hover {
-          border-color: ${palette("primary", 0)};
+          border-color: ${palette('primary', 0)};
         }
 
         &::-webkit-input-placeholder {
-          color: ${palette("grayscale", 0)};
+          color: ${palette('grayscale', 0)};
         }
 
         &:-moz-placeholder {
-          color: ${palette("grayscale", 0)};
+          color: ${palette('grayscale', 0)};
         }
 
         &::-moz-placeholder {
-          color: ${palette("grayscale", 0)};
+          color: ${palette('grayscale', 0)};
         }
         &:-ms-input-placeholder {
-          color: ${palette("grayscale", 0)};
+          color: ${palette('grayscale', 0)};
         }
       }
     }

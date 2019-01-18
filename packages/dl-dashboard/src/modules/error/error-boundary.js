@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class ErrorBoundary extends Component {
   state = { error: undefined, errorInfo: undefined };
@@ -6,7 +6,7 @@ class ErrorBoundary extends Component {
   componentDidCatch(error, errorInfo) {
     this.setState({
       error,
-      errorInfo
+      errorInfo,
     });
   }
 
@@ -14,7 +14,7 @@ class ErrorBoundary extends Component {
     const { error, errorInfo } = this.state;
     if (errorInfo) {
       const errorDetails =
-        process.env.NODE_ENV === "development" ? (
+        process.env.NODE_ENV === 'development' ? (
           <details className="preserve-space">
             {error && error.toString()}
             <br />

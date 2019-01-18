@@ -1,19 +1,19 @@
-import { colors } from './colors';
-import { utils } from './utils';
+import { colors } from "./colors";
+import { utils } from "./utils";
 
 const breadcrumb = {
   colors: {
     default: {
-      backgroundColor: colors.gray200,
-    },
+      backgroundColor: colors.gray200
+    }
   },
   padding: {
-    default: '0.75rem 1rem',
+    default: "0.75rem 1rem"
   },
   margin: {
-    bottom: '1rem',
+    bottom: "1rem"
   },
-  borderRadius: utils.borderRadius,
+  borderRadius: utils.borderRadius
 };
 
 export { breadcrumb };

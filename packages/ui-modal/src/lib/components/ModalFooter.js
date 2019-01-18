@@ -7,7 +7,8 @@ const ModalFooter = styled.div`
   align-items: center;
   justify-content: flex-end;
   padding: ${props => padding(props, "modalFooter").default}
-  border-top: ${props => border(props, "modalFooter").default} ${props => colors(props, "modalFooter").borderColor};
+  border-top: ${props => border(props, "modalFooter").default} ${props =>
+  colors(props, "modalFooter").borderColor};
 `;
 
 ModalFooter.defaultProps = {

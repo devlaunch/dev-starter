@@ -1,3 +1,3 @@
-import { Popconfirm } from "antd";
+import { Popconfirm } from 'antd';
 
 export default Popconfirm;

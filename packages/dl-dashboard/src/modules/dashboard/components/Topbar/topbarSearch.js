@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { InputSearch } from "../uielements/input";
-import TopbarSearchModal from "./topbarSearchModal.style";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { InputSearch } from '../uielements/input';
+import TopbarSearchModal from './topbarSearchModal.style';
 
 class Searchbar extends Component {
   componentDidMount() {
     setTimeout(() => {
       try {
-        document.getElementById("InputTopbarSearch").focus();
+        document.getElementById('InputTopbarSearch').focus();
       } catch (e) {}
     }, 200);
   }
@@ -25,23 +25,23 @@ class Searchbar extends Component {
 
 class TopbarSearch extends Component {
   state = {
-    visiblity: false
+    visiblity: false,
   };
   handleCancel = () => {
     this.setState({
-      visible: false
+      visible: false,
     });
   };
   handleBlur = () => {
     setTimeout(() => {
       this.setState({
-        visible: false
+        visible: false,
       });
     }, 200);
   };
   showModal = () => {
     this.setState({
-      visible: true
+      visible: true,
     });
   };
   render() {
@@ -49,10 +49,7 @@ class TopbarSearch extends Component {
     const { visible } = this.state;
     return (
       <div onClick={this.showModal}>
-        <i
-          className="ion-ios-search-strong"
-          style={{ color: customizedTheme.textColor }}
-        />
+        <i className="ion-ios-search-strong" style={{ color: customizedTheme.textColor }} />
         <TopbarSearchModal
           visible={visible}
           onOk={this.handleCancel}
@@ -62,7 +59,7 @@ class TopbarSearch extends Component {
           footer={null}
         >
           <div className="dlSearchContainer">
-            {visible ? <Searchbar onBlur={this.handleBlur} /> : ""}
+            {visible ? <Searchbar onBlur={this.handleBlur} /> : ''}
           </div>
         </TopbarSearchModal>
       </div>
@@ -72,5 +69,5 @@ class TopbarSearch extends Component {
 
 export default connect(state => ({
   ...state.App,
-  customizedTheme: state.ThemeSwitcher.topbarTheme
+  customizedTheme: state.ThemeSwitcher.topbarTheme,
 }))(TopbarSearch);

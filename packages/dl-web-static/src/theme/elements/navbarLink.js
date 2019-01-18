@@ -1,31 +1,31 @@
-import { colors } from "../colors";
+import { colors as thcolors } from "../colors";
 import { utils } from "../settings";
 
 const navbarLink = {
   colors: {
     dark: {
-      colorDisabled: colors.navbarDarkColorDisabled,
-      colorDisabledHoverFocus: colors.navbarDarkColorDisabled,
-      colorActive: colors.navbarDarkColorActive,
-      colorActiveHoverFocus: colors.navbarDarkColorActive,
-      color: colors.navbarDarkColor,
-      colorHoverFocus: colors.navbarDarkColorHoverFocus
+      colorDisabled: thcolors.dark.disabledtext,
+      colorDisabledHoverFocus: thcolors.dark.disabledtext,
+      colorActive: thcolors.dark.bodytext,
+      colorActiveHoverFocus: thcolors.dark.bodytext,
+      color: thcolors.dark.mutedtext,
+      colorHoverFocus: thcolors.dark.mutedtext
     },
     light: {
-      colorDisabled: colors.navbarLightColorDisabled,
-      colorDisabledHoverFocus: colors.navbarLightColorDisabled,
-      colorActive: colors.navbarLightColorActive,
-      colorActiveHoverFocus: colors.navbarLightColorActive,
-      color: colors.navbarLightColor,
-      colorHoverFocus: colors.navbarLightColorHoverFocus
+      colorDisabled: thcolors.light.disabledtext,
+      colorDisabledHoverFocus: thcolors.light.disabledtext,
+      colorActive: thcolors.light.bodytext,
+      colorActiveHoverFocus: thcolors.light.bodytext,
+      color: thcolors.light.mutedtext,
+      colorHoverFocus: thcolors.light.mutedtext
     },
     default: {
-      colorDisabled: colors.navbarLightColorDisabled,
-      colorDisabledHoverFocus: colors.navbarLightColorDisabled,
-      colorActive: colors.navbarLightColorActive,
-      colorActiveHoverFocus: colors.navbarLightColorActive,
-      color: colors.navbarLightColor,
-      colorHoverFocus: colors.navbarLightColorHoverFocus
+      colorDisabled: thcolors.light.disabledtext,
+      colorDisabledHoverFocus: thcolors.light.disabledtext,
+      colorActive: thcolors.light.bodytext,
+      colorActiveHoverFocus: thcolors.light.bodytext,
+      color: thcolors.light.mutedtext,
+      colorHoverFocus: thcolors.light.mutedtext
     }
   },
   padding: {

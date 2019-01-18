@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import Button from "./uielements/button";
-import Popover from "./uielements/popover";
-import ColorChooserDropdown from "./colorChooser.style";
+import React, { Component } from 'react';
+import Button from './uielements/button';
+import Popover from './uielements/popover';
+import ColorChooserDropdown from './colorChooser.style';
 
 export default class extends Component {
   constructor(props) {
@@ -9,7 +9,7 @@ export default class extends Component {
     this.handleVisibleChange = this.handleVisibleChange.bind(this);
     this.hide = this.hide.bind(this);
     this.state = {
-      visible: false
+      visible: false,
     };
   }
   hide() {
@@ -28,7 +28,7 @@ export default class extends Component {
             changeColor(index);
           };
           const style = {
-            background: color
+            background: color,
           };
           return <Button key={index} onClick={onClick} style={style} />;
         })}
@@ -41,10 +41,7 @@ export default class extends Component {
         visible={this.state.visible}
         onVisibleChange={this.handleVisibleChange}
       >
-        <Button
-          style={{ backgroundColor: colors[seectedColor] }}
-          className="dlColorChooser"
-        />
+        <Button style={{ backgroundColor: colors[seectedColor] }} className="dlColorChooser" />
       </Popover>
     );
   }

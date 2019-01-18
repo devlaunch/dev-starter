@@ -1,25 +1,17 @@
-import React, { Component } from "react";
-import MailPagination from "./mailPagination.style";
-import { rtl } from "../../settings/withDirection";
+import React, { Component } from 'react';
+import MailPagination from './mailPagination.style';
+import { rtl } from '../../settings/withDirection';
 
 export default class extends Component {
   render() {
     return (
       <MailPagination className="dlMailPagination">
         <button type="button" className="prevPage">
-          <i
-            className={
-              rtl === "rtl" ? "ion-ios-arrow-forward" : "ion-ios-arrow-back"
-            }
-          />
+          <i className={rtl === 'rtl' ? 'ion-ios-arrow-forward' : 'ion-ios-arrow-back'} />
         </button>
 
         <button type="button" className="nextPage">
-          <i
-            className={
-              rtl === "rtl" ? "ion-ios-arrow-back" : "ion-ios-arrow-forward"
-            }
-          />
+          <i className={rtl === 'rtl' ? 'ion-ios-arrow-back' : 'ion-ios-arrow-forward'} />
         </button>
       </MailPagination>
     );

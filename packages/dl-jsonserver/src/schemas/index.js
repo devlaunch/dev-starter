@@ -1,206 +1,206 @@
 const schema = {
-  type: "object",
+  type: 'object',
   properties: {
     articles: {
-      type: "object",
+      type: 'object',
       properties: {
-        $ref: "#/definitions/MultipleArticlesResponse"
-      }
+        $ref: '#/definitions/MultipleArticlesResponse',
+      },
     },
     profile: {
-      type: "array",
+      type: 'array',
       minItems: 10,
       maxItems: 10,
       items: {
-        $ref: "#/definitions/Profile"
-      }
+        $ref: '#/definitions/Profile',
+      },
     },
     user: {
-      type: "array",
+      type: 'array',
       minItems: 10,
       maxItems: 10,
       items: {
-        $ref: "#/definitions/User"
-      }
-    }
+        $ref: '#/definitions/User',
+      },
+    },
   },
-  required: ["user", "articles", "profile"],
+  required: ['user', 'articles', 'profile'],
   definitions: {
     PositiveInt: {
-      type: "integer",
+      type: 'integer',
       minimum: 0,
-      exclusiveMinimum: true
+      exclusiveMinimum: true,
     },
     User: {
-      type: "object",
+      type: 'object',
       properties: {
         id: {
-          $ref: "#/definitions/PositiveInt"
+          $ref: '#/definitions/PositiveInt',
         },
         username: {
-          type: "string",
-          faker: "name.findName"
+          type: 'string',
+          faker: 'name.findName',
         },
         password: {
-          type: "string",
-          faker: "internet.password"
+          type: 'string',
+          faker: 'internet.password',
         },
         email: {
-          type: "string",
-          format: "email",
-          faker: "internet.email"
-        }
+          type: 'string',
+          format: 'email',
+          faker: 'internet.email',
+        },
       },
-      required: ["id", "username", "email", "password"]
+      required: ['id', 'username', 'email', 'password'],
     },
     Bio: {
-      type: "object",
+      type: 'object',
       properties: {
         id: {
-          $ref: "#/definitions/PositiveInt"
+          $ref: '#/definitions/PositiveInt',
         },
         username: {
-          type: "string",
-          faker: "name.findName"
+          type: 'string',
+          faker: 'name.findName',
         },
         email: {
-          type: "string",
-          format: "email",
-          faker: "internet.email"
+          type: 'string',
+          format: 'email',
+          faker: 'internet.email',
         },
         bio: {
-          type: "string",
-          faker: "lorem.sentence"
+          type: 'string',
+          faker: 'lorem.sentence',
         },
         image: {
-          type: "string",
-          faker: "internet.avatar"
+          type: 'string',
+          faker: 'internet.avatar',
         },
         following: {
-          type: "boolean",
-          faker: "random.boolean"
-        }
+          type: 'boolean',
+          faker: 'random.boolean',
+        },
       },
-      required: ["id", "username", "email", "bio", "image", "following"]
+      required: ['id', 'username', 'email', 'bio', 'image', 'following'],
     },
     Profile: {
-      type: "object",
-      allOf: [{ $ref: "#/definitions/User" }, { $ref: "#/definitions/Bio" }]
+      type: 'object',
+      allOf: [{ $ref: '#/definitions/User' }, { $ref: '#/definitions/Bio' }],
     },
     Article: {
-      type: "object",
+      type: 'object',
       properties: {
         slug: {
-          type: "string",
-          faker: "lorem.slug"
+          type: 'string',
+          faker: 'lorem.slug',
         },
         title: {
-          type: "string",
-          faker: "lorem.sentence"
+          type: 'string',
+          faker: 'lorem.sentence',
         },
         description: {
-          type: "string",
-          faker: "lorem.paragraph"
+          type: 'string',
+          faker: 'lorem.paragraph',
         },
         body: {
-          type: "string",
-          faker: "lorem.paragraphs"
+          type: 'string',
+          faker: 'lorem.paragraphs',
         },
         tagList: {
-          type: "array",
+          type: 'array',
           items: {
-            type: "string",
-            faker: "lorem.words"
-          }
+            type: 'string',
+            faker: 'lorem.words',
+          },
         },
         createdAt: {
-          type: "string",
-          format: "pastDate"
+          type: 'string',
+          format: 'pastDate',
         },
         updatedAt: {
-          type: "string",
-          format: "recentDate"
+          type: 'string',
+          format: 'recentDate',
         },
         favorited: {
-          type: "boolean",
-          faker: "random.boolean"
+          type: 'boolean',
+          faker: 'random.boolean',
         },
         favoritesCount: {
-          type: "integer",
+          type: 'integer',
           faker: {
-            "random.number": [100]
-          }
+            'random.number': [100],
+          },
         },
         author: {
-          $ref: "#/definitions/Bio"
+          $ref: '#/definitions/Bio',
         },
         comment: {
-          type: "array",
+          type: 'array',
           items: {
-            $ref: "#/definitions/Comment"
-          }
-        }
+            $ref: '#/definitions/Comment',
+          },
+        },
       },
       required: [
-        "slug",
-        "title",
-        "description",
-        "body",
-        "tagList",
-        "createdAt",
-        "updatedAt",
-        "favorited",
-        "favoritesCount",
-        "author",
-        "comment"
-      ]
+        'slug',
+        'title',
+        'description',
+        'body',
+        'tagList',
+        'createdAt',
+        'updatedAt',
+        'favorited',
+        'favoritesCount',
+        'author',
+        'comment',
+      ],
     },
     MultipleArticlesResponse: {
-      type: "object",
+      type: 'object',
       properties: {
         articles: {
-          type: "array",
+          type: 'array',
           minItems: 10,
           maxItems: 30,
           items: {
-            $ref: "#/definitions/Article"
-          }
+            $ref: '#/definitions/Article',
+          },
         },
         articlesCount: {
-          type: "integer",
+          type: 'integer',
           faker: {
-            "random.number": [100]
-          }
-        }
+            'random.number': [100],
+          },
+        },
       },
-      required: ["articles", "articlesCount"]
+      required: ['articles', 'articlesCount'],
     },
     Comment: {
-      type: "object",
+      type: 'object',
       properties: {
         id: {
-          $ref: "#/definitions/PositiveInt"
+          $ref: '#/definitions/PositiveInt',
         },
         createdAt: {
-          type: "string",
-          format: "date-time",
-          faker: "date.past"
+          type: 'string',
+          format: 'date-time',
+          faker: 'date.past',
         },
         updatedAt: {
-          type: "string",
-          format: "date-time",
-          faker: "date.recent"
+          type: 'string',
+          format: 'date-time',
+          faker: 'date.recent',
         },
         body: {
-          type: "string",
-          faker: "lorem.paragraph"
+          type: 'string',
+          faker: 'lorem.paragraph',
         },
         author: {
-          $ref: "#/definitions/Bio"
-        }
+          $ref: '#/definitions/Bio',
+        },
       },
-      required: ["id", "createdAt", "updatedAt", "body", "author"]
-    }
-  }
+      required: ['id', 'createdAt', 'updatedAt', 'body', 'author'],
+    },
+  },
 };
 export default schema;

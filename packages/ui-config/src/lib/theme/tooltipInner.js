@@ -1,17 +1,17 @@
-import { colors } from './colors';
-import { utils } from './utils';
+import { colors } from "./colors";
+import { utils } from "./utils";
 
 const tooltipInner = {
   colors: {
     default: {
       color: colors.white,
-      backgroundColor: colors.black,
-    },
+      backgroundColor: colors.black
+    }
   },
   padding: {
-    default: '0.25rem 0.5rem',
+    default: "0.25rem 0.5rem"
   },
-  borderRadius: utils.borderRadius,
+  borderRadius: utils.borderRadius
 };
 
 export { tooltipInner };

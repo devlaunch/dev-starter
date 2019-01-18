@@ -1,6 +1,11 @@
 import styled, { css } from "styled-components";
 
-import { theme, colors, border, borderRadius as br } from "@devlaunch/ui-config";
+import {
+  theme,
+  colors,
+  border,
+  borderRadius as br
+} from "@devlaunch/ui-config";
 
 const borderRadius = props => {
   if (props.noRadius) {
@@ -22,7 +27,8 @@ const ModalContent = styled.div`
   pointer-events: auto;
   background-color: ${props => colors(props, "modalContent").backgroundColor};
   background-clip: padding-box;
-  border: ${props => border(props, "modalContent").default} ${props => colors(props, "modalContent").borderColor};
+  border: ${props => border(props, "modalContent").default}
+    ${props => colors(props, "modalContent").borderColor};
   outline: 0;
   ${props => borderRadius(props)}
 `;

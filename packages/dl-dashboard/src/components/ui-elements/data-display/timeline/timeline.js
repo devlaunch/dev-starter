@@ -1,6 +1,6 @@
-import { Timeline } from "antd";
-import AntTimeline from "./timeline.style";
-import WithDirection from "../../../../settings/withDirection";
+import { Timeline } from 'antd';
+import AntTimeline from './timeline.style';
+import WithDirection from '../../../../settings/withDirection';
 
 const Timelines = AntTimeline(Timeline);
 const WDTimelineItem = AntTimeline(Timeline.Item);

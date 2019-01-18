@@ -1,11 +1,11 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-import 'jest-styled-components';
+import React from "react";
+import renderer from "react-test-renderer";
+import "jest-styled-components";
 
-import { Button } from '../../src';
+import { Button } from "../../src";
 
-test('Styles matches Button noRadius', () => {
+test("Styles matches Button noRadius", () => {
   const tree = renderer.create(<Button noRadius />).toJSON();
   expect(tree).toMatchSnapshot();
-  expect(tree).toHaveStyleRule('border-radius', '0');
+  expect(tree).toHaveStyleRule("border-radius", "0");
 });

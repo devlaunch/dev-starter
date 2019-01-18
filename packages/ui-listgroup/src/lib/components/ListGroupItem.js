@@ -1,6 +1,12 @@
 import styled, { css } from "styled-components";
 
-import { theme, colors, padding, border, borderRadius } from "@devlaunch/ui-config";
+import {
+  theme,
+  colors,
+  padding,
+  border,
+  borderRadius
+} from "@devlaunch/ui-config";
 
 const color = props => {
   if (props.disabled) {
@@ -45,7 +51,8 @@ const color = props => {
 const backgroundBorderColor = props => {
   if (props.disabled) {
     return css`
-      background-color: ${colors(props, "listGroupItem").backgroundColorDisabled};
+      background-color: ${colors(props, "listGroupItem")
+        .backgroundColorDisabled};
     `;
   }
 
@@ -58,12 +65,14 @@ const backgroundBorderColor = props => {
         &:focus,
         & > a:hover,
         & > a:focus {
-          background-color: ${colors(props, "listGroupItem").backgroundColorHoverFocusAction};
+          background-color: ${colors(props, "listGroupItem")
+            .backgroundColorHoverFocusAction};
         }
       `}
     ${props.active &&
       css`
-        background-color: ${colors(props, "listGroupItem").backgroundColorActive};
+        background-color: ${colors(props, "listGroupItem")
+          .backgroundColorActive};
         border-color: ${colors(props, "listGroupItem").borderColorActive};
         &:hover,
         &:focus,
@@ -104,12 +113,15 @@ const ListGroupItem = styled.li`
   position: relative;
   display: block;
   padding: ${props => padding(props, "listGroupItem").default};
-  border: ${props => border(props, "listGroupItem").default} ${props => colors(props, "listGroupItem").borderColor};
+  border: ${props => border(props, "listGroupItem").default} ${props =>
+  colors(props, "listGroupItem").borderColor};
   border-bottom: none;
   margin-bottom: -1px;
   &:first-child {
-    border-top-left-radius: ${props => borderRadius(props, "listGroupItem").default};
-    border-top-right-radius: ${props => borderRadius(props, "listGroupItem").default};
+    border-top-left-radius: ${props =>
+      borderRadius(props, "listGroupItem").default};
+    border-top-right-radius: ${props =>
+      borderRadius(props, "listGroupItem").default};
   };
   &:last-child {
     border-bottom: ${props => border(props, "listGroupItem").default}
@@ -121,8 +133,10 @@ const ListGroupItem = styled.li`
       return colors(props, "listGroupItem").borderColor;
     }};
     margin-bottom: 0;
-    border-bottom-right-radius: ${props => borderRadius(props, "listGroupItem").default};
-    border-bottom-left-radius: ${props => borderRadius(props, "listGroupItem").default};
+    border-bottom-right-radius: ${props =>
+      borderRadius(props, "listGroupItem").default};
+    border-bottom-left-radius: ${props =>
+      borderRadius(props, "listGroupItem").default};
   };
   & > a:hover, 
   & > a:focus {
